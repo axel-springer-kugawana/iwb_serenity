@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "serenity.css",
+	"sources": [
+		"../../src/scss/serenity.scss",
+		"../../src/scss/utils/_variables.scss"
+	],
+	"names": [],
+	"mappings": "AAAA;;;wCAGwC;AAIxC,AAAA,IAAI,CAAC;EACD,UAAU,ECRD,IAAI,GDShB;;AAED,AAAA,GAAG,CAAC;EACA,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,IAAI,GACpB"
+}

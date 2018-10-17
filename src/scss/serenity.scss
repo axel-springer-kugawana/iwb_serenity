@@ -1,0 +1,15 @@
+/*------------------------------------*\
+  Serenity Framework
+  @authors Immoweb PHP Tribe
+\*------------------------------------*/
+
+@import "utils/variables";
+
+body {
+    background: $color-pink;
+}
+
+div {
+    display: grid;
+    user-select: none;
+}
