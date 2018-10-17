@@ -1,0 +1,271 @@
+/**
+ * Vue Press Serenity
+ *
+ * Specific style for vue press documentation of the Serenity Framework
+ */
+
+#app {
+    height: 100%;
+}
+
+/**
+ * sd-main-container
+ */
+
+.sd-main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/**
+ * sd-header
+ */
+.sd-header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    background: #fff;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    z-index: 1000;
+}
+
+/**
+ * sd-navbar
+ */
+.sd-navbar {
+    max-width: 50%;
+}
+
+.sd-navbar__menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+}
+
+.sd-navbar__menu-item {
+    margin-right: 1rem;
+}
+
+.sd-navbar__sub-menu {
+    position: absolute;
+    display: none;
+    top: 100%;
+    padding:10px;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+.sd-navbar__sub-menu ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.sd-navbar__sub-menu ul ul {
+    margin-left: 30px;
+    list-style-type: circle;
+}
+
+.sd-navbar__sub-menu.open {
+    display: block;
+}
+
+.sd-navbar__sub-menu-toggle:hover,
+.sd-navbar__sub-menu-toggle:focus {
+    text-decoration: none;
+}
+
+.sd-navbar__sub-menu-title {
+    display: inline-block;
+}
+
+.sd-navbar__sub-menu-toggle:hover .sd-navbar__sub-menu-title,
+.sd-navbar__sub-menu-toggle:focus .sd-navbar__sub-menu-title {
+    text-decoration: underline;
+}
+
+/**
+ * Arrow down
+ */
+.sd-arrow-down {
+    display: inline-block;
+    border-top: 6px solid #bbb;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    vertical-align: middle;
+    margin-left: .2rem;
+}
+
+/**
+ * sd-content
+ */
+
+.sd-content {
+    flex: 1 0 auto;
+    height: fit-content;
+}
+
+.sd-content .content.custom >  h2:not(first-child),
+.sd-content .content.custom > h3:not(first-child),
+.sd-content .content.custom > h4:not(first-child),
+.sd-content .content.custom > h5:not(first-child),
+.sd-content .content.custom > h6:not(first-child) {
+    margin-top: 2rem;
+}
+
+.sd-content .content.custom > h2:before,
+.sd-content .content.custom > h3:before,
+.sd-content .content.custom > h4:before,
+.sd-content .content.custom > h5:before,
+.sd-content .content.custom > h6:before {
+    display: block;
+    height: 4rem;
+    margin-top: -4rem;
+    visibility: hidden;
+    content: "";
+}
+
+/**
+ * sd-footer
+ */
+
+.sd-footer {
+    flex-shrink: 0;
+    margin-top: 4rem;
+    padding: 1rem;
+    font-size: .8rem;
+}
+
+/**
+ * sd-example-block
+ * Colored block use to illustrate some example
+ * e.g Grid page
+ */
+
+.sd-example-block {
+    display: block;
+    background: #32bbff;
+    color: #fff;
+}
+
+/**
+ * Header Hanchor
+ */
+
+a.header-anchor {
+    font-size: .85em;
+    float: left;
+    margin-left: -.87em;
+    padding-right: .23em;
+    margin-top: .125em;
+    opacity: 0;
+}
+
+.header-anchor:hover,
+.header-anchor:focus {
+    outline: none;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.content.custom > h1:hover .header-anchor,
+.content.custom > h2:hover .header-anchor,
+.content.custom > h3:hover .header-anchor,
+.content.custom > h4:hover .header-anchor,
+.content.custom > h5:hover .header-anchor,
+.content.custom > h6:hover .header-anchor {
+    opacity: 1;
+}
+
+/**
+ * Custom Block
+ */
+
+.custom-block.danger,
+.custom-block.tip,
+.custom-block.warning {
+    padding: .1rem 1.5rem;
+    border-left-width: .5rem;
+    border-left-style: solid;
+    margin: 1rem 0;
+}
+
+.custom-block .custom-block-title {
+    font-weight: 700;
+    margin-bottom: .3rem;
+}
+
+
+/* Warning */
+.custom-block.warning {
+    background-color: rgba(255, 229, 100, .3);
+    border-color: #e7c000;
+    color: #6b5900;
+}
+
+.custom-block.warning .custom-block-title {
+    color: #b29400;
+}
+
+/* Tip */
+.custom-block.tip {
+    background-color: #f4f4f4;
+    border-color: #3d6ca9;
+    color: #294871;
+}
+
+.custom-block.tip .custom-block-title {
+    color: #3d6ca9;
+}
+
+.custom-block ul {
+    margin: 1em 0;
+}
+
+/**
+ * Example
+ */
+.sd-example {
+    margin-top: 2rem;
+}
+
+
+/**
+ * Code Block
+ */
+code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(27,31,35,0.05);
+    border-radius: 3px;
+    color: #3d6ca9;
+}
+
+pre code {
+    padding: 0;
+    font-size: 100%;
+    background-color: transparent;
+    border-radius: 0;
+    color: inherit;
+}
+
+
+.extra-class {
+    margin: 1rem 0;
+}
+
+/**
+ * Router Link
+ */
+.router-link-exact-active {
+    border-bottom: 2px solid #3d6ca9;
+}
+
+.router-link-exact-active:hover {
+    text-decoration: none;
+    cursor: default;
+}

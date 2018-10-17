@@ -1,0 +1,870 @@
+/*------------------------------------*\
+  > Form
+\*------------------------------------*/
+
+.form,
+.field {
+    width: 100%;
+}
+
+.form__button-clear {
+    float: right;
+}
+
+// Field
+// ---------------------
+
+.field,
+.field-group,
+.field--ingroup {
+    position: relative;
+    margin-bottom: $size-16;
+
+    // &:only-child {
+    //     margin-bottom: 0;
+    // }
+}
+
+// Field Text align
+.field--center {
+    text-align: center;
+}
+
+// Field Title / Label / Description,
+.field__title,
+.field__label {
+    display: block;
+    margin-bottom: $size-4;
+    font-family: $font-title;
+    font-weight: $font-weight-title;
+    font-size: $size-16;
+}
+
+.field__title,
+.field__label,
+.field__description {
+    // white-space: pre-line;
+    word-break: break-word;
+}
+
+.field__title,
+.field__label,
+.field__description,
+.field__label--ingroup {
+    color: $primary-dd;
+}
+
+.field__description,
+.field__label--ingroup {
+    font-size: $size-16;
+}
+
+// Label Icon
+.label__icon {
+    fill: $primary-dd;
+}
+
+.label__icon,
+.label__text {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+// Field Ingroup
+// Field of a group
+.field--ingroup--inline {
+    margin-bottom: $size-10;
+
+    @include media-query("medium") {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.field__label--ingroup--inline {
+    margin-bottom: $size-4;
+    font-size: $size-16;
+    color: $primary-dd;
+
+    @include media-query("medium") {
+        width: auto;
+        max-width: 30%;
+        display: inline-block;
+        margin: 0;
+    }
+}
+
+// field__label optional
+.field__label--optional {
+    display: inline-block;
+    text-transform: lowercase;
+    font-size: $size-12;
+}
+
+// Field Row
+// Use to display field side by side
+// ---------------------
+.field-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $size-16;
+}
+
+.field-row__item {
+    width: calc(50% - 10px);
+}
+
+// Field Error
+// ---------------------
+.field__error {
+    position: relative;
+    color: $primary-dd;
+    font-size: $size-16;
+    padding-left: $size-24;
+    margin: $size-4 0 0 0;
+    white-space: normal;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        transform: translateY(-50%);
+        background: url("/images/icons/icon-validation-error.svg");
+    }
+}
+
+.field__error:first-letter {
+    text-transform: uppercase;
+}
+
+// Text Like Input
+// ---------------------
+.input--text {
+    line-height: $size-36;
+    padding: 0 $size-14;
+    border: 2px solid $primary-ll;
+    border-radius: $inputBorderRadius;
+    font-size: $size-16;
+    color: $primary-dd;
+    outline: none;
+    width: 100%;
+    min-height: $size-40;
+    appearance: none;
+
+    &:focus {
+        border-color: $primary-dd;
+    }
+
+    // Placeholder Style
+    &::placeholder {
+        color: $primary-dd;
+        opacity: .3;
+    }
+
+    &:disabled {
+        background: $primary-lll;
+        cursor: not-allowed;
+    }
+}
+
+.input--ingroup--inline {
+    @include media-query("medium") {
+        width: 70%;
+        margin: 0 0 0 auto;
+    }
+}
+
+// Variation for input number
+.input--text[type="number"]::-webkit-inner-spin-button,
+.input--text[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+.input--text[type="number"] {
+    appearance: textfield;
+}
+
+// Textarea
+// ---------------------
+.input--textarea {
+    display: block;
+    border: 2px solid $primary-ll;
+    border-radius: 8px;
+    background: #fff;
+    width: 100%;
+    outline: none;
+    padding: $size-4 $size-8 $size-16;
+    resize: none;
+    height: auto;
+    min-height: 100px;
+    overflow: hidden;
+
+    &:focus {
+        border-color: $primary-dd;
+    }
+}
+
+// Text area wrapper (use for counter)
+.text-area {
+    position: relative;
+}
+
+// Counter
+// ---------------------
+
+.input--text__counter,
+.text-area__counter {
+    font-size: $size-10;
+    font-weight: $font-weight-title;
+    color: $primary-dd;
+    opacity: .4;
+}
+
+.input--text__counter {
+    display: block;
+    text-align: right;
+    margin-top: $size-2;
+    padding-right: $size-14;
+}
+
+.text-area__counter {
+    position: absolute;
+    right: 9px;
+    bottom: 6px;
+}
+
+// Error State
+// ---------------------
+.input--text,
+.input--number,
+.text-area {
+    &:invalid {
+        box-shadow: none;
+    }
+}
+
+.input--error {
+    border-color: $functional-error;
+}
+
+
+// Input Select
+// ---------------------
+
+// Input Select Toggle
+// ---------------------
+.input--select {
+    position: relative;
+}
+
+.input--select__toggle,
+.input--select--mobile {
+    min-height: 38px;
+    padding: $size-8 $size-32 $size-8 $size-14;
+    border: 2px solid $primary-ll;
+    border-radius: $inputBorderRadius;
+    background: $primary-lll url("/images/icons/icon-arrow-bottom.svg") no-repeat right 15px top 50%;
+    background-size: 10px 12px;
+    width: 100%;
+    outline: none;
+    appearance: none;
+    text-align: left;
+    font-weight: $font-weight-title;
+    font-family: $font-title;
+    font-size: $size-12;
+    color: $primary-dd;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+        border-color: $primary-dd;
+    }
+}
+
+.input--select__toggle-label {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+// Input Select List
+// ---------------------
+.input--select__list {
+    position: absolute;
+    left: 10px;
+    width: calc(100% - 20px);
+    z-index: z("dropdown");
+    margin-top: $size-8;
+    padding: $size-4 0;
+    border-radius: 2px;
+    border: 1px solid fade-out($primary-l, .6);
+    box-shadow: 0 10px 30px -10px $primary-l;
+    background: #fff;
+    list-style-type: none;
+}
+
+// Input Select Drop Up (Open on top of input instead of bottom)
+.input--select__list--dropup {
+    bottom: 100%;
+    margin-bottom: $size-8;
+}
+
+// Input Select Option
+.input--select__option {
+    @include button-transparent(none);
+    font-weight: $font-weight-title;
+    font-family: $font-title;
+    font-size: $size-12;
+    color: $primary-dd;
+    line-height: 1.4;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    padding: $size-4 $size-10;
+    display: block;
+    word-break: break-all;
+
+    &:focus,
+    &:hover,
+    &.active {
+        outline: none;
+        background-color: $primary-ll;
+    }
+}
+
+.input-group__prepend .input--select  {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+// Input Select Mobile
+// Native input a little bit stylized
+// ---------------------
+.input--select--mobile {
+    width: 100%;
+    outline: 0;
+
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000;
+    }
+
+    @include media-query("desktop") {
+        display: none;
+    }
+}
+
+.input--select--mobile option {
+    font-weight: $font-weight-title;
+    font-family: $font-title;
+    font-size: $size-12;
+    line-height: 1.4;
+    padding: $size-4 $size-10;
+
+    &:focus,
+    &:hover,
+    &.active {
+        outline: none;
+        background-color: $primary-ll;
+    }
+
+    &,
+    &:not(:checked) {
+        color: $primary-dd; /* Prevent <option>s from becoming transparent due to the focusring transparent rules */
+    }
+}
+
+// Input--select--desktop
+// Custom input select, hidden on mobile
+// ---------------------
+.input--select--desktop {
+    display: none;
+
+    @include media-query("desktop") {
+        display: block;
+    }
+}
+
+.input--select--ingroup.input--select--desktop {
+    display: none;
+
+    @include media-query("medium") {
+        display: block;
+    }
+}
+
+// input--radio
+// ---------------------
+
+// Input Radio
+.input--radio {
+    position: relative;
+    // margin-bottom: $size-10;
+}
+
+.input--radio__input {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+}
+
+.input--radio__label {
+    position: relative;
+    padding-left: $size-28;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: $font-weight-title;
+    font-family: $font-title;
+    font-size: $size-12;
+    color: $primary-dd;
+}
+
+// Fake Radio Input
+.input--radio__label:before {
+    display: block;
+    content: "";
+    border-radius: 100%;
+    height: $size-18;
+    width: $size-18;
+    border: 2px solid fade-out($primary, .7);
+    left: 0;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+// Fake Radio Active
+.input--radio__label:after {
+    display: block;
+    content: "";
+    border-radius: 100%;
+    height: $size-10;
+    width: $size-10;
+    background: $secondary;
+    left: 4px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+}
+
+.input--radio__input:checked + .input--radio__label:before {
+    border-color: fade-out($primary, .9);
+}
+
+.input--radio__input:checked + .input--radio__label:after {
+    opacity: 1;
+}
+
+// Focus State
+.input--radio__input:focus + .input--radio__label:before {
+    border-color: $primary-dd;
+}
+
+// .input--radio__input:checked:focus + .input--radio__label:before {
+//     border-color: $primary-dd;
+// }
+
+// Disabled State
+.input--radio__input:disabled + .input--radio__label {
+    color: fade-out(#000, .8);
+    cursor: not-allowed;
+}
+
+.input--radio__input:disabled + .input--radio__label:before {
+    border-color: fade-out(#000, .9);
+}
+
+// Variation for radio inline
+.input--radio--inline {
+    margin-bottom: $size-10;
+
+    @include media-query("medium") {
+        display: inline;
+        margin-left: $size-40;
+        margin-bottom: 0;
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// input--checkbox
+// ---------------------
+.input--checkbox {
+    position: relative;
+    margin-bottom: $size-10;
+}
+
+
+.input--checkbox__input {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+}
+
+.input--checkbox__label {
+    position: relative;
+    padding-left: $size-28;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: $font-weight-title;
+    font-family: $font-title;
+    font-size: $size-12;
+    color: $primary-dd;
+}
+
+// Fake Checkbox Input
+.input--checkbox__label:before {
+    display: block;
+    content: "";
+    border-radius: 2px;
+    height: $size-18;
+    width: $size-18;
+    border: 2px solid fade-out($primary, .7);
+    left: 0;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+// Fake Checkbox Active
+.input--checkbox__label:after {
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    display: block;
+    height: $size-10;
+    width: $size-10;
+    content: "\2714";
+    line-height: 100%;
+    color: #fff;
+    margin: auto;
+}
+
+.input--checkbox__input:checked + .input--checkbox__label:before {
+    border-color: $secondary;
+    background: $secondary;
+}
+
+.input--checkbox__input:checked + .input--checkbox__label:after {
+    opacity: 1;
+}
+
+// Focus State
+.input--checkbox__input:focus + .input--checkbox__label:before {
+    border-color: $primary-dd;
+}
+
+.input--checkbox__input:checked:focus + .input--checkbox__label:before {
+    border-color: $primary-dd;
+}
+
+// Disabled State
+.input--checkbox__input:disabled + .input--checkbox__label {
+    color: fade-out(#000, .8);
+    cursor: not-allowed;
+}
+
+.input--checkbox__input:disabled + .input--checkbox__label:before {
+    border-color: fade-out(#000, .9);
+}
+
+// Input Search
+// eg. Immocode in top navigation
+// ---------------------
+.input-search {
+    display: flex;
+    padding: $size-4 $size-4 $size-4 $size-12;
+    border: 1px solid $primary-ll;
+    border-radius: $size-32;
+
+    &.focused {
+        border-color: $secondary;
+    }
+}
+
+.input-search__input {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    outline: none;
+    width: 100%;
+}
+
+// Input Group
+// ---------------------
+
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-group__abbr[title] {
+    text-decoration: none;
+}
+
+.input-group__to,
+.input-group__from,
+.input-group__main {
+    min-width: 0;
+}
+
+// Error state
+.input-group--error:not(.focused) .input-group__from:not(:focus),
+.input-group--error:not(.focused) .input-group__to:not(:focus),
+.input-group--error:not(.focused) .input-group__from-to-label,
+.input-group--error:not(.focused) .input-group--stepper__button:not(:focus),
+.input-group--error:not(.focused) .input-group__main:not(:focus) {
+    border-color: $functional-error;
+}
+
+// Prepend & Append
+.input-group__prepend,
+.input-group__append,
+.input-group__from-to-label,
+.input-group--stepper__button,
+.input-group--select__button {
+    font-family: $font-title;
+    font-weight: $font-weight-title;
+    font-size: $size-12;
+    color: $primary-dd;
+    text-transform: uppercase;
+    background-color: $primary-ll;
+    line-height: $size-36;
+    border: 2px solid $primary-ll;
+    box-shadow: 0 0 0 2px inset #fff;
+    min-height: $size-40;
+}
+
+.input-group__main--prepend:focus ~ .input-group__prepend,
+.input-group__main--append:focus ~ .input-group__append,
+.input-group__main--append:focus ~ .input-group--stepper__button {
+    border-color: $primary-dd;
+}
+
+// Prepend
+.input-group__prepend,
+.input-group--stepper__button--prepend,
+.input-group--select__button--prepend {
+    padding: 0 $size-10 0 $size-16;
+    border-top-left-radius: $inputBorderRadius;
+    border-bottom-left-radius: $inputBorderRadius;
+    border-right: 0;
+    order: -1;
+}
+
+.input-group--select--large .input-group--select__button--prepend {
+    border-top-left-radius: $inputGroupSelectLargeBorderRadius;
+    border-bottom-left-radius: $inputGroupSelectLargeBorderRadius;
+}
+
+.input-group__main--prepend {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+}
+
+
+// Append
+.input-group__append,
+.input-group--stepper__button--append {
+    padding: 0 $size-16 0 $size-10;
+    border-top-right-radius: $inputBorderRadius;
+    border-bottom-right-radius: $inputBorderRadius;
+    border-left: 0;
+}
+
+.input-group__main--append {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+}
+
+// From To
+.input-group__from {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    padding-right: 0;
+}
+
+.input-group__to {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+}
+
+.input-group__from-to-label {
+    border-left: 0;
+    border-right: 0;
+    padding: 0 $size-8;
+    margin-bottom: 0;
+}
+
+.input-group.focused .input-group__from,
+.input-group.focused .input-group__to,
+.input-group.focused .input-group__from-to-label,
+.input-group.focused .input-group--stepper__button {
+    border-color: $primary-dd;
+}
+
+// Stepper
+.input-group--stepper__main {
+    text-align: center;
+}
+
+.input-group--stepper__button {
+    cursor: pointer;
+    position: relative;
+
+    &:focus {
+        outline: none;
+        border-color: $primary-dd;
+    }
+
+    &:focus::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -2px;
+        width: 2px;
+        height: calc(100% + 4px); // 100% + 4px (addition of top and bottom border))
+        background: $primary-dd;
+    }
+
+    &:disabled {
+        background: $grey-91;
+        color: $grey-61;
+        cursor: not-allowed;
+    }
+}
+
+.input-group--stepper__button--prepend:focus::after {
+    right: -2px;
+}
+
+.input-group--stepper__button--append:focus::after {
+    left: -2px;
+}
+
+// Select
+// ---------------------
+.input-group--select {
+    position: relative;
+    align-items: flex-start;
+}
+
+.input--select--ingroup {
+    position: static;
+}
+
+.input-group--select__button {
+    cursor: pointer;
+    position: relative;
+    padding-right: 30px;
+    background-image: url("/images/icons/icon-arrow-bottom.svg");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    text-transform: unset;
+
+    &:focus {
+        outline: none;
+        border-color: $primary-dd;
+    }
+
+    &:focus::after {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: z("dropdown");
+        top: -2px;
+        width: 2px;
+        height: calc(100% + 4px); // 100% + 4px (addition of top and bottom border))
+        background: $primary-dd;
+    }
+
+    &:disabled {
+        background: $grey-91;
+        color: $grey-61;
+        cursor: not-allowed;
+    }
+}
+
+.input-group--select__button--prepend:focus::after {
+    right: -2px;
+}
+
+.input-group--select__button--append:focus::after {
+    left: -2px;
+}
+
+.input-group--select__list {
+    width: auto;
+}
+
+// Input group select size
+.searchbox--large .multiselect__input,
+.input-group--select--large .multiselect__input {
+    min-height: $size-44;
+}
+
+.searchbox--large .input-group--select__button,
+.input-group--select--large .input-group--select__button {
+    min-height: $size-48;
+}
+
+// Field__button-clear
+// ---------------------
+.field__button-clear {
+    display: block;
+    margin: 0 auto;
+
+    @include media-query("medium") {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+// Form Field Submit Sticky
+// Sticky submit row
+// e.g. Use in the advance search
+// ---------------------
+.form__field-submit--sticky {
+    @include media-query("medium") {
+        width: 100%;
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: $size-40 0;
+        background: rgba(255, 255, 255, .9);
+        z-index: z("sticky-footer");
+        box-shadow: 0 -10px 30px -10px $primary-ll;
+    }
+}

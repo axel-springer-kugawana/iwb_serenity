@@ -1,0 +1,61 @@
+/*------------------------------------*\
+  > Layout.scss
+  Define all general rules for layout conpomnent (container, etc)
+\*------------------------------------*/
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+// Container
+// ---------------------
+.container,
+.container--no-gutter {
+    position: relative;
+    width: 100%;
+    max-width: $max-width-x-small;
+    margin: 0 auto;
+    display: block;
+
+    @include media-query("small") {
+        width: $max-width-small;
+    }
+
+    @include media-query("medium") {
+        padding: 0;
+        width: $max-width-medium;
+    }
+
+    @include media-query("desktop") {
+        width: $max-width-desktop;
+    }
+
+    @include media-query("widescreen") {
+        width: $max-width-widescreen;
+    }
+}
+
+.container {
+    padding: 0 $size-20;
+
+    @include media-query("medium") {
+        padding: 0;
+    }
+}
+
+// Container variation without gutter on x-small breakpoint but one on small
+.container--no-gutter {
+    padding: 0;
+
+    @include media-query("small") {
+        padding: 0 $size-20;
+    }
+
+    @include media-query("medium") {
+        padding: 0;
+    }
+}

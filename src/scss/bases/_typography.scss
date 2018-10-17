@@ -1,0 +1,201 @@
+//====== Typography ======
+// Import fontface and define various typography generic rules
+
+// Global Typography
+// ---------------------
+html {
+
+    /* Better font rendering (Mainly for Mac Os X) */
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+html,
+body {
+    color: $color-body;
+}
+
+// Title
+// ---------------------
+%title {
+    font-family: $font-title;
+    font-weight: $font-weight-title;
+}
+
+// H1
+h1,
+.title--1,
+%title--1 {
+    @extend %title;
+    color: $primary-dd;
+    font-size: $size-28;
+
+    @include media-query("medium") {
+        font-size: $size-36;
+    }
+}
+
+// H2
+h2,
+.title--2,
+%title--2,
+.title--2--dark,
+%title--2--dark {
+    @extend %title;
+    font-size: $size-24;
+}
+
+h2,
+.title--2,
+%title--2 {
+    color: $primary;
+}
+
+.title--2--dark,
+%title--2--dark {
+    color: $primary-dd;
+}
+
+// H3
+h3,
+.title--3,
+%title--3 {
+    @extend %title;
+    font-size: $size-20;
+    color: $primary;
+}
+
+// H4
+h4,
+.title--4,
+%title--4,
+.title--4--dark,
+%title--4--dark {
+    @extend %title;
+    font-size: $size-16;
+
+    @include media-query("medium") {
+        font-size: $size-18;
+    }
+}
+
+h4,
+.title--4,
+%title--4 {
+    color: $primary;
+}
+
+.title--4--dark,
+%title--4--dark {
+    color: $primary-dd;
+}
+
+// H5
+h5,
+.title--5,
+%title--5,
+.title--5--dark,
+%title--5--dark {
+    @extend %title;
+    font-size: $size-16;
+}
+
+h5,
+.title--5,
+%title--5 {
+    color: $primary;
+}
+
+.title--5--dark,
+%title--5--dark {
+    color: $primary-dd;
+}
+
+// H6
+h6,
+.title--6,
+%title--6 {
+    font-family: $font-body;
+    font-style: italic;
+    font-weight: 700;
+    color: $primary-dd;
+    font-size: $size-16;
+}
+
+// Small
+// ---------------------
+small,
+.small,
+.small--primary,
+.small--dark {
+    font-size: $size-14;
+    color: $color-body;
+}
+
+.small--primary,
+.small--xs--primary {
+    color: $primary;
+}
+
+.small--dark,
+.small--xs--dark {
+    color: $primary-ddd;
+}
+
+.small--xs,
+.small--xs--primary,
+.small--xs--dark {
+    font-size: $size-12;
+}
+
+// Link
+// ---------------------
+
+a {
+    color: $color-link;
+    text-decoration: none;
+    background-color: transparent; // Remove the gray background on active links in IE 10.
+    -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.
+
+    @include hover {
+        color: $color-link-hover;
+        text-decoration: underline;
+    }
+}
+
+// And undo these styles for placeholder links/named anchors (without href)
+// which have not been made explicitly keyboard-focusable (without tabindex).
+// It would be more straightforward to just use a[href] in previous block, but that
+// causes specificity issues in many other styles that are too complex to fix.
+// See https://github.com/twbs/bootstrap/issues/19402
+
+a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+
+    @include hover-focus {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+// Text Color Utility
+// ---------------------
+.text-primary {
+    color: $primary;
+}
+
+// Position Utility
+// ---------------------
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}

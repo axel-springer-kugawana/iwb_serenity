@@ -1,0 +1,396 @@
+/*------------------------------------*\
+  > Button
+  All style & mixins for generic buttons
+  \*------------------------------------*/
+
+.button {
+    display: inline-block;
+    border: 0;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+
+    &:focus:not([disabled="disabled"]):not(.button-disable) {
+        outline: 2px solid $primary-ddd;
+    }
+}
+
+// Specific for icon and label
+.button__label,
+.button__icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+// Disable state
+%button-disable,
+.button-disable,
+.button:disabled {
+    outline: none;
+    cursor: not-allowed;
+    pointer-events: none;
+    color: $grey-61;
+
+    &:hover {
+        color: $grey-61;
+    }
+
+    @include media-query("desktop") {
+        pointer-events: auto;
+    }
+}
+
+// Button Mixin
+// ---------------------
+
+// Button Plain
+// Button with plain background color
+// eg. button--primary
+@mixin button-plain($color, $theme: "bright") {
+    position: relative;
+    padding: $size-6 $size-12; // We substract 2px to padding (regarding the frontify doc) to take in account the 2px border
+    background-color: $color;
+    border: 2px solid $color;
+    border-radius: $buttonBorderRadius;
+    text-transform: uppercase;
+    font-family: $font-title;
+    font-size: $size-16;
+    font-weight: $font-weight-title;
+    transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic;
+
+    &:not([disabled="disabled"]):not(.button-disable) {
+        color: $primary-ddd;
+    }
+
+    @if $theme != "dark" {
+        // For better  performance, use add the box shadow on a pseudo element
+        // and animate it with opacity (less repainting than box-shadow transition)
+        // @url: http://tobiasahlin.com/blog/how-to-animate-box-shadow/
+        &:before {
+            content: "";
+            position: absolute;
+            opacity: 0;
+            border-radius: $buttonBorderRadius;
+            box-shadow: 2px 2px 10px 3px fade-out($color, .5), 0 0 15px 0 fade-out($color, .5) inset;
+            transition: opacity .3s $easeInOutCubic;
+            // Shadow width and height should be equal to 100% + some 4px (arbitrary decided) to avoid overflow on button
+            // For the same reason the shadow is positioned -2px top and left
+            top: -2px;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+        }
+    }
+
+    // Hover, focus, active interactions
+    &:hover:not([disabled="disabled"]):not(.button-disable) {
+        color: #fff;
+    }
+
+    &:hover:not([disabled="disabled"]):not(.button-disable)::before {
+        opacity: 1;
+    }
+
+    &:focus:not([disabled="disabled"]):not(.button-disable) {
+        outline: none;
+
+        @if $theme == "dark" {
+            border-color: #fff;
+        }
+        @else {
+            border-color: $primary-ddd;
+        }
+    }
+
+    &:active:not([disabled="disabled"]):not(.button-disable) {
+        border-color: color-ddd($color);
+        background-color: color-ddd($color);
+    }
+
+    // Disabled state
+    &:disabled,
+    &[disabled="disabled"],
+    &.button-disable {
+        background-color: $grey-91;
+        border-color: $grey-91;
+    }
+
+    // Icons
+    .button__icon {
+        display: inline-block;
+        line-height: 100%;
+        vertical-align: middle;
+        margin-right: 2px;
+        fill: $color;
+    }
+}
+
+// Button Outline
+// Button with transparent background and a colored border
+// eg. button--secondary
+@mixin button-outline($color, $theme: "bright") {
+    position: relative;
+    padding: $size-6 $size-12; // We substract 2px to padding (regarding the frontify doc) to take in account the 2px border
+    background-color: transparent;
+    border: 2px solid $color;
+    border-radius: $buttonBorderRadius;
+    text-transform: uppercase;
+    font-family: $font-title;
+    font-size: $size-16;
+    font-weight: $font-weight-title;
+    transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic;
+
+
+    &:not([disabled="disabled"]):not(.button-disable) {
+        @if $theme == "dark" {
+            color: $color;
+        }
+        @else {
+            color: $primary-ddd;
+        }
+    }
+
+    @if $theme != "dark" {
+        // For better  performance, use add the box shadow on a pseudo element
+        // and animate it with opacity (less repainting than box-shadow transition)
+        // @url: http://tobiasahlin.com/blog/how-to-animate-box-shadow/
+        &:before {
+            content: "";
+            position: absolute;
+            opacity: 0;
+            border-radius: $buttonBorderRadius;
+            box-shadow: 2px 2px 10px 3px fade-out($color, .5), 0 0 15px 0 fade-out($color, .5) inset;
+            transition: opacity .3s $easeInOutCubic;
+            // Shadow width and height should be equal to 100% + some 4px (arbitrary decided) to avoid overflow on button
+            // For the same reason the shadow is positioned -2px top and left
+            top: -2px;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+        }
+    }
+
+    // Icons
+    .button__icon {
+        display: inline-block;
+        line-height: 100%;
+        vertical-align: middle;
+        // margin-top: 1px; // Margin top magic number for visualy "aligned" icon
+        margin-right: 2px;
+        fill: $color;
+    }
+
+
+    // Hover, focus, active interactions
+    &:hover:not([disabled="disabled"]):not(.button-disable) {
+        color: #fff;
+        background-color: $color;
+    }
+
+    &:hover:not([disabled="disabled"]):not(.button-disable)::before {
+        opacity: 1;
+    }
+
+    &:hover:not([disabled="disabled"]):not(.button-disable) .button__icon {
+        fill: #fff;
+    }
+
+    &:focus:not([disabled="disabled"]):not(.button-disable),
+    &.button--active {
+        outline: none;
+
+        @if $theme == "dark" {
+            background-color: transparent;
+            border-color: #fff;
+            color: #fff;
+        }
+        @else {
+            background-color: $color;
+            border-color: $primary-ddd;
+        }
+    }
+
+    &:focus:not([disabled="disabled"]):not(.button-disable) .button__icon,
+    &.button--active .button__icon {
+        @if $theme == "dark" {
+            fill: #fff;
+        }
+        @else {
+            fill: $primary-ddd;
+        }
+    }
+
+    &:active:not([disabled="disabled"]):not(.button-disable) {
+        border-color: color-ddd($color);
+        background-color: transparent;
+
+        @if $theme == "dark" {
+            color: color-ddd($color);
+        }
+        @else {
+            color: $primary-ddd;
+        }
+    }
+
+    &:active:not([disabled="disabled"]):not(.button-disable) .button__icon {
+        fill: color-ddd($color);
+    }
+
+    // Disabled state
+    &:disabled,
+    &[disabled="disabled"],
+    &.button-disable {
+        border-color: $grey-91;
+    }
+
+    &:disabled .button__icon,
+    &[disabled="disabled"] .button__icon,
+    &.button-disable .button__icon {
+        fill: $grey-61;
+    }
+}
+
+// Button Text
+// Button with transparent background and no border
+// eg. button--text
+@mixin button-text($color) {
+    position: relative;
+    padding: 0;
+    background-color: transparent;
+    color: $primary-ddd;
+    border: 0;
+    font-size: $size-16;
+    font-family: $font-title;
+    font-weight: $font-weight-title;
+
+    @include media-query("medium") {
+        font-size: $size-12;
+    }
+
+    &:focus:not([disabled="disabled"]):not(.button-disable) {
+        outline: none;
+        box-shadow: 0 -1px 0 0 $primary-ddd inset;
+    }
+
+    &:hover:not([disabled="disabled"]):not(.button-disable) {
+        box-shadow: 0 -1px 0 0 $color inset;
+        color: $primary-ddd;
+    }
+
+    &:active:not([disabled="disabled"]):not(.button-disable) {
+        box-shadow: 0 -1px 0 0 color-ddd($color) inset;
+    }
+
+    &:disabled,
+    &[disabled="disabled"],
+    &.button-disable,
+    &:disabled .button__icon,
+    &[disabled="disabled"] .button__icon,
+    &.button-disable .button__icon {
+        color: $grey-61;
+    }
+
+    // Icons
+    .button__icon {
+        fill: $color;
+        width: $size-16;
+        height: $size-16;
+        margin-left: $size-4;
+
+        @include media-query("medium") {
+            width: $size-12;
+            height: $size-12;
+        }
+    }
+
+    .button__icon--left {
+        margin-right: $size-4;
+    }
+
+    &:active:not([disabled="disabled"]):not(.button-disable) .button__icon {
+        fill: color-ddd($color);
+    }
+
+    &:disabled .button__icon,
+    &[disabled="disabled"] .button__icon,
+    &.button-disable .button__icon {
+        fill: $grey-61;
+    }
+}
+
+// Button Transparent
+// Button without any "style"
+// e.g. Card Bookmark classified button
+@mixin button-transparent($outline: "default") {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+
+
+    @if $outline != "default" {
+        &:focus {
+            outline: $outline;
+        }
+    }
+
+    &:disabled,
+    &[disabled="disabled"] {
+        cursor: not-allowed;
+    }
+}
+
+// Button definition
+// ---------------------
+
+// Button Primary
+%button--primary,
+.button--primary {
+    @include button-plain($green);
+}
+
+%button--primary--dark,
+.button--primary--dark {
+    @include button-plain($green, "dark");
+}
+
+// Button Secondary
+%button--secondary,
+.button--secondary {
+    @include button-outline($green);
+}
+
+%button--secondary--dark,
+.button--secondary--dark {
+    @include button-outline($green, "dark");
+}
+
+// Button Text
+%button--text,
+.button--text {
+    @include button-text($green);
+}
+
+// Button Transparent
+%button--transparent,
+.button--transparent {
+    @include button-transparent();
+}
+
+// Sizes
+// ---------------------
+
+// Size Small
+// Smaller version of the button
+// eg. Button use in PP Header
+%button--size-small,
+.button--size-small {
+    font-size: $size-12;
+    padding: $size-6 $size-10;
+}

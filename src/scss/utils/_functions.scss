@@ -1,0 +1,46 @@
+/*------------------------------------*\
+  > Functions
+  Usefull functions use every where in the scss
+  \*------------------------------------*/
+
+/**
+ * [z Look for the given argument in a layers map to see if it is mapped to a z-index value]
+ * @param  {string} $layer [Layer to search for]
+ * @return {int} [Z-index value]
+ */
+@function z($layer) {
+    @if not map-has-key($z-layers, $layer) {
+        @warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
+    }
+
+    @return map-get($z-layers, $layer);
+}
+
+/**
+ * [Colors Functions Return the correct color variation (base on the design system)]
+ * @param  {string} $color [The base color]
+ * @return {int} [Color varation]
+ */
+@function color-d($color) {
+    @return darken(saturate($color, .69), 15.88);
+}
+
+@function color-dd($color) {
+    @return darken(saturate($color, 3.95), 23.53);
+}
+
+@function color-ddd($color) {
+    @return darken(saturate($color, .1), 31.76);
+}
+
+@function color-l($color) {
+    @return lighten(desaturate($color, 8.16), 19.02);
+}
+
+@function color-ll($color) {
+    @return lighten(desaturate(adjust-hue($color, -1), 9.03), 49.22);
+}
+
+@function color-lll($color) {
+    @return lighten(desaturate(adjust-hue($color, -4), 13.62), 52.55);
+}

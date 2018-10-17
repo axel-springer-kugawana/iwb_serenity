@@ -1,0 +1,30 @@
+
+// js-fullscreen
+// Class added to the body by JS when fullscreen component is opened
+// Prevent body scroll when fullscreen component is open
+// ---------------------
+html.js-fullscreen,
+html.js-fullscreen body {
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+
+    @include media-query("desktop") {
+        position: static;
+    }
+}
+
+.js-fullscreen .main-container {
+    @include media-query("desktop") {
+        width: 100%;
+        position: absolute;
+    }
+}
+
+// js-fullscreen--nested
+// Use to prevent scroll inside nested fullscreen element
+// e.g. Search autocomplete / dropdown in the quick filter
+// ---------------------
+html.js-fullscreen--nested .searchbox__mobile-overlay--open {
+    overflow-y: hidden;
+}
