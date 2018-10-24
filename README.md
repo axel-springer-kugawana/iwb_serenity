@@ -2,6 +2,8 @@
 
 Internal front-end framework for Immoweb.
 
+[Read the Serenity docs](https://axel-springer-kugawana.github.io/iwb_serenity/)
+
 ## Table of contents
 
 - [Quick start](#quick-start)
@@ -58,3 +60,6 @@ Serenity documentation, included in this repo inside the `/docs` folder, is buil
 3. Run `npm start` to compile CSS and JavaScript files, generate the docs, and watch for changes.
 4. The doc is accessible in your browser at this url `http://localhost:8080`.
 
+#### Deploy documentation
+
+To deploy the documentation on [Github Pages](https://axel-springer-kugawana.github.io/iwb_serenity/), run `deploy.sh` script (It may ask your credential). It will generate the build of the documentation and push it on the *gh-pages* branch (use by github to display the documentation page).
