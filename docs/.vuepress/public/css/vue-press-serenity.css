@@ -106,6 +106,7 @@
 .sd-content {
     flex: 1 0 auto;
     height: fit-content;
+    margin-top: 5rem;
 }
 
 .sd-content .content.custom >  h2:not(first-child),

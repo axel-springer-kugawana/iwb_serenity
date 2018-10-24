@@ -287,3 +287,59 @@ An input checkbox can be disabled adding the attribute `disabled="disabled"` to 
     <label for="exampleCheckboxId02" class="input--checkbox__label">Disabled Input Checkbox</label>
 </div>
 ```
+
+## Input Group
+
+Input Group are a group of two (or more) components (input or not) inside one main element.
+
+### Input Group Prepend
+
+Input Group Prepend, allow you to add a text block before an `input--text`.
+
+<div class="field">
+    <label id="inputGroupPrependLabel" for="inputGroupPrependExample" class="field__label">Input Group Label</label>
+    <div class="input-group">
+        <input id="inputGroupPrependExample" type="text" placeholder="Placeholder" aria-labeledby="inputGroupPrependLabel inputGroupPrependPrefix" class="input-group__main--prepend input--text">
+        <div id="inputGroupPrependPrefix" class="input-group__prepend">
+            <abbr title="Belgium" class="input-group__abbr">Be</abbr>
+        </div>
+     </div>
+</div>
+
+```html
+<div class="field">
+    <label id="inputGroupPrependLabel" for="inputGroupPrependExample" class="field__label">Input Group Label</label>
+    <div class="input-group">
+        <input id="inputGroupPrependExample" type="text" placeholder="Placeholder" aria-labeledby="inputGroupPrependLabel inputGroupPrependPrefix" class="input-group__main--prepend input--text">
+        <div id="inputGroupPrependPrefix" class="input-group__prepend">
+            <abbr title="Belgium" class="input-group__abbr">Be</abbr>
+        </div>
+     </div>
+</div>
+```
+
+### Input Group Append
+
+Input Group Append, allow you to add a text block after an `input--text`.
+
+<div class="field">
+    <label for="inputGroupApendExample" id="inputGroupApendLabel" class="field__label">Input Group Append</label>
+    <div class="input-group">
+        <input id="inputGroupApendExample" type="text" placeholder="Placeholder" aria-labeledby="inputGroupApendLabel inputGroupAppendSuffix" class="input-group__main--append input--text">
+        <div id="inputGroupAppendSuffix" class="input-group__append">
+            <abbr title="Belgium" class="input-group__abbr">Be</abbr>
+        </div>
+    </div>
+</div>
+
+```html
+<div class="field">
+    <label for="inputGroupApendExample" id="inputGroupApendLabel" class="field__label">Input Group Append</label>
+    <div class="input-group">
+        <input id="inputGroupApendExample" type="text" placeholder="Placeholder" aria-labeledby="inputGroupApendLabel inputGroupAppendSuffix" class="input-group__main--append input--text">
+        <div id="inputGroupAppendSuffix" class="input-group__append">
+            <abbr title="Belgium" class="input-group__abbr">Be</abbr>
+        </div>
+    </div>
+</div>
+```
