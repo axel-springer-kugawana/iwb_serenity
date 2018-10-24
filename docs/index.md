@@ -27,3 +27,24 @@ Serenity is a mobile first framework. Make sure your website include the respons
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 
+## Browser Compatibility
+
+Serenity intent to supports the latest, stable releases of all major browsers and platforms. On windows we support Internet Explorer 11 and Microsoft Edge.
+
+You can find the supported range of browsers and their versions in the browserslist section of [package.json](https://github.com/axel-springer-kugawana/iwb_serenity/blob/master/package.json):
+
+```json
+"browserslist": [
+    "> 0.3%",
+    "last 7 versions",
+    "Android >= 4",
+    "Firefox >= 27",
+    "iOS >= 7",
+    "Safari >= 7",
+    "Chrome >= 30",
+    "Explorer >= 11"
+]
+```
+
+We use Autoprefixer to handle CSS prefixes (based on Browserslist).
+
