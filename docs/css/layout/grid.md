@@ -3,7 +3,7 @@
 
 ## Overview
 
-The Serenity grid is a twelve columns system based on Flexbox with gutters of 20px.
+The Serenity grid is a twelve column system, based on Flexbox, with 20px gutters.
 
 <div class="sd-example">
     <div class="grid">
@@ -252,13 +252,13 @@ Start a grid with the `grid` class then add content by stacking items with the c
 
 ## Columns
 
-To position grid items next to each other, you have to specify modifiers by telling the relative width of the desired columns, wich is a number between 1 (minimum) and 12 (maximum).
+To position grid items next to each other, you have to specify modifiers by specifying the relative width of the desired columns. Use a number between 1 (minimum) and 12 (maximum).
 
-In that system, a column of a 50% width would have a modifier of 6.
+In that system, a 50% width column would have a modifier of 6.
 
-The modifier is prefixed by the breakpoint from wich it is active. Possible breakpoints are: *x-small*, *small*, *medium*, *desktop*, *widescreen*.
+The modifier is prefixed by the breakpoint for which it is active. Possible breakpoints are: *x-small*, *small*, *medium*, *desktop*, *widescreen*.
 
-The following exemple would show 2 lines on mobile, but two columns on desktop and larger:
+The following example would show 2 lines on mobile, but two columns on desktop and larger:
 
 <div class="sd-example">
     <div class="grid">
@@ -292,7 +292,7 @@ If you want to leave some white space between columns, you can specify a modifie
 
 Just like columns modifiers, the push and pull modifiers are prefixed by the breakpoint from which they are active.
 
-In the following example, the left columns is pushed 3 step to the right on desktop and larger:
+In the following example, the left columns is pushed 3 steps to the right on desktop and larger:
 
 <div class="sd-example">
     <div class="grid">
@@ -322,9 +322,9 @@ In the following example, the left columns is pushed 3 step to the right on desk
 
 ## Horizontal modifier
 
-For some specific case you want to force a grid to align their children from right to left or in the center. You can use the `horizontal--end` (alligned on the right) and `horizontal--center` (alligned in the center) on the grid container.
+For some specific cases you want to force a grid to align their children from right to left or in the center. You can use the `horizontal--end` (aligned to the right) and `horizontal--center` (aligned to the center) on the grid container.
 
-Just like columns modifiers, the horizontal modifier modifiers are prefixed by the breakpoint from which they are active.
+Just like columns modifiers, the horizontal modifiers are prefixed by the breakpoint for which they are active.
 
 <div class="sd-example">
     <p><strong>Horizontal right alligned grid</strong></p>
@@ -340,7 +340,7 @@ Just like columns modifiers, the horizontal modifier modifiers are prefixed by t
             </div>
         </div>
     </div>
-    <p><strong>Horizontal center alligned grid</strong></p>
+    <p><strong>Horizontal center aligned grid</strong></p>
     <div class="grid desktop--horizontal--center">
         <div class="grid__item desktop--3">
             <div class="sd-example-block">
@@ -356,7 +356,7 @@ Just like columns modifiers, the horizontal modifier modifiers are prefixed by t
 </div>
 
 ```html
-<p><strong>Horizontal right alligned grid</strong></p>
+<p><strong>Horizontal right aligned grid</strong></p>
 <div class="grid desktop--horizontal--end">
     <div class="grid__item desktop--3">
         <div class="sd-example-block">
@@ -369,7 +369,7 @@ Just like columns modifiers, the horizontal modifier modifiers are prefixed by t
         </div>
     </div>
 </div>
-<p><strong>Horizontal center alligned grid</strong></p>
+<p><strong>Horizontal center aligned grid</strong></p>
 <div class="grid desktop--horizontal--center">
     <div class="grid__item desktop--3">
         <div class="sd-example-block">
@@ -386,9 +386,9 @@ Just like columns modifiers, the horizontal modifier modifiers are prefixed by t
 
 ## Vertical modifier
 
-By default all children of a grid are aligned on top of the grid. If you want to align them in the center you can use the `vertical--center` on the grid container.
+By default all children of a grid are aligned on top of the grid. If you want to align them in the center you can use `vertical--center` on the grid container.
 
-Just like columns modifiers, the horizontal modifier modifiers are prefixed by the breakpoint from which they are active.
+Just like columns modifiers, the horizontal modifiers are prefixed by the breakpoint for which they are active.
 
 <div class="sd-example">
     <div class="grid desktop--vertical--centered">
@@ -427,7 +427,7 @@ Just like columns modifiers, the horizontal modifier modifiers are prefixed by t
 
 There is a special modifier for cases where the total number of grid items is less than 12, but you want them to be evenly spaced.
 
-In the case, put the `centered` modifier on your grid.
+In that case, put the `centered` modifier on your grid.
 
 <div class="sd-example">
     <div class="grid grid--centered">

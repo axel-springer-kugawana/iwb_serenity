@@ -1,8 +1,8 @@
 # Bases
 
-Base include configuration and rules which are use everywhere on the project (not depending on block/container/page).
+Base, includes configuration and rules which are used everywhere on the project (not depending on block/container/page).
 
-It include:
+It includes:
 
 * [Reset](/css/bases/reset.html)
 * [Typography](/css/bases/typography.html)

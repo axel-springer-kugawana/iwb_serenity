@@ -20,7 +20,7 @@ A field is the grouping of a `label` and an `input`. Enclose those within a div 
 
 ## Field Group
 
-Field group can be use to group multiple field inside one group. A field group is a container with the `field-group` class. A field group can contain a `title` and a `description`.
+Field group can be used to group multiple fields inside a group. A field group is a container with the `field-group` class. A field group can contain a `title` and a `description`.
 
 A field label inside a `field-group` should use the `field__label--ingroup` class.
 
@@ -88,7 +88,7 @@ For a more complex layout (3+ columns) or different layout per breakpoint, use t
 
 ## Error messages
 
-Fields can contain error messages (e.g. to show validation error related to the input value). Declare a tag containing those messages with the `field__error` class. The error message is prefixed by a "danger"-type icon.
+Fields can contain error messages (e.g. to show validation errors related to the input value). Declare a tag containing these messages with the `field__error` class. The error message is prefixed by a "danger"-type icon.
 
 <div class="sd-example">
     <div class="field">
@@ -112,7 +112,7 @@ Fields can contain error messages (e.g. to show validation error related to the 
 
 Declare text inputs with the `input--text` class.
 
-An input text can be disabled adding the attribute `disabled="disabled"` to the input.
+An input text can be disabled by adding the attribute `disabled="disabled"` to the input.
 
 <div class="sd-example">
     <div class="field">
@@ -132,7 +132,7 @@ An input text can be disabled adding the attribute `disabled="disabled"` to the 
 
 Declare text area inputs with the `input--textarea` class.
 
-A textarea can be disabled adding the attribute `disabled="disabled"` to the textarea.
+A textarea can be disabled by adding the attribute `disabled="disabled"` to the textarea.
 
 <div class="sd-example">
     <div class="field">
@@ -152,7 +152,7 @@ A textarea can be disabled adding the attribute `disabled="disabled"` to the tex
 
 Enclose radio inputs within a container with the `input--radio` class. Then give the `input--radio__label` class to the label and the `input--radio__input` class to the input itself.
 
-An input radio can be disabled adding the attribute `disabled="disabled"` to the input.
+An input radio can be disabled by adding the attribute `disabled="disabled"` to the input.
 
 <div class="sd-example">
     <div class="input--radio">
@@ -216,9 +216,9 @@ Enclose multiple input--radio inside a `field` containter with the `role="group"
 </div>
 ```
 
-By default input--radio inside a group are stacked. If you want to display them inline, you can enclose them inside a `field--ingroup--inline` class.
+By default input--radio fields inside a group are stacked. If you want to display them inline, you can enclose them inside a `field--ingroup--inline` class.
 
-Then use a `field__label--ingroup--inline`class on the label and a `input--radio--inline` class (in addition to `input--radio`) on each inputs.
+Then use a `field__label--ingroup--inline`class on the label and a `input--radio--inline` class (in addition to `input--radio`) on each input.
 
 <div class="sd-example">
     <div role="group" aria-labelledby="exampleRadioGroupId002" class="field--ingroup--inline">

@@ -2,11 +2,11 @@
 
 ## Font-family:
 
-By default font-family for title is configure to use [Montserrat](https://fonts.google.com/specimen/Montserrat) and [PT Sans](https://fonts.google.com/specimen/PT+Sans) for other text.
+By default, the font-family for titles is [Montserrat](https://fonts.google.com/specimen/Montserrat) and [PT Sans](https://fonts.google.com/specimen/PT+Sans) for other text.
 
 If these fonts are not available it will fall back on the generic *sans-serif* family for both.
 
-These two fonts are not loaded inside the CSS, you have to include it the `<head>` tag of your page.
+These two fonts are not loaded inside the CSS, you have to include them in the `<head>` tag of your page.
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i">
@@ -15,7 +15,7 @@ These two fonts are not loaded inside the CSS, you have to include it the `<head
 
 ## Title
 
-All HTML headings, `<h1>` through `<h6>`, are available. h2, h3 and h4 also exists in a dark variation.
+All HTML headings, `<h1>` through `<h6>`, are available. h2, h3 and h4 also exist in a dark variation.
 
 <div class="sd-example">
     <h1>Title Level 1</h1>
@@ -47,7 +47,7 @@ All HTML headings, `<h1>` through `<h6>`, are available. h2, h3 and h4 also exis
 <h5 class="title--5--dark">Title Level 5 dark</h5>
 ```
 
-`.title--1` through `.title--6` classes are also available if you need to match the style of an heading on another type of element.
+`.title--1` through `.title--6` classes are also available if you need to match a heading style on another type of element.
 
 <div class="sd-example">
     <p class="title--1">Title Level 1</p>
@@ -72,56 +72,56 @@ All HTML headings, `<h1>` through `<h6>`, are available. h2, h3 and h4 also exis
 Some inline HTML elements are also available.
 
 <div class="sd-example">
-    <p>This line contain a <strong>strong</strong> element</p>
-    <p>This line contain a <em>em</em> element</p>
-    <p>This line contain a <del>strikethrough</del> element</p>
+    <p>This line contains a <strong>strong</strong> element</p>
+    <p>This line contains a <em>em</em> element</p>
+    <p>This line contains a <del>strikethrough</del> element</p>
     <p><u>This line of text will render as underlined</u></p>
 </div>
 
 ```html
-<p>This line contain a <strong>strong</strong> element</p>
-<p>This line contain a <em>em</em> element</p>
-<p>This line contain a <del>strikethrough</del> element</p>
+<p>This line contains a <strong>strong</strong> element</p>
+<p>This line contains a <em>em</em> element</p>
+<p>This line contains a <del>strikethrough</del> element</p>
 <p><u>This line of text will render as underlined</u></p>
 ```
 
 ### Small (and small-xs)
 
-`small` is an inline element with some extra variation. It also exists in primary or dark colored variation.
+`small` is an inline element with some extra variation. It also exists in primary or dark colored variations.
 
 <div class="sd-example">
-    <p>This line contain a <small>small</small> element</p>
-    <p>This line contain a <small class="small--primary">small (in primary color)</small> element</p>
-    <p>This line contain a <small class="small--dark">small (in dark color)</small> element</p>
+    <p>This line contains a <small>small</small> element</p>
+    <p>This line contains a <small class="small--primary">small (in primary color)</small> element</p>
+    <p>This line contains a <small class="small--dark">small (in dark color)</small> element</p>
 </div>
 
 ```html
-    <p>This line contain a <small>small</small> element</p>
-    <p>This line contain a <small class="small--primary">small (in primary color)</small> element</p>
-    <p>This line contain a <small class="small--dark">small (in dark color)</small> element</p>
+    <p>This line contains a <small>small</small> element</p>
+    <p>This line contains a <small class="small--primary">small (in primary color)</small> element</p>
+    <p>This line contains a <small class="small--dark">small (in dark color)</small> element</p>
 ```
 
 `small-xs` element (a smaller variation of small) (also exists in primary or dark colored variation).
 
 <div class="sd-example">
-    <p>This line contain a <small class="small--xs">small-xs</small> element</p>
-    <p>This line contain a <small class="small--xs--primary">small-xs (in primary color)</small> element</p>
-    <p>This line contain a <small class="small--xs--dark">small-xs (in dark color)</small> element</p>
+    <p>This line contains a <small class="small--xs">small-xs</small> element</p>
+    <p>This line contains a <small class="small--xs--primary">small-xs (in primary color)</small> element</p>
+    <p>This line contains a <small class="small--xs--dark">small-xs (in dark color)</small> element</p>
 </div>
 
 ```html
-    <p>This line contain a <small class="small--xs">small-xs</small> element</p>
-    <p>This line contain a <small class="small--xs--primary">small-xs (in primary color)</small> element</p>
-    <p>This line contain a <small class="small--xs--dark">small-xs (in dark color)</small> element</p>
+    <p>This line contains a <small class="small--xs">small-xs</small> element</p>
+    <p>This line contains a <small class="small--xs--primary">small-xs (in primary color)</small> element</p>
+    <p>This line contains a <small class="small--xs--dark">small-xs (in dark color)</small> element</p>
 ```
 
 ### Text Utility
 
-Serenity provide some text utility to help you easily change the allignement or the color of the current text from the markup.
+Serenity provides some text utility to help you easily change the alignment or the color of the current text from the markup.
 
-* `text-center` class is use to align text in the center of it's container.
-* `text-right` class is use to align text on the right of it's container.
-* `text-primary` class is use to set the color of the text with the $color-primary value.
+* `text-center` class is used to align text in the center of it's container.
+* `text-right` class is used to align text on the right of it's container.
+* `text-primary` class is used to set the color of the text with the $color-primary value.
 
 <div class="sd-example">
     <p class="text-center">Centered aligned text</p>
