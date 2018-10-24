@@ -32,6 +32,7 @@
 // ex: Card, Button, Searchbox
 @import "blocks/button";
 @import "blocks/form";
+@import "blocks/alert";
 
 // Visibility Utils
 // Need to be imported in last, to make sure these styles overwrite the older one

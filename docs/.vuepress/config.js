@@ -40,6 +40,9 @@ module.exports = {
                     text: 'Components',
                     link: '/css/components/',
                     children: [{
+                        text: 'Alerts',
+                        link: '/css/components/alerts.html'
+                    }, {
                         text: 'Buttons',
                         link: '/css/components/buttons.html'
                     }, {
