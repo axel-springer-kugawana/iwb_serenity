@@ -1,7 +1,7 @@
 <template>
     <div class="sd-main-container">
         <header class="sd-header">
-            <a href="/" class="title--4">{{$site.title}}</a>
+            <a href="/iwb_serenity" class="title--4">{{$site.title}}</a>
             <navbar></navbar>
         </header>
 
