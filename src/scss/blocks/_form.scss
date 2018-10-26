@@ -133,7 +133,8 @@
         width: 16px;
         height: 16px;
         transform: translateY(-50%);
-        background: url("/images/icons/icon-validation-error.svg");
+        // background: url("/iwb_serenity/images/icons/icon-validation-error.svg");
+        background: url("../images/icons/icon-validation-error.svg");
     }
 }
 
@@ -255,20 +256,23 @@
 
 // Input Select
 // ---------------------
-
-// Input Select Toggle
-// ---------------------
 .input--select {
-    position: relative;
+    width: 100%;
+    outline: 0;
+
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000;
+    }
 }
 
-.input--select__toggle,
-.input--select--mobile {
+.input--select,
+.input--select__toggle {
     min-height: 38px;
     padding: $size-8 $size-32 $size-8 $size-14;
     border: 2px solid $primary-ll;
     border-radius: $inputBorderRadius;
-    background: $primary-lll url("/images/icons/icon-arrow-bottom.svg") no-repeat right 15px top 50%;
+    background: $primary-lll url("../images/icons/icon-arrow-bottom.svg") no-repeat right 15px top 50%;
     background-size: 10px 12px;
     width: 100%;
     outline: none;
@@ -283,6 +287,26 @@
     &:focus {
         outline: none;
         border-color: $primary-dd;
+    }
+}
+
+.input--select option {
+    font-weight: $font-weight-title;
+    font-family: $font-title;
+    font-size: $size-12;
+    line-height: 1.4;
+    padding: $size-4 $size-10;
+
+    &:focus,
+    &:hover,
+    &.active {
+        outline: none;
+        background-color: $primary-ll;
+    }
+
+    &,
+    &:not(:checked) {
+        color: $primary-dd; /* Prevent <option>s from becoming transparent due to the focusring transparent rules */
     }
 }
 
@@ -347,36 +371,8 @@
 // Native input a little bit stylized
 // ---------------------
 .input--select--mobile {
-    width: 100%;
-    outline: 0;
-
-    &:-moz-focusring {
-        color: transparent;
-        text-shadow: 0 0 0 #000;
-    }
-
     @include media-query("desktop") {
         display: none;
-    }
-}
-
-.input--select--mobile option {
-    font-weight: $font-weight-title;
-    font-family: $font-title;
-    font-size: $size-12;
-    line-height: 1.4;
-    padding: $size-4 $size-10;
-
-    &:focus,
-    &:hover,
-    &.active {
-        outline: none;
-        background-color: $primary-ll;
-    }
-
-    &,
-    &:not(:checked) {
-        color: $primary-dd; /* Prevent <option>s from becoming transparent due to the focusring transparent rules */
     }
 }
 
@@ -385,6 +381,7 @@
 // ---------------------
 .input--select--desktop {
     display: none;
+    position: relative;
 
     @include media-query("desktop") {
         display: block;
@@ -786,7 +783,7 @@
     cursor: pointer;
     position: relative;
     padding-right: 30px;
-    background-image: url("/images/icons/icon-arrow-bottom.svg");
+    background-image: url("../images/icons/icon-arrow-bottom.svg");
     background-repeat: no-repeat;
     background-position: right 15px top 50%;
     text-transform: unset;

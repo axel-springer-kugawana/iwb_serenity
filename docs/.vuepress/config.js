@@ -50,8 +50,14 @@ module.exports = {
                         link: '/css/components/forms.html'
                     }]
                 }]
-            },
-            {
+            }, {
+                text: 'Js',
+                link: '/js/',
+                children: [{
+                    text: 'Input Select',
+                    link: '/js/input-select.html'
+                }]
+            }, {
                 text: 'Github',
                 link: 'https://github.com/axel-springer-kugawana/iwb_serenity',
                 external: true
