@@ -63,7 +63,6 @@
 </template>
 <script>
 import { mixin as clickaway } from "vue-clickaway";
-import enquire from "enquire.js";
 
 export default {
     name: "InputSelect",
@@ -126,19 +125,21 @@ export default {
         }
     },
     mounted: function() {
-        // Responsive Behavior
-        /* istanbul ignore next */
-        enquire.register(
-            "screen and (" + this.mobileBreakpoint + ")",
-            {
-                match: () => {
-                    this.displayDesktopInput = true;
-                },
-                unmatch: () => {
-                    this.displayDesktopInput = false;
+        import('enquire.js').then(enquire => {
+            // Responsive Behavior
+            /* istanbul ignore next */
+            enquire.register(
+                "screen and (" + this.mobileBreakpoint + ")",
+                {
+                    match: () => {
+                        this.displayDesktopInput = true;
+                    },
+                    unmatch: () => {
+                        this.displayDesktopInput = false;
+                    }
                 }
-            }
-        );
+            );
+        });
     },
     methods: {
         /**

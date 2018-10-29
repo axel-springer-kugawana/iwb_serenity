@@ -17,11 +17,11 @@
 </template>
 
 <script>
-import serenityInputSelect from '../Serenity/InputSelect.vue'
+import serenityInputSelect from '../Serenity/InputSelect.vue';
 
 export default {
     components: {
         serenityInputSelect
-    },
+    }
 }
 </script>
