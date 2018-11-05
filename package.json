@@ -14,7 +14,7 @@
         "css:copy": "shx cp -r dist/css/serenity.min.css docs/.vuepress/public/css && shx cp -r node_modules/prism-themes/themes/prism-a11y-dark.css docs/.vuepress/public/css",
         "js": "npm-run-all --sequential js:build js:copy",
         "js:build": "cross-env NODE_ENV=production webpack --config build/webpack.config.js",
-        "js:copy": "shx cp -r dist/js/*.js docs/.vuepress/components/Serenity/",
+        "js:copy": "shx cp -r src/js/serenity/*.vue docs/.vuepress/components/Serenity/",
         "images": "npm-run-all --sequential images:copy",
         "images:copy": "shx cp -r src/images/ dist/ && shx cp -r dist/images/ docs/.vuepress/public/",
         "copy": "npm run-all --parallel css:copy images:copy",

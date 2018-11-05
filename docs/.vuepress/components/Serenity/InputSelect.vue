@@ -61,11 +61,12 @@
         </select>
     </div>
 </template>
+
 <script>
 import { mixin as clickaway } from "vue-clickaway";
 
 export default {
-    name: "InputSelect",
+    name: "inputselect",
     mixins: [clickaway],
     props: {
         id: {
@@ -87,6 +88,10 @@ export default {
         mobileBreakpoint: {
             type: String,
             default: "min-width: 768px"
+        },
+        displayDesktopInput: {
+            type: Boolean,
+            default: true
         }
     },
     data() {
@@ -96,8 +101,7 @@ export default {
             groupFocused: false,
             currentOptionLabel: "",
             currentPosition: 0,
-            preSelectPosition: 0,
-            displayDesktopInput: false,
+            preSelectPosition: 0
         };
     },
     watch: {
@@ -123,23 +127,6 @@ export default {
                 }
             }
         }
-    },
-    mounted: function() {
-        import('enquire.js').then(enquire => {
-            // Responsive Behavior
-            /* istanbul ignore next */
-            enquire.register(
-                "screen and (" + this.mobileBreakpoint + ")",
-                {
-                    match: () => {
-                        this.displayDesktopInput = true;
-                    },
-                    unmatch: () => {
-                        this.displayDesktopInput = false;
-                    }
-                }
-            );
-        });
     },
     methods: {
         /**

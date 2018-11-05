@@ -66,7 +66,7 @@
 import { mixin as clickaway } from "vue-clickaway";
 
 export default {
-    name: "inputselect",
+    name: "Inputselect",
     mixins: [clickaway],
     props: {
         id: {
