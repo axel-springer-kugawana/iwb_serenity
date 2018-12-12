@@ -16,7 +16,7 @@
         text-decoration: none;
     }
 
-    &:focus:not([disabled="disabled"]):not(.button-disable) {
+    &:focus:not([disabled="disabled"]) {
         outline: 2px solid $primary-ddd;
     }
 }
@@ -28,20 +28,26 @@
     vertical-align: middle;
 }
 
+// IE 11 FIX
+// On IE 11 :active state make content of the button shifting of some pixel
+// These bunch of rules should cancel this behaviour
+.button:active .button__label,
+.button:active .button__icon {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
 // Disable state
 %button-disable,
-.button-disable,
 .button:disabled {
     outline: none;
     cursor: not-allowed;
     pointer-events: none;
     color: $grey-61;
 
-    &:hover {
-        color: $grey-61;
-    }
-
     @include media-query("desktop") {
+        cursor: not-allowed;
         pointer-events: auto;
     }
 }
@@ -56,6 +62,7 @@
     position: relative;
     padding: $size-6 $size-12; // We substract 2px to padding (regarding the frontify doc) to take in account the 2px border
     background-color: $color;
+    color: $primary-ddd;
     border: 2px solid $color;
     border-radius: $buttonBorderRadius;
     text-transform: uppercase;
@@ -63,10 +70,6 @@
     font-size: $size-16;
     font-weight: $font-weight-title;
     transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic;
-
-    &:not([disabled="disabled"]):not(.button-disable) {
-        color: $primary-ddd;
-    }
 
     @if $theme != "dark" {
         // For better  performance, use add the box shadow on a pseudo element
@@ -88,16 +91,17 @@
         }
     }
 
+
     // Hover, focus, active interactions
-    &:hover:not([disabled="disabled"]):not(.button-disable) {
+    &:hover:not([disabled="disabled"]) {
         color: #fff;
     }
 
-    &:hover:not([disabled="disabled"]):not(.button-disable)::before {
+    &:hover:not([disabled="disabled"])::before {
         opacity: 1;
     }
 
-    &:focus:not([disabled="disabled"]):not(.button-disable) {
+    &:focus:not([disabled="disabled"]) {
         outline: none;
 
         @if $theme == "dark" {
@@ -108,15 +112,14 @@
         }
     }
 
-    &:active:not([disabled="disabled"]):not(.button-disable) {
+    &:active:not([disabled="disabled"]) {
         border-color: color-ddd($color);
         background-color: color-ddd($color);
     }
 
     // Disabled state
     &:disabled,
-    &[disabled="disabled"],
-    &.button-disable {
+    &[disabled="disabled"] {
         background-color: $grey-91;
         border-color: $grey-91;
     }
@@ -146,14 +149,11 @@
     font-weight: $font-weight-title;
     transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic;
 
-
-    &:not([disabled="disabled"]):not(.button-disable) {
-        @if $theme == "dark" {
-            color: $color;
-        }
-        @else {
-            color: $primary-ddd;
-        }
+    @if $theme == "dark" {
+        color: $color;
+    }
+    @else {
+        color: $primary-ddd;
     }
 
     @if $theme != "dark" {
@@ -188,20 +188,20 @@
 
 
     // Hover, focus, active interactions
-    &:hover:not([disabled="disabled"]):not(.button-disable) {
+    &:hover:not([disabled="disabled"]) {
         color: #fff;
         background-color: $color;
     }
 
-    &:hover:not([disabled="disabled"]):not(.button-disable)::before {
+    &:hover:not([disabled="disabled"])::before {
         opacity: 1;
     }
 
-    &:hover:not([disabled="disabled"]):not(.button-disable) .button__icon {
+    &:hover:not([disabled="disabled"]) .button__icon {
         fill: #fff;
     }
 
-    &:focus:not([disabled="disabled"]):not(.button-disable),
+    &:focus:not([disabled="disabled"]),
     &.button--active {
         outline: none;
 
@@ -216,7 +216,7 @@
         }
     }
 
-    &:focus:not([disabled="disabled"]):not(.button-disable) .button__icon,
+    &:focus:not([disabled="disabled"]) .button__icon,
     &.button--active .button__icon {
         @if $theme == "dark" {
             fill: #fff;
@@ -226,7 +226,7 @@
         }
     }
 
-    &:active:not([disabled="disabled"]):not(.button-disable) {
+    &:active:not([disabled="disabled"]) {
         border-color: color-ddd($color);
         background-color: transparent;
 
@@ -238,20 +238,18 @@
         }
     }
 
-    &:active:not([disabled="disabled"]):not(.button-disable) .button__icon {
+    &:active:not([disabled="disabled"]) .button__icon {
         fill: color-ddd($color);
     }
 
     // Disabled state
     &:disabled,
-    &[disabled="disabled"],
-    &.button-disable {
+    &[disabled="disabled"] {
         border-color: $grey-91;
     }
 
     &:disabled .button__icon,
-    &[disabled="disabled"] .button__icon,
-    &.button-disable .button__icon {
+    &[disabled="disabled"] .button__icon {
         fill: $grey-61;
     }
 }
@@ -273,26 +271,24 @@
         font-size: $size-12;
     }
 
-    &:focus:not([disabled="disabled"]):not(.button-disable) {
+    &:focus:not([disabled="disabled"]) {
         outline: none;
         box-shadow: 0 -1px 0 0 $primary-ddd inset;
     }
 
-    &:hover:not([disabled="disabled"]):not(.button-disable) {
+    &:hover:not([disabled="disabled"]) {
         box-shadow: 0 -1px 0 0 $color inset;
         color: $primary-ddd;
     }
 
-    &:active:not([disabled="disabled"]):not(.button-disable) {
+    &:active:not([disabled="disabled"]) {
         box-shadow: 0 -1px 0 0 color-ddd($color) inset;
     }
 
     &:disabled,
     &[disabled="disabled"],
-    &.button-disable,
     &:disabled .button__icon,
-    &[disabled="disabled"] .button__icon,
-    &.button-disable .button__icon {
+    &[disabled="disabled"] .button__icon {
         color: $grey-61;
     }
 
@@ -313,13 +309,12 @@
         margin-right: $size-4;
     }
 
-    &:active:not([disabled="disabled"]):not(.button-disable) .button__icon {
+    &:active:not([disabled="disabled"]) .button__icon {
         fill: color-ddd($color);
     }
 
     &:disabled .button__icon,
-    &[disabled="disabled"] .button__icon,
-    &.button-disable .button__icon {
+    &[disabled="disabled"] .button__icon {
         fill: $grey-61;
     }
 }
@@ -377,14 +372,44 @@
     @include button-text($green);
 }
 
+// Button Bright
+%button--bright,
+.button--bright {
+    @include button-plain($bright);
+}
+
+// Button Square
+%button--square,
+.button--square {
+    border-radius: 0;
+}
+
 // Button Transparent
 %button--transparent,
 .button--transparent {
     @include button-transparent();
 }
 
+// Positions
+// ---------------------
+// Button on the right
+.button--right {
+    float: right;
+}
+
 // Sizes
 // ---------------------
+
+// Size Input
+// Size use in input field
+// eg input-search
+%button--size-input,
+.button--size-input {
+    padding: 0 $size-10;
+    height: 100%;
+    line-height: 100%;
+    font-size: $size-24;
+}
 
 // Size Small
 // Smaller version of the button
@@ -393,4 +418,12 @@
 .button--size-small {
     font-size: $size-12;
     padding: $size-6 $size-10;
+}
+
+// Button Short Label
+// Specific style for button with short label (use to avoid button rendering like a circle)
+// eg. Button use in advance search location search
+// ---------------------
+.button--short-label {
+    min-width: 50px;
 }
