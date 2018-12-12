@@ -222,6 +222,10 @@ $breakpoint-enabled: ("x-small", "small", "medium", "desktop", "widescreen") !de
     flex: 0 0 100%;
 }
 
+.grid__item--centered {
+    align-self: center;
+}
+
 @each $name in $breakpoint-enabled {
     @include media-query($name) {
         @include create-columns("#{$name}");
