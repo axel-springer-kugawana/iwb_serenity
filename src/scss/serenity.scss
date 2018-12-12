@@ -5,7 +5,6 @@
   @authors Immoweb PHP Tribe
 \*------------------------------------*/
 
-
 //====== Utils ======
 // Various tools use everywhere in the project which are not directly link
 // to a block
@@ -31,7 +30,7 @@
 // Reusable stand alone blocks which can be use everywhere on the project
 // ex: Card, Button, Searchbox
 @import "blocks/button";
-@import "blocks/form";
+@import "blocks/form/form";
 @import "blocks/alert";
 
 // Visibility Utils

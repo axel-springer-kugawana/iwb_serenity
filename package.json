@@ -8,7 +8,7 @@
         "start": "npm-run-all --parallel watch docs:dev",
         "css": "npm-run-all --parallel css:lint css:compile --sequential css:prefix css:minify css:copy",
         "css:lint": "stylelint src/scss/**/*.scss --config build/.stylelintrc",
-        "css:compile": "node-sass src/scss/ -o dist/css/ --source-map dist/css/",
+        "css:compile": "node-sass src/scss/init.scss -o dist/css/serenity.css --source-map dist/css/",
         "css:prefix": "postcss --use autoprefixer --replace dist/css/*.css !dist/css/*.min.css",
         "css:minify": "cleancss --level 1 --output dist/css/serenity.min.css dist/css/serenity.css --source-map dist/css/",
         "css:copy": "shx cp -r dist/css/serenity.min.css docs/.vuepress/public/css && shx cp -r node_modules/prism-themes/themes/prism-a11y-dark.css docs/.vuepress/public/css",
