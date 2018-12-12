@@ -1,0 +1,23 @@
+/*------------------------------------*\
+  > Input Search
+    eg. Immocode in top navigation
+\*------------------------------------*/
+
+.input-search {
+    display: flex;
+    padding: $size-4 $size-4 $size-4 $size-12;
+    border: 2px solid $primary-ll;
+    border-radius: $size-32;
+
+    &.focused {
+        border-color: $secondary;
+    }
+}
+
+.input-search__input {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    outline: none;
+    width: 100%;
+}

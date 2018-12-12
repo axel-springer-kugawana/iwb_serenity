@@ -1,0 +1,43 @@
+/*------------------------------------*\
+  > Input Text
+  Text Like Input
+\*------------------------------------*/
+
+.input--text {
+    line-height: $size-36;
+    padding: 0 $size-14;
+    border: 2px solid $primary-ll;
+    border-radius: $inputBorderRadius;
+    font-size: $size-16;
+    color: $primary-dd;
+    outline: none;
+    width: 100%;
+    min-height: $size-40;
+    appearance: none;
+
+    &:focus {
+        border-color: $primary-dd;
+    }
+
+    // Placeholder Style
+    &::placeholder {
+        color: $primary-dd;
+        opacity: .3;
+    }
+
+    &:disabled {
+        background: $primary-lll;
+        cursor: not-allowed;
+    }
+}
+
+// Variation for input number
+.input--text[type="number"]::-webkit-inner-spin-button,
+.input--text[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+.input--text[type="number"] {
+    appearance: textfield;
+}

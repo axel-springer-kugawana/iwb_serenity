@@ -1,0 +1,49 @@
+/*------------------------------------*\
+  > Input Textarea
+\*------------------------------------*/
+
+.input--textarea {
+    display: block;
+    border: 2px solid $primary-ll;
+    border-radius: 8px;
+    background: #fff;
+    width: 100%;
+    outline: none;
+    padding: $size-4 $size-8 $size-16;
+    resize: none;
+    height: auto;
+    min-height: 100px;
+    overflow: hidden;
+
+    &:focus {
+        border-color: $primary-dd;
+    }
+}
+
+// Text area wrapper (use for counter)
+.text-area {
+    position: relative;
+}
+
+// Counter
+// ---------------------
+.input--text__counter,
+.text-area__counter {
+    font-size: $size-10;
+    font-weight: $font-weight-title;
+    color: $primary-dd;
+    opacity: .4;
+}
+
+.input--text__counter {
+    display: block;
+    text-align: right;
+    margin-top: $size-2;
+    padding-right: $size-14;
+}
+
+.text-area__counter {
+    position: absolute;
+    right: 9px;
+    bottom: 6px;
+}

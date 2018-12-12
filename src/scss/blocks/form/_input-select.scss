@@ -1,0 +1,150 @@
+/*------------------------------------*\
+  > Input Select
+  Custom input select
+\*------------------------------------*/
+
+// Input Select Toggle
+// ---------------------
+.input--select {
+    position: relative;
+}
+
+.input--select__toggle,
+.input--select--mobile {
+    min-height: 38px;
+    padding: $size-8 $size-32 $size-8 $size-14;
+    border: 2px solid $primary-ll;
+    border-radius: 22px;
+    background: $primary-lll url("#{$public-path}/images/icons/icon-arrow-bottom.svg") no-repeat right 15px top 50%;
+    background-size: 10px 12px;
+    width: 100%;
+    outline: none;
+    appearance: none;
+    text-align: left;
+    font-weight: $font-weight-title;
+    font-family: $font-title;
+    font-size: $size-12;
+    color: $primary-dd;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+        border-color: $primary-dd;
+    }
+}
+
+.input--select__toggle-label {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+// Input Select List
+// ---------------------
+.input--select__list {
+    position: absolute;
+    left: 10px;
+    width: calc(100% - 20px);
+    z-index: z("dropdown");
+    margin-top: $size-8;
+    padding: $size-4 0;
+    border-radius: 2px;
+    border: 1px solid fade-out($primary-l, .6);
+    box-shadow: 0 10px 30px -10px $primary-l;
+    background: #fff;
+    list-style-type: none;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+// Input Select Drop Up (Open on top of input instead of bottom)
+.input--select__list--above {
+    bottom: 100%;
+    margin-bottom: $size-8;
+}
+
+// Input Select Option
+.input--select__option {
+    @include button-transparent(none);
+    font-weight: $font-weight-title;
+    font-family: $font-title;
+    font-size: $size-12;
+    color: $primary-dd;
+    line-height: 1.4;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    padding: $size-4 $size-10;
+    display: block;
+    word-break: break-all;
+
+    &:focus,
+    &:hover,
+    &.active {
+        outline: none;
+        background-color: $primary-ll;
+    }
+}
+
+.input-group__prepend .input--select  {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+// Input Select Mobile
+// Native input a little bit stylized
+// ---------------------
+.input--select--mobile {
+    width: 100%;
+    outline: 0;
+    font-size: $size-16;
+
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000;
+    }
+
+    @include media-query("desktop") {
+        display: none;
+    }
+}
+
+.input--select--mobile option {
+    font-weight: $font-weight-title;
+    font-family: $font-title;
+    font-size: $size-12;
+    line-height: 1.4;
+    padding: $size-4 $size-10;
+
+    &:focus,
+    &:hover,
+    &.active {
+        outline: none;
+        background-color: $primary-ll;
+    }
+
+    &,
+    &:not(:checked) {
+        color: $primary-dd; /* Prevent <option>s from becoming transparent due to the focusring transparent rules */
+    }
+}
+
+// Input--select--desktop
+// Custom input select, hidden on mobile
+// ---------------------
+.input--select--desktop {
+    display: none;
+
+    @include media-query("desktop") {
+        display: block;
+    }
+}
+
+.input--select--ingroup.input--select--desktop {
+    display: none;
+
+    @include media-query("medium") {
+        display: block;
+    }
+}

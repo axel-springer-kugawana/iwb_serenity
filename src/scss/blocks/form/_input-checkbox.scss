@@ -1,0 +1,89 @@
+/*------------------------------------*\
+  > Input Checkbox
+\*------------------------------------*/
+
+.input--checkbox {
+    position: relative;
+    margin-bottom: $size-10;
+}
+
+.input--checkbox__input {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+}
+
+.input--checkbox__label {
+    position: relative;
+    padding-left: $size-28;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: $font-weight-title;
+    font-family: $font-title;
+    font-size: $size-12;
+    color: $primary-dd;
+}
+
+// Fake Checkbox Input
+.input--checkbox__label:before {
+    display: block;
+    content: "";
+    border-radius: 2px;
+    height: $size-18;
+    width: $size-18;
+    border: 2px solid fade-out($primary, .7);
+    left: 0;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+// Fake Checkbox Active
+.input--checkbox__label:after {
+    background: url("#{$public-path}/images/icons/icon-checkmark.svg") no-repeat;
+    content: "";
+    display: block;
+    position: absolute;
+    fill: #fff;
+    height: 11px;
+    width: 11px;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    line-height: 100%;
+    color: #fff;
+    margin: auto;
+}
+
+.input--checkbox__input:checked + .input--checkbox__label:before {
+    border-color: $secondary;
+    background: $secondary;
+}
+
+.input--checkbox__input:checked + .input--checkbox__label:after {
+    opacity: 1;
+}
+
+// Focus State
+.input--checkbox__input:focus + .input--checkbox__label:before {
+    border-color: $primary-dd;
+}
+
+.input--checkbox__input:checked:focus + .input--checkbox__label:before {
+    border-color: $primary-dd;
+}
+
+// Disabled State
+.input--checkbox__input:disabled + .input--checkbox__label {
+    color: fade-out(#000, .8);
+    cursor: not-allowed;
+}
+
+.input--checkbox__input:disabled + .input--checkbox__label:before {
+    border-color: fade-out(#000, .9);
+}

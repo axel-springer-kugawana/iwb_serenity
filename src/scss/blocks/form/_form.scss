@@ -1,0 +1,184 @@
+/*------------------------------------*\
+  > Form
+\*------------------------------------*/
+
+// Import
+// ---------------------
+// Inputs
+@import "input-text";
+@import "input-textarea";
+@import "input-select";
+@import "input-radio";
+@import "input-checkbox";
+@import "input-search";
+@import "input-group";
+
+// General
+// ---------------------
+.form,
+.field {
+    width: 100%;
+}
+
+.form__button-clear {
+    float: right;
+}
+
+// Field
+// ---------------------
+.field,
+.field-group,
+.field--ingroup {
+    position: relative;
+    margin-bottom: $size-16;
+}
+
+// Field Text align
+.field--center {
+    text-align: center;
+}
+
+// Field Title / Label / Description,
+.field__title,
+.field__label {
+    display: block;
+    margin-bottom: $size-4;
+    font-family: $font-title;
+    font-weight: $font-weight-title;
+    font-size: $size-16;
+}
+
+.field__title,
+.field__label,
+.field__description {
+    word-break: break-word;
+}
+
+.field__title,
+.field__label,
+.field__description,
+.field__label--ingroup {
+    color: $primary-dd;
+}
+
+.field__description,
+.field__label--ingroup {
+    font-size: $size-16;
+}
+
+// Label Icon
+.label__icon {
+    fill: $primary-dd;
+}
+
+.label__icon,
+.label__text {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+// Field Ingroup
+// Field of a group
+.field--ingroup--inline {
+    margin-bottom: $size-10;
+
+    @include media-query("medium") {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.field__label--ingroup--inline {
+    margin-bottom: $size-4;
+    font-size: $size-16;
+    color: $primary-dd;
+
+    @include media-query("medium") {
+        width: auto;
+        max-width: 30%;
+        display: inline-block;
+        margin: 0;
+    }
+}
+
+// field__label optional
+.field__label--optional {
+    display: inline-block;
+    text-transform: lowercase;
+    font-size: $size-12;
+}
+
+// Field Row
+// Use to display field side by side
+// ---------------------
+.field-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.field-row__item {
+    width: calc(50% - 10px);
+}
+
+// Field Error
+// ---------------------
+.field__error {
+    position: relative;
+    color: $primary-dd;
+    font-size: $size-16;
+    padding-left: $size-24;
+    margin: $size-4 0 0 0;
+    white-space: normal;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        transform: translateY(-50%);
+        background: url("#{$public-path}/images/icons/icon-validation-error.svg");
+    }
+}
+
+.field__error:first-letter {
+    text-transform: uppercase;
+}
+
+// Input Ingroup Inline
+// ---------------------
+.input--ingroup--inline {
+    @include media-query("medium") {
+        width: 70%;
+        margin: 0 0 0 auto;
+    }
+}
+
+// Error State
+// ---------------------
+.input--text,
+.input--number,
+.text-area {
+    &:invalid {
+        box-shadow: none;
+    }
+}
+
+.input--error {
+    border-color: $functional-error;
+}
+
+// Field__button-clear
+// ---------------------
+.field__button-clear {
+    display: block;
+    margin: 0 auto;
+
+    @include media-query("medium") {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
