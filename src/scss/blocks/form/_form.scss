@@ -169,16 +169,3 @@
 .input--error {
     border-color: $functional-error;
 }
-
-// Field__button-clear
-// ---------------------
-.field__button-clear {
-    display: block;
-    margin: 0 auto;
-
-    @include media-query("medium") {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-}

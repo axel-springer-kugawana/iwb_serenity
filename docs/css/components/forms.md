@@ -106,6 +106,24 @@ Fields can contain error messages (e.g. to show validation errors related to the
 </div>
 ```
 
+## Optional Field Label
+
+A field `label` can be notified as optional by adding an extra `span` with a `field__label--optional` class inside the `label`.
+
+<div class="sd-example">
+    <div class="field">
+        <label for="exampleInputLabelOptional00" class="field__label">Field Label <span class="field__label--optional">(optional)</span></label>
+        <input id="exampleInputLabelOptional00" class="input--text" value="text goes here">
+    </div>
+</div>
+
+```html
+<div class="field">
+    <label for="exampleInputLabelOptional00" class="field__label">Field Label <span class="field__label--optional">(optional)</span></label>
+    <input id="exampleInputLabelOptional00" class="input--text" value="text goes here">
+</div>
+```
+
 ## Inputs
 
 ### Text
