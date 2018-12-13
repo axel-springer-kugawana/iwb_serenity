@@ -2,6 +2,7 @@
     <div>
         <serenityInputSelect
             id="inputSelectExampleId"
+            inputLabelId="inputSelectExampleLabelId"
             :options="[
                 {'value': 'select-value-01', 'label': 'Option 01'},
                 {'value': 'select-value-02', 'label': 'Option 02'},
