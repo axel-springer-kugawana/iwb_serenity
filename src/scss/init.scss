@@ -1,3 +1,5 @@
-$public-path: "..";
+// Global Variables
+// ---------------------
+$public-path: "../"; // Path prefix to public folder where all the "image" are saved.
 
 @import "serenity";
