@@ -4,7 +4,7 @@
             <div
                 class="input--select input--select--desktop"
                 v-if="displayDesktopInput"
-                v-on-clickaway="closeList"
+                v-click-outside="closeList"
                 @blur="closeList"
             >
                 <button
@@ -68,7 +68,7 @@
             <div
                 class="input--select input--select--ingroup input--select--desktop"
                 v-if="displayDesktopInput"
-                v-on-clickaway="closeList"
+                v-click-outside="closeList"
                 @blur="closeList"
             >
                 <button
@@ -119,8 +119,8 @@
     </div>
 </template>
 <script>
-import { mixin as clickaway } from "vue-clickaway";
 import enquire from "enquire.js";
+import Vue from "vue";
 
 // Register breakpoint
 // Use for enquire.js
@@ -133,7 +133,19 @@ const breakpoints = {
 
 export default {
     name: "InputSelect",
-    mixins: [clickaway],
+    directives: {
+        'clickOutside': {
+            bind (el, binding) {
+                el.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                });
+                document.body.addEventListener('click', binding.value);
+            },
+            unbind(el, binding) {
+                document.body.removeEventListener('click', binding.value);
+            }
+        }
+    },
     props: {
         id: {
             type: String,
