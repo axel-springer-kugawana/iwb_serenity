@@ -120,7 +120,6 @@
 </template>
 <script>
 import enquire from "enquire.js";
-import Vue from "vue";
 
 // Register breakpoint
 // Use for enquire.js

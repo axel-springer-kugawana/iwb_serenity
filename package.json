@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "description": "Immoweb Front-end Framework",
     "main": "dist/js/serenity.min.js",
+    "unpkg": "dist/js/serenity.min.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "npm-run-all --parallel watch docs:dev",

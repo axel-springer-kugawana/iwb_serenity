@@ -1,7 +1,5 @@
 var path = require('path');
-var webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     mode: process.env.NODE_ENV,
@@ -16,9 +14,9 @@ module.exports = {
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
-    externals: {
+    externals: [{
         vue: "vue"
-    },
+    }],
     module: {
         rules: [
             {
@@ -28,31 +26,15 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/
+                include: [path.join(__dirname, '../src')],
             }
         ]
     },
-    resolve: {
-        alias: {
-            'vue$': 'vue/dist/vue.esm.js'
-        }
-    },
-    devtool: '#eval-source-map',
-    optimization: {
-        minimizer: [
-            // we specify a custom UglifyJsPlugin here to get source maps in production
-            new UglifyJsPlugin({
-                cache: true,
-                parallel: true,
-                uglifyOptions: {
-                    compress: false,
-                    ecma: 6,
-                    mangle: true
-                },
-                sourceMap: true
-            })
-        ]
-    },
+    // resolve: {
+    //     alias: {
+    //         'vue$': 'vue/dist/vue.common.js'
+    //     }
+    // },
     plugins: [
         new VueLoaderPlugin(),
     ]
