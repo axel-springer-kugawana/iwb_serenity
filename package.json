@@ -6,6 +6,7 @@
     "unpkg": "dist/js/serenity.min.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "npm-run-all css js copy",
         "start": "npm-run-all --parallel watch docs:dev",
         "css": "npm-run-all --parallel css:lint css:compile --sequential css:prefix css:minify css:copy",
         "css:lint": "stylelint src/scss/**/*.scss --config build/.stylelintrc",
@@ -18,7 +19,7 @@
         "js:copy": "shx cp -r src/js/serenity/*.vue docs/.vuepress/components/Serenity/",
         "images": "npm-run-all --sequential images:copy",
         "images:copy": "shx cp -r src/images/ dist/ && shx cp -r dist/images/ docs/.vuepress/public/",
-        "copy": "npm run-all --parallel css:copy images:copy",
+        "copy": "npm-run-all --parallel css:copy images:copy",
         "watch": "npm-run-all --parallel watch:*",
         "watch:css": "nodemon --watch src/scss/ --ext scss --exec \"npm run css\"",
         "watch:js": "nodemon --watch src/js --ext vue --exec \"npm run js\"",
