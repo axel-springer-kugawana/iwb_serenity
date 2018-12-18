@@ -20,7 +20,7 @@ $fresh: #32bbff !default;
 
 $storm-grey: #70768c !default;
 
-$blue-firefly: #0e1a29;
+$blue-firefly: #0e1a29 !default;
 
 $primary: $blue !default;
 $secondary: $green !default;
@@ -55,9 +55,9 @@ $bright-ll: color-ll($bright) !default;
 // $bright-lll: color-lll($bright);
 
 // Grey shader
-$grey-91: #e9e9e9;
-$grey-61: #9b9b9b;
-$grey-50: #808080;
+$grey-91: #e9e9e9 !default;
+$grey-61: #9b9b9b !default;
+$grey-50: #808080 !default;
 
 // Link & other
 $color-link: $primary !default;

@@ -1,5 +1,6 @@
 <template>
     <div>
+        <label class="field__label" id="inputSelectExampleLabelId" for="inputSelectExampleId">Default Input Select:</label>
         <serenityInputSelect
             id="inputSelectExampleId"
             inputLabelId="inputSelectExampleLabelId"

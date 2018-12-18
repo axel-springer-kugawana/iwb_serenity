@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="input--select-wrapper">
         <template v-if="type === 'inputSelectDefault'">
             <div
                 class="input--select input--select--desktop"
@@ -115,20 +115,23 @@
                     </li>
                 </ul>
             </div>
+            <select
+                class="input--select input--select--mobile"
+                v-model="internalValue"
+                :aria-labelledby="inputLabelId"
+                @change="updateMobileValue">
+                <option
+                    v-for="(option, index) in options"
+                    :key="`option-${index}`"
+                    :value="option.value">
+                    {{ option.label }}
+                </option>
+            </select>
         </template>
     </div>
 </template>
 <script>
 import enquire from "enquire.js";
-
-// Register breakpoint
-// Use for enquire.js
-const breakpoints = {
-    small: 576,
-    medium: 768,
-    desktop: 992,
-    widescreen: 1200
-};
 
 export default {
     name: "InputSelect",
@@ -165,6 +168,11 @@ export default {
         type: {
             type: String,
             default: "inputSelectDefault"
+        },
+        mobileBreakpoint: {
+            type: String,
+            required: false,
+            default: "min-width: 992px"
         },
         maxHeight: {
             type: Number,
@@ -213,7 +221,7 @@ export default {
         // Responsive Behavior
         /* istanbul ignore next */
         enquire.register(
-            "screen and (min-width:" + breakpoints.medium + "px)",
+            "screen and (" + this.mobileBreakpoint + ")",
             {
                 match: () => {
                     this.displayDesktopInput = true;

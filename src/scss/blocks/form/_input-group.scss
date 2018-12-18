@@ -58,15 +58,14 @@
 .input-group--stepper__button--prepend,
 .input-group--select__button--prepend {
     padding: 0 $size-10 0 $size-16;
-    border-top-left-radius: $inputBorderRadius;
-    border-bottom-left-radius: $inputBorderRadius;
     border-right: 0;
     order: -1;
 }
 
-.input-group--select--large .input-group--select__button--prepend {
-    border-top-left-radius: $inputGroupSelectLargeBorderRadius;
-    border-bottom-left-radius: $inputGroupSelectLargeBorderRadius;
+.input-group__prepend,
+.input-group--stepper__button--prepend {
+    border-top-left-radius: $inputBorderRadius;
+    border-bottom-left-radius: $inputBorderRadius;
 }
 
 .input-group__main--prepend {
@@ -163,6 +162,11 @@
 .input-group--select {
     position: relative;
     align-items: flex-start;
+    flex-wrap: wrap;
+
+    @include media-query("desktop") {
+        flex-wrap: nowrap;
+    }
 }
 
 .input--select--ingroup {
@@ -189,6 +193,7 @@
         position: absolute;
         z-index: z("dropdown");
         top: -2px;
+        right: 0;
         width: 2px;
         height: calc(100% + 4px); // 100% + 4px (addition of top and bottom border))
         background: $primary-dd;
@@ -201,25 +206,87 @@
     }
 }
 
-.input-group--select__button--prepend:focus::after {
-    right: -2px;
-}
-
-.input-group--select__button--append:focus::after {
-    left: -2px;
+.input-group--select__button--prepend {
+    border-top-left-radius: $inputGroupSelectLargeBorderRadius;
+    border-bottom-left-radius: $inputGroupSelectLargeBorderRadius;
 }
 
 .input-group--select__list {
     width: auto;
 }
 
-// Input group select size
-.searchbox--large .multiselect__input,
-.input-group--select--large .multiselect__input {
+.input-group--select__input {
+    width: 100%;
+    font-family: $font-title;
+    background: #fff;
+    color: $primary-dd;
+    border: 2px solid $primary-ll;
+    border-right: 0;
+    border-top-left-radius: $inputGroupSelectLargeBorderRadius;
+    border-bottom-left-radius: $inputGroupSelectLargeBorderRadius;
+    padding: 0 $size-14;
+    line-height: 1;
     min-height: $size-44;
+    font-size: $size-16;
+    outline: none;
+
+    &:only-child {
+        border-right: 2px solid $primary-ll;
+        border-top-right-radius: $inputBorderRadius;
+        border-bottom-right-radius: $inputBorderRadius;
+    }
+
+    &:focus {
+        border-color: $primary-dd;
+
+        @include media-query("desktop") {
+            box-shadow: 4px 0 0 -2px $primary-ddd inset;
+        }
+    }
+
+    // Placeholder Style
+    &::placeholder {
+        color: $primary-dd;
+        opacity: .3;
+    }
+
+    &:disabled {
+        background: $primary-lll;
+        cursor: not-allowed;
+    }
+
+    @include media-query("desktop") {
+        border-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        padding-right: 0;
+    }
 }
 
-.searchbox--large .input-group--select__button,
-.input-group--select--large .input-group--select__button {
+.input-group--select__main {
+    display: flex;
+    width: 100%;
+}
+
+// Input group select size
+.input-group--select__button,
+.input-group--select__submit,
+.input-group--select__input:only-child {
     min-height: $size-48;
+}
+
+.input-group--select__input:only-child,
+.input-group--select__submit {
+    border-top-right-radius: $inputGroupSelectLargeBorderRadius;
+    border-bottom-right-radius: $inputGroupSelectLargeBorderRadius;
+}
+
+.input-group--select__submit {
+    padding: 2px;
+    border: 2px solid $primary-ll;
+    border-left: 0;
+}
+
+.input-group--select__input:focus ~ .input-group--select__submit {
+    border-color: $primary-dd;
 }

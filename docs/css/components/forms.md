@@ -361,3 +361,42 @@ Input Group Append, allow you to add a text block after an `input--text`.
     </div>
 </div>
 ```
+### Input Group Select
+
+Input group select allow you to mix input-select and other input together, it can be usefull to build a search form or similar element.
+
+The input-group-select is build with a wrapper div with both class `input-group` and `input-group--select`.
+This wrapper should contain an input-select component with the `type` props set to *inputGroupSelect* and a div with both class `input-group__main` and `input-group--select__main`.
+The `input-group__main` should contain an input with `input-group--select__input`. It can eventualy contain a `input-group--select__submit` div with any button type inside it.
+
+
+<div class="sd-example">
+    <Example-InputSelectGroup></Example-InputSelectGroup>
+</div>
+
+```html
+<label class="field__label" id="inputSelectExampleLabelIdGroup" for="inputSelectExampleIdGroup">Group Input Select:</label>
+<div class="input-group input-group--select input-group--select--large">
+    <serenityInputSelect
+        id="inputSelectExampleIdGroup"
+        inputLabelId="inputSelectExampleLabelIdGroup"
+        type="inputGroupSelect"
+        :options="[
+            {'value': 'select-value-01', 'label': 'Option 01'},
+            {'value': 'select-value-02', 'label': 'Option 02'},
+            {'value': 'select-value-03', 'label': 'Option 03'},
+            {'value': 'select-value-04', 'label': 'Option 04'},
+            {'value': 'select-value-05', 'label': 'Option 05'},
+            {'value': 'select-value-06', 'label': 'Option 06'},
+            {'value': 'select-value-07', 'label': 'Option 07'},
+            {'value': 'select-value-08', 'label': 'Option 08'},
+        ]"
+    ></serenityInputSelect>
+    <div class="input-group__main input-group--select__main">
+        <input type="text" class="input-group--select__input" placeholder="Enter a city, a postal code..." />
+        <div class="input-group--select__submit">
+            <button id="searchBoxSubmitButtonDesktop" type="submit" class="button button--primary">Search</button>
+        </div>
+    </div>
+</div>
+```

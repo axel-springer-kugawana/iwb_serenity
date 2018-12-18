@@ -3,6 +3,18 @@
   Custom input select
 \*------------------------------------*/
 
+// Input Select Wrapper
+// ---------------------
+.input--select-wrapper {
+    width: 100%;
+    margin-bottom: $size-20;
+
+    @include media-query("desktop") {
+        width: auto;
+        margin-bottom: 0;
+    }
+}
+
 // Input Select Toggle
 // ---------------------
 .input--select {
