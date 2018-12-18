@@ -131,7 +131,6 @@
     </div>
 </template>
 <script>
-import enquire from "enquire.js";
 
 export default {
     name: "InputSelect",
@@ -219,18 +218,18 @@ export default {
     },
     mounted: function() {
         // Responsive Behavior
-        /* istanbul ignore next */
-        enquire.register(
-            "screen and (" + this.mobileBreakpoint + ")",
-            {
-                match: () => {
-                    this.displayDesktopInput = true;
-                },
-                unmatch: () => {
-                    this.displayDesktopInput = false;
-                }
+        var mediaQueriesList = window.matchMedia("screen and (" + this.mobileBreakpoint + ")");
+
+        var screenTest = (e) => {
+            if (e.matches) {
+                this.displayDesktopInput = true;
+            } else {
+                this.displayDesktopInput = false;
             }
-        );
+        };
+
+        screenTest(mediaQueriesList);
+        mediaQueriesList.addListener(screenTest);
     },
     methods: {
         /**

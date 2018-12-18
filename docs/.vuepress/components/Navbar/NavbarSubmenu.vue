@@ -1,5 +1,5 @@
 <template>
-    <div v-on-clickaway="closeItem">
+    <div v-click-outside="closeItem">
         <a
             :role="children && children.length > 0 ? 'button' : false"
             :href="href.length > 0 ? href : '#'"
@@ -47,7 +47,6 @@
 <script>
 
 import navbarMenuItem from './NavbarMenuItem.vue';
-import { mixin as clickaway } from "vue-clickaway";
 
 export default {
 
@@ -55,7 +54,19 @@ export default {
         navbarMenuItem
     },
 
-    mixins: [clickaway],
+    directives: {
+        'clickOutside': {
+            bind (el, binding) {
+                el.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                });
+                document.body.addEventListener('click', binding.value);
+            },
+            unbind(el, binding) {
+                document.body.removeEventListener('click', binding.value);
+            }
+        }
+    },
 
     props: {
         title: {
