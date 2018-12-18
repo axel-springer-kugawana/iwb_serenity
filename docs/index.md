@@ -6,7 +6,9 @@ Serenity is Immoweb's internal front-end framework. It is build with [Sass](http
 
 ## Installation
 
-Work in progress
+```cli
+npm install iwb_serenity
+```
 
 ## Requirements
 
