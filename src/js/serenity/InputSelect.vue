@@ -8,40 +8,40 @@
                 @blur="closeList"
             >
                 <button
-                    type="button"
                     class="input--select__toggle"
-                    role="combobox"
                     aria-haspopup="listbox"
                     :id="id"
-                    :aria-owns="`${id}-list`"
                     :aria-expanded="listOpen ? 'true' : 'false'"
-                    :aria-controls="`${id}-list`"
-                    :aria-activedescendant="`${id}-item-${currentPosition}`"
                     :aria-labelledby="`${inputLabelId} ${id}-item-${currentPosition}`"
-                    @keydown.up="handleKeyUp"
-                    @keydown.down="handleKeyDown"
-                    @keydown.tab="handleKeyTab"
-                    @keydown.esc="closeList"
-                    @click="toggleList">
+                    @click="toggleList"
+                    @keydown.down="handleKeyDown">
                     <span class="input--select__toggle-label">
                         {{ currentOptionLabel }}
                     </span>
                 </button>
                 <ul
+                    tabindex="0"
                     class="input--select__list"
                     :class="`input--select__list--${prefferedOpenDirection}`"
                     role="listbox"
                     v-show="listOpen"
                     :id="`${id}-list`"
                     :style="{ maxHeight: optimizedHeight + 'px' }"
+                    :aria-activedescendant="`${id}-item-${currentPosition}`"
                     @keydown.esc="closeList"
+                    @keydown.enter="closeList"
+                    @keydown.up="handleKeyUp"
+                    @keydown.down="handleKeyDown"
+                    @keydown.tab="handleKeyTab"
+                    @keydown.home="handleKeyHome"
+                    @keydown.end="handleKeyEnd"
+                    @keyup="handleKeyPress"
                 >
                     <li
                         v-for="(option, index) in options"
                         role="option"
                         class="input--select__option"
                         :class="{' active': internalValue === option.value }"
-                        :aria-selected="(internalValue === option.value) ? 'true' : false"
                         :key="`option-${index}`"
                         :id="`${id}-item-${index}`"
                         :data-value="option.value"
@@ -72,40 +72,40 @@
                 @blur="closeList"
             >
                 <button
-                    type="button"
                     class="input-group--select__button input-group--select__button--prepend"
-                    role="combobox"
                     aria-haspopup="listbox"
                     :id="id"
-                    :aria-owns="`${id}-list`"
                     :aria-expanded="listOpen ? 'true' : 'false'"
-                    :aria-controls="`${id}-list`"
-                    :aria-activedescendant="`${id}-item-${currentPosition}`"
                     :aria-labelledby="`${inputLabelId} ${id}-item-${currentPosition}`"
-                    @keydown.up="handleKeyUp"
                     @keydown.down="handleKeyDown"
-                    @keydown.tab="handleKeyTab"
-                    @keydown.esc="closeList"
                     @click="toggleList">
                     <span class="input--select__toggle-label">
                         {{ currentOptionLabel }}
                     </span>
                 </button>
                 <ul
+                    tabindex="0"
                     class="input--select__list input-group--select__list"
                     :class="`input--select__list--${prefferedOpenDirection}`"
                     role="listbox"
                     v-show="listOpen"
                     :id="`${id}-list`"
                     :style="{ maxHeight: optimizedHeight + 'px' }"
+                    :aria-activedescendant="`${id}-item-${currentPosition}`"
                     @keydown.esc="closeList"
+                    @keydown.enter="closeList"
+                    @keydown.up="handleKeyUp"
+                    @keydown.down="handleKeyDown"
+                    @keydown.tab="handleKeyTab"
+                    @keydown.home="handleKeyHome"
+                    @keydown.end="handleKeyEnd"
+                    @keyup="handleKeyPress"
                 >
                     <li
                         v-for="(option, index) in options"
                         role="option"
                         class="input--select__option"
                         :class="{' active': internalValue === option.value }"
-                        :aria-selected="(internalValue === option.value) ? 'true' : false"
                         :key="`option-${index}`"
                         :id="`${id}-item-${index}`"
                         :data-value="option.value"
@@ -189,7 +189,11 @@ export default {
             preSelectPosition: 0,
             displayDesktopInput: false,
             optimizedHeight: this.maxHeight,
-            prefferedOpenDirection: "below"
+            prefferedOpenDirection: "below",
+            actionKeysArray: ["End", "Home", "ArrowDown", "ArrowUp", "Esc", "Enter", "Shift"],
+            currentKeysString: "",
+            keyClear: null,
+            searchIndex: 0
         };
     },
     watch: {
@@ -248,6 +252,14 @@ export default {
         openList: function() {
             this.adjustPosition();
             this.listOpen = true;
+
+            const listbox = document.getElementById(`${this.id}-list`);
+
+            // Dirty timeout 0s to makesure listbox is present in dom and allow focus on it
+            // Could probably be replace by a Vue.nextThick()
+            window.setTimeout(() => {
+                listbox.focus();
+            }, 0);
         },
         /**
          * [closeList Close the options list]
@@ -255,6 +267,15 @@ export default {
         closeList: function() {
             if(this.listOpen === true) {
                 this.listOpen = false;
+
+                const listToggle = document.getElementById(`${this.id}`);
+
+                // Dirty timeout 0s to makesure listToggle is present in dom and allow focus on it
+                // Could probably be replace by a Vue.nextThick()
+                window.setTimeout(() => {
+                    listToggle.focus();
+                }, 0);
+
                 // Each time the list is closed, emit the value to parent
                 this.$emit("update-value", this.internalValue);
             }
@@ -303,8 +324,6 @@ export default {
          */
         handleKeyDown: function(event) {
             event.preventDefault();
-
-
             if(this.listOpen === false) {
                 this.openList();
             }
@@ -326,6 +345,111 @@ export default {
                 this.closeList();
                 this.updateCurrentOption(this.preSelectPosition);
             }
+        },
+        /**
+         * [handleKeyHome On key home pressed, select the first options]
+         * @param  {object} event [Native Dom Event]
+         */
+        handleKeyHome: function(event) {
+            if (this.listOpen === true) {
+                event.preventDefault();
+
+                this.updateCurrentOption(0);
+            }
+        },
+        /**
+         * [handleKeyEnd On key end pressed, select the last options]
+         * @param  {object} event [Native Dom Event]
+         */
+        handleKeyEnd: function(event) {
+            if (this.listOpen === true) {
+                event.preventDefault();
+
+                this.updateCurrentOption(this.options.length - 1);
+            }
+        },
+        /**
+         * [handleKeyPress On any key pressed, verify if it's not an action key (home, end, up, down, enter, etc) and call findItemByCharacter]
+         * @param  {object} event [Native Dom Event]
+         */
+        handleKeyPress: function(event) {
+            if (this.listOpen === true) {
+                event.preventDefault();
+
+                var key = event.key;
+
+                if(this.actionKeysArray.indexOf(key) === -1) {
+                    this.findItemByCharacter(key);
+                }
+            }
+        },
+        /**
+         * [findItemByCharacter Find and item based on the first letter of the key press]
+         * @param  {string} key [The key pressed by the user]
+         */
+        findItemByCharacter: function(key) {
+            var character = key.charAt(0).toLowerCase();
+
+            if (!this.currentKeysString) {
+                for (var i = 0; i < this.options.length; i++) {
+                    if (this.options[i].value === this.internalValue) {
+                        this.searchIndex = i;
+                    }
+                }
+            }
+
+            this.currentKeysString += character;
+
+            this.clearCurrentKeysStringAfterDelay();
+
+            var nextMatch = this.findMatchInRange(
+                this.searchIndex + 1,
+                this.options.length
+            );
+
+
+            if (!nextMatch) {
+                nextMatch = this.findMatchInRange(
+                    0,
+                    this.searchIndex
+                );
+            }
+
+            if(nextMatch) {
+                const position = this.getObjetIndexByKey(this.options, "value", nextMatch.value);
+                this.updateCurrentOption(position);
+            }
+        },
+        /**
+         * [findMatchInRange Find a entry in an array that start with the given letter(s)]
+         * @param  {int} startIndex [Index to start searching in the options list]
+         * @param  {int} endIndex   [Index to stop searching in the options list]
+         * @return {object}         [The closest options (based on current position in list) that match the current key string)]
+         */
+        findMatchInRange: function(startIndex, endIndex) {
+            // Find the first item starting with the currentKeysString substring, searching in
+            // the specified range of items
+            for (var n = startIndex; n < endIndex; n++) {
+                var label = this.options[n].label;
+
+                if (label && label.toLowerCase().indexOf(this.currentKeysString) === 0) {
+                    return this.options[n];
+                }
+            }
+            return null;
+        },
+        /**
+         * [clearCurrentKeysStringAfterDelay Clear the currentKeyString after X time]
+         */
+        clearCurrentKeysStringAfterDelay: function() {
+            if (this.keyClear) {
+                clearTimeout(this.keyClear);
+                this.keyClear = null;
+            }
+            this.keyClear = setTimeout(() => {
+                this.currentKeysString = "";
+                this.keyClear = null;
+            }, 500);
         },
         /**
          * [updateCurrentOption Update the current select option (based on the position in options list)]

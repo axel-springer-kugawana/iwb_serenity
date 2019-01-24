@@ -67,6 +67,10 @@
     list-style-type: none;
     overflow-y: auto;
     max-height: 300px;
+
+    &:focus {
+        outline: none;
+    }
 }
 
 // Input Select Drop Up (Open on top of input instead of bottom)
