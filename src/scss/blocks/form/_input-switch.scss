@@ -1,0 +1,95 @@
+/*------------------------------------*\
+  > Input Switch
+  Custom Checkbox Input
+\*------------------------------------*/
+.input-switch {
+    position: relative;
+    display: inline-block;
+    font-weight: $font-weight-title;
+    font-family: $font-title;
+    font-size: $size-12;
+    color: $primary-dd;
+    padding-top: $size-4;
+    margin-bottom: $size-10;
+    width: 100%;
+}
+
+// Hide checkbox
+.input-switch__input {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+// Box around the switch
+.input-switch__slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: $size-48;
+    height: $size-28;
+    background-color: $primary-lll;
+    border-radius: $size-30;
+    transition: .4s;
+    border: 1px solid fade-out($primary-l, .5);
+    cursor: pointer;
+}
+
+// Slider
+.input-switch__slider:before {
+    position: absolute;
+    content: "";
+    height: $size-26;
+    width: $size-26;
+    background-color: $color-background;
+    box-shadow: 0 0 5px 0 fade-out($primary-l, .75);
+    transition: .4s;
+    border-radius: $size-28;
+}
+
+// Label
+.input-switch__input + .input-switch__slider + .input-switch__label {
+    cursor: pointer;
+    margin-left: $size-56;
+}
+
+// Checked State
+.input-switch__input:checked + .input-switch__slider {
+    border: 1px solid $secondary;
+    background-color: $secondary;
+}
+
+.input-switch__input:checked + .input-switch__slider:before {
+    transform: translateX($size-20);
+    box-shadow: 0 0 5px 0 fade-out($primary-l, .5);
+}
+
+// Focus State
+.input-switch__input:focus + .input-switch__slider {
+    border: 1px solid $primary-ddd;
+}
+
+// Disabled State
+.input-switch__input:disabled + .input-switch__slider {
+    border-color: $grey-85;
+    background-color: $color-background;
+    cursor: not-allowed;
+}
+
+.input-switch__input:disabled + .input-switch__slider + .input-switch__label {
+    color: $grey-85;
+    cursor: not-allowed;
+}
+
+.input-switch__input:disabled + .input-switch__slider:before,
+.input-switch__input:disabled:checked + .input-switch__slider:before {
+    background-color: $grey-85;
+}
+
+.input-switch__input:disabled:checked + .input-switch__slider {
+    border-color: $grey-85;
+    background-color: $grey-94;
+}

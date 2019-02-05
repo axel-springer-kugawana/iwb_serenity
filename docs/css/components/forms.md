@@ -306,6 +306,46 @@ An input checkbox can be disabled adding the attribute `disabled="disabled"` to 
 </div>
 ```
 
+### Input Switch
+
+To display checkbox input as a switch, enclose it within a label with the `input-swicth` class.
+Then give the `input-switch__switch` class to the input, the `input-switch__slider` class to the span as faked slider and the `input-switch__label` class to the span containing the label of the input.
+
+An input checkbox can be disabled adding the attribute `disabled="disabled"` to the input.
+
+<div class="sd-example">
+    <label for="exampleSwitchId01" class="input-switch">
+        <input type="checkbox" name="swicthName" class="input-switch__input" value="value" id="exampleSwitchId01">
+        <span class="input-switch__slider"></span>
+        <span class="input-switch__label">Input Switch</span>
+    </label>
+    <label for="exampleSwitchId02" class="input-switch">
+        <input type="checkbox" name="swicthName" class="input-switch__input" value="value" disabled="disabled" id="exampleSwitchId02">
+        <span class="input-switch__slider"></span>
+        <span class="input-switch__label">Disabled Input Switch</span>
+    </label>
+    <!--label for="exampleSwitchId03" class="input-switch">
+        <input type="checkbox" name="swicthName" class="input-switch__input" value="value" disabled="disabled" checked="checked" id="exampleSwitchId03">
+        <span class="input-switch__slider"></span>
+         <span class="input-switch__label">Disabled Input Switch</span>
+    </label-->
+</div>
+
+```html
+<div class="input-switch">
+    <label for="exampleSwitchId01" class="input-switch">
+        <input type="checkbox" name="swicthName" class="input-switch__input" value="value" id="exampleSwitchId01">
+        <span class="input-switch__slider"></span>
+        <span class="input-switch__label">Input Switch</span>
+    </label>
+    <label for="exampleSwitchId02" class="input-switch">
+        <input type="checkbox" name="swicthName" class="input-switch__input" value="value" disabled="disabled" id="exampleSwitchId02">
+        <span class="input-switch__slider"></span>
+        <span class="input-switch__label">Disabled Input Switch</span>
+    </label>
+</div>
+```
+
 ## Input Group
 
 Input Group are a group of two (or more) components (input or not) inside one main element.
