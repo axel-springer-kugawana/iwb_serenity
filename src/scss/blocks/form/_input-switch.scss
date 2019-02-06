@@ -41,7 +41,7 @@
     background-color: $primary-lll;
     border-radius: $size-30;
     transition: background-color .4s $easeInOutCubic;
-    border: 1px solid $primary-ll;
+    border: 1px solid $grey-85;
     cursor: pointer;
 }
 
@@ -56,11 +56,10 @@
     height: $size-26;
     width: $size-26;
     background-color: $color-background;
-    box-shadow: 0 0 5px 0 fade-out($primary-l, .75);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .4);
     transition: transform .4s $easeInOutCubic;
     border-radius: $size-28;
 }
-
 
 // Checked State
 .input--switch__input:checked + .input--switch__label::before {
@@ -94,6 +93,7 @@
 .input--switch__input:disabled + .input--switch__label::after,
 .input--switch__input:disabled:checked + .input--switch__label::after {
     background-color: $grey-85;
+    box-shadow: 0 0 5px 0 fade-out($primary-l, .75);
 }
 
 .input--switch__input:disabled:checked + .input--switch__label::before {
