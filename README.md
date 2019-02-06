@@ -49,17 +49,17 @@ iwb_serenity/
             └── serenity.scss
 ```
 
-### Documentation
+## Documentation
 
 Serenity documentation, included in this repo inside the `/docs` folder, is built with [Vue Press](https://vuepress.vuejs.org/) and publicly hosted on GitHub Pages. The docs may also be run locally.
 
-#### Running documentation locally
+### Running documentation locally
 
 1. Make sure you have [node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) installed.
 2. Run `npm install` to install Node.js dependencies.
 3. Run `npm start` to compile CSS and JavaScript files, generate the docs, and watch for changes.
 4. The doc is accessible in your browser at this url `http://localhost:8080`.
 
-#### Deploy documentation
+### Deploy documentation
 
 To deploy the documentation on [Github Pages](https://axel-springer-kugawana.github.io/iwb_serenity/), run `deploy.sh` script (It may ask your credential). It will generate the build of the documentation and push it on the *gh-pages* branch (use by github to display the documentation page).
