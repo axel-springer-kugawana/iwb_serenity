@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.6 - 2019-02-06
+### Added
+- Forms: Input Switch
+
 ## 0.0.5 - 2019-01-30
 ### Changed
 - Buttons: Remove hover/focus blur effect on primary and secondary button
