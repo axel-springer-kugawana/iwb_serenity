@@ -5,11 +5,13 @@
             <navbar></navbar>
         </header>
 
-        <div class="sd-content">
-            <div class="container">
-                <Content/>
+        <main id="main-content">
+            <div class="sd-content">
+                <div class="container">
+                    <Content/>
+                </div>
             </div>
-        </div>
+        </main>
 
         <footer class="sd-footer">
             <div class="container">

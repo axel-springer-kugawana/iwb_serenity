@@ -174,23 +174,23 @@ An input radio can be disabled by adding the attribute `disabled="disabled"` to 
 
 <div class="sd-example">
     <div class="input--radio">
-        <input id="exampleRadioId01" type="radio" value="01" name="inputRadioBox" class="input--radio__input">
+        <input id="exampleRadioId01" type="radio" value="01" name="inputRadioBox01" class="input--radio__input">
         <label for="exampleRadioId01" class="input--radio__label">Input radio</label>
     </div>
     <div class="input--radio">
-        <input id="exampleRadioId02" type="radio" value="01" name="inputRadioBox" class="input--radio__input" disabled="disabled">
+        <input id="exampleRadioId02" type="radio" value="01" name="inputRadioBox02" class="input--radio__input" disabled="disabled">
         <label for="exampleRadioId02" class="input--radio__label">Disabled Input radio</label>
     </div>
 </div>
 
 ```html
 <div class="input--radio">
-    <input id="exampleRadioId01" type="radio" value="01" name="inputRadioBox" class="input--radio__input">
+    <input id="exampleRadioId01" type="radio" value="01" name="inputRadioBox01" class="input--radio__input">
     <label for="exampleRadioId01" class="input--radio__label">Input radio</label>
 </div>
 <div class="input--radio">
-    <input id="exampleRadioId02" type="radio" value="01" name="inputRadioBox" class="input--radio__input" disabled="disabled">
-    <label for="exampleRadioId02" class="input--radio__label">Input radio</label>
+    <input id="exampleRadioId02" type="radio" value="01" name="inputRadioBox02" class="input--radio__input" disabled="disabled">
+    <label for="exampleRadioId02" class="input--radio__label">Disabled Input radio</label>
 </div>
 ```
 
@@ -199,7 +199,7 @@ An input radio can be disabled by adding the attribute `disabled="disabled"` to 
 Enclose multiple input--radio inside a `field` containter with the `role="group"` and a valid `aria-labelledby` attribute to indicate to assistive technologies that these input are part of the same group.
 
 <div class="sd-example">
-    <div class="field" role="group" aria-labelledby="exampleRadioGroupId01">
+    <div class="field" role="group" aria-labelledby="exampleRadioGroupId03">
         <label id="exampleRadioGroupId03" class="field__label">Field radios</label>
         <div class="input--radio">
             <input type="radio" value="01" name="inputRadioBox" class="input--radio__input" id="exampleRadioId03">
@@ -217,7 +217,7 @@ Enclose multiple input--radio inside a `field` containter with the `role="group"
 </div>
 
 ```html
-<div class="field" role="group" aria-labelledby="exampleRadioGroupId01">
+<div class="field" role="group" aria-labelledby="exampleRadioGroupId03">
     <label id="exampleRadioGroupId03" class="field__label">Field radios</label>
     <div class="input--radio">
         <input type="radio" value="01" name="inputRadioBox" class="input--radio__input" id="exampleRadioId03">
@@ -240,7 +240,7 @@ Then use a `field__label--ingroup--inline`class on the label and a `input--radio
 
 <div class="sd-example">
     <div role="group" aria-labelledby="exampleRadioGroupId002" class="field--ingroup--inline">
-        <label id="exampleRadioGroupId002" for="exampleRadioId06" class="field__label--ingroup--inline">Input radio group inline</label>
+        <label id="exampleRadioGroupId002" class="field__label--ingroup--inline">Input radio group inline</label>
         <div class="input--ingroup--inline">
             <div class="input--radio input--radio--inline">
                 <input type="radio" value="true" name="radioName" class="input--radio__input" id="exampleRadioId06">
@@ -260,7 +260,7 @@ Then use a `field__label--ingroup--inline`class on the label and a `input--radio
 
 ```html
 <div role="group" aria-labelledby="exampleRadioGroupId002" class="field--ingroup--inline">
-    <label id="exampleRadioGroupId002" for="exampleRadioId06" class="field__label--ingroup--inline">Input radio group inline</label>
+    <label id="exampleRadioGroupId002" class="field__label--ingroup--inline">Input radio group inline</label>
     <div class="input--ingroup--inline">
         <div class="input--radio input--radio--inline">
             <input type="radio" value="true" name="radioName" class="input--radio__input" id="exampleRadioId06">
@@ -286,22 +286,22 @@ An input checkbox can be disabled adding the attribute `disabled="disabled"` to 
 
 <div class="sd-example">
     <div class="input--checkbox">
-        <input type="checkbox" name="checkboxName" class="input--checkbox__input" value="value" id="exampleCheckboxId01">
+        <input type="checkbox" name="checkboxName01" class="input--checkbox__input" value="value" id="exampleCheckboxId01">
         <label for="exampleCheckboxId01" class="input--checkbox__label">Input Checkbox</label>
     </div>
     <div class="input--checkbox">
-        <input type="checkbox" name="checkboxName" class="input--checkbox__input" value="value" disabled="disabled" id="exampleCheckboxId02">
+        <input type="checkbox" name="checkboxName02" class="input--checkbox__input" value="value" disabled="disabled" id="exampleCheckboxId02">
         <label for="exampleCheckboxId02" class="input--checkbox__label">Disabled Input Checkbox</label>
     </div>
 </div>
 
 ```html
 <div class="input--checkbox">
-    <input type="checkbox" name="checkboxName" class="input--checkbox__input" value="value" id="exampleCheckboxId01">
+    <input type="checkbox" name="checkboxName01" class="input--checkbox__input" value="value" id="exampleCheckboxId01">
     <label for="exampleCheckboxId01" class="input--checkbox__label">Input Checkbox</label>
 </div>
 <div class="input--checkbox">
-    <input type="checkbox" name="checkboxName" class="input--checkbox__input" value="value" disabled="disabled" id="exampleCheckboxId02">
+    <input type="checkbox" name="checkboxName02" class="input--checkbox__input" value="value" disabled="disabled" id="exampleCheckboxId02">
     <label for="exampleCheckboxId02" class="input--checkbox__label">Disabled Input Checkbox</label>
 </div>
 ```
@@ -317,22 +317,22 @@ An input checkbox can be disabled adding the attribute `disabled="disabled"` to 
 
 <div class="sd-example">
     <label for="exampleSwitchId01" class="input--switch">
-        <input type="checkbox" name="swicthName" class="input--switch__input" value="value" id="exampleSwitchId01">
+        <input type="checkbox" name="swicthName01" class="input--switch__input" value="value" id="exampleSwitchId01">
         <span class="input--switch__label">Input Switch Label</span>
     </label>
     <label for="exampleSwitchId02" class="input--switch">
-        <input type="checkbox" name="swicthName" class="input--switch__input" value="value" disabled="disabled" id="exampleSwitchId02">
+        <input type="checkbox" name="swicthName02" class="input--switch__input" value="value" disabled="disabled" id="exampleSwitchId02">
         <span class="input--switch__label">Disabled Input Switch Label</span>
     </label>
 </div>
 
 ```html
 <label for="exampleSwitchId01" class="input--switch">
-    <input type="checkbox" name="swicthName" class="input--switch__input" value="value" id="exampleSwitchId01">
+    <input type="checkbox" name="swicthName01" class="input--switch__input" value="value" id="exampleSwitchId01">
     <span class="input--switch__label">Input Switch Label</span>
 </label>
 <label for="exampleSwitchId02" class="input--switch">
-    <input type="checkbox" name="swicthName" class="input--switch__input" value="value" disabled="disabled" id="exampleSwitchId02">
+    <input type="checkbox" name="swicthName02" class="input--switch__input" value="value" disabled="disabled" id="exampleSwitchId02">
     <span class="input--switch__label">Disabled Input Switch Label</span>
 </label>
 ```
@@ -345,21 +345,23 @@ Input Group are a group of two (or more) components (input or not) inside one ma
 
 Input Group Prepend, allow you to add a text block before an `input--text`.
 
-<div class="field">
-    <label id="inputGroupPrependLabel" for="inputGroupPrependExample" class="field__label">Input Group Label</label>
-    <div class="input-group">
-        <input id="inputGroupPrependExample" type="text" placeholder="Placeholder" aria-labeledby="inputGroupPrependLabel inputGroupPrependPrefix" class="input-group__main--prepend input--text">
-        <div id="inputGroupPrependPrefix" class="input-group__prepend">
-            <abbr title="Belgium" class="input-group__abbr">Be</abbr>
-        </div>
-     </div>
+<div class="sd-example">
+    <div class="field">
+        <label id="inputGroupPrependLabel" for="inputGroupPrependExample" class="field__label">Input Group Label</label>
+        <div class="input-group">
+            <input id="inputGroupPrependExample" name="inputGroupPrependName" type="text" placeholder="Placeholder" aria-labelledby="inputGroupPrependLabel inputGroupPrependPrefix" class="input-group__main--prepend input--text">
+            <div id="inputGroupPrependPrefix" class="input-group__prepend">
+                <abbr title="Belgium" class="input-group__abbr">Be</abbr>
+            </div>
+         </div>
+    </div>
 </div>
 
 ```html
 <div class="field">
     <label id="inputGroupPrependLabel" for="inputGroupPrependExample" class="field__label">Input Group Label</label>
     <div class="input-group">
-        <input id="inputGroupPrependExample" type="text" placeholder="Placeholder" aria-labeledby="inputGroupPrependLabel inputGroupPrependPrefix" class="input-group__main--prepend input--text">
+        <input id="inputGroupPrependExample" name="inputGroupPrependName" type="text" placeholder="Placeholder" aria-labelledby="inputGroupPrependLabel inputGroupPrependPrefix" class="input-group__main--prepend input--text">
         <div id="inputGroupPrependPrefix" class="input-group__prepend">
             <abbr title="Belgium" class="input-group__abbr">Be</abbr>
         </div>
@@ -371,12 +373,14 @@ Input Group Prepend, allow you to add a text block before an `input--text`.
 
 Input Group Append, allow you to add a text block after an `input--text`.
 
-<div class="field">
-    <label for="inputGroupApendExample" id="inputGroupApendLabel" class="field__label">Input Group Append</label>
-    <div class="input-group">
-        <input id="inputGroupApendExample" type="text" placeholder="Placeholder" aria-labeledby="inputGroupApendLabel inputGroupAppendSuffix" class="input-group__main--append input--text">
-        <div id="inputGroupAppendSuffix" class="input-group__append">
-            <abbr title="Belgium" class="input-group__abbr">Be</abbr>
+<div class="sd-example">
+    <div class="field">
+        <label for="inputGroupApendExample" id="inputGroupApendLabel" class="field__label">Input Group Append</label>
+        <div class="input-group">
+            <input id="inputGroupApendExample" name="inputGroupApendName" type="text" placeholder="Placeholder" aria-labelledby="inputGroupApendLabel inputGroupAppendSuffix" class="input-group__main--append input--text">
+            <div id="inputGroupAppendSuffix" class="input-group__append">
+                <abbr title="Belgium" class="input-group__abbr">Be</abbr>
+            </div>
         </div>
     </div>
 </div>
@@ -385,7 +389,7 @@ Input Group Append, allow you to add a text block after an `input--text`.
 <div class="field">
     <label for="inputGroupApendExample" id="inputGroupApendLabel" class="field__label">Input Group Append</label>
     <div class="input-group">
-        <input id="inputGroupApendExample" type="text" placeholder="Placeholder" aria-labeledby="inputGroupApendLabel inputGroupAppendSuffix" class="input-group__main--append input--text">
+        <input id="inputGroupApendExample" name="inputGroupApendName" type="text" placeholder="Placeholder" aria-labelledby="inputGroupApendLabel inputGroupAppendSuffix" class="input-group__main--append input--text">
         <div id="inputGroupAppendSuffix" class="input-group__append">
             <abbr title="Belgium" class="input-group__abbr">Be</abbr>
         </div>
