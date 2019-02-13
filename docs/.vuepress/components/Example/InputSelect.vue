@@ -11,8 +11,9 @@
                 {'value': 'select-value-04', 'label': 'John'},
                 {'value': 'select-value-05', 'label': 'Robert'},
                 {'value': 'select-value-06', 'label': 'Marie'},
-                {'value': 'select-value-07', 'label': 'Marc'},
-                {'value': 'select-value-08', 'label': 'Julie'},
+                {'value': 'select-value-07', 'label': 'Marie Micheline'},
+                {'value': 'select-value-08', 'label': 'Marc'},
+                {'value': 'select-value-09', 'label': 'Julie'},
             ]"
         ></serenityInputSelect>
     </div>

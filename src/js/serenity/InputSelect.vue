@@ -32,6 +32,7 @@
                     @keydown.enter="closeList"
                     @keydown.up="handleKeyUp"
                     @keydown.down="handleKeyDown"
+                    @keydown.space.prevent="handleKeyUp"
                     @keydown.tab="handleKeyTab"
                     @keydown.home="handleKeyHome"
                     @keydown.end="handleKeyEnd"
