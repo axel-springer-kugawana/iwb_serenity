@@ -176,7 +176,7 @@ export default {
         maxHeight: {
             type: Number,
             required: false,
-            default: 300
+            default: 325
         }
     },
     data() {
