@@ -110,6 +110,11 @@
     font-size: $size-12;
 }
 
+// Field Label Extra use to display minor extra info inside a label
+.field__label--extra {
+    font-weight: $font-weight-body;
+}
+
 // Field Row
 // Use to display field side by side
 // ---------------------

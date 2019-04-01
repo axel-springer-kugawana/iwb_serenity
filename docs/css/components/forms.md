@@ -124,6 +124,24 @@ A field `label` can be notified as optional by adding an extra `span` with a `fi
 </div>
 ```
 
+## Extra Field Label
+
+A field `label` can be enhanced with an extra `span` with a `field__label--extra` class inside the `label` to provide extra information.
+
+<div class="sd-example">
+    <div class="field">
+        <label for="exampleInputLabelExtra00" class="field__label">Field Label <span class="field__label--extra">(extra informations)</span></label>
+        <input id="exampleInputLabelExtra00" class="input--text" value="text goes here">
+    </div>
+</div>
+
+```html
+<div class="field">
+    <label for="exampleInputLabelOptional00" class="field__label">Field Label <span class="field__label--optional">(optional)</span></label>
+    <input id="exampleInputLabelOptional00" class="input--text" value="text goes here">
+</div>
+```
+
 ## Inputs
 
 ### Text
