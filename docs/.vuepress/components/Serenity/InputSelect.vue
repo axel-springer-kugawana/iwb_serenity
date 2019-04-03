@@ -8,6 +8,7 @@
                 @blur="closeList"
             >
                 <button
+                    type="button"
                     class="input--select__toggle"
                     aria-haspopup="listbox"
                     :id="id"
@@ -73,6 +74,7 @@
                 @blur="closeList"
             >
                 <button
+                    type="button"
                     class="input-group--select__button input-group--select__button--prepend"
                     aria-haspopup="listbox"
                     :id="id"
