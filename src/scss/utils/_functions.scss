@@ -38,9 +38,13 @@
 }
 
 @function color-ll($color) {
-    @return lighten(desaturate(adjust-hue($color, -1), 9.03), 49.22);
+    @return lighten(desaturate(adjust-hue($color, -1), 8.13), 38.24);
 }
 
 @function color-lll($color) {
+    @return lighten(desaturate(adjust-hue($color, -1), 9.03), 49.22);
+}
+
+@function color-llll($color) {
     @return lighten(desaturate(adjust-hue($color, -4), 13.62), 52.55);
 }

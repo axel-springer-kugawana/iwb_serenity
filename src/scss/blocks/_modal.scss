@@ -39,7 +39,7 @@
     height: 100%;
     padding: $size-20;
     overflow-y: auto;
-    background: $primary-lll;
+    background: $primary-llll;
 
     @include media-query("medium") {
         top: 50%;
@@ -120,7 +120,7 @@
 
 .modal__section--divider {
     padding-top: $size-40;
-    border: 1px solid $primary-lll;
+    border: 1px solid $primary-llll;
 }
 
 .modal__section--full-width {
@@ -139,7 +139,7 @@
 // Modal Subsection
 // ---------------------
 .modal__subsection {
-    border-top: 2px solid $primary-ll;
+    border-top: 2px solid $primary-lll;
     padding-top: $size-20;
     margin-top: $size-20;
     text-align: center;

@@ -40,11 +40,21 @@
     font-size: $size-12;
     color: $primary-dd;
     text-transform: uppercase;
-    background-color: $primary-ll;
     line-height: $size-36;
     border: 2px solid $primary-ll;
     box-shadow: 0 0 0 2px inset #fff;
     min-height: $size-40;
+}
+
+.input-group__prepend,
+.input-group__append,
+.input-group__from-to-label,
+.input-group--stepper__button {
+    background-color: $primary-ll;
+}
+
+.input-group--select__button {
+    background-color: $primary-lll;
 }
 
 .input-group__main--prepend:focus ~ .input-group__prepend,
@@ -251,7 +261,7 @@
     }
 
     &:disabled {
-        background: $primary-lll;
+        background: $primary-llll;
         cursor: not-allowed;
     }
 
