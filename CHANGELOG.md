@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.0.7 - 2019-04-03
+### Added
+- Forms: Add field__label--extra
+- Add deploy-manual doc
+
+### Changed
+- Update color scheme (change primary-ll, primary-lll, add primary-lll)
+- Input Select: Increase max-height of input--select__list tp 325px
+
+### Fixed
+- Forms: Force field-label allignement to left
+- Input Select: Cancel page jump when space is pressed
+
 ## 0.0.6 - 2019-02-06
 ### Added
 - Forms: Input Switch
