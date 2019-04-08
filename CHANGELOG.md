@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.8 - 2019-04-08
+### Fixed
+- Forms: Change input-select button type to "button" to prevent form submit on click
+
 ## 0.0.7 - 2019-04-03
 ### Added
 - Forms: Add field__label--extra
