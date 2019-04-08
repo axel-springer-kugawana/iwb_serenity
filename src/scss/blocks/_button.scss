@@ -258,6 +258,7 @@
 
     .button__icon--left {
         margin-right: $size-4;
+        margin-left: 0;
     }
 
     &:active:not([disabled="disabled"]) .button__icon {
