@@ -44,7 +44,7 @@
     outline: none;
     cursor: not-allowed;
     pointer-events: none;
-    color: $grey-61;
+    color: $grey-65;
 
     @include media-query("desktop") {
         cursor: not-allowed;
@@ -95,8 +95,8 @@
     // Disabled state
     &:disabled,
     &[disabled="disabled"] {
-        background-color: $grey-91;
-        border-color: $grey-91;
+        background-color: $grey-95;
+        border-color: $grey-95;
     }
 
     // Icons
@@ -196,12 +196,12 @@
     // Disabled state
     &:disabled,
     &[disabled="disabled"] {
-        border-color: $grey-91;
+        border-color: $grey-95;
     }
 
     &:disabled .button__icon,
     &[disabled="disabled"] .button__icon {
-        fill: $grey-61;
+        fill: $grey-65;
     }
 }
 
@@ -240,7 +240,7 @@
     &[disabled="disabled"],
     &:disabled .button__icon,
     &[disabled="disabled"] .button__icon {
-        color: $grey-61;
+        color: $grey-65;
     }
 
     // Icons
@@ -267,7 +267,7 @@
 
     &:disabled .button__icon,
     &[disabled="disabled"] .button__icon {
-        fill: $grey-61;
+        fill: $grey-65;
     }
 }
 
