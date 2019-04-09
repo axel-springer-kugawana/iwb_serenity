@@ -136,6 +136,7 @@
 .input-group--stepper__button {
     cursor: pointer;
     position: relative;
+    font-size: $size-24;
 
     &:focus {
         outline: none;
