@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.9 - 2019-04-09
+### Fixed
+- Buttons: Fix margin left issue with button__icon--left
+
+### Changed
+- Forms: Increase input-group stepper button font-size (now 24px was 12px)
+- Update color scheme (change some grey), and deprecated others
+
 ## 0.0.8 - 2019-04-08
 ### Fixed
 - Forms: Change input-select button type to "button" to prevent form submit on click
