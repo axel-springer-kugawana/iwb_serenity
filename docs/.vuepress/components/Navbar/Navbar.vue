@@ -1,11 +1,13 @@
 <template>
-    <nav class="sd-navbar">
+    <div class="sd-navbar">
         <ul class="sd-navbar__menu">
             <li class="sd-navbar__menu-item" v-for="navItem in $site.themeConfig.nav">
                 <template v-if="navItem.children">
                     <navbarSubmenu
+                        :name="navItem.text.toLowerCase()"
                         :title="navItem.text"
                         :children="navItem.children"
+                        @openItem="closeAllSubmenu($event)"
                     ></navbarSubmenu>
                 </template>
                 <template v-else>
@@ -17,7 +19,7 @@
                 </template>
             </li>
         </ul>
-    </nav>
+    </div>
 </template>
 
 <script>
@@ -28,6 +30,17 @@ export default {
     components: {
         navbarMenuItem,
         navbarSubmenu
+    },
+    methods: {
+        closeAllSubmenu: function(activeSubmenu) {
+            this.$children.forEach(function(submenu) {
+                if (submenu.name !== activeSubmenu) {
+                    if (typeof(submenu.closeItem) === "function") {
+                        submenu.closeItem();
+                    }
+                }
+            });
+        },
     }
 }
 </script>

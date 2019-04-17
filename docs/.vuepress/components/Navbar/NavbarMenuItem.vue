@@ -2,11 +2,14 @@
     <div>
         <template v-if="isExternal">
             <a
+                class="sd-navbar__link"
                 :href="href">{{title}}</a>
         </template>
         <template v-else>
             <router-link
-            :to="href">{{title}}</router-link>
+                class="sd-navbar__link"
+                :class="(linkClass ? `sd-navbar__link--${linkClass}` : false)"
+                :to="href">{{title}}</router-link>
         </template>
     </div>
 </template>
@@ -26,6 +29,11 @@ export default {
             type: Boolean,
             default: false
         },
+        linkClass: {
+            type: String,
+            required: false,
+            default: ""
+        }
     },
 }
 </script>

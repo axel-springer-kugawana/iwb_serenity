@@ -86,7 +86,6 @@ $inputGroupSelectLargeBorderRadius: 24px !default;
 
 // Responsive
 // ---------------------
-
 /**
  * Breakpoints.
  * The first value is the name of the breakpoint (use for grid class generation)
@@ -113,6 +112,11 @@ $max-width-widescreen: 1140px !default;
 $columns-amount: 12 !default;
 $gutter: 20px !default;
 
+$max-column-width-small: calc(($max-width-small - ($gutter * $columns-amount)) / $columns-amount);
+$max-column-width-medium: ($max-width-medium - ($gutter * $columns-amount)) / $columns-amount;
+$max-column-width-desktop: ($max-width-desktop - ($gutter * $columns-amount)) / $columns-amount;
+$max-column-width-widescreen: ($max-width-widescreen - ($gutter * $columns-amount)) / $columns-amount;
+
 // Transition
 // ---------------------
 $easeInOutCubic: cubic-bezier(.645, .045, .355, 1) !default;
@@ -122,6 +126,7 @@ $easeInOutCubic: cubic-bezier(.645, .045, .355, 1) !default;
 // ---------------------
 $z-layers: (
     "modal": 2000,
+    "top-navigation": 1800,
     "dropdown": 1400,
     "sticky-footer": 1200,
 ) !default;

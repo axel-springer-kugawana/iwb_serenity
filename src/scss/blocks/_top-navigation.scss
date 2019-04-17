@@ -1,0 +1,87 @@
+/*------------------------------------*\
+  > Top Navigation
+  Website main navigation
+\*------------------------------------*/
+
+// Top Navigation
+// ---------------------
+.top-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 56px;
+    z-index: z("top-navigation");
+    background: #fff;
+
+    @include media-query("desktop") {
+        border-bottom: 1px solid $primary-lll;
+        box-shadow: 0 10px 30px -10px $primary-lll;
+        padding: 0 $size-16;
+    }
+}
+
+.top-navigation.open {
+    height: 100%;
+}
+
+// Top Navigation Header
+// Contain the logo and menu button
+// ---------------------
+.top-navigation__header,
+.top-navigation__header--centered {
+    padding: $size-16 $size-16 $size-16 $size-30;
+
+    @include media-query("desktop") {
+        padding: 0;
+    }
+}
+
+.top-navigation__header {
+    @include media-query("desktop") {
+        background: transparent;
+        display: inline-block;
+    }
+}
+
+// Centered variation of top-navigation
+// e.g beta landing page
+.top-navigation__header--centered {
+    width: 100%;
+}
+
+// Top Navigation Logo
+// ---------------------
+.top-navigation__logo {
+    width: 118px;
+    display: inline-block;
+
+    @include media-query("desktop") {
+        // width: column-width(2, desktop, none);
+        margin-right: $gutter;
+    }
+
+    @include media-query("widescreen") {
+        width: 197px;
+        margin-right: $gutter * 2;
+    }
+}
+
+.top-navigation__logo-link {
+    text-decoration: none;
+}
+
+.top-navigation__image {
+    width: 100%;
+
+    @include media-query("desktop") {
+        height: 54px;
+    }
+}
+
+// Centered variation of top-navigation
+// e.g beta landing page
+.top-navigation__logo--centered {
+    width: 200px;
+    margin: 0 auto;
+}

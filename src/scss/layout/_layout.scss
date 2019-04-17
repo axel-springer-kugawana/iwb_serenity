@@ -59,3 +59,37 @@ body {
         padding: 0;
     }
 }
+
+// Top Container Variation
+.container--top-navigation,
+.container--top-navigation-submenu {
+    width: $max-width-x-small;
+    margin: 0 auto;
+    padding: 0;
+
+    @include media-query("desktop") {
+        width: $max-width-desktop;
+        display: flex;
+    }
+
+    @include media-query("widescreen") {
+        width: $max-width-widescreen;
+    }
+}
+
+.container--top-navigation {
+    @include media-query("desktop") {
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.container--top-navigation-submenu {
+    @include media-query("desktop") {
+        padding-left: ($max-column-width-desktop * 2) + ($gutter * 2);
+    }
+
+    @include media-query("widescreen") {
+        padding-left: 238px;
+    }
+}

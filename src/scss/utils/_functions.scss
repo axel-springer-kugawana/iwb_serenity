@@ -4,6 +4,53 @@
 \*------------------------------------*/
 
 /**
+ * [column-width Return a width based on the number of columns desired for a specific breakpoint]
+ * @param  {number} $columns:    1             [Number of columns desired]
+ * @param  {string} $breakpoint: phone         [Breakpoint desired (Breakpoint allowed: phone, tablet, desktop, widescreen)]
+ * @param  {string} $gutters:    all           [Include gutter size, inner (gutter * amount columns minus one), none]
+ * @return {number}                            [Size desired]
+ */
+@function column-width($columns: 1, $breakpoint: x-small, $gutters: all) {
+    @if not ($breakpoint == small or $breakpoint == medium or $breakpoint == desktop or $breakpoint == widescreen) {
+        @error "No breakpoint found for `#{$breakpoint}`. (Breakpoint allowed: x-small, small, tablet, desktop, widescreen).";
+    }
+
+    $max-column-width: 0 !default;
+
+    @if $breakpoint == "small" {
+        $max-column-width: $max-column-width-small;
+    }
+    @else if $breakpoint == "medium" {
+        $max-column-width: $max-column-width-medium;
+    }
+    @else if $breakpoint == "desktop" {
+        $max-column-width: $max-column-width-desktop;
+    }
+    @else if $breakpoint == "widescreen" {
+        $max-column-width: $max-column-width-widescreen;
+    }
+
+    $gutters-width: $gutter * $columns;
+
+    @if $gutters == "inner" {
+        $gutters-width: ($gutter * $columns) - $gutter;
+    }
+    @else if $gutters == "none" {
+        $gutters-width: 0px; /* stylelint-disable-line length-zero-no-unit */
+    }
+
+    @if $breakpoint == "x-small" {
+        $column-width: (100 / $columns-amount) * $columns;
+        $all-gutters-width: $gutter * $columns-amount;
+
+        @return calc((#{$column-width}% - #{$all-gutters-width}) + #{$gutters-width});
+    }
+    @else {
+        @return ($max-column-width * $columns) + $gutters-width;
+    }
+}
+
+/**
  * [z Look for the given argument in a layers map to see if it is mapped to a z-index value]
  * @param  {string} $layer [Layer to search for]
  * @return {int} [Z-index value]

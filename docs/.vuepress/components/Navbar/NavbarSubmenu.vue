@@ -5,7 +5,7 @@
             :href="href.length > 0 ? href : '#'"
             tabindex="0"
             :aria-expanded="isExpanded"
-            class="sd-navbar__sub-menu-toggle"
+            class="sd-navbar__link sd-navbar__sub-menu-toggle"
             :class="(open ? 'open' : '')"
             @click="toggleItem"
         >
@@ -18,28 +18,30 @@
             v-if="children && children.length > 0"
             class="sd-navbar__sub-menu"
             :class="{ open: open }">
-
-            <ul>
-                <li v-for="child in children">
-                    <navbarMenuItem
-                        :title="child.text"
-                        :href="child.link"
-                        :isExternal="child.external">
-                    </navbarMenuItem>
-                    <template v-if="child.children && child.children.length > 0">
-                        <ul class="">
-                            <li v-for="subChild in child.children">
-                                <navbarMenuItem
-                                    :title="subChild.text"
-                                    :href="subChild.link"
-                                    :isExternal="subChild.external">
-                                </navbarMenuItem>
-                            </li>
-                        </ul>
-                    </template>
-                </li>
-            </ul>
-
+            <div class="container">
+                <ul class="sd-navbar__sub-menu-list">
+                    <li v-for="child in children">
+                        <navbarMenuItem
+                            link-class="submenu"
+                            :title="child.text"
+                            :href="child.link"
+                            :isExternal="child.external">
+                        </navbarMenuItem>
+                        <template v-if="child.children && child.children.length > 0">
+                            <ul class="">
+                                <li v-for="subChild in child.children">
+                                    <navbarMenuItem
+                                        link-class="submenu"
+                                        :title="subChild.text"
+                                        :href="subChild.link"
+                                        :isExternal="subChild.external">
+                                    </navbarMenuItem>
+                                </li>
+                            </ul>
+                        </template>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
@@ -73,6 +75,10 @@ export default {
             type: String,
             required: true
         },
+        name: {
+            type: String,
+            required: true
+        },
         href: {
             type: String,
             required: false,
@@ -90,7 +96,7 @@ export default {
             open: false,
             id: null,
             targetBlankString: "",
-            noopenerNoreferrerString: "",
+            noopenerNoreferrerString: ""
         };
     },
 
@@ -132,10 +138,11 @@ export default {
         },
         openItem: function() {
             this.open = true;
+            this.$emit('openItem', this.name);
         },
         closeItem: function() {
             this.open = false;
-        },
+        }
     }
 }
 </script>

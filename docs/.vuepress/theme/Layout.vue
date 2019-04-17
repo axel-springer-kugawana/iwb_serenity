@@ -1,9 +1,20 @@
 <template>
     <div class="sd-main-container">
-        <header class="sd-header">
-            <a href="/iwb_serenity" class="title--4">{{$site.title}}</a>
-            <navbar></navbar>
-        </header>
+        <nav
+            role="navigation"
+            class="top-navigation">
+            <div class="container--top-navigation">
+                <div class="top-navigation__header">
+                    <div class="top-navigation__logo">
+                        <a href="/iwb_serenity" class="top-navigation__logo-link">
+                            <!-- <img src="/iwb_serenity/images/logos/brand-logo.svg" alt="Immoweb" class="top-navigation__image" /> -->
+                            {{$site.title}}
+                        </a>
+                    </div>
+                </div>
+                <navbar></navbar>
+            </div>
+        </nav>
 
         <main id="main-content">
             <div class="sd-content">
