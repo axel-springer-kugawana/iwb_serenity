@@ -8,6 +8,11 @@ module.exports = {
         ['link', { rel: 'stylesheet', href: '/css/vue-press-serenity.css' }],
         ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i' }],
         ['link', { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i' }],
+        ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/favicons/favicon-16x16.png' }],
+        ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/images/favicons/favicon-32x32.png' }],
+        ['link', { rel: 'mask-icon', color: '#3d6ca9', href: '/images/favicons/safari-pinned-tab.svg' }],
+        ['link', { rel: 'shortcut icon', href: '/images/favicons/favicon.ico' }],
+        ['meta', { name: 'theme-color', content: '#ffffff' }],
     ],
     themeConfig: {
         nav: [
