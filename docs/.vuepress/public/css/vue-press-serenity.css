@@ -134,6 +134,25 @@
     text-decoration: underline;
 }
 
+@media screen and (max-width: 992px) {
+    .sd-top-navigation-logo {
+        width: 240px;
+    }
+
+    .sd-navbar {
+        padding: 0 1rem 0 1.875rem;
+        width: 100%;
+    }
+
+    .sd-navbar__menu {
+        width: 100%;
+    }
+
+    .sd-navbar__sub-menu ul {
+        padding: 0;
+    }
+}
+
 /**
  * Arrow down
  */

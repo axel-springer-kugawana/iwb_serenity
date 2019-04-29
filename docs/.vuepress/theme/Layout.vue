@@ -2,10 +2,10 @@
     <div class="sd-main-container">
         <nav
             role="navigation"
-            class="top-navigation">
+            class="top-navigation sd-top-navigation">
             <div class="container--top-navigation">
                 <div class="top-navigation__header">
-                    <div class="top-navigation__logo">
+                    <div class="top-navigation__logo sd-top-navigation-logo">
                         <a href="/iwb_serenity" class="top-navigation__logo-link">
                             <img src="/iwb_serenity/images/logos/immoweb-serenity.svg" :alt="$site.title" />
                         </a>
