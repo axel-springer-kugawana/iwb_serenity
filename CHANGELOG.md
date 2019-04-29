@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.10 - 2019-04-29
+### Changed
+- Change default link state (now undelrine, darke color on hover)
+- Update docs (Add favicons, logos, refactor menu)
+
 ## 0.0.9 - 2019-04-09
 ### Fixed
 - Buttons: Fix margin left issue with button__icon--left
