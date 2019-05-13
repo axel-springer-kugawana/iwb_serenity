@@ -244,12 +244,23 @@ export default {
          */
         toggleList: function() {
             // Close previous opened list
-            var listbox = document.getElementsByClassName("input--select__list--below");
-            if(listbox.length > 0) {
-                for(var index = 0; index < listbox.length; index++) {
-                    if(this.id != listbox[index].id) {
-                        if (listbox[index].style.display != "none") {
-                            listbox[index].style.display = "none";
+            /*var listbox = document.getElementsByClassName("input--select__list");
+            if (listbox.length > 0) {
+                for (var i = 0; i < listbox.length; i++) {
+                    if(this.id != listbox[i].id) {
+                        if (listbox[i].style.display != "none") {
+                            listbox[i].style.display = "none";
+                        }
+                    }
+                }
+            }*/
+
+            var listComponent = document.getElementsByClassName("input--select-wrapper");
+            if (listComponent.length > 0) {
+                for (var z = 0; z < listComponent.length; z++) {
+                    if (this.id != listComponent[z].__vue__.id) {
+                        if (listComponent[z].__vue__.listOpen != false) {
+                            listComponent[z].__vue__.listOpen = false;
                         }
                     }
                 }
@@ -260,8 +271,6 @@ export default {
             } else {
                 this.openList();
             }
-
-            //console.log(this.$root.$children[0].$children[6].$children[0].$children[0].$el.className + " === " + this.$root.$children[0].$children[6].$children[0].$children[0].listOpen);
         },
         /**
          * [openList Open the options list]
