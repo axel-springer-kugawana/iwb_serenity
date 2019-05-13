@@ -243,11 +243,25 @@ export default {
          * [toggleList Open / Close the options list based on current status]
          */
         toggleList: function() {
+            // Close previous opened list
+            var listbox = document.getElementsByClassName("input--select__list--below");
+            if(listbox.length > 0) {
+                for(var index = 0; index < listbox.length; index++) {
+                    if(this.id != listbox[index].id) {
+                        if (listbox[index].style.display != "none") {
+                            listbox[index].style.display = "none";
+                        }
+                    }
+                }
+            }
+
             if (this.listOpen === true) {
                 this.closeList();
             } else {
                 this.openList();
             }
+
+            //console.log(this.$root.$children[0].$children[6].$children[0].$children[0].$el.className + " === " + this.$root.$children[0].$children[6].$children[0].$children[0].listOpen);
         },
         /**
          * [openList Open the options list]
