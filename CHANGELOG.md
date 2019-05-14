@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.0.11 - 2019-05-14
+### Changed
+- Change doc logo
+
+### Fixed
+- Display inline error fields
+- Input Select: Update active hover color
+- Input Select: Close all previous opened select when click 
+
 ## 0.0.10 - 2019-04-29
 ### Changed
 - Change default link state (now undelrine, darke color on hover)
