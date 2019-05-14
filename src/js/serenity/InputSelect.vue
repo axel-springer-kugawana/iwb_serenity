@@ -244,17 +244,6 @@ export default {
          */
         toggleList: function() {
             // Close previous opened list
-            /*var listbox = document.getElementsByClassName("input--select__list");
-            if (listbox.length > 0) {
-                for (var i = 0; i < listbox.length; i++) {
-                    if(this.id != listbox[i].id) {
-                        if (listbox[i].style.display != "none") {
-                            listbox[i].style.display = "none";
-                        }
-                    }
-                }
-            }*/
-
             var listComponent = document.getElementsByClassName("input--select-wrapper");
             if (listComponent.length > 0) {
                 for (var z = 0; z < listComponent.length; z++) {
