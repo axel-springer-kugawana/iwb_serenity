@@ -34,6 +34,45 @@ Standard standalone input-select.
 ></serenityInputSelect>
 ```
 
+### Standalone Select with Grouping Options
+
+Standard standalone input-select with Grouping Options. If `value` key of an entry of options props is an array, it will display an options group.
+
+Only one level of grouping is possible.
+
+<div class="sd-example">
+    <Example-InputSelectGroupingOptions></Example-InputSelectGroupingOptions>
+</div>
+
+```html
+<label class="field__label" id="inputSelectGroupingOptionsExampleLabelId" for="inputSelectGroupingOptionsExampleId">Default Input Select:</label>
+<serenityInputSelect
+    id="inputSelectGroupingOptionsExampleId"
+    inputLabelId="inputSelectGroupingOptionsExampleLabelId"
+    :options="[
+        {
+            'value': [
+                {'value': 'select-value-01', 'label': 'Jenny'},
+                {'value': 'select-value-02', 'label': 'Boby'},
+                {'value': 'select-value-03', 'label': 'Bob'},
+                {'value': 'select-value-04', 'label': 'John'},
+                {'value': 'select-value-05', 'label': 'Robert'},
+            ],
+            'label': 'Main name'
+        },
+        {
+            'value': [
+                {'value': 'select-value-06', 'label': 'Marie'},
+                {'value': 'select-value-07', 'label': 'Marie Micheline'},
+                {'value': 'select-value-08', 'label': 'Marc'},
+                {'value': 'select-value-09', 'label': 'Julie'},
+            ],
+            'label': 'Secondary name'
+        }
+    ]"
+></serenityInputSelect>
+```
+
 ## Input Group Select
 
 Input select can also be used inside an **input-group** in association with an input--text.

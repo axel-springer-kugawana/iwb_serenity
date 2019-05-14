@@ -113,6 +113,33 @@
     background-color: transparent;
 }
 
+.input--select__option--disabled {
+    color: $primary;
+    font-weight: $font-weight-title;
+    font-family: $font-title;
+    font-size: $size-12;
+    pointer-events: none;
+    background: $color-background;
+    cursor: default;
+    padding-left: $size-12;
+    position: relative;
+
+    span {
+        position: relative;
+        width: 100%;
+    }
+}
+
+// Input Select Option-group
+// ---------------------
+.input--select__option-group {
+    padding: 0;
+}
+
+.input--select__option-group .input--select__option {
+    padding-left: $size-24;
+}
+
 // Input Select Mobile
 // Native input a little bit stylized
 // ---------------------

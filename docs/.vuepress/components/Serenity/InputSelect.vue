@@ -39,32 +39,72 @@
                     @keydown.end="handleKeyEnd"
                     @keyup="handleKeyPress"
                 >
-                    <li
-                        v-for="(option, index) in options"
-                        role="option"
-                        class="input--select__option"
-                        :class="{' active': internalValue === option.value }"
-                        :key="`option-${index}`"
-                        :id="`${id}-item-${index}`"
-                        :data-value="option.value"
-                        @click="selectOption"
-                        @mouseover="preSelectOption">
-                        {{ option.label }}
-                    </li>
+                    <template v-for="(option, index) in options">
+                        <template v-if="Array.isArray(option.value)">
+                            <li :key="`option-${id}-${index}`">
+                                <div class="input--select__option--disabled">
+                                    {{ option.label }}
+                                </div>
+                                <ul class="input--select__option-group">
+                                    <li
+                                        v-for="(optionGroupChild, index) in option.value"
+                                        role="option"
+                                        class="input--select__option"
+                                        :class="{' active': internalValue === optionGroupChild.value }"
+                                        :key="`option-${id}-groupchild-${index}`"
+                                        :id="`${id}-item-${index}`"
+                                        :data-value="optionGroupChild.value"
+                                        @click="selectOption"
+                                        @mouseover="preSelectOption">
+                                        {{ optionGroupChild.label }}
+                                    </li>
+                                </ul>
+                            </li>
+                        </template>
+                        <template v-else>
+                            <li
+                                role="option"
+                                class="input--select__option"
+                                :class="{' active': internalValue === option.value }"
+                                :key="`option-${id}-${index}`"
+                                :id="`${id}-item-${index}`"
+                                :data-value="option.value"
+                                @click="selectOption"
+                                @mouseover="preSelectOption">
+                                {{ option.label }}
+                            </li>
+                        </template>
+                    </template>
+
                 </ul>
             </div>
+
             <select
                 class="input--select input--select--mobile"
                 v-model="internalValue"
                 :aria-labelledby="inputLabelId"
                 @change="updateMobileValue">
-                <option
-                    v-for="(option, index) in options"
-                    :key="`option-${index}`"
-                    :value="option.value">
-                    {{ option.label }}
-                </option>
+                <template v-for="(option, index) in options">
+                    <template v-if="Array.isArray(option.value)">
+                        <optgroup
+                            :key="`option-${id}-${index}`"
+                            :label="option.label">
+                            <option
+                                v-for="(optionGroupChild, index) in option.value"
+                                :key="`option-${id}-groupchild-${index}`"
+                                :value="optionGroupChild.value">
+                                {{ optionGroupChild.label }}</option>
+                        </optgroup>
+                    </template>
+                    <template v-else>
+                        <option
+                            :key="`option-${id}-${index}`"
+                            :value="option.value">
+                            {{ option.label }}</option>
+                    </template>
+                </template>
             </select>
+
         </template>
         <template v-else-if="type === 'inputGroupSelect'">
             <div
@@ -109,7 +149,7 @@
                         role="option"
                         class="input--select__option"
                         :class="{' active': internalValue === option.value }"
-                        :key="`option-${index}`"
+                        :key="`option-${id}-${index}`"
                         :id="`${id}-item-${index}`"
                         :data-value="option.value"
                         @click="selectOption"
@@ -123,12 +163,26 @@
                 v-model="internalValue"
                 :aria-labelledby="inputLabelId"
                 @change="updateMobileValue">
-                <option
-                    v-for="(option, index) in options"
-                    :key="`option-${index}`"
-                    :value="option.value">
-                    {{ option.label }}
-                </option>
+                <template v-for="(option, index) in options">
+                    <template v-if="Array.isArray(option.value)">
+                        <optgroup
+                            :key="`option-${id}-${index}`"
+                            :label="option.label">
+                            <option
+                                v-for="(optionGroupChild, index) in option.value"
+                                :key="`option-${id}-groupchild-${index}`"
+                                :value="optionGroupChild.value">
+                                {{ optionGroupChild.label }}</option>
+                        </optgroup>
+                    </template>
+                    <template v-else>
+                        <option
+                            :key="`option-${id}-${index}`"
+                            :value="option.value">
+                            {{ option.label }}
+                        </option>
+                    </template>
+                </template>
             </select>
         </template>
     </div>
@@ -199,17 +253,42 @@ export default {
             searchIndex: 0
         };
     },
+    computed:{
+        flatOptions: function(e) {
+            const flatArray = [];
+            const originalArray = this.options;
+
+            originalArray.forEach(function(option) {
+              if (Array.isArray(option.value)) {
+                flatArray.push(option.value)
+              } else {
+                flatArray.push(option)
+              }
+            });
+
+            return flatArray.flat();
+        }
+    },
     watch: {
         value: function(newValue) {
             // If value is not a visible one reset it to first value of list else update the options list
-            const position = this.getObjetIndexByKey(this.options, "value", newValue);
+            const arrayToTest = [];
+
+            if(Array.isArray(this.flatOptions[newValue].value)) {
+                arrayToTest = this.flatOptions[newValue].value[0];
+            } else {
+                arrayToTest = this.flatOptions;
+            }
+
+            const position = this.getObjetIndexByKey(arrayToTest, "value", newValue);
+
             if(position === -1) {
                 this.updateCurrentOption(0);
             } else {
                 this.updateCurrentOption(position);
             }
         },
-        options: {
+        flatOptions: {
             immediate: true,
             handler(newValues) {
                 // If value is not a visible one reset it to first value of list else update the options list
@@ -301,7 +380,7 @@ export default {
          */
         selectOption: function(event) {
             const value = event.target.dataset.value;
-            const position = this.getObjetIndexByKey(this.options, "value", value);
+            const position = this.getObjetIndexByKey(this.flatOptions, "value", value);
 
             this.updateCurrentOption(position);
 
@@ -313,7 +392,7 @@ export default {
          */
         preSelectOption: function(event) {
             const value = event.target.dataset.value;
-            const position = this.getObjetIndexByKey(this.options, "value", value);
+            const position = this.getObjetIndexByKey(this.flatOptions, "value", value);
 
             this.preSelectPosition = position;
         },
@@ -343,7 +422,7 @@ export default {
                 this.openList();
             }
 
-            if (this.currentPosition < this.options.length - 1) {
+            if (this.currentPosition < this.flatOptions.length - 1) {
                 this.currentPosition = this.currentPosition + 1;
                 this.updateCurrentOption(this.currentPosition);
             }
@@ -380,7 +459,7 @@ export default {
             if (this.listOpen === true) {
                 event.preventDefault();
 
-                this.updateCurrentOption(this.options.length - 1);
+                this.updateCurrentOption(this.flatOptions.length - 1);
             }
         },
         /**
@@ -406,8 +485,8 @@ export default {
             var character = key.charAt(0).toLowerCase();
 
             if (!this.currentKeysString) {
-                for (var i = 0; i < this.options.length; i++) {
-                    if (this.options[i].value === this.internalValue) {
+                for (var i = 0; i < this.flatOptions.length; i++) {
+                    if (this.flatOptions[i].value === this.internalValue) {
                         this.searchIndex = i;
                     }
                 }
@@ -419,7 +498,7 @@ export default {
 
             var nextMatch = this.findMatchInRange(
                 this.searchIndex + 1,
-                this.options.length
+                this.flatOptions.length
             );
 
 
@@ -431,7 +510,7 @@ export default {
             }
 
             if(nextMatch) {
-                const position = this.getObjetIndexByKey(this.options, "value", nextMatch.value);
+                const position = this.getObjetIndexByKey(this.flatOptions, "value", nextMatch.value);
                 this.updateCurrentOption(position);
             }
         },
@@ -445,10 +524,10 @@ export default {
             // Find the first item starting with the currentKeysString substring, searching in
             // the specified range of items
             for (var n = startIndex; n < endIndex; n++) {
-                var label = this.options[n].label;
+                var label = this.flatOptions[n].label;
 
                 if (label && label.toLowerCase().indexOf(this.currentKeysString) === 0) {
-                    return this.options[n];
+                    return this.flatOptions[n];
                 }
             }
             return null;
@@ -475,13 +554,13 @@ export default {
             this.preSelectPosition = position;
             // Define current position
             this.currentPosition = position;
-            // Update select label and value
-            let label = this.options[position].label;
+
+            let label = this.flatOptions[position].label;
             if(this.type === "inputGroupSelect" && label.length > 10) {
                 label = this.truncate(label, 11, "...");
             }
             this.currentOptionLabel = label;
-            this.internalValue = this.options[position].value;
+            this.internalValue = this.flatOptions[position].value;
         },
         /**
          * [updateMobileValue On input mobile change, emit the value with custom event update-value]
@@ -491,7 +570,7 @@ export default {
             this.$emit("update-value", this.internalValue);
 
             // Update Desktop Input Current Option (in case of breakpoint change)
-            const position = this.getObjetIndexByKey(this.options, "value", this.internalValue);
+            const position = this.getObjetIndexByKey(this.flatOptions, "value", this.internalValue);
 
             if (position > -1) {
                 this.updateCurrentOption(position);
