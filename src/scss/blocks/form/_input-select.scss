@@ -102,7 +102,8 @@
 
     &.active {
         outline: none;
-        background-color: $primary-l;
+        background-color: $primary;
+        color: #FFF;
     }
 }
 
