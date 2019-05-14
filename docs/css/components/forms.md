@@ -326,9 +326,9 @@ An input checkbox can be disabled adding the attribute `disabled="disabled"` to 
 
 ### Input Switch
 
-The `input--switch` take 100% of the width of is container, the label is display on the left and the "switch" button on the right.
+The `input--switch` takes 100% of the width of its container, the label is displayed on the left and the "switch" button on the right.
 
-To display checkbox input as a switch, enclose it within a label with the `input--swicth` class.
+To display the checkbox input as a switch, enclose it within a label with the `input--swicth` class.
 Then give the `input--switch__input` class to the input and the `input--switch__label` class to the span containing the label of the input.
 
 An input checkbox can be disabled adding the attribute `disabled="disabled"` to the input.

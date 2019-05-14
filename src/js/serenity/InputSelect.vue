@@ -243,6 +243,18 @@ export default {
          * [toggleList Open / Close the options list based on current status]
          */
         toggleList: function() {
+            // Close previous opened list
+            var listComponent = document.getElementsByClassName("input--select-wrapper");
+            if (listComponent.length > 0) {
+                for (var z = 0; z < listComponent.length; z++) {
+                    if (this.id != listComponent[z].__vue__.id) {
+                        if (listComponent[z].__vue__.listOpen != false) {
+                            listComponent[z].__vue__.listOpen = false;
+                        }
+                    }
+                }
+            }
+
             if (this.listOpen === true) {
                 this.closeList();
             } else {

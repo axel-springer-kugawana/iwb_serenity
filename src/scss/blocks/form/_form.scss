@@ -136,6 +136,7 @@
     padding-left: $size-24;
     margin: $size-4 0 0 0;
     white-space: normal;
+    display: inline-block;
 
     &:before {
         content: "";

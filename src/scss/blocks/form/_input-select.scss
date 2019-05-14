@@ -95,10 +95,15 @@
     word-break: break-all;
 
     &:focus,
-    &:hover,
-    &.active {
+    &:hover {
         outline: none;
         background-color: $primary-ll;
+    }
+
+    &.active {
+        outline: none;
+        background-color: $primary;
+        color: #FFF;
     }
 }
 
