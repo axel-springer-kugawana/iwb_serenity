@@ -36,7 +36,7 @@ Standard standalone input-select.
 
 ### Standalone Select with Grouping Options
 
-Standard standalone input-select with Grouping Options. If `value` key of an entry of options props is an array, it will display an options group.
+Standard standalone input-select with Grouping Options. If `value` key of an entry of `options` props is an array, it will display an options group.
 
 Only one level of grouping is possible.
 

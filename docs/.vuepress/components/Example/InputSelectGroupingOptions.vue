@@ -1,6 +1,6 @@
 <template>
     <div>
-        <label class="field__label" id="inputSelectGroupingOptionsExampleLabelId" for="inputSelectGroupingOptionsExampleId">Default Input Select:</label>
+        <label class="field__label" id="inputSelectGroupingOptionsExampleLabelId" for="inputSelectGroupingOptionsExampleId">Input Select with Grouping Options:</label>
         <serenityInputSelect
             id="inputSelectGroupingOptionsExampleId"
             inputLabelId="inputSelectGroupingOptionsExampleLabelId"
@@ -23,6 +23,15 @@
                         {'value': 'select-value-09', 'label': 'Julie'},
                     ],
                     'label': 'Secondary name'
+                },
+                {
+                    'value': [
+                        {'value': 'select-value-10', 'label': 'Blaise'},
+                        {'value': 'select-value-11', 'label': 'Hector'},
+                        {'value': 'select-value-12', 'label': 'Jean'},
+                        {'value': 'select-value-13', 'label': 'Antoine'},
+                    ],
+                    'label': 'Third name'
                 }
             ]"
         ></serenityInputSelect>

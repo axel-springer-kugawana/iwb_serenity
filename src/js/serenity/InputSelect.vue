@@ -39,20 +39,20 @@
                     @keydown.end="handleKeyEnd"
                     @keyup="handleKeyPress"
                 >
-                    <template v-for="(option, index) in options">
+                    <template v-for="(option, index) in internalOptions">
                         <template v-if="Array.isArray(option.value)">
-                            <li :key="`option-${id}-${index}`">
-                                <div class="input--select__option--disabled">
+                            <li role="group" :aria-labelledby="`option-${id}-groupchild-${index}-label`" :key="`option-${id}-${index}`">
+                                <div :id="`option-${id}-groupchild-${index}-label`" class="input--select__option--disabled">
                                     {{ option.label }}
                                 </div>
                                 <ul class="input--select__option-group">
                                     <li
-                                        v-for="(optionGroupChild, index) in option.value"
+                                        v-for="(optionGroupChild, subListIndex) in option.value"
                                         role="option"
                                         class="input--select__option"
                                         :class="{' active': internalValue === optionGroupChild.value }"
-                                        :key="`option-${id}-groupchild-${index}`"
-                                        :id="`${id}-item-${index}`"
+                                        :key="`option-${id}-groupchild-${index}-${subListIndex}`"
+                                        :id="`${id}-item-${optionGroupChild.id}`"
                                         :data-value="optionGroupChild.value"
                                         @click="selectOption"
                                         @mouseover="preSelectOption">
@@ -67,7 +67,7 @@
                                 class="input--select__option"
                                 :class="{' active': internalValue === option.value }"
                                 :key="`option-${id}-${index}`"
-                                :id="`${id}-item-${index}`"
+                                :id="`${id}-item-${option.id}`"
                                 :data-value="option.value"
                                 @click="selectOption"
                                 @mouseover="preSelectOption">
@@ -254,6 +254,36 @@ export default {
         };
     },
     computed:{
+        internalOptions: function(e) {
+            // Add id to the each item to allow maping between flatOptions array and options
+            const newArray = [];
+
+            var globalLoopIndex = 0;
+            const originalArray = this.options;
+
+            originalArray.forEach(function(option) {
+                if (Array.isArray(option.value)) {
+                    var subArray = [];
+
+                    option.value.forEach(function(subOption) {
+
+                        subOption["id"] = globalLoopIndex;
+
+                        subArray.push(subOption);
+
+                        globalLoopIndex = globalLoopIndex + 1;
+                    });
+
+                    newArray.push({'label': option.label, 'value': subArray});
+                } else {
+                    newArray.push({'label': option.label, 'value': option.value, 'id': globalLoopIndex});
+
+                    globalLoopIndex = globalLoopIndex + 1;
+                }
+            });
+
+            return newArray;
+        },
         flatOptions: function(e) {
             const flatArray = [];
             const originalArray = this.options;
