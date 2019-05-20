@@ -318,10 +318,10 @@ export default {
     watch: {
         value: function(newValue) {
             // If value is not a visible one reset it to first value of list else update the options list
-            const arrayToTest = [];
+            var arrayToTest = [];
 
-            if(Array.isArray(this.flatOptions[newValue].value)) {
-                arrayToTest = this.flatOptions[newValue].value[0];
+            if(Array.isArray(this.flatOptions[this.currentPosition].value)) {
+                arrayToTest = this.flatOptions[this.currentPosition].value[0];
             } else {
                 arrayToTest = this.flatOptions;
             }
