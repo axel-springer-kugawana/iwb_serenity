@@ -13,7 +13,7 @@
                     aria-haspopup="listbox"
                     :id="id"
                     :aria-expanded="listOpen ? 'true' : 'false'"
-                    :aria-labelledby="`${inputLabelId} ${id}-item-${currentPosition}`"
+                    :aria-labelledby="`${inputLabelId} ${currentOptionId}`"
                     @click="toggleList"
                     @keydown.down="handleKeyDown">
                     <span class="input--select__toggle-label">
@@ -28,7 +28,8 @@
                     v-show="listOpen"
                     :id="`${id}-list`"
                     :style="{ maxHeight: optimizedHeight + 'px' }"
-                    :aria-activedescendant="`${id}-item-${currentPosition}`"
+                    :aria-activedescendant="currentOptionId"
+                    ref="list"
                     @keydown.esc="closeList"
                     @keydown.enter="closeList"
                     @keydown.up="handleKeyUp"
@@ -119,7 +120,7 @@
                     aria-haspopup="listbox"
                     :id="id"
                     :aria-expanded="listOpen ? 'true' : 'false'"
-                    :aria-labelledby="`${inputLabelId} ${id}-item-${currentPosition}`"
+                    :aria-labelledby="`${inputLabelId} ${currentOptionId}`"
                     @keydown.down="handleKeyDown"
                     @click="toggleList">
                     <span class="input--select__toggle-label">
@@ -134,7 +135,8 @@
                     v-show="listOpen"
                     :id="`${id}-list`"
                     :style="{ maxHeight: optimizedHeight + 'px' }"
-                    :aria-activedescendant="`${id}-item-${currentPosition}`"
+                    :aria-activedescendant="currentOptionId"
+                    ref="list"
                     @keydown.esc="closeList"
                     @keydown.enter="closeList"
                     @keydown.up="handleKeyUp"
@@ -233,7 +235,7 @@ export default {
         maxHeight: {
             type: Number,
             required: false,
-            default: 325
+            default: 320
         }
     },
     data() {
@@ -250,12 +252,13 @@ export default {
             actionKeysArray: ["End", "Home", "ArrowDown", "ArrowUp", "Esc", "Enter", "Shift"],
             currentKeysString: "",
             keyClear: null,
-            searchIndex: 0
+            searchIndex: 0,
+            currentOptionId: null
         };
     },
     computed:{
         internalOptions: function(e) {
-            // Add id to the each item to allow maping between flatOptions array and options
+            // Add id to each items to allow maping between flatOptions array and options
             const newArray = [];
 
             var globalLoopIndex = 0;
@@ -321,7 +324,7 @@ export default {
         flatOptions: {
             immediate: true,
             handler(newValues) {
-                // If value is not a visible one reset it to first value of list else update the options list
+                // If value is not a visible one reset it to first value of list, else update the options list
                 const position = this.getObjetIndexByKey(newValues, "value", this.internalValue);
                 if(position === -1) {
                     this.updateCurrentOption(0);
@@ -591,6 +594,24 @@ export default {
             }
             this.currentOptionLabel = label;
             this.internalValue = this.flatOptions[position].value;
+            this.currentOptionId = `${this.id}-item-${this.flatOptions[position].id}`;
+
+            const currentOption = document.getElementById(this.currentOptionId);
+
+            if(currentOption !== null) {
+                const currentOptionTop = currentOption.offsetTop;
+                const currentOptionHeight = currentOption.offsetHeight;
+
+                const optionsListHeight = this.$refs.list.offsetHeight;
+
+                if (currentOptionTop >= optionsListHeight) {
+                    this.$refs.list.scrollTop = currentOptionTop;
+                }
+
+                if (currentOptionTop <= this.$refs.list.scrollTop) {
+                    this.$refs.list.scrollTop = currentOptionTop;
+                }
+            }
         },
         /**
          * [updateMobileValue On input mobile change, emit the value with custom event update-value]
