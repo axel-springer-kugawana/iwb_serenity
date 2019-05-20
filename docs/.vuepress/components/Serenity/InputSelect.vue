@@ -339,7 +339,7 @@ export default {
               }
             });
 
-            return flatArray.flat();
+            return this.flattenDeep(flatArray);
         }
     },
     watch: {
@@ -720,6 +720,15 @@ export default {
                 return item[key] === value;
             })[0];
             return array.indexOf(object);
+        },
+        /**
+         * [flattenDeep Return a flat array]
+         * @param  {array} array [The initial array to flat]
+         * @return {array}       [A flatten array]
+         * @url https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat#reduce_and_concat
+         */
+        flattenDeep (array) {
+           return array.reduce((acc, val) => Array.isArray(val) ? acc.concat(this.flattenDeep(val)) : acc.concat(val), []);
         }
     },
 };
