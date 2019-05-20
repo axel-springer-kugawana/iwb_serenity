@@ -34,7 +34,7 @@
                     @keydown.enter="closeList"
                     @keydown.up="handleKeyUp"
                     @keydown.down="handleKeyDown"
-                    @keydown.space.prevent="handleKeyUp"
+                    @keydown.space.prevent="handleKeyPress"
                     @keydown.tab="handleKeyTab"
                     @keydown.home="handleKeyHome"
                     @keydown.end="handleKeyEnd"
@@ -151,19 +151,46 @@
                     @keydown.end="handleKeyEnd"
                     @keyup="handleKeyPress"
                 >
-                    <li
-                        v-for="(option, index) in options"
-                        role="option"
-                        class="input--select__option"
-                        :class="{' active': internalValue === option.value, 'input--select__option--disabled': option.disabled == true }"
-                        :key="`option-${id}-${index}`"
-                        :id="`${id}-item-${index}`"
-                        :data-value="option.value"
-                        :data-disabled="(option.disabled == true) ? true : false"
-                        @click="selectOption"
-                        @mouseover="preSelectOption">
-                        {{ option.label }}
-                    </li>
+                    <template v-for="(option, index) in internalOptions">
+                        <template v-if="Array.isArray(option.value)">
+                            <li role="group" :aria-labelledby="`option-${id}-groupchild-${index}-label`" :key="`option-${id}-${index}`">
+                                <div :id="`option-${id}-groupchild-${index}-label`" class="input--select__option-group-title">
+                                    {{ option.label }}
+                                </div>
+                                <ul class="input--select__option-group">
+                                    <li
+                                        v-for="(optionGroupChild, subListIndex) in option.value"
+                                        role="option"
+                                        class="input--select__option"
+                                        :class="{' active': internalValue === optionGroupChild.value, 'input--select__option--disabled': optionGroupChild.disabled == true }"
+                                        :key="`option-${id}-${index}`"
+                                        :id="`${id}-item-${optionGroupChild.id}`"
+                                        :data-value="optionGroupChild.value"
+                                        :data-disabled="(option.disabled == true) ? true : false"
+                                        @click="selectOption"
+                                        @mouseover="preSelectOption">
+                                        {{ optionGroupChild.label }}
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </template>
+                        <template v-else>
+                            <li
+                                role="option"
+                                class="input--select__option"
+                                :class="{' active': internalValue === option.value, 'input--select__option--disabled': option.disabled == true }"
+                                :key="`option-${id}-${index}`"
+                                :id="`${id}-item-${index}`"
+                                :data-value="option.value"
+                                :data-disabled="(option.disabled == true) ? true : false"
+                                @click="selectOption"
+                                @mouseover="preSelectOption">
+                                {{ option.label }}
+                            </li>
+                        </template>
+                    </template>
+
                 </ul>
             </div>
             <select
@@ -536,11 +563,18 @@ export default {
             var character = key.charAt(0).toLowerCase();
 
             if (!this.currentKeysString) {
-                for (var i = 0; i < this.flatOptions.length; i++) {
-                    if (this.flatOptions[i].value === this.internalValue) {
-                        this.searchIndex = i;
+
+                if (key === " ") {
+                    this.updateCurrentOption(this.currentPosition);
+                    this.closeList();
+                } else {
+                    for (var i = 0; i < this.flatOptions.length; i++) {
+                        if (this.flatOptions[i].value === this.internalValue) {
+                            this.searchIndex = i;
+                        }
                     }
                 }
+
             }
 
             this.currentKeysString += character;
