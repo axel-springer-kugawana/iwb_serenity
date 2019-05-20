@@ -113,7 +113,7 @@
     background-color: transparent;
 }
 
-.input--select__option--disabled {
+.input--select__option-group-title {
     color: $primary;
     font-weight: $font-weight-title;
     font-family: $font-title;
@@ -127,6 +127,17 @@
     span {
         position: relative;
         width: 100%;
+    }
+}
+
+.input--select__option--disabled {
+    color: $grey-55;
+
+    &:hover,
+    &:focus {
+        background: inherit;
+        color: inherit;
+        cursor: default;
     }
 }
 
