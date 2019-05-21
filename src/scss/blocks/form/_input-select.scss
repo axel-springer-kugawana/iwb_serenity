@@ -66,7 +66,7 @@
     background: #fff;
     list-style-type: none;
     overflow-y: auto;
-    max-height: 325px;
+    max-height: 320px;
 
     &:focus {
         outline: none;
@@ -103,7 +103,7 @@
     &.active {
         outline: none;
         background-color: $primary;
-        color: #FFF;
+        color: #fff;
     }
 }
 
@@ -111,6 +111,44 @@
     border: 0;
     padding: 0;
     background-color: transparent;
+}
+
+.input--select__option-group-title {
+    color: $primary;
+    font-weight: $font-weight-title;
+    font-family: $font-title;
+    font-size: $size-12;
+    pointer-events: none;
+    background: $color-background;
+    cursor: default;
+    padding-left: $size-12;
+    position: relative;
+
+    span {
+        position: relative;
+        width: 100%;
+    }
+}
+
+.input--select__option--disabled {
+    color: $grey-65;
+
+    &:hover,
+    &:focus {
+        background: inherit;
+        color: $grey-65;
+        cursor: default;
+    }
+}
+
+// Input Select Option-group
+// ---------------------
+.input--select__option-group {
+    padding: 0;
+}
+
+.input--select__option-group .input--select__option {
+    padding-left: $size-24;
 }
 
 // Input Select Mobile

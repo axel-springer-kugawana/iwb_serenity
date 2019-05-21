@@ -22,14 +22,58 @@ Standard standalone input-select.
     id="inputSelectExampleId"
     inputLabelId="inputSelectExampleLabelId"
     :options="[
-        {'value': 'select-value-01', 'label': 'Option 01'},
-        {'value': 'select-value-02', 'label': 'Option 02'},
-        {'value': 'select-value-03', 'label': 'Option 03'},
-        {'value': 'select-value-04', 'label': 'Option 04'},
-        {'value': 'select-value-05', 'label': 'Option 05'},
-        {'value': 'select-value-06', 'label': 'Option 06'},
-        {'value': 'select-value-07', 'label': 'Option 07'},
-        {'value': 'select-value-08', 'label': 'Option 08'},
+        {'value': 'select-value-01', 'label': 'Jenny'},
+        {'value': 'select-value-02', 'label': 'Boby'},
+        {'value': 'select-value-03', 'label': 'Bob'},
+        {'value': 'select-value-04', 'label': 'John'},
+        {'value': 'select-value-05', 'label': 'Jean', 'disabled': true},
+        {'value': 'select-value-06', 'label': 'Robert'},
+        {'value': 'select-value-07', 'label': 'Marie'},
+        {'value': 'select-value-08', 'label': 'Marc'},
+        {'value': 'select-value-09', 'label': 'Julie'}
+    ]"
+></serenityInputSelect>
+```
+
+:::tip Note
+Note that an option with a `disabled` key set to true will not be selectable.
+:::
+
+### Standalone Select with Grouping Options
+
+Standard standalone input-select with Grouping Options. If `value` key of an entry of `options` props is an array, it will display an options group.
+
+Only one level of grouping is possible.
+
+<div class="sd-example">
+    <Example-InputSelectGroupingOptions></Example-InputSelectGroupingOptions>
+</div>
+
+```html
+<label class="field__label" id="inputSelectGroupingOptionsExampleLabelId" for="inputSelectGroupingOptionsExampleId">Default Input Select:</label>
+<serenityInputSelect
+    id="inputSelectGroupingOptionsExampleId"
+    inputLabelId="inputSelectGroupingOptionsExampleLabelId"
+    :options="[
+        {
+            'value': [
+                {'value': 'select-value-01', 'label': 'Jenny'},
+                {'value': 'select-value-02', 'label': 'Boby'},
+                {'value': 'select-value-03', 'label': 'Bob'},
+                {'value': 'select-value-04', 'label': 'John'},
+                {'value': 'select-value-05', 'label': 'Robert'},
+            ],
+            'label': 'Main name'
+        },
+        {
+            'value': [
+                {'value': 'select-value-06', 'label': 'Marie'},
+                {'value': 'select-value-07', 'label': 'Marie Micheline'},
+                {'value': 'select-value-08', 'label': 'Marc'},
+                {'value': 'select-value-09', 'label': 'Julie'},
+            ],
+            'label': 'Secondary name'
+        }
     ]"
 ></serenityInputSelect>
 ```
@@ -54,14 +98,14 @@ For more informations about the way to build this element, refer to [Forms: Inpu
         inputLabelId="inputSelectExampleLabelIdGroup"
         type="inputGroupSelect"
         :options="[
-            {'value': 'select-value-01', 'label': 'Option 01'},
-            {'value': 'select-value-02', 'label': 'Option 02'},
-            {'value': 'select-value-03', 'label': 'Option 03'},
-            {'value': 'select-value-04', 'label': 'Option 04'},
-            {'value': 'select-value-05', 'label': 'Option 05'},
-            {'value': 'select-value-06', 'label': 'Option 06'},
-            {'value': 'select-value-07', 'label': 'Option 07'},
-            {'value': 'select-value-08', 'label': 'Option 08'},
+            {'value': 'select-value-01', 'label': 'Jenny'},
+            {'value': 'select-value-02', 'label': 'Boby'},
+            {'value': 'select-value-03', 'label': 'Bob'},
+            {'value': 'select-value-04', 'label': 'John'},
+            {'value': 'select-value-05', 'label': 'Robert'},
+            {'value': 'select-value-06', 'label': 'Marie'},
+            {'value': 'select-value-07', 'label': 'Marc'},
+            {'value': 'select-value-08', 'label': 'Julie'},
         ]"
     ></serenityInputSelect>
     <div class="input-group__main input-group--select__main">

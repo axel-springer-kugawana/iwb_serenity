@@ -13,7 +13,7 @@
                     aria-haspopup="listbox"
                     :id="id"
                     :aria-expanded="listOpen ? 'true' : 'false'"
-                    :aria-labelledby="`${inputLabelId} ${id}-item-${currentPosition}`"
+                    :aria-labelledby="`${inputLabelId} ${currentOptionId}`"
                     @click="toggleList"
                     @keydown.down="handleKeyDown">
                     <span class="input--select__toggle-label">
@@ -28,43 +28,89 @@
                     v-show="listOpen"
                     :id="`${id}-list`"
                     :style="{ maxHeight: optimizedHeight + 'px' }"
-                    :aria-activedescendant="`${id}-item-${currentPosition}`"
+                    :aria-activedescendant="currentOptionId"
+                    ref="list"
                     @keydown.esc="closeList"
                     @keydown.enter="closeList"
                     @keydown.up="handleKeyUp"
                     @keydown.down="handleKeyDown"
-                    @keydown.space.prevent="handleKeyUp"
+                    @keydown.space.prevent="handleKeyPress"
                     @keydown.tab="handleKeyTab"
                     @keydown.home="handleKeyHome"
                     @keydown.end="handleKeyEnd"
                     @keyup="handleKeyPress"
                 >
-                    <li
-                        v-for="(option, index) in options"
-                        role="option"
-                        class="input--select__option"
-                        :class="{' active': internalValue === option.value }"
-                        :key="`option-${index}`"
-                        :id="`${id}-item-${index}`"
-                        :data-value="option.value"
-                        @click="selectOption"
-                        @mouseover="preSelectOption">
-                        {{ option.label }}
-                    </li>
+                    <template v-for="(option, index) in internalOptions">
+                        <template v-if="Array.isArray(option.value)">
+                            <li role="group" :aria-labelledby="`option-${id}-groupchild-${index}-label`" :key="`option-${id}-${index}`">
+                                <div :id="`option-${id}-groupchild-${index}-label`" class="input--select__option-group-title">
+                                    {{ option.label }}
+                                </div>
+                                <ul class="input--select__option-group">
+                                    <li
+                                        v-for="(optionGroupChild, subListIndex) in option.value"
+                                        role="option"
+                                        class="input--select__option"
+                                        :class="{' active': internalValue === optionGroupChild.value, 'input--select__option--disabled': optionGroupChild.disabled == true }"
+                                        :key="`option-${id}-groupchild-${index}-${subListIndex}`"
+                                        :id="`${id}-item-${optionGroupChild.id}`"
+                                        :data-value="optionGroupChild.value"
+                                        @click="selectOption"
+                                        @mouseover="preSelectOption"
+                                        :data-disabled="(option.disabled == true) ? true : false"
+                                    >
+                                        {{ optionGroupChild.label }}
+                                    </li>
+                                </ul>
+                            </li>
+                        </template>
+                        <template v-else>
+                            <li
+                                role="option"
+                                class="input--select__option"
+                                :class="{' active': internalValue === option.value, 'input--select__option--disabled': option.disabled == true }"
+                                :key="`option-${id}-${index}`"
+                                :id="`${id}-item-${option.id}`"
+                                :data-value="option.value"
+                                @click="selectOption"
+                                @mouseover="preSelectOption"
+                                :data-disabled="(option.disabled == true) ? true : false">
+                                {{ option.label }}
+                            </li>
+                        </template>
+                    </template>
+
                 </ul>
             </div>
+
             <select
                 class="input--select input--select--mobile"
                 v-model="internalValue"
                 :aria-labelledby="inputLabelId"
                 @change="updateMobileValue">
-                <option
-                    v-for="(option, index) in options"
-                    :key="`option-${index}`"
-                    :value="option.value">
-                    {{ option.label }}
-                </option>
+                <template v-for="(option, index) in options">
+                    <template v-if="Array.isArray(option.value)">
+                        <optgroup
+                            :key="`option-${id}-${index}`"
+                            :label="option.label">
+                            <option
+                                v-for="(optionGroupChild, index) in option.value"
+                                :key="`option-${id}-groupchild-${index}`"
+                                :value="optionGroupChild.value"
+                                :disabled="(optionGroupChild.disabled == true) ? true : false">
+                                {{ optionGroupChild.label }}</option>
+                        </optgroup>
+                    </template>
+                    <template v-else>
+                        <option
+                            :key="`option-${id}-${index}`"
+                            :value="option.value"
+                            :disabled="(option.disabled == true) ? true : false">
+                            {{ option.label }}</option>
+                    </template>
+                </template>
             </select>
+
         </template>
         <template v-else-if="type === 'inputGroupSelect'">
             <div
@@ -79,7 +125,7 @@
                     aria-haspopup="listbox"
                     :id="id"
                     :aria-expanded="listOpen ? 'true' : 'false'"
-                    :aria-labelledby="`${inputLabelId} ${id}-item-${currentPosition}`"
+                    :aria-labelledby="`${inputLabelId} ${currentOptionId}`"
                     @keydown.down="handleKeyDown"
                     @click="toggleList">
                     <span class="input--select__toggle-label">
@@ -94,7 +140,8 @@
                     v-show="listOpen"
                     :id="`${id}-list`"
                     :style="{ maxHeight: optimizedHeight + 'px' }"
-                    :aria-activedescendant="`${id}-item-${currentPosition}`"
+                    :aria-activedescendant="currentOptionId"
+                    ref="list"
                     @keydown.esc="closeList"
                     @keydown.enter="closeList"
                     @keydown.up="handleKeyUp"
@@ -104,18 +151,46 @@
                     @keydown.end="handleKeyEnd"
                     @keyup="handleKeyPress"
                 >
-                    <li
-                        v-for="(option, index) in options"
-                        role="option"
-                        class="input--select__option"
-                        :class="{' active': internalValue === option.value }"
-                        :key="`option-${index}`"
-                        :id="`${id}-item-${index}`"
-                        :data-value="option.value"
-                        @click="selectOption"
-                        @mouseover="preSelectOption">
-                        {{ option.label }}
-                    </li>
+                    <template v-for="(option, index) in internalOptions">
+                        <template v-if="Array.isArray(option.value)">
+                            <li role="group" :aria-labelledby="`option-${id}-groupchild-${index}-label`" :key="`option-${id}-${index}`">
+                                <div :id="`option-${id}-groupchild-${index}-label`" class="input--select__option-group-title">
+                                    {{ option.label }}
+                                </div>
+                                <ul class="input--select__option-group">
+                                    <li
+                                        v-for="(optionGroupChild, subListIndex) in option.value"
+                                        role="option"
+                                        class="input--select__option"
+                                        :class="{' active': internalValue === optionGroupChild.value, 'input--select__option--disabled': optionGroupChild.disabled == true }"
+                                        :key="`option-${id}-${index}`"
+                                        :id="`${id}-item-${optionGroupChild.id}`"
+                                        :data-value="optionGroupChild.value"
+                                        :data-disabled="(option.disabled == true) ? true : false"
+                                        @click="selectOption"
+                                        @mouseover="preSelectOption">
+                                        {{ optionGroupChild.label }}
+                                    </li>
+
+                                </ul>
+                            </li>
+                        </template>
+                        <template v-else>
+                            <li
+                                role="option"
+                                class="input--select__option"
+                                :class="{' active': internalValue === option.value, 'input--select__option--disabled': option.disabled == true }"
+                                :key="`option-${id}-${index}`"
+                                :id="`${id}-item-${index}`"
+                                :data-value="option.value"
+                                :data-disabled="(option.disabled == true) ? true : false"
+                                @click="selectOption"
+                                @mouseover="preSelectOption">
+                                {{ option.label }}
+                            </li>
+                        </template>
+                    </template>
+
                 </ul>
             </div>
             <select
@@ -123,12 +198,29 @@
                 v-model="internalValue"
                 :aria-labelledby="inputLabelId"
                 @change="updateMobileValue">
-                <option
-                    v-for="(option, index) in options"
-                    :key="`option-${index}`"
-                    :value="option.value">
-                    {{ option.label }}
-                </option>
+                <template v-for="(option, index) in options">
+                    <template v-if="Array.isArray(option.value)">
+                        <optgroup
+                            :key="`option-${id}-${index}`"
+                            :label="option.label">
+                            <option
+                                v-for="(optionGroupChild, index) in option.value"
+                                :key="`option-${id}-groupchild-${index}`"
+                                :value="optionGroupChild.value"
+                                :disabled="(optionGroupChild.disabled == true) ? true : false">
+                                {{ optionGroupChild.label }}</option>
+                        </optgroup>
+                    </template>
+                    <template v-else>
+                        <option
+                            :key="`option-${id}-${index}`"
+                            :value="option.value"
+                            :disabled="(option.disabled == true) ? true : false"
+                        >
+                            {{ option.label }}
+                        </option>
+                    </template>
+                </template>
             </select>
         </template>
     </div>
@@ -179,7 +271,7 @@ export default {
         maxHeight: {
             type: Number,
             required: false,
-            default: 325
+            default: 320
         }
     },
     data() {
@@ -196,30 +288,95 @@ export default {
             actionKeysArray: ["End", "Home", "ArrowDown", "ArrowUp", "Esc", "Enter", "Shift"],
             currentKeysString: "",
             keyClear: null,
-            searchIndex: 0
+            searchIndex: 0,
+            currentOptionId: null
         };
+    },
+    computed:{
+        internalOptions: function(e) {
+            // Add id to each items to allow maping between flatOptions array and options
+            const newArray = [];
+
+            var globalLoopIndex = 0;
+            const originalArray = this.options;
+
+            originalArray.forEach(function(option) {
+                if (Array.isArray(option.value)) {
+                    var subArray = [];
+
+                    option.value.forEach(function(subOption) {
+
+                        subOption["id"] = globalLoopIndex;
+
+                        subArray.push(subOption);
+
+                        globalLoopIndex = globalLoopIndex + 1;
+                    });
+
+                    option['value'] = subArray;
+
+                    newArray.push(option);
+                } else {
+                    option['id'] = globalLoopIndex;
+
+                    newArray.push(option);
+
+                    globalLoopIndex = globalLoopIndex + 1;
+                }
+            });
+
+            return newArray;
+        },
+        flatOptions: function(e) {
+            const flatArray = [];
+            const originalArray = this.options;
+
+            originalArray.forEach(function(option) {
+              if (Array.isArray(option.value)) {
+                flatArray.push(option.value)
+              } else {
+                flatArray.push(option)
+              }
+            });
+
+            return this.flattenDeep(flatArray);
+        }
     },
     watch: {
         value: function(newValue) {
             // If value is not a visible one reset it to first value of list else update the options list
-            const position = this.getObjetIndexByKey(this.options, "value", newValue);
+            var arrayToTest = [];
+
+            if(Array.isArray(this.flatOptions[this.currentPosition].value)) {
+                arrayToTest = this.flatOptions[this.currentPosition].value[0];
+            } else {
+                arrayToTest = this.flatOptions;
+            }
+
+            const position = this.getObjetIndexByKey(arrayToTest, "value", newValue);
+
             if(position === -1) {
                 this.updateCurrentOption(0);
             } else {
                 this.updateCurrentOption(position);
             }
         },
-        options: {
+        flatOptions: {
             immediate: true,
             handler(newValues) {
-                // If value is not a visible one reset it to first value of list else update the options list
-                const position = this.getObjetIndexByKey(newValues, "value", this.internalValue);
-                if(position === -1) {
-                    this.updateCurrentOption(0);
-                    this.$emit("update-value", this.internalValue);
+                // If value is not a visible one reset it to first value of list, else update the options list
+                if(this.internalValue !== "") {
+                    const position = this.getObjetIndexByKey(newValues, "value", this.internalValue);
+                    if(position === -1) {
+                        this.updateCurrentOption(0);
+                        this.$emit("update-value", this.internalValue);
+                    } else {
+                        this.updateCurrentOption(position);
+                    }
                 } else {
-                    this.updateCurrentOption(position);
+                    this.updateCurrentOption(0);
                 }
+
             }
         }
     },
@@ -301,7 +458,7 @@ export default {
          */
         selectOption: function(event) {
             const value = event.target.dataset.value;
-            const position = this.getObjetIndexByKey(this.options, "value", value);
+            const position = this.getObjetIndexByKey(this.flatOptions, "value", value);
 
             this.updateCurrentOption(position);
 
@@ -313,7 +470,7 @@ export default {
          */
         preSelectOption: function(event) {
             const value = event.target.dataset.value;
-            const position = this.getObjetIndexByKey(this.options, "value", value);
+            const position = this.getObjetIndexByKey(this.flatOptions, "value", value);
 
             this.preSelectPosition = position;
         },
@@ -329,8 +486,8 @@ export default {
             }
 
             if (this.currentPosition > 0) {
-                this.currentPosition = this.currentPosition - 1;
-                this.updateCurrentOption(this.currentPosition);
+                var position = this.currentPosition - 1;
+                this.updateCurrentOption(position);
             }
         },
         /**
@@ -343,9 +500,9 @@ export default {
                 this.openList();
             }
 
-            if (this.currentPosition < this.options.length - 1) {
-                this.currentPosition = this.currentPosition + 1;
-                this.updateCurrentOption(this.currentPosition);
+            if (this.currentPosition < this.flatOptions.length - 1) {
+                var position = this.currentPosition + 1;
+                this.updateCurrentOption(position);
             }
         },
         /**
@@ -380,7 +537,7 @@ export default {
             if (this.listOpen === true) {
                 event.preventDefault();
 
-                this.updateCurrentOption(this.options.length - 1);
+                this.updateCurrentOption(this.flatOptions.length - 1);
             }
         },
         /**
@@ -406,11 +563,18 @@ export default {
             var character = key.charAt(0).toLowerCase();
 
             if (!this.currentKeysString) {
-                for (var i = 0; i < this.options.length; i++) {
-                    if (this.options[i].value === this.internalValue) {
-                        this.searchIndex = i;
+
+                if (key === " ") {
+                    this.updateCurrentOption(this.currentPosition);
+                    this.closeList();
+                } else {
+                    for (var i = 0; i < this.flatOptions.length; i++) {
+                        if (this.flatOptions[i].value === this.internalValue) {
+                            this.searchIndex = i;
+                        }
                     }
                 }
+
             }
 
             this.currentKeysString += character;
@@ -419,7 +583,7 @@ export default {
 
             var nextMatch = this.findMatchInRange(
                 this.searchIndex + 1,
-                this.options.length
+                this.flatOptions.length
             );
 
 
@@ -431,7 +595,7 @@ export default {
             }
 
             if(nextMatch) {
-                const position = this.getObjetIndexByKey(this.options, "value", nextMatch.value);
+                const position = this.getObjetIndexByKey(this.flatOptions, "value", nextMatch.value);
                 this.updateCurrentOption(position);
             }
         },
@@ -445,10 +609,10 @@ export default {
             // Find the first item starting with the currentKeysString substring, searching in
             // the specified range of items
             for (var n = startIndex; n < endIndex; n++) {
-                var label = this.options[n].label;
+                var label = this.flatOptions[n].label;
 
                 if (label && label.toLowerCase().indexOf(this.currentKeysString) === 0) {
-                    return this.options[n];
+                    return this.flatOptions[n];
                 }
             }
             return null;
@@ -471,17 +635,45 @@ export default {
          * @param  {int} position [Position of the item to select]
          */
         updateCurrentOption: function (position) {
+            var newPosition = position;
+
+            if (this.flatOptions[position].disabled) {
+                if (this.currentPosition < position) {
+                    newPosition = position + 1;
+                } else if (this.currentPosition > position) {
+                    newPosition = position - 1;
+                }
+            }
+
             // Reset Preselect position
-            this.preSelectPosition = position;
+            this.preSelectPosition = newPosition;
             // Define current position
-            this.currentPosition = position;
-            // Update select label and value
-            let label = this.options[position].label;
+            this.currentPosition = newPosition;
+
+            let label = this.flatOptions[newPosition].label;
             if(this.type === "inputGroupSelect" && label.length > 10) {
                 label = this.truncate(label, 11, "...");
             }
             this.currentOptionLabel = label;
-            this.internalValue = this.options[position].value;
+            this.internalValue = this.flatOptions[newPosition].value;
+            this.currentOptionId = `${this.id}-item-${this.flatOptions[newPosition].id}`;
+
+            const currentOption = document.getElementById(this.currentOptionId);
+
+            if(currentOption !== null) {
+                const currentOptionTop = currentOption.offsetTop;
+                const currentOptionHeight = currentOption.offsetHeight;
+
+                const optionsListHeight = this.$refs.list.offsetHeight;
+
+                if (currentOptionTop >= optionsListHeight) {
+                    this.$refs.list.scrollTop = currentOptionTop;
+                }
+
+                if (currentOptionTop <= this.$refs.list.scrollTop) {
+                    this.$refs.list.scrollTop = currentOptionTop;
+                }
+            }
         },
         /**
          * [updateMobileValue On input mobile change, emit the value with custom event update-value]
@@ -491,7 +683,7 @@ export default {
             this.$emit("update-value", this.internalValue);
 
             // Update Desktop Input Current Option (in case of breakpoint change)
-            const position = this.getObjetIndexByKey(this.options, "value", this.internalValue);
+            const position = this.getObjetIndexByKey(this.flatOptions, "value", this.internalValue);
 
             if (position > -1) {
                 this.updateCurrentOption(position);
@@ -528,6 +720,15 @@ export default {
                 return item[key] === value;
             })[0];
             return array.indexOf(object);
+        },
+        /**
+         * [flattenDeep Return a flat array]
+         * @param  {array} array [The initial array to flat]
+         * @return {array}       [A flatten array]
+         * @url https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat#reduce_and_concat
+         */
+        flattenDeep (array) {
+           return array.reduce((acc, val) => Array.isArray(val) ? acc.concat(this.flattenDeep(val)) : acc.concat(val), []);
         }
     },
 };
