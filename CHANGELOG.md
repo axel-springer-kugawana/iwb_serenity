@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.0.12 - 2019-05-23
+### Changed
+- Input Select: Add option-group support (like optgroup)
+- Input Select: Add disabled option support
+- Input Select: Select an option on space keydown (if it's the first key hit)
+
+### Fixed
+- Input Select: Text transform issue with input-group--select
+
 ## 0.0.11 - 2019-05-14
 ### Changed
 - Change doc logo
@@ -7,7 +16,7 @@
 ### Fixed
 - Display inline error fields
 - Input Select: Update active hover color
-- Input Select: Close all previous opened select when click 
+- Input Select: Close all previous opened select when click
 
 ## 0.0.10 - 2019-04-29
 ### Changed
