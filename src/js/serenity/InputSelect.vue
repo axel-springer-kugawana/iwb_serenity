@@ -292,7 +292,7 @@ export default {
             currentOptionId: null
         };
     },
-    computed:{
+    computed: {
         internalOptions: function(e) {
             // Add id to each items to allow maping between flatOptions array and options
             const newArray = [];
@@ -362,7 +362,6 @@ export default {
             }
         },
         flatOptions: {
-            immediate: true,
             handler(newValues) {
                 // If value is not a visible one reset it to first value of list, else update the options list
                 if(this.internalValue !== "") {
@@ -394,6 +393,14 @@ export default {
 
         screenTest(mediaQueriesList);
         mediaQueriesList.addListener(screenTest);
+
+        const position = this.getObjetIndexByKey(this.flatOptions, "value", this.internalValue);
+        if(position === -1) {
+            this.updateCurrentOption(0);
+            this.$emit("update-value", this.internalValue);
+        } else {
+            this.updateCurrentOption(position);
+        }
     },
     methods: {
         /**
