@@ -386,7 +386,7 @@ Just like columns modifiers, the horizontal modifiers are prefixed by the breakp
 
 ## Vertical modifier
 
-By default all children of a grid are aligned on top of the grid. If you want to align them in the center you can use `vertical--center` on the grid container.
+By default all children of a grid are aligned on top of the grid. If you want to align them in the center you can use `vertical--centered` on the grid container.
 
 Just like columns modifiers, the horizontal modifiers are prefixed by the breakpoint for which they are active.
 
