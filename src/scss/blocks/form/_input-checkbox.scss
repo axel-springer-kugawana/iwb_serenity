@@ -87,3 +87,32 @@
 .input--checkbox__input:disabled + .input--checkbox__label:before {
     border-color: fade-out(#000, .9);
 }
+
+// Fake undeterminate
+.input--checkbox__input:indeterminate + .input--checkbox__label:before {
+    border-color: $secondary;
+    background: $secondary;
+}
+
+.input--checkbox__input:indeterminate + .input--checkbox__label:after {
+    content: "";
+    display: block;
+    position: absolute;
+    fill: #fff;
+    height: 2px;
+    width: 11px;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 100%;
+    color: #fff;
+    margin: auto;
+    opacity: 1;
+    background: url("#{$public-path}images/icons/icon-checkmark-partial.svg") no-repeat;
+}
+
+// Focus State
+.input--checkbox__input:indeterminate:focus + .input--checkbox__label:before {
+    border-color: $primary-dd;
+}
+

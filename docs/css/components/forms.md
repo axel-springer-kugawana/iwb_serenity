@@ -300,17 +300,21 @@ Then use a `field__label--ingroup--inline`class on the label and a `input--radio
 
 Enclose checkbox inputs within a container with the `input--checkbox` class. Then give the `input--checkbox__label` class to the label and the `input--checkbox__input` class to the input itself.
 
+An input checkbox can be checked adding the attribute `checked="checked"`to the input.
+
 An input checkbox can be disabled adding the attribute `disabled="disabled"` to the input.
 
+An input checkbox can be set has indeterminate, but it's impossible to do it with an html attribute. To do so, you need to set the element with Javascript.
+
+
+```js
+inputInstance.indeterminate = true;
+```
+
+[See more about Indeterminate checkbox on Mozzila Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#Indeterminate_state_checkboxes)
+
 <div class="sd-example">
-    <div class="input--checkbox">
-        <input type="checkbox" name="checkboxName01" class="input--checkbox__input" value="value" id="exampleCheckboxId01">
-        <label for="exampleCheckboxId01" class="input--checkbox__label">Input Checkbox</label>
-    </div>
-    <div class="input--checkbox">
-        <input type="checkbox" name="checkboxName02" class="input--checkbox__input" value="value" disabled="disabled" id="exampleCheckboxId02">
-        <label for="exampleCheckboxId02" class="input--checkbox__label">Disabled Input Checkbox</label>
-    </div>
+    <Example-InputCheckbox></Example-InputCheckbox>
 </div>
 
 ```html
@@ -319,8 +323,16 @@ An input checkbox can be disabled adding the attribute `disabled="disabled"` to 
     <label for="exampleCheckboxId01" class="input--checkbox__label">Input Checkbox</label>
 </div>
 <div class="input--checkbox">
-    <input type="checkbox" name="checkboxName02" class="input--checkbox__input" value="value" disabled="disabled" id="exampleCheckboxId02">
-    <label for="exampleCheckboxId02" class="input--checkbox__label">Disabled Input Checkbox</label>
+    <input type="checkbox" name="checkboxName02" class="input--checkbox__input" value="value" id="exampleCheckboxId02" checked="checked">
+    <label for="exampleCheckboxId02" class="input--checkbox__label">Checked Input Checkbox</label>
+</div>
+<div class="input--checkbox">
+    <input type="checkbox" name="checkboxName03" class="input--checkbox__input" value="value" disabled="disabled" id="exampleCheckboxId03">
+    <label for="exampleCheckboxId03" class="input--checkbox__label">Disabled Input Checkbox</label>
+</div>
+<div class="input--checkbox">
+    <input type="checkbox" name="checkboxName04" class="input--checkbox__input" value="value" id="exampleCheckboxId04">
+    <label for="exampleCheckboxId04" class="input--checkbox__label">Indeterminate Input Checkbox</label>
 </div>
 ```
 
@@ -331,7 +343,7 @@ The `input--switch` takes 100% of the width of its container, the label is displ
 To display the checkbox input as a switch, enclose it within a label with the `input--swicth` class.
 Then give the `input--switch__input` class to the input and the `input--switch__label` class to the span containing the label of the input.
 
-An input checkbox can be disabled adding the attribute `disabled="disabled"` to the input.
+An input switch can be disabled adding the attribute `disabled="disabled"` to the input.
 
 <div class="sd-example">
     <label for="exampleSwitchId01" class="input--switch">
