@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.13 - 2019-07-04
+### Changed
+- Input Checbox: Add indeterminate state
+
+### Fixed
+- Fix typo in doc for grid
+
 ## 0.0.12 - 2019-05-23
 ### Changed
 - Input Select: Add option-group support (like optgroup)
