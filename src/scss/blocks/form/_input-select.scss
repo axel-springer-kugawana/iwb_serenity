@@ -23,25 +23,31 @@
 
 .input--select__toggle,
 .input--select--mobile {
-    min-height: 38px;
+    min-height: 40px;
     padding: $size-8 $size-32 $size-8 $size-14;
     border: 2px solid $primary-ll;
     border-radius: 22px;
-    background: $primary-llll url("#{$public-path}images/icons/icon-arrow-bottom.svg") no-repeat right 15px top 50%;
-    background-size: 10px 12px;
+    background: #fff url("#{$public-path}images/icons/icon-arrow-bottom.svg") no-repeat right 15px top 50%;
+    background-size: 8px 8px;
     width: 100%;
     outline: none;
     appearance: none;
     text-align: left;
     font-weight: $font-weight-title;
     font-family: $font-title;
-    font-size: $size-12;
+    font-size: $size-14;
     color: $primary-dd;
     cursor: pointer;
+    transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic, border-color .2s $easeInOutCubic;
+
+    &:hover,
+    &:focus {
+        border-color: $primary-dd;
+    }
 
     &:focus {
         outline: none;
-        border-color: $primary-dd;
+        background-color: fade-out($primary-lll, 0);
     }
 }
 
@@ -157,7 +163,6 @@
 .input--select--mobile {
     width: 100%;
     outline: 0;
-    font-size: $size-16;
 
     &:-moz-focusring {
         color: transparent;
