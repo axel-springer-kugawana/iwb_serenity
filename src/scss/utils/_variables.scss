@@ -99,7 +99,8 @@ $breakpoints: (
     "medium" "(min-width: 768px)",
     "desktop" "(min-width: 992px)",
     "widescreen" "(min-width: 1200px)",
-    "xl" "(min-width: 1400px)"
+    "xl" "(min-width: 1400px)",
+    "below-desktop" "(max-width: 991px)"
 ) !default;
 
 $max-width-x-small: 100% !default;
