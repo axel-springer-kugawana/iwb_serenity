@@ -50,6 +50,11 @@
     text-align: left;
 }
 
+.field__title::first-letter,
+.field__label::first-letter {
+    text-transform: uppercase;
+}
+
 .field__title,
 .field__label,
 .field__description {
