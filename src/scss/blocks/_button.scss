@@ -214,13 +214,9 @@
     background-color: transparent;
     color: $primary-ddd;
     border: 0;
-    font-size: $size-16;
+    font-size: $size-12;
     font-family: $font-title;
     font-weight: $font-weight-title;
-
-    @include media-query("medium") {
-        font-size: $size-12;
-    }
 
     &:focus:not([disabled="disabled"]) {
         outline: none;
@@ -246,14 +242,9 @@
     // Icons
     .button__icon {
         fill: $color;
-        width: $size-16;
-        height: $size-16;
+        width: $size-12;
+        height: $size-12;
         margin-left: $size-4;
-
-        @include media-query("medium") {
-            width: $size-12;
-            height: $size-12;
-        }
     }
 
     .button__icon--left {
