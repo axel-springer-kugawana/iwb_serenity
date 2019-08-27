@@ -8,7 +8,7 @@
 }
 
 .input--checkbox__input {
-    position: absolute;
+    position: relative;
     left: 0;
     opacity: 0;
 }
@@ -17,6 +17,7 @@
     position: relative;
     padding-left: $size-28;
     margin: 0;
+    margin-left: -$size-18;
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
