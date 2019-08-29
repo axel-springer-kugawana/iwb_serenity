@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.0.14 - 2019-08-29
+### Fixed
+- Fix input checkbox position bug when used in group
+
+### Changed
+- Input Select: Update the colors of the input
+- Breakpoints: Add below-desktop breakpoint
+- Form: Force uppercase on the first letter of the field-label
+- Button: Decrease the font-size of button--text on mobile
+
 ## 0.0.13 - 2019-07-04
 ### Changed
 - Input Checbox: Add indeterminate state
