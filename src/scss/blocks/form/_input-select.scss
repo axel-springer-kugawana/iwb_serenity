@@ -63,6 +63,9 @@
     position: absolute;
     left: 10px;
     width: calc(100% - 20px);
+    min-width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: z("dropdown");
     margin-top: $size-8;
     padding: $size-4 0;

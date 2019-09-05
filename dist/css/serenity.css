@@ -1621,6 +1621,9 @@ body {
   position: absolute;
   left: 10px;
   width: calc(100% - 20px);
+  min-width: 200px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1400;
   margin-top: 0.5rem;
   padding: 0.25rem 0;
