@@ -1822,7 +1822,7 @@ body {
   margin-bottom: 0.625rem; }
 
 .input--checkbox__input {
-  position: relative;
+  position: absolute;
   left: 0;
   opacity: 0; }
 
@@ -1830,7 +1830,6 @@ body {
   position: relative;
   padding-left: 1.75rem;
   margin: 0;
-  margin-left: -1.125rem;
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
