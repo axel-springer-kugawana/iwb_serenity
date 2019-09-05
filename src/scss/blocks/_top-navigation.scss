@@ -17,7 +17,6 @@
     @include media-query("desktop") {
         border-bottom: 1px solid $primary-lll;
         box-shadow: 0 10px 30px -10px $primary-lll;
-        padding: 0 $size-16;
     }
 }
 
