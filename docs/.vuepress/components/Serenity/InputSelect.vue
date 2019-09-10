@@ -3,7 +3,7 @@
         <div
             class="input--select input--select--desktop"
             v-if="displayDesktopInput"
-            v-on-clickaway="handleClickAway"
+            v-click-outside="handleClickAway"
             @blur="closeList"
         >
             <button
@@ -113,12 +113,24 @@
 </template>
 <script>
 
-import { directive as onClickaway } from 'vue-clickaway';
-
 export default {
     name: "InputSelect",
     directives: {
-        onClickaway: onClickaway,
+        "click-outside": {
+            bind: function (el, binding, vnode) {
+                el.clickOutsideEvent = function (event) {
+                    // here I check that click was outside the el and his childrens
+                    if (!(el == event.target || el.contains(event.target))) {
+                        // and if it did, call method provided in attribute value
+                        vnode.context[binding.expression](event);
+                    }
+                };
+                document.body.addEventListener('click', el.clickOutsideEvent)
+            },
+            unbind: function (el) {
+                document.body.removeEventListener('click', el.clickOutsideEvent)
+            },
+        }
     },
     props: {
         id: {
