@@ -33,8 +33,7 @@
 .input-group__prepend,
 .input-group__append,
 .input-group__from-to-label,
-.input-group--stepper__button,
-.input-group--select__button {
+.input-group--stepper__button {
     font-family: $font-title;
     font-weight: $font-weight-title;
     font-size: $size-12;
@@ -53,10 +52,6 @@
     background-color: $primary-ll;
 }
 
-.input-group--select__button {
-    background-color: $primary-lll;
-}
-
 .input-group__main--prepend:focus ~ .input-group__prepend,
 .input-group__main--append:focus ~ .input-group__append,
 .input-group__main--append:focus ~ .input-group--stepper__button {
@@ -65,8 +60,7 @@
 
 // Prepend
 .input-group__prepend,
-.input-group--stepper__button--prepend,
-.input-group--select__button--prepend {
+.input-group--stepper__button--prepend {
     padding: 0 $size-10 0 $size-16;
     border-right: 0;
     order: -1;
@@ -180,52 +174,6 @@
     }
 }
 
-.input--select--ingroup {
-    position: static;
-}
-
-.input-group--select__button {
-    cursor: pointer;
-    position: relative;
-    padding-right: 30px;
-    background-image: url("#{$public-path}images/icons/icon-arrow-bottom.svg");
-    background-repeat: no-repeat;
-    background-position: right 15px top 50%;
-    text-transform: none;
-
-    &:focus {
-        outline: none;
-        border-color: $primary-dd;
-    }
-
-    &:focus::after {
-        content: "";
-        display: block;
-        position: absolute;
-        z-index: z("dropdown");
-        top: -2px;
-        right: 0;
-        width: 2px;
-        height: calc(100% + 4px); // 100% + 4px (addition of top and bottom border))
-        background: $primary-dd;
-    }
-
-    &:disabled {
-        background: $grey-95;
-        color: $grey-65;
-        cursor: not-allowed;
-    }
-}
-
-.input-group--select__button--prepend {
-    border-top-left-radius: $inputGroupSelectLargeBorderRadius;
-    border-bottom-left-radius: $inputGroupSelectLargeBorderRadius;
-}
-
-.input-group--select__list {
-    width: auto;
-}
-
 .input-group--select__input {
     width: 100%;
     font-family: $font-title;
@@ -280,7 +228,6 @@
 }
 
 // Input group select size
-.input-group--select__button,
 .input-group--select__submit,
 .input-group--select__input:only-child {
     min-height: $size-48;

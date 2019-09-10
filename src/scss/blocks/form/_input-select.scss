@@ -206,11 +206,3 @@
         display: block;
     }
 }
-
-.input--select--ingroup.input--select--desktop {
-    display: none;
-
-    @include media-query("medium") {
-        display: block;
-    }
-}

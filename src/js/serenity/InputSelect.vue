@@ -1,246 +1,124 @@
 <template>
     <div class="input--select-wrapper">
-        <template v-if="type === 'inputSelectDefault'">
-            <div
-                class="input--select input--select--desktop"
-                v-if="displayDesktopInput"
-                v-click-outside="closeList"
-                @blur="closeList"
+        <div
+            class="input--select input--select--desktop"
+            v-if="displayDesktopInput"
+            v-on-clickaway="closeList"
+            @blur="closeList"
+        >
+            <button
+                type="button"
+                class="input--select__toggle"
+                aria-haspopup="listbox"
+                :id="id"
+                :aria-expanded="listOpen ? 'true' : 'false'"
+                :aria-labelledby="`${inputLabelId} ${currentOptionId}`"
+                @click="toggleList"
+                @keydown.down="handleKeyDown">
+                <span class="input--select__toggle-label">
+                    {{ currentOptionLabel }}
+                </span>
+            </button>
+            <ul
+                tabindex="0"
+                class="input--select__list"
+                :class="`input--select__list--${prefferedOpenDirection}`"
+                role="listbox"
+                v-show="listOpen"
+                :id="`${id}-list`"
+                :style="{ maxHeight: optimizedHeight + 'px' }"
+                :aria-activedescendant="currentOptionId"
+                ref="list"
+                @keydown.esc="closeList"
+                @keydown.enter="closeList"
+                @keydown.up="handleKeyUp"
+                @keydown.down="handleKeyDown"
+                @keydown.space.prevent="handleKeyPress"
+                @keydown.tab="handleKeyTab"
+                @keydown.home="handleKeyHome"
+                @keydown.end="handleKeyEnd"
+                @keyup="handleKeyPress"
             >
-                <button
-                    type="button"
-                    class="input--select__toggle"
-                    aria-haspopup="listbox"
-                    :id="id"
-                    :aria-expanded="listOpen ? 'true' : 'false'"
-                    :aria-labelledby="`${inputLabelId} ${currentOptionId}`"
-                    @click="toggleList"
-                    @keydown.down="handleKeyDown">
-                    <span class="input--select__toggle-label">
-                        {{ currentOptionLabel }}
-                    </span>
-                </button>
-                <ul
-                    tabindex="0"
-                    class="input--select__list"
-                    :class="`input--select__list--${prefferedOpenDirection}`"
-                    role="listbox"
-                    v-show="listOpen"
-                    :id="`${id}-list`"
-                    :style="{ maxHeight: optimizedHeight + 'px' }"
-                    :aria-activedescendant="currentOptionId"
-                    ref="list"
-                    @keydown.esc="closeList"
-                    @keydown.enter="closeList"
-                    @keydown.up="handleKeyUp"
-                    @keydown.down="handleKeyDown"
-                    @keydown.space.prevent="handleKeyPress"
-                    @keydown.tab="handleKeyTab"
-                    @keydown.home="handleKeyHome"
-                    @keydown.end="handleKeyEnd"
-                    @keyup="handleKeyPress"
-                >
-                    <template v-for="(option, index) in internalOptions">
-                        <template v-if="Array.isArray(option.value)">
-                            <li role="group" :aria-labelledby="`option-${id}-groupchild-${index}-label`" :key="`option-${id}-${index}`">
-                                <div :id="`option-${id}-groupchild-${index}-label`" class="input--select__option-group-title">
-                                    {{ option.label }}
-                                </div>
-                                <ul class="input--select__option-group">
-                                    <li
-                                        v-for="(optionGroupChild, subListIndex) in option.value"
-                                        role="option"
-                                        class="input--select__option"
-                                        :class="{' active': internalValue === optionGroupChild.value, 'input--select__option--disabled': optionGroupChild.disabled == true }"
-                                        :key="`option-${id}-groupchild-${index}-${subListIndex}`"
-                                        :id="`${id}-item-${optionGroupChild.id}`"
-                                        :data-value="optionGroupChild.value"
-                                        @click="selectOption"
-                                        @mouseover="preSelectOption"
-                                        :data-disabled="(option.disabled == true) ? true : false"
-                                    >
-                                        {{ optionGroupChild.label }}
-                                    </li>
-                                </ul>
-                            </li>
-                        </template>
-                        <template v-else>
-                            <li
-                                role="option"
-                                class="input--select__option"
-                                :class="{' active': internalValue === option.value, 'input--select__option--disabled': option.disabled == true }"
-                                :key="`option-${id}-${index}`"
-                                :id="`${id}-item-${option.id}`"
-                                :data-value="option.value"
-                                @click="selectOption"
-                                @mouseover="preSelectOption"
-                                :data-disabled="(option.disabled == true) ? true : false">
-                                {{ option.label }}
-                            </li>
-                        </template>
-                    </template>
-
-                </ul>
-            </div>
-
-            <select
-                class="input--select input--select--mobile"
-                v-model="internalValue"
-                :aria-labelledby="inputLabelId"
-                @change="updateMobileValue">
-                <template v-for="(option, index) in options">
+                <template v-for="(option, index) in internalOptions">
                     <template v-if="Array.isArray(option.value)">
-                        <optgroup
-                            :key="`option-${id}-${index}`"
-                            :label="option.label">
-                            <option
-                                v-for="(optionGroupChild, index) in option.value"
-                                :key="`option-${id}-groupchild-${index}`"
-                                :value="optionGroupChild.value"
-                                :disabled="(optionGroupChild.disabled == true) ? true : false">
-                                {{ optionGroupChild.label }}</option>
-                        </optgroup>
+                        <li role="group" :aria-labelledby="`option-${id}-groupchild-${index}-label`" :key="`option-${id}-${index}`">
+                            <div :id="`option-${id}-groupchild-${index}-label`" class="input--select__option-group-title">
+                                {{ option.label }}
+                            </div>
+                            <ul class="input--select__option-group">
+                                <li
+                                    v-for="(optionGroupChild, subListIndex) in option.value"
+                                    role="option"
+                                    class="input--select__option"
+                                    :class="{' active': internalValue === optionGroupChild.value, 'input--select__option--disabled': optionGroupChild.disabled == true }"
+                                    :key="`option-${id}-groupchild-${index}-${subListIndex}`"
+                                    :id="`${id}-item-${optionGroupChild.id}`"
+                                    :data-value="optionGroupChild.value"
+                                    @click="selectOption"
+                                    @mouseover="preSelectOption"
+                                    :data-disabled="(option.disabled == true) ? true : false"
+                                >
+                                    {{ optionGroupChild.label }}
+                                </li>
+                            </ul>
+                        </li>
                     </template>
                     <template v-else>
-                        <option
+                        <li
+                            role="option"
+                            class="input--select__option"
+                            :class="{' active': internalValue === option.value, 'input--select__option--disabled': option.disabled == true }"
                             :key="`option-${id}-${index}`"
-                            :value="option.value"
-                            :disabled="(option.disabled == true) ? true : false">
-                            {{ option.label }}</option>
-                    </template>
-                </template>
-            </select>
-
-        </template>
-        <template v-else-if="type === 'inputGroupSelect'">
-            <div
-                class="input--select input--select--ingroup input--select--desktop"
-                v-if="displayDesktopInput"
-                v-click-outside="closeList"
-                @blur="closeList"
-            >
-                <button
-                    type="button"
-                    class="input-group--select__button input-group--select__button--prepend"
-                    aria-haspopup="listbox"
-                    :id="id"
-                    :aria-expanded="listOpen ? 'true' : 'false'"
-                    :aria-labelledby="`${inputLabelId} ${currentOptionId}`"
-                    @keydown.down="handleKeyDown"
-                    @click="toggleList">
-                    <span class="input--select__toggle-label">
-                        {{ currentOptionLabel }}
-                    </span>
-                </button>
-                <ul
-                    tabindex="0"
-                    class="input--select__list input-group--select__list"
-                    :class="`input--select__list--${prefferedOpenDirection}`"
-                    role="listbox"
-                    v-show="listOpen"
-                    :id="`${id}-list`"
-                    :style="{ maxHeight: optimizedHeight + 'px' }"
-                    :aria-activedescendant="currentOptionId"
-                    ref="list"
-                    @keydown.esc="closeList"
-                    @keydown.enter="closeList"
-                    @keydown.up="handleKeyUp"
-                    @keydown.down="handleKeyDown"
-                    @keydown.tab="handleKeyTab"
-                    @keydown.home="handleKeyHome"
-                    @keydown.end="handleKeyEnd"
-                    @keyup="handleKeyPress"
-                >
-                    <template v-for="(option, index) in internalOptions">
-                        <template v-if="Array.isArray(option.value)">
-                            <li role="group" :aria-labelledby="`option-${id}-groupchild-${index}-label`" :key="`option-${id}-${index}`">
-                                <div :id="`option-${id}-groupchild-${index}-label`" class="input--select__option-group-title">
-                                    {{ option.label }}
-                                </div>
-                                <ul class="input--select__option-group">
-                                    <li
-                                        v-for="(optionGroupChild, subListIndex) in option.value"
-                                        role="option"
-                                        class="input--select__option"
-                                        :class="{' active': internalValue === optionGroupChild.value, 'input--select__option--disabled': optionGroupChild.disabled == true }"
-                                        :key="`option-${id}-${index}`"
-                                        :id="`${id}-item-${optionGroupChild.id}`"
-                                        :data-value="optionGroupChild.value"
-                                        :data-disabled="(option.disabled == true) ? true : false"
-                                        @click="selectOption"
-                                        @mouseover="preSelectOption">
-                                        {{ optionGroupChild.label }}
-                                    </li>
-
-                                </ul>
-                            </li>
-                        </template>
-                        <template v-else>
-                            <li
-                                role="option"
-                                class="input--select__option"
-                                :class="{' active': internalValue === option.value, 'input--select__option--disabled': option.disabled == true }"
-                                :key="`option-${id}-${index}`"
-                                :id="`${id}-item-${index}`"
-                                :data-value="option.value"
-                                :data-disabled="(option.disabled == true) ? true : false"
-                                @click="selectOption"
-                                @mouseover="preSelectOption">
-                                {{ option.label }}
-                            </li>
-                        </template>
-                    </template>
-
-                </ul>
-            </div>
-            <select
-                class="input--select input--select--mobile"
-                v-model="internalValue"
-                :aria-labelledby="inputLabelId"
-                @change="updateMobileValue">
-                <template v-for="(option, index) in options">
-                    <template v-if="Array.isArray(option.value)">
-                        <optgroup
-                            :key="`option-${id}-${index}`"
-                            :label="option.label">
-                            <option
-                                v-for="(optionGroupChild, index) in option.value"
-                                :key="`option-${id}-groupchild-${index}`"
-                                :value="optionGroupChild.value"
-                                :disabled="(optionGroupChild.disabled == true) ? true : false">
-                                {{ optionGroupChild.label }}</option>
-                        </optgroup>
-                    </template>
-                    <template v-else>
-                        <option
-                            :key="`option-${id}-${index}`"
-                            :value="option.value"
-                            :disabled="(option.disabled == true) ? true : false"
-                        >
+                            :id="`${id}-item-${option.id}`"
+                            :data-value="option.value"
+                            @click="selectOption"
+                            @mouseover="preSelectOption"
+                            :data-disabled="(option.disabled == true) ? true : false">
                             {{ option.label }}
-                        </option>
+                        </li>
                     </template>
                 </template>
-            </select>
-        </template>
+
+            </ul>
+        </div>
+
+        <select
+            class="input--select input--select--mobile"
+            v-model="internalValue"
+            :aria-labelledby="inputLabelId"
+            @change="updateMobileValue">
+            <template v-for="(option, index) in options">
+                <template v-if="Array.isArray(option.value)">
+                    <optgroup
+                        :key="`option-${id}-${index}`"
+                        :label="option.label">
+                        <option
+                            v-for="(optionGroupChild, index) in option.value"
+                            :key="`option-${id}-groupchild-${index}`"
+                            :value="optionGroupChild.value"
+                            :disabled="(optionGroupChild.disabled == true) ? true : false">
+                            {{ optionGroupChild.label }}</option>
+                    </optgroup>
+                </template>
+                <template v-else>
+                    <option
+                        :key="`option-${id}-${index}`"
+                        :value="option.value"
+                        :disabled="(option.disabled == true) ? true : false">
+                        {{ option.label }}</option>
+                </template>
+            </template>
+        </select>
     </div>
 </template>
 <script>
 
+import { directive as onClickaway } from 'vue-clickaway';
+
 export default {
     name: "InputSelect",
     directives: {
-        'clickOutside': {
-            bind (el, binding) {
-                el.addEventListener('click', (event) => {
-                    event.stopPropagation();
-                });
-                document.body.addEventListener('click', binding.value);
-            },
-            unbind(el, binding) {
-                document.body.removeEventListener('click', binding.value);
-            }
-        }
+        onClickaway: onClickaway,
     },
     props: {
         id: {
@@ -251,17 +129,13 @@ export default {
             type: Array,
             required: true
         },
-        value: {
-            type: [String, Number],
-            default: ""
-        },
         inputLabelId: {
             type: String,
             required: true
         },
-        type: {
-            type: String,
-            default: "inputSelectDefault"
+        value: {
+            type: [String, Number],
+            default: ""
         },
         mobileBreakpoint: {
             type: String,
@@ -658,9 +532,7 @@ export default {
             this.currentPosition = newPosition;
 
             let label = this.flatOptions[newPosition].label;
-            if(this.type === "inputGroupSelect" && label.length > 10) {
-                label = this.truncate(label, 11, "...");
-            }
+
             this.currentOptionLabel = label;
             this.internalValue = this.flatOptions[newPosition].value;
             this.currentOptionId = `${this.id}-item-${this.flatOptions[newPosition].id}`;

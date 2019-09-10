@@ -78,45 +78,6 @@ Only one level of grouping is possible.
 ></serenityInputSelect>
 ```
 
-## Input Group Select
-
-Input select can also be used inside an **input-group** in association with an input--text.
-
-Init the input-select component with the `type` props set to *inputGroupSelect*. Then wrap it inside a div with both class `input-group` and `input-group--select`.
-
-For more informations about the way to build this element, refer to [Forms: Input Group Select section](../css/components/forms.md#input-group-select).
-
-<div class="sd-example">
-    <Example-InputSelectGroup></Example-InputSelectGroup>
-</div>
-
-```html
-<label class="field__label" id="inputSelectExampleLabelIdGroup" for="inputSelectExampleIdGroup">Group Input Select:</label>
-<div class="input-group input-group--select input-group--select--large">
-    <serenityInputSelect
-        id="inputSelectExampleIdGroup"
-        inputLabelId="inputSelectExampleLabelIdGroup"
-        type="inputGroupSelect"
-        :options="[
-            {'value': 'select-value-01', 'label': 'Jenny'},
-            {'value': 'select-value-02', 'label': 'Boby'},
-            {'value': 'select-value-03', 'label': 'Bob'},
-            {'value': 'select-value-04', 'label': 'John'},
-            {'value': 'select-value-05', 'label': 'Robert'},
-            {'value': 'select-value-06', 'label': 'Marie'},
-            {'value': 'select-value-07', 'label': 'Marc'},
-            {'value': 'select-value-08', 'label': 'Julie'},
-        ]"
-    ></serenityInputSelect>
-    <div class="input-group__main input-group--select__main">
-        <input type="text" class="input-group--select__input" placeholder="Enter a city, a postal code..." />
-        <div class="input-group--select__submit">
-            <button id="searchBoxSubmitButtonDesktop" type="submit" class="button button--primary">Search</button>
-        </div>
-    </div>
-</div>
-```
-
 ## Props
 
 ```json
@@ -175,15 +136,6 @@ For more informations about the way to build this element, refer to [Forms: Inpu
 * *value*:
 
     A string representing the current option (if it match the value key of one of the options).
-
-* *type*:
-
-    *default: inputSelectDefault*
-
-    A string use to define the type of the input select:
-
-        * *inputSelectDefault*: Default input select, display a standalone input.
-        * *inputGroupSelect*: Display a input select intended to be associated with a text input inside a group.
 
 * *mobileBreakpoint*:
 
