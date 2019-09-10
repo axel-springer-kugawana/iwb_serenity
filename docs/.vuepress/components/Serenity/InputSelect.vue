@@ -3,7 +3,7 @@
         <div
             class="input--select input--select--desktop"
             v-if="displayDesktopInput"
-            v-on-clickaway="closeList"
+            v-on-clickaway="handleClickAway"
             @blur="closeList"
         >
             <button
@@ -129,13 +129,13 @@ export default {
             type: Array,
             required: true
         },
-        value: {
-            type: [String, Number],
-            default: ""
-        },
         inputLabelId: {
             type: String,
             required: true
+        },
+        value: {
+            type: [String, Number],
+            default: ""
         },
         mobileBreakpoint: {
             type: String,
@@ -317,17 +317,19 @@ export default {
         /**
          * [closeList Close the options list]
          */
-        closeList: function() {
+        closeList: function(focusOnToggle = true) {
             if(this.listOpen === true) {
                 this.listOpen = false;
 
-                const listToggle = document.getElementById(`${this.id}`);
+                if (focusOnToggle) {
+                    const listToggle = document.getElementById(`${this.id}`);
 
-                // Dirty timeout 0s to makesure listToggle is present in dom and allow focus on it
-                // Could probably be replace by a Vue.nextThick()
-                window.setTimeout(() => {
-                    listToggle.focus();
-                }, 0);
+                    // Dirty timeout 0s to makesure listToggle is present in dom and allow focus on it
+                    // Could probably be replace by a Vue.nextThick()
+                    window.setTimeout(() => {
+                        listToggle.focus();
+                    }, 0);
+                }
 
                 // Each time the list is closed, emit the value to parent
                 this.$emit("update-value", this.internalValue);
@@ -435,6 +437,12 @@ export default {
                     this.findItemByCharacter(key);
                 }
             }
+        },
+        /**
+         * [handleClickAway On click outside the element close the list whitout focusing back to toggleList]
+         */
+        handleClickAway: function() {
+            this.closeList(false);
         },
         /**
          * [findItemByCharacter Find and item based on the first letter of the key press]
