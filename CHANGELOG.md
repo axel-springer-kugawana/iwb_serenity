@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 - 2019-09-12 - Nymphaea caerulea Hotfix 1
+### Fixed
+- Fix issue with vuepress/plugins-container
+
 ## 1.0.0 - 2019-09-12 - Nymphaea caerulea
 ### Changed
 - Input-select: Add a min width and align the list width the middle of the toggle
