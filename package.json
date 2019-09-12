@@ -1,6 +1,6 @@
 {
     "name": "iwb_serenity",
-    "version": "0.0.14",
+    "version": "1.0.0",
     "description": "Immoweb Front-end Framework",
     "main": "dist/js/serenity.min.js",
     "unpkg": "dist/js/serenity.min.js",

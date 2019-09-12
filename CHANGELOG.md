@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.0.0 - 2019-09-12 - Nymphaea caerulea
+### Changed
+- Input-select: Add a min width and align the list width the middle of the toggle
+- Input Select: Remove vue click away (due to issue with double Vue import) and fix the custom directive
+- Various: Update some JS package
+
+### Fixed
+- Top Navigation: Remove unused padding on desktop
+- Input Checkbox: Roleback input--checkbox fix (fix issue apply by commit e8d6dcc)
+- Input Select: Do not focus back on input toggle if click outside the element
+
+### Removed
+- Input-Select: Remove input-select in group
+
 ## 0.0.14 - 2019-08-29
 ### Fixed
 - Fix input checkbox position bug when used in group
