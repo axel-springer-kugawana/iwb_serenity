@@ -54,7 +54,8 @@
         "stylelint": "^9.10.1",
         "uglifyjs-webpack-plugin": "^2.2.0",
         "vue-loader": "^15.7.1",
-        "vuepress": "^1.0.4",
+        "vuepress": "^0.14.8",
+        "vuepress-plugin-container": "^2.0.2",
         "webpack": "^4.39.3",
         "webpack-cli": "^3.3.8",
         "webpack-glob-entry": "^2.1.1"
@@ -70,7 +71,6 @@
         "Explorer >= 11"
     ],
     "dependencies": {
-        "vue": "^2.6.10",
-        "vuepress-plugin-container": "^2.0.2"
+        "vue": "^2.6.10"
     }
 }
