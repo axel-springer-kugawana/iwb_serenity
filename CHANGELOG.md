@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.2 - 2019-09-18 - Nymphaea caerulea Hotfix 2
+### Fixed
+- Input-select: Put the list dropdown higher than top-navigation
+- Input-select: Close the list on scroll outside
+
+### Changed
+- Role back vue-press version (was causing some issue on documentation generation)
+
 ## 1.0.1 - 2019-09-12 - Nymphaea caerulea Hotfix 1
 ### Fixed
 - Fix issue with vuepress/plugins-container
