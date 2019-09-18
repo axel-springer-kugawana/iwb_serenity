@@ -175,7 +175,8 @@ export default {
             currentKeysString: "",
             keyClear: null,
             searchIndex: 0,
-            currentOptionId: null
+            currentOptionId: null,
+            isGlobalScrollEnable: true
         };
     },
     computed: {
@@ -324,6 +325,9 @@ export default {
             // Could probably be replace by a Vue.nextThick()
             window.setTimeout(() => {
                 listbox.focus();
+
+                window.addEventListener("wheel", this.handleScrollWhenListIsOpened, {passive: false});
+                window.addEventListener("DOMMouseScroll", this.handleScrollWhenListIsOpened, {passive: false});
             }, 0);
         },
         /**
@@ -343,8 +347,34 @@ export default {
                     }, 0);
                 }
 
+                window.removeEventListener("wheel", this.handleScrollWhenListIsOpened);
+                window.removeEventListener("DOMMouseScroll", this.handleScrollWhenListIsOpened);
                 // Each time the list is closed, emit the value to parent
                 this.$emit("update-value", this.internalValue);
+            }
+        },
+        /**
+         * [handleScrollWhenListIsOpened If the mouse is outside the input-select list during the scroll, close the list ]
+         */
+        handleScrollWhenListIsOpened: function(event) {
+            function isDescendant(parent, child) {
+                var node = child.parentNode;
+                while (node != null) {
+                    if (node == parent) {
+                        return true;
+                    }
+                    node = node.parentNode;
+                }
+                return false;
+            }
+
+            var selectList = document.getElementById(`${this.id}-list`);
+            var isTargetIsDescendantOfSelectList = isDescendant(selectList, event.target);
+
+            if(!isTargetIsDescendantOfSelectList) {
+                if(event.target.id !== `${this.id}-list`) {
+                    this.closeList();
+                }
             }
         },
         /**
