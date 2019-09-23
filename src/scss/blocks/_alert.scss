@@ -7,13 +7,14 @@
     margin: 24px 0;
     background-color: $grey-95;
     color: $grey-55;
-    padding: 24px;
+    padding: 20px;
     border-radius: 3px;
+    font-family: "Montserrat", sans-serif;
 }
 
 .alert--success {
     background-color: $functional-success;
-    color: #fff;
+    color: $primary-dd;
 }
 
 .alert--error {
