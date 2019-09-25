@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.3 - 2019-09-25 - Nymphaea caerulea Improvement
+### Changed
+- Alerts: Change font weight body to font weight title and decrease padding to display smaller height
+
+### Removed
+- Alerts : Remove border radius
+
 ## 1.0.2 - 2019-09-18 - Nymphaea caerulea Hotfix 2
 ### Fixed
 - Input-select: Put the list dropdown higher than top-navigation
