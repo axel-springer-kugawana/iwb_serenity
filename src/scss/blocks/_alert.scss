@@ -4,12 +4,12 @@
 
 .alert {
     width: 100%;
-    margin: 24px 0;
+    margin: $size-24 0;
     background-color: $grey-95;
     color: $grey-55;
-    padding: 20px;
-    border-radius: 3px;
-    font-family: "Montserrat", sans-serif;
+    padding: $size-18;
+    font-family: $font-title;
+    font-weight: $font-weight-title;
 }
 
 .alert--success {
