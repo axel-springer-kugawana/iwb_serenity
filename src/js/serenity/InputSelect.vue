@@ -12,7 +12,7 @@
                 aria-haspopup="listbox"
                 :id="id"
                 :aria-expanded="listOpen ? 'true' : 'false'"
-                :aria-labelledby="`${inputLabelId} ${currentOptionId}`"
+                :aria-labelledby="`${inputLabelId} ${id}`"
                 @click="toggleList"
                 @keydown.down="handleKeyDown">
                 <span class="input--select__toggle-label">
@@ -20,7 +20,7 @@
                 </span>
             </button>
             <ul
-                tabindex="0"
+                tabindex="-1"
                 class="input--select__list"
                 :class="`input--select__list--${prefferedOpenDirection}`"
                 role="listbox"
@@ -28,6 +28,7 @@
                 :id="`${id}-list`"
                 :style="{ maxHeight: optimizedHeight + 'px' }"
                 :aria-activedescendant="currentOptionId"
+                :aria-labelledby="`${inputLabelId}`"
                 ref="list"
                 @keydown.esc="closeList"
                 @keydown.enter="closeList"
@@ -216,7 +217,7 @@ export default {
         },
         flatOptions: function(e) {
             const flatArray = [];
-            const originalArray = this.options;
+            const originalArray = this.internalOptions;
 
             originalArray.forEach(function(option) {
               if (Array.isArray(option.value)) {
