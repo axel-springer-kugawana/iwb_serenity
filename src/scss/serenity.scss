@@ -10,9 +10,9 @@
 // to a block
 // ex: Variables, mixin, etc
 @import "utils/functions";
+@import "utils/sizes";
 @import "utils/variables";
 @import "utils/mixins";
-@import "utils/sizes";
 
 //====== Base ======
 // Various configuration or element which are use everywhere on the project (not depending on block

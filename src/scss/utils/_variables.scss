@@ -80,9 +80,9 @@ $grey-50: #808080 !default;
 
 // Form & buttons
 // ---------------------
-$inputBorderRadius: 20px !default;
+$inputBorderRadius: $size-20 !default;
 $buttonBorderRadius: $inputBorderRadius !default;
-$inputGroupSelectLargeBorderRadius: 24px !default;
+$inputGroupSelectLargeBorderRadius: $size-24 !default;
 
 // Responsive
 // ---------------------
@@ -93,25 +93,43 @@ $inputGroupSelectLargeBorderRadius: 24px !default;
  *
  * @warning: xl breakpoint should only be used for gallery modal
  */
+// $breakpoints: (
+//     "x-small" "(max-width: 575px)",
+//     "small" "(min-width: 576px)",
+//     "medium" "(min-width: 768px)",
+//     "desktop" "(min-width: 992px)",
+//     "widescreen" "(min-width: 1200px)",
+//     "xl" "(min-width: 1400px)",
+//     "below-desktop" "(max-width: 991px)"
+// ) !default;
+
+// $max-width-x-small: 100% !default;
+// $max-width-small: 540px !default;
+// $max-width-medium: 720px !default;
+// $max-width-desktop: 960px !default;
+// $max-width-widescreen: 1140px !default;
+
+// TMP Breakpoints test
+// ---------------------
 $breakpoints: (
-    "x-small" "(max-width: 575px)",
-    "small" "(min-width: 576px)",
-    "medium" "(min-width: 768px)",
-    "desktop" "(min-width: 992px)",
-    "widescreen" "(min-width: 1200px)",
-    "xl" "(min-width: 1400px)",
-    "below-desktop" "(max-width: 991px)"
+    "x-small" "(max-width: 35.93rem)", // 575px
+    "small" "(min-width: 36rem)", // 576px
+    "medium" "(min-width: 48rem)", // 768px
+    "desktop" "(min-width: 62rem)", // 992px
+    "widescreen" "(min-width: 75rem)", // 1200px
+    "xl" "(min-width: 87.5rem)", // 1400px
+    "below-desktop" "(max-width: 61.93rem)" // 991px
 ) !default;
 
 $max-width-x-small: 100% !default;
-$max-width-small: 540px !default;
-$max-width-medium: 720px !default;
-$max-width-desktop: 960px !default;
-$max-width-widescreen: 1140px !default;
+$max-width-small: 33.75rem !default;
+$max-width-medium: 45rem !default;
+$max-width-desktop: 60rem !default;
+$max-width-widescreen: 71.25rem !default;
 
 // Grid
 $columns-amount: 12 !default;
-$gutter: 20px !default;
+$gutter: 1.25rem !default;
 
 $max-column-width-small: calc(($max-width-small - ($gutter * $columns-amount)) / $columns-amount);
 $max-column-width-medium: ($max-width-medium - ($gutter * $columns-amount)) / $columns-amount;
