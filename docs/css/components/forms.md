@@ -88,21 +88,21 @@ For a more complex layout (3+ columns) or different layout per breakpoint, use t
 
 ## Error messages
 
-Fields can contain error messages (e.g. to show validation errors related to the input value). Declare a tag containing these messages with the `field__error` class. The error message is prefixed by a "danger"-type icon.
+Fields can contain error messages (e.g. to show validation errors related to the input value). Declare a tag containing these messages with the `field__error` class. Link the error tag and the input with an `aria-labbelledby` refering to the error tag id. Don't forget to add `aria-invalid="true"` on the input. The error message is prefixed by a "danger"-type icon.
 
 <div class="sd-example">
     <div class="field">
-        <label for="exampleInputId05" class="field__label">Label goes here</label>
-        <input id="exampleInputId05" class="input--text" value="text goes here">
-        <p class="field__error">Error message goes here</p>
+        <label id="exampleInput05LabelId" for="exampleInputId05" class="field__label">Label of the Input</label>
+        <input id="exampleInputId05" class="input--text" value="" aria-labelledby="exampleInput05LabelId exampleInput05ErrorId" aria-invalid="true">
+        <p id="exampleInput05ErrorId" class="field__error">Error message for input</p>
     </div>
 </div>
 
 ```html
 <div class="field">
-    <label for="exampleInputId05" class="field__label">Label goes here</label>
-    <input id="exampleInputId05" class="input--text" value="text goes here">
-    <p class="field__error">Error message goes here</p>
+    <label id="exampleInput05LabelId" for="exampleInputId05" class="field__label">Label of the Input</label>
+    <input id="exampleInputId05" class="input--text" value="" aria-labelledby="exampleInput05LabelId exampleInput05ErrorId" aria-invalid="true">
+    <p id="exampleInput05ErrorId" class="field__error">Error message for input</p>
 </div>
 ```
 
