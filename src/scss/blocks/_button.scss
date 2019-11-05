@@ -16,7 +16,7 @@
         text-decoration: none;
     }
 
-    &:focus:not([disabled="disabled"]) {
+    &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
         outline: 2px solid $primary-ddd;
     }
 }
@@ -40,7 +40,9 @@
 
 // Disable state
 %button-disable,
-.button:disabled {
+.button:disabled,
+.button[aria-disabled="true"],
+.button.button-disabled {
     outline: none;
     cursor: not-allowed;
     pointer-events: none;
@@ -72,11 +74,12 @@
     transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic;
 
     // Hover, focus, active interactions
-    &:hover:not([disabled="disabled"]) {
+    &:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
         color: #fff;
     }
 
-    &:focus:not([disabled="disabled"]) {
+    &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]),
+    &.button-disabled:focus:not([disabled="disabled"]):not([aria-disabled="true"]) {
         outline: none;
 
         @if $theme == "dark" {
@@ -87,14 +90,16 @@
         }
     }
 
-    &:active:not([disabled="disabled"]) {
+    &:active:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
         border-color: color-ddd($color);
         background-color: color-ddd($color);
     }
 
     // Disabled state
     &:disabled,
-    &[disabled="disabled"] {
+    &[disabled="disabled"],
+    &[aria-disabled="true"],
+    &.button-disabled {
         background-color: $grey-95;
         border-color: $grey-95;
     }
@@ -141,33 +146,42 @@
         fill: $color;
     }
 
-
     // Hover, focus, active interactions
-    &:hover:not([disabled="disabled"]) {
+    &:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
         color: #fff;
         background-color: $color;
     }
 
-    &:hover:not([disabled="disabled"]) .button__icon {
+    &:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) .button__icon {
         fill: #fff;
     }
 
-    &:focus:not([disabled="disabled"]),
+    &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]),
     &.button--active {
-        outline: none;
 
         @if $theme == "dark" {
             background-color: transparent;
-            border-color: #fff;
             color: #fff;
         }
         @else {
             background-color: $color;
+        }
+    }
+
+    &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]),
+    &.button-disabled:focus:not([aria-disabled="true"]),
+    &.button--active {
+        outline: none;
+
+        @if $theme == "dark" {
+            border-color: #fff;
+        }
+        @else {
             border-color: $primary-ddd;
         }
     }
 
-    &:focus:not([disabled="disabled"]) .button__icon,
+    &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) .button__icon,
     &.button--active .button__icon {
         @if $theme == "dark" {
             fill: #fff;
@@ -177,7 +191,7 @@
         }
     }
 
-    &:active:not([disabled="disabled"]) {
+    &:active:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
         border-color: color-ddd($color);
         background-color: transparent;
 
@@ -189,18 +203,22 @@
         }
     }
 
-    &:active:not([disabled="disabled"]) .button__icon {
+    &:active:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) .button__icon {
         fill: color-ddd($color);
     }
 
     // Disabled state
     &:disabled,
-    &[disabled="disabled"] {
+    &[disabled="disabled"],
+    &[aria-disabled="true"],
+    &.button-disabled {
         border-color: $grey-95;
     }
 
     &:disabled .button__icon,
-    &[disabled="disabled"] .button__icon {
+    &[disabled="disabled"] .button__icon,
+    &[aria-disabled="true"] .button__icon,
+    &.button-disabled .button__icon {
         fill: $grey-65;
     }
 }
@@ -218,24 +236,29 @@
     font-family: $font-title;
     font-weight: $font-weight-title;
 
-    &:focus:not([disabled="disabled"]) {
-        outline: none;
-        box-shadow: 0 -1px 0 0 $primary-ddd inset;
-    }
-
-    &:hover:not([disabled="disabled"]) {
+    &:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
         box-shadow: 0 -1px 0 0 $color inset;
         color: $primary-ddd;
     }
 
-    &:active:not([disabled="disabled"]) {
+    &:focus:not([disabled="disabled"]):not([aria-disabled="true"]) {
+        box-shadow: 0 -1px 0 0 $primary-ddd inset;
+    }
+
+    &:active:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
         box-shadow: 0 -1px 0 0 color-ddd($color) inset;
+    }
+
+    &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
+        outline: none;
     }
 
     &:disabled,
     &[disabled="disabled"],
     &:disabled .button__icon,
-    &[disabled="disabled"] .button__icon {
+    &[disabled="disabled"] .button__icon,
+    &[aria-disabled="true"] .button__icon,
+    &.button-disabled .button__icon {
         color: $grey-65;
     }
 
@@ -252,12 +275,14 @@
         margin-left: 0;
     }
 
-    &:active:not([disabled="disabled"]) .button__icon {
+    &:active:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) .button__icon {
         fill: color-ddd($color);
     }
 
     &:disabled .button__icon,
-    &[disabled="disabled"] .button__icon {
+    &[disabled="disabled"] .button__icon,
+    &[aria-disabled="true"] .button__icon,
+    &.button-disabled .button__icon {
         fill: $grey-65;
     }
 }
@@ -271,7 +296,6 @@
     padding: 0;
     cursor: pointer;
 
-
     @if $outline != "default" {
         &:focus {
             outline: $outline;
@@ -279,7 +303,9 @@
     }
 
     &:disabled,
-    &[disabled="disabled"] {
+    &[disabled="disabled"],
+    &[aria-disabled="true"],
+    &.button-disabled {
         cursor: not-allowed;
     }
 }
