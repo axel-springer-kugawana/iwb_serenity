@@ -12,7 +12,7 @@
     padding: $size-4 $size-8 $size-16;
     resize: none;
     height: auto;
-    min-height: 100px;
+    min-height: $size-100;
     overflow: hidden;
 
     &:focus {
@@ -43,6 +43,6 @@
 
 .text-area__counter {
     position: absolute;
-    right: 9px;
-    bottom: 6px;
+    right: $size-8;
+    bottom: $size-6;
 }
