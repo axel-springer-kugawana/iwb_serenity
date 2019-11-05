@@ -55,18 +55,32 @@ All buttons can have a disabled state by adding the attribute *disabled="disable
 If you need to use the disabled state on an ```<a>``` element, keep in mind that it behaves a bit differently than a ```<button>```:
 
 ::: warning
-* `<a>`s don’t support the disabled attribute, so you must add the `.button-disable` class to make it visually appear disabled.
-* Disabled buttons should include the `aria-disabled="true"` attribute to indicate the state of the element to accessibility devices.
+* `<a>` don’t support the disabled attribute, so you must add the `.button-disabled` class to make it visually appear disabled.
+* Disabled buttons link should include the `aria-disabled="true"` attribute to indicate the state of the element to accessibility devices. Eventually a `tabindex=-'1'`could be add.
 :::
 
-<a href="#" class="button button--primary button-disable" aria-disabled="true" tabindex="-1" role="button">Primary button</a>
-<a href="#" class="button button--secondary button-disable" aria-disabled="true" tabindex="-1" role="button">Secondary button</a>
-<a href="#" class="button button--text button-disable" aria-disabled="true" tabindex="-1" role="button">Text button</a>
+<a href="" class="button button--primary button-disabled" aria-disabled="true" tabindex="-1" role="button">Primary button</a>
+<a href="" class="button button--secondary button-disabled" aria-disabled="true" tabindex="-1" role="button">Secondary button</a>
+<a href="" class="button button--text button-disabled" aria-disabled="true" tabindex="-1" role="button">Text button</a>
 
 ```html
-<a href="#" class="button button--primary button-disable" aria-disabled="true" tabindex="-1" role="button">Primary button</a>
-<a href="#" class="button button--secondary button-disable" aria-disabled="true" tabindex="-1" role="button">Secondary button</a>
-<a href="#" class="button button--text button-disable" aria-disabled="true" tabindex="-1" role="button">Text button</a>
+<a href="#" class="button button--primary button-disabled" aria-disabled="true" tabindex="-1" role="button">Primary button</a>
+<a href="#" class="button button--secondary button-disabled" aria-disabled="true" tabindex="-1" role="button">Secondary button</a>
+<a href="#" class="button button--text button-disabled" aria-disabled="true" tabindex="-1" role="button">Text button</a>
+```
+
+:::tip Note
+In some case you cannot use the `disabled` html or aria attribute. (e.g. the button should be focusable for accessible reason), but you still need to give it a disabled style. In this case the `.button-disabled` class alone can also be used. Note that the button is still focusable so he have a focus style.
+:::
+
+<button class="button button--primary button-disabled">Primary button</button>
+<button class="button button--secondary button-disabled">Secondary button</button>
+<button class="button button--text button-disabled">Text button</button>
+
+```html
+<button class="button button--primary button-disabled">Primary button</button>
+<button class="button button--secondary button-disabled">Secondary button</button>
+<button class="button button--text button-disabled">Text button</button>
 ```
 
 ## Button size
