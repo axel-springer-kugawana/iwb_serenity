@@ -10,7 +10,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 56px;
+    min-height: 3.5rem;
     z-index: z("top-navigation");
     background: #fff;
 
@@ -52,7 +52,7 @@
 // Top Navigation Logo
 // ---------------------
 .top-navigation__logo {
-    width: 118px;
+    width: 7.375rem; // 118px
     display: inline-block;
 
     @include media-query("desktop") {
@@ -61,7 +61,7 @@
     }
 
     @include media-query("widescreen") {
-        width: 197px;
+        width: 12.3125rem; // 197px
         margin-right: $gutter * 2;
     }
 }

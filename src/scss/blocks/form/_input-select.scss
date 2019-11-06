@@ -26,9 +26,9 @@
     min-height: 40px;
     padding: $size-8 $size-32 $size-8 $size-14;
     border: 2px solid $primary-ll;
-    border-radius: 22px;
-    background: #fff url("#{$public-path}images/icons/icon-arrow-bottom.svg") no-repeat right 15px top 50%;
-    background-size: 8px 8px;
+    border-radius: $size-22;
+    background: #fff url("#{$public-path}images/icons/icon-arrow-bottom.svg") no-repeat right $size-15 top 50%;
+    background-size: $size-8 $size-8;
     width: 100%;
     outline: none;
     appearance: none;

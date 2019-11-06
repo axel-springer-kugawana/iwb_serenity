@@ -49,9 +49,9 @@
     display: block;
     position: absolute;
     fill: #fff;
-    height: 11px;
-    width: 11px;
-    left: 4px;
+    height: $size-11;
+    width: $size-11;
+    left: $size-4;
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
@@ -99,9 +99,9 @@
     display: block;
     position: absolute;
     fill: #fff;
-    height: 2px;
-    width: 11px;
-    left: 4px;
+    height: $size-2;
+    width: $size-11;
+    left: $size-4;
     top: 50%;
     transform: translateY(-50%);
     line-height: 100%;
