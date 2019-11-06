@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.0 - 2019-11-06 - Hevea brasiliensis
+### Fixed
+- Input-select: Input Select: Fix issue with computed flat array option (now contain id for each options)
+
+### Changed
+- Convert some fixed size (PX) to relative one (REM) (Form element, mediaqueries)
+- Buttons: Refactor button-disable style and behavior
+- Forms: Adapt documentation for error-field
+- README: Update with instruction to test serenity locally in your project
+
 ## 1.0.3 - 2019-09-25 - Nymphaea caerulea Improvement
 ### Changed
 - Alerts: Change font weight body to font weight title and decrease padding to display smaller height
