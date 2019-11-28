@@ -37,10 +37,10 @@
     font-family: $font-title;
     font-weight: $font-weight-title;
     font-size: $size-12;
-    color: $primary-dd;
+    color: $primary-blue-d;
     text-transform: uppercase;
     line-height: $size-36;
-    border: 2px solid $primary-ll;
+    border: 2px solid $primary-blue-l;
     box-shadow: 0 0 0 2px inset #fff;
     min-height: $size-40;
 }
@@ -49,13 +49,13 @@
 .input-group__append,
 .input-group__from-to-label,
 .input-group--stepper__button {
-    background-color: $primary-ll;
+    background-color: $primary-blue-lll;
 }
 
 .input-group__main--prepend:focus ~ .input-group__prepend,
 .input-group__main--append:focus ~ .input-group__append,
 .input-group__main--append:focus ~ .input-group--stepper__button {
-    border-color: $primary-dd;
+    border-color: $primary-blue-d;
 }
 
 // Prepend
@@ -119,7 +119,7 @@
 .input-group.focused .input-group__to,
 .input-group.focused .input-group__from-to-label,
 .input-group.focused .input-group--stepper__button {
-    border-color: $primary-dd;
+    border-color: $primary-blue-d;
 }
 
 // Stepper
@@ -134,7 +134,7 @@
 
     &:focus {
         outline: none;
-        border-color: $primary-dd;
+        border-color: $primary-blue-d;
     }
 
     &:focus::after {
@@ -144,7 +144,7 @@
         top: -2px;
         width: 2px;
         height: calc(100% + 4px); // 100% + 4px (addition of top and bottom border))
-        background: $primary-dd;
+        background: $primary-blue-d;
     }
 
     &:disabled {
@@ -178,8 +178,8 @@
     width: 100%;
     font-family: $font-title;
     background: #fff;
-    color: $primary-dd;
-    border: 2px solid $primary-ll;
+    color: $primary-blue-d;
+    border: 2px solid $primary-blue-l;
     border-right: 0;
     border-top-left-radius: $inputGroupSelectLargeBorderRadius;
     border-bottom-left-radius: $inputGroupSelectLargeBorderRadius;
@@ -190,28 +190,23 @@
     outline: none;
 
     &:only-child {
-        border-right: 2px solid $primary-ll;
+        border-right: 2px solid $primary-blue-l;
         border-top-right-radius: $inputBorderRadius;
         border-bottom-right-radius: $inputBorderRadius;
     }
 
     &:focus {
-        border-color: $primary-dd;
+        border-color: $primary-blue-d;
 
         @include media-query("desktop") {
-            box-shadow: 4px 0 0 -2px $primary-ddd inset;
+            box-shadow: 4px 0 0 -2px $primary-blue-d inset;
         }
     }
 
     // Placeholder Style
     &::placeholder {
-        color: $primary-dd;
+        color: $primary-blue-l;
         opacity: .3;
-    }
-
-    &:disabled {
-        background: $primary-llll;
-        cursor: not-allowed;
     }
 
     @include media-query("desktop") {
@@ -241,10 +236,10 @@
 
 .input-group--select__submit {
     padding: 2px;
-    border: 2px solid $primary-ll;
+    border: 2px solid $primary-blue-l;
     border-left: 0;
 }
 
 .input-group--select__input:focus ~ .input-group--select__submit {
-    border-color: $primary-dd;
+    border-color: $primary-blue-d;
 }

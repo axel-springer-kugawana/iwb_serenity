@@ -65,7 +65,7 @@
 .field__label,
 .field__description,
 .field__label--ingroup {
-    color: $primary-dd;
+    color: $secondary-grey;
 }
 
 .field__description,
@@ -75,7 +75,7 @@
 
 // Label Icon
 .label__icon {
-    fill: $primary-dd;
+    fill: $primary-blue-dd;
 }
 
 .label__icon,
@@ -98,7 +98,7 @@
 .field__label--ingroup--inline {
     margin-bottom: $size-4;
     font-size: $size-16;
-    color: $primary-dd;
+    color: $secondary-grey;
 
     @include media-query("medium") {
         width: auto;
@@ -136,7 +136,7 @@
 // ---------------------
 .field__error {
     position: relative;
-    color: $primary-dd;
+    color: $primary-blue-dd;
     font-size: $size-16;
     padding-left: $size-24;
     margin: $size-4 0 0 0;

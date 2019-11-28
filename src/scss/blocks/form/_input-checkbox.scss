@@ -23,7 +23,7 @@
     font-weight: $font-weight-title;
     font-family: $font-title;
     font-size: $size-12;
-    color: $primary-dd;
+    color: $primary-blue-dd;
 }
 
 // Fake Checkbox Input
@@ -33,7 +33,7 @@
     border-radius: 2px;
     height: $size-18;
     width: $size-18;
-    border: 2px solid fade-out($primary, .7);
+    border: 2px solid fade-out($primary-blue, .7);
     left: 0;
     margin: auto;
     position: absolute;
@@ -61,8 +61,8 @@
 }
 
 .input--checkbox__input:checked + .input--checkbox__label:before {
-    border-color: $secondary;
-    background: $secondary;
+    border-color: $primary-blue;
+    background: $primary-blue;
 }
 
 .input--checkbox__input:checked + .input--checkbox__label:after {
@@ -71,11 +71,11 @@
 
 // Focus State
 .input--checkbox__input:focus + .input--checkbox__label:before {
-    border-color: $primary-dd;
+    border-color: $primary-blue-d;
 }
 
 .input--checkbox__input:checked:focus + .input--checkbox__label:before {
-    border-color: $primary-dd;
+    border-color: $primary-blue-d;
 }
 
 // Disabled State
@@ -90,8 +90,8 @@
 
 // Fake undeterminate
 .input--checkbox__input:indeterminate + .input--checkbox__label:before {
-    border-color: $secondary;
-    background: $secondary;
+    border-color: $primary-blue;
+    background: $primary-blue;
 }
 
 .input--checkbox__input:indeterminate + .input--checkbox__label:after {
@@ -113,6 +113,6 @@
 
 // Focus State
 .input--checkbox__input:indeterminate:focus + .input--checkbox__label:before {
-    border-color: $primary-dd;
+    border-color: $primary-blue-d;
 }
 

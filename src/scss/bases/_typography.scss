@@ -28,33 +28,25 @@ h1,
 .title--1,
 %title--1 {
     @extend %title;
-    color: $primary-dd;
-    font-size: $size-28;
+    color: $primary-blue-dd;
+    font-size: $size-24;
 
-    @include media-query("medium") {
-        font-size: $size-36;
+    @include media-query("desktop") {
+        font-size: $size-30;
     }
 }
 
 // H2
 h2,
 .title--2,
-%title--2,
-.title--2--dark,
-%title--2--dark {
-    @extend %title;
-    font-size: $size-24;
-}
-
-h2,
-.title--2,
 %title--2 {
-    color: $primary;
-}
+    @extend %title;
+    color: $primary-blue-dd;
+    font-size: $size-20;
 
-.title--2--dark,
-%title--2--dark {
-    color: $primary-dd;
+    @include media-query("desktop") {
+        font-size: $size-24;
+    }
 }
 
 // H3
@@ -62,54 +54,39 @@ h3,
 .title--3,
 %title--3 {
     @extend %title;
-    font-size: $size-20;
-    color: $primary;
+    color: $primary-blue-dd;
+    font-size: $size-18;
+
+    @include media-query("desktop") {
+        font-size: $size-20;
+    }
 }
 
 // H4
 h4,
 .title--4,
-%title--4,
-.title--4--dark,
-%title--4--dark {
+%title--4 {
     @extend %title;
+    color: $primary-blue-dd;
     font-size: $size-16;
 
-    @include media-query("medium") {
+    @include media-query("desktop") {
         font-size: $size-18;
     }
 }
 
-h4,
-.title--4,
-%title--4 {
-    color: $primary;
-}
-
-.title--4--dark,
-%title--4--dark {
-    color: $primary-dd;
-}
 
 // H5
 h5,
 .title--5,
-%title--5,
-.title--5--dark,
-%title--5--dark {
-    @extend %title;
-    font-size: $size-16;
-}
-
-h5,
-.title--5,
 %title--5 {
-    color: $primary;
-}
+    @extend %title;
+    color: $primary-blue-dd;
+    font-size: $size-14;
 
-.title--5--dark,
-%title--5--dark {
-    color: $primary-dd;
+    @include media-query("desktop") {
+        font-size: $size-16;
+    }
 }
 
 // H6
@@ -119,7 +96,7 @@ h6,
     font-family: $font-body;
     font-style: italic;
     font-weight: 700;
-    color: $primary-dd;
+    color: $primary-blue-dd;
     font-size: $size-16;
 }
 
@@ -135,12 +112,12 @@ small,
 
 .small--primary,
 .small--xs--primary {
-    color: $primary;
+    color: $primary-blue;
 }
 
 .small--dark,
 .small--xs--dark {
-    color: $primary-ddd;
+    color: $primary-blue-dd;
 }
 
 .small--xs,
@@ -185,7 +162,7 @@ a:not([href]):not([tabindex]) {
 // Text Color Utility
 // ---------------------
 .text-primary {
-    color: $primary;
+    color: $primary-blue;
 }
 
 // Position Utility

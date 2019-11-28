@@ -4,7 +4,7 @@
 
 .input--textarea {
     display: block;
-    border: 2px solid $primary-ll;
+    border: 2px solid $primary-blue-l;
     border-radius: 8px;
     background: #fff;
     width: 100%;
@@ -16,7 +16,7 @@
     overflow: hidden;
 
     &:focus {
-        border-color: $primary-dd;
+        border-color: $primary-blue-d;
     }
 }
 

@@ -17,7 +17,7 @@
     }
 
     &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
-        outline: 2px solid $primary-ddd;
+        outline: 2px solid $primary-blue-d;
     }
 }
 
@@ -64,7 +64,7 @@
     position: relative;
     padding: $size-6 $size-12; // We substract 2px to padding (regarding the frontify doc) to take in account the 2px border
     background-color: $color;
-    color: $primary-ddd;
+    color: $primary-blue-dd;
     border: 2px solid $color;
     border-radius: $buttonBorderRadius;
     text-transform: uppercase;
@@ -86,7 +86,7 @@
             border-color: #fff;
         }
         @else {
-            border-color: $primary-ddd;
+            border-color: $primary-blue-dd;
         }
     }
 
@@ -133,7 +133,7 @@
         color: $color;
     }
     @else {
-        color: $primary-ddd;
+        color: $primary-blue-dd;
     }
 
     // Icons
@@ -177,7 +177,7 @@
             border-color: #fff;
         }
         @else {
-            border-color: $primary-ddd;
+            border-color: $primary-blue-dd;
         }
     }
 
@@ -187,7 +187,7 @@
             fill: #fff;
         }
         @else {
-            fill: $primary-ddd;
+            fill: $primary-blue-dd;
         }
     }
 
@@ -199,7 +199,7 @@
             color: color-ddd($color);
         }
         @else {
-            color: $primary-ddd;
+            color: $primary-blue-dd;
         }
     }
 
@@ -230,7 +230,7 @@
     position: relative;
     padding: 0;
     background-color: transparent;
-    color: $primary-ddd;
+    color: $primary-blue-dd;
     border: 0;
     font-size: $size-12;
     font-family: $font-title;
@@ -238,16 +238,17 @@
 
     &:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
         box-shadow: 0 -1px 0 0 $color inset;
-        color: $primary-ddd;
+        color: $primary-blue-dd;
     }
 
-    &:focus:not([disabled="disabled"]):not([aria-disabled="true"]) {
+    // 2019-11-28 : Used anymore ?
+    /*&:focus:not([disabled="disabled"]):not([aria-disabled="true"]) {
         box-shadow: 0 -1px 0 0 $primary-ddd inset;
     }
 
     &:active:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
         box-shadow: 0 -1px 0 0 color-ddd($color) inset;
-    }
+    }*/
 
     &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
         outline: none;

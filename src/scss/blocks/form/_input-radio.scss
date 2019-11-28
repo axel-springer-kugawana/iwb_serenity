@@ -24,7 +24,7 @@
     font-weight: $font-weight-title;
     font-family: $font-title;
     font-size: $size-12;
-    color: $primary-dd;
+    color: $primary-blue-dd;
 }
 
 // Fake Radio Input
@@ -34,7 +34,7 @@
     border-radius: 100%;
     height: $size-18;
     width: $size-18;
-    border: 2px solid fade-out($primary, .7);
+    border: 2px solid fade-out($primary-blue, .7);
     left: 0;
     margin: auto;
     position: absolute;
@@ -50,7 +50,7 @@
     border-radius: 100%;
     height: $size-10;
     width: $size-10;
-    background: $secondary;
+    background: $primary-blue;
     left: $size-4;
     margin: auto;
     position: absolute;
@@ -60,7 +60,7 @@
 }
 
 .input--radio__input:checked + .input--radio__label:before {
-    border-color: fade-out($primary, .9);
+    border-color: fade-out($primary-blue, .9);
 }
 
 .input--radio__input:checked + .input--radio__label:after {
@@ -69,12 +69,8 @@
 
 // Focus State
 .input--radio__input:focus + .input--radio__label:before {
-    border-color: $primary-dd;
+    border-color: $primary-blue-d;
 }
-
-// .input--radio__input:checked:focus + .input--radio__label:before {
-//     border-color: $primary-dd;
-// }
 
 // Disabled State
 .input--radio__input:disabled + .input--radio__label {

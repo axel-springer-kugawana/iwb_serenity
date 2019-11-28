@@ -6,28 +6,23 @@
 .input--text {
     line-height: $size-36;
     padding: 0 $size-14;
-    border: 2px solid $primary-ll;
+    border: 2px solid $primary-blue-l;
     border-radius: $inputBorderRadius;
     font-size: $size-16;
-    color: $primary-dd;
+    color: $primary-blue-dd;
     outline: none;
     width: 100%;
     min-height: $size-40;
     appearance: none;
 
     &:focus {
-        border-color: $primary-dd;
+        border-color: $primary-blue-d;
     }
 
     // Placeholder Style
     &::placeholder {
-        color: $primary-dd;
+        color: $primary-blue-l;
         opacity: .3;
-    }
-
-    &:disabled {
-        background: $primary-llll;
-        cursor: not-allowed;
     }
 }
 

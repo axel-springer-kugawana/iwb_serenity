@@ -13,45 +13,37 @@ $line-height-body: 1.5 !default;
 
 // Colors
 // ---------------------
-$blue: #3d6ca9 !default;
+$blue: #3f6da7 !default;
 $green: #65d78d !default;
-$bright: #f7752a !default;
-$fresh: #32bbff !default;
+$grey: #63697d !default;
+$fresh: #3cbcfc !default;
+$bright: #cd4c02 !default;
 
-$blue-firefly: #0e1a29 !default;
+// Primary
+$primary-blue: $blue !default;
+$primary-green: $green !default;
 
-$primary: $blue !default;
-$secondary: $green !default;
+// Secondary
+$secondary-grey: $grey !default;
+$secondary-fresh: $fresh !default;
+$secondary-bright: $bright !default;
 
 // Shade
-$primary-d: color-d($primary) !default;
-$primary-dd: color-dd($primary) !default;
-$primary-ddd: color-ddd($primary) !default;
-$primary-l: color-l($primary) !default;
-$primary-ll: color-ll($primary) !default;
-$primary-lll: color-lll($primary) !default;
-$primary-llll: color-llll($primary) !default;
+$primary-blue-d: color-d($primary-blue) !default;
+$primary-blue-dd: color-dd($primary-blue) !default;
+$primary-blue-ddd: color-ddd($primary-blue) !default;
+$primary-blue-l: color-l($primary-blue) !default;
+$primary-blue-ll: color-ll($primary-blue) !default;
+$primary-blue-lll: color-lll($primary-blue) !default;
+$primary-blue-llll: color-llll($primary-blue) !default;
 
-$secondary-d: color-d($secondary) !default;
-$secondary-dd: color-dd($secondary) !default;
-// $secondary-ddd: color-ddd($secondary);
-$secondary-l: color-l($secondary) !default;
-// $secondary-ll: color-ll($secondary);
-// $secondary-lll: color-lll($secondary);
-
-$fresh-d: color-d($fresh) !default;
-// $fresh-dd: color-dd($fresh);
-// $fresh-ddd: color-ddd($fresh);
-$fresh-l: color-l($fresh) !default;
-// $fresh-ll: color-ll($fresh);
-// $fresh-lll: color-lll($fresh);
-
-$bright-d: color-d($bright) !default;
-// $bright-dd: color-dd($bright);
-// $bright-ddd: color-ddd($bright);
-$bright-l: color-l($bright) !default;
-$bright-ll: color-ll($bright) !default;
-// $bright-lll: color-lll($bright);
+$primary-green-d: color-d($primary-green) !default;
+$primary-green-dd: color-dd($primary-green) !default;
+$primary-green-ddd: color-ddd($primary-green) !default;
+$primary-green-l: color-l($primary-green) !default;
+$primary-green-ll: color-ll($primary-green) !default;
+$primary-green-lll: color-lll($primary-green) !default;
+//$primary-green-llll: color-llll($primary-green) !default;
 
 // Grey shader
 $grey-95: #f2f2f2 !default;
@@ -60,23 +52,16 @@ $grey-65: #a6a6a6 !default;
 $grey-55: #737373 !default;
 
 // Link & other
-$color-link: $primary !default;
-$color-link-hover: $primary-dd !default;
+$color-link: $primary-blue !default;
+$color-link-hover: $primary-blue-d !default;
 
-$color-body: #63697e !default;
+$color-body: $secondary-grey !default;
 $color-background: #fff !default;
 
 // Functional
-$functional-success: #6bc97d !default;
-$functional-error: #91273f !default;
-$functional-warning: #eccb6d !default;
-
-// Colors Deprecated
-$storm-grey: #70768c !default;
-$grey-94: #efefef !default;
-$grey-91: #e9e9e9 !default;
-$grey-61: #9b9b9b !default;
-$grey-50: #808080 !default;
+$functional-success: #6ec880 !default;
+$functional-error: #c4262e !default;
+$functional-warning: #ebca73 !default;
 
 // Form & buttons
 // ---------------------

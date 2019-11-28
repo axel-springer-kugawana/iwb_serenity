@@ -15,8 +15,8 @@
     background: #fff;
 
     @include media-query("desktop") {
-        border-bottom: 1px solid $primary-lll;
-        box-shadow: 0 10px 30px -10px $primary-lll;
+        border-bottom: 1px solid $primary-blue-lll;
+        box-shadow: 0 10px 30px -10px $primary-blue-lll;
     }
 }
 

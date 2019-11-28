@@ -25,7 +25,7 @@
 .input--select--mobile {
     min-height: 40px;
     padding: $size-8 $size-32 $size-8 $size-14;
-    border: 2px solid $primary-ll;
+    border: 2px solid $primary-blue-l;
     border-radius: $size-22;
     background: #fff url("#{$public-path}images/icons/icon-arrow-bottom.svg") no-repeat right $size-15 top 50%;
     background-size: $size-8 $size-8;
@@ -36,18 +36,18 @@
     font-weight: $font-weight-title;
     font-family: $font-title;
     font-size: $size-14;
-    color: $primary-dd;
+    color: $primary-blue-dd;
     cursor: pointer;
     transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic, border-color .2s $easeInOutCubic;
 
     &:hover,
     &:focus {
-        border-color: $primary-dd;
+        border-color: $primary-blue-d;
     }
 
     &:focus {
         outline: none;
-        background-color: fade-out($primary-lll, 0);
+        background-color: fade-out($primary-blue-lll, 0);
     }
 }
 
@@ -69,8 +69,8 @@
     margin-top: $size-8;
     padding: $size-4 0;
     border-radius: 2px;
-    border: 1px solid fade-out($primary-l, .6);
-    box-shadow: 0 10px 30px -10px $primary-l;
+    border: 1px solid fade-out($primary-blue-l, .6);
+    box-shadow: 0 10px 30px -10px $primary-blue-l;
     background: #fff;
     list-style-type: none;
     overflow-y: auto;
@@ -93,7 +93,7 @@
     font-weight: $font-weight-title;
     font-family: $font-title;
     font-size: $size-12;
-    color: $primary-dd;
+    color: $primary-blue-dd;
     line-height: 1.4;
     cursor: pointer;
     width: 100%;
@@ -105,12 +105,12 @@
     &:focus,
     &:hover {
         outline: none;
-        background-color: $primary-ll;
+        background-color: $primary-blue-l;
     }
 
     &.active {
         outline: none;
-        background-color: $primary;
+        background-color: $primary-blue-d;
         color: #fff;
     }
 }
@@ -122,7 +122,7 @@
 }
 
 .input--select__option-group-title {
-    color: $primary;
+    color: $secondary-grey;
     font-weight: $font-weight-title;
     font-family: $font-title;
     font-size: $size-12;
@@ -187,12 +187,12 @@
     &:hover,
     &.active {
         outline: none;
-        background-color: $primary-ll;
+        background-color: $primary-blue-l;
     }
 
     &,
     &:not(:checked) {
-        color: $primary-dd; /* Prevent <option>s from becoming transparent due to the focusring transparent rules */
+        color: $primary-blue-d; /* Prevent <option>s from becoming transparent due to the focusing transparent rules */
     }
 }
 

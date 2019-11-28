@@ -15,7 +15,7 @@ These two fonts are not loaded inside the CSS, you have to include them in the `
 
 ## Title
 
-All HTML headings, `<h1>` through `<h6>`, are available. h2, h3 and h4 also exist in a dark variation.
+All HTML headings, `<h1>` through `<h5>`, are available.
 
 <div class="sd-example">
     <h1>Title Level 1</h1>
@@ -23,7 +23,6 @@ All HTML headings, `<h1>` through `<h6>`, are available. h2, h3 and h4 also exis
     <h3>Title Level 3</h3>
     <h4>Title Level 4</h4>
     <h5>Title Level 5</h5>
-    <h6>Title Level 6</h6>
 </div>
 
 ```html
@@ -32,22 +31,9 @@ All HTML headings, `<h1>` through `<h6>`, are available. h2, h3 and h4 also exis
 <h3>Title Level 3</h3>
 <h4>Title Level 4</h4>
 <h5>Title Level 5</h5>
-<h6>Title Level 6</h6>
 ```
 
-<div class="sd-example">
-    <h2 class="title--2--dark">Title Level 2 dark</h2>
-    <h4 class="title--4--dark">Title Level 4 dark</h4>
-    <h5 class="title--5--dark">Title Level 5 dark</h5>
-</div>
-
-```html
-<h2 class="title--2--dark">Title Level 2 dark</h2>
-<h4 class="title--4--dark">Title Level 4 dark</h4>
-<h5 class="title--5--dark">Title Level 5 dark</h5>
-```
-
-`.title--1` through `.title--6` classes are also available if you need to match a heading style on another type of element.
+`.title--1` through `.title--5` classes are also available if you need to match a heading style on another type of element.
 
 <div class="sd-example">
     <p class="title--1">Title Level 1</p>
@@ -55,7 +41,6 @@ All HTML headings, `<h1>` through `<h6>`, are available. h2, h3 and h4 also exis
     <p class="title--3">Title Level 3</p>
     <p class="title--4">Title Level 4</p>
     <p class="title--5">Title Level 5</p>
-    <p class="title--6">Title Level 6</p>
 </div>
 
 ```html
@@ -64,7 +49,6 @@ All HTML headings, `<h1>` through `<h6>`, are available. h2, h3 and h4 also exis
 <p class="title--3">Title Level 3</p>
 <p class="title--4">Title Level 4</p>
 <p class="title--5">Title Level 5</p>
-<p class="title--6">Title Level 6</p>
 ```
 
 ## Inline text elements
