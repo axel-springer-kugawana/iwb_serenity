@@ -132,9 +132,47 @@
     width: calc(50% - 10px);
 }
 
-// Field Error
+// State messages
 // ---------------------
+%field_state_message {
+    position: relative;
+    font-size: $size-16;
+    padding-left: $size-24;
+    margin: $size-4 0 0 0;
+    white-space: normal;
+    display: inline-block;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        transform: translateY(-50%);
+    }
+}
+
 .field__error {
+    @extend %field_state_message;
+    color: $primary-blue-dd;
+
+    &:before {
+        background: url("#{$public-path}images/icons/icon-validation-error.svg");
+    }
+}
+
+.field__warning {
+    @extend %field_state_message;
+    color: $primary-blue-dd;
+
+    &:before {
+        background: url("#{$public-path}images/icons/icon-validation-warning.svg");
+    }
+}
+
+.field__success {
     position: relative;
     color: $primary-blue-dd;
     font-size: $size-16;
@@ -156,7 +194,32 @@
     }
 }
 
-.field__error:first-letter {
+.field__info {
+    position: relative;
+    color: $primary-blue-dd;
+    font-size: $size-16;
+    padding-left: $size-24;
+    margin: $size-4 0 0 0;
+    white-space: normal;
+    display: inline-block;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        transform: translateY(-50%);
+        background: url("#{$public-path}images/icons/icon-validation-error.svg");
+    }
+}
+
+.field__error:first-letter,
+.field__warning:first-letter,
+.field__success:first-letter,
+.field__info:first-letter {
     text-transform: uppercase;
 }
 

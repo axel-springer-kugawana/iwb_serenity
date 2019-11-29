@@ -106,6 +106,26 @@ Fields can contain error messages (e.g. to show validation errors related to the
 </div>
 ```
 
+## Warning messages
+
+Fields can contain warning messages (e.g. to show validation warning related to the input value). Declare a tag containing these messages with the `field__warning` class. Link the warning tag and the input with an `aria-labbelledby` refering to the warning tag id. Don't forget to add `aria-invalid="true"` on the input. The warning message is prefixed by a "warning"-type icon.
+
+<div class="sd-example">
+    <div class="field">
+        <label id="exampleInput06LabelId" for="exampleInputId06" class="field__label">Label of the Input</label>
+        <input id="exampleInputId06" class="input--text" value="" aria-labelledby="exampleInput06LabelId exampleInput06WarningId" aria-invalid="true">
+        <p id="exampleInput06WarningId" class="field__warning">Warning message for input</p>
+    </div>
+</div>
+
+```html
+<div class="field">
+    <label id="exampleInput06LabelId" for="exampleInputId06" class="field__label">Label of the Input</label>
+    <input id="exampleInputId06" class="input--text" value="" aria-labelledby="exampleInput06LabelId exampleInput06WarningId" aria-invalid="true">
+    <p id="exampleInput06WarningId" class="field__warning">Warning message for input</p>
+</div>
+```
+
 ## Optional Field Label
 
 A field `label` can be notified as optional by adding an extra `span` with a `field__label--optional` class inside the `label`.
