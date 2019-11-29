@@ -92,16 +92,16 @@ Fields can contain error messages (e.g. to show validation errors related to the
 
 <div class="sd-example">
     <div class="field">
-        <label id="exampleInput05LabelId" for="exampleInputId05" class="field__label">Label of the Input</label>
-        <input id="exampleInputId05" class="input--text" value="" aria-labelledby="exampleInput05LabelId exampleInput05ErrorId" aria-invalid="true">
+        <label id="exampleInput05LabelId" for="exampleInputId05" class="field__label--error">Label of the Input</label>
+        <input id="exampleInputId05" class="input--text--error" value="" aria-labelledby="exampleInput05LabelId exampleInput05ErrorId" aria-invalid="true">
         <p id="exampleInput05ErrorId" class="field__error">Error message for input</p>
     </div>
 </div>
 
 ```html
 <div class="field">
-    <label id="exampleInput05LabelId" for="exampleInputId05" class="field__label">Label of the Input</label>
-    <input id="exampleInputId05" class="input--text" value="" aria-labelledby="exampleInput05LabelId exampleInput05ErrorId" aria-invalid="true">
+    <label id="exampleInput05LabelId" for="exampleInputId05" class="field__label--error">Label of the Input</label>
+    <input id="exampleInputId05" class="input--text--error" value="" aria-labelledby="exampleInput05LabelId exampleInput05ErrorId" aria-invalid="true">
     <p id="exampleInput05ErrorId" class="field__error">Error message for input</p>
 </div>
 ```

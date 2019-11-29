@@ -41,7 +41,8 @@
 
 // Field Title / Label / Description,
 .field__title,
-.field__label {
+.field__label,
+.field__label--error {
     display: block;
     margin-bottom: $size-4;
     font-family: $font-title;
@@ -51,12 +52,14 @@
 }
 
 .field__title::first-letter,
-.field__label::first-letter {
+.field__label::first-letter,
+.field__label--error::first-letter {
     text-transform: uppercase;
 }
 
 .field__title,
 .field__label,
+.field__label--error,
 .field__description {
     word-break: break-word;
 }
@@ -66,6 +69,10 @@
 .field__description,
 .field__label--ingroup {
     color: $secondary-grey;
+}
+
+.field__label--error {
+    color: $functional-error;
 }
 
 .field__description,
