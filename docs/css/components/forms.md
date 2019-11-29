@@ -210,56 +210,38 @@ A field `label` can be enhanced with an extra `span` with a `field__label--extra
 
 Declare text inputs with the `input--text` class.
 
-An input text can be disabled by adding the attribute `disabled="disabled"` to the input.
-
 <div class="sd-example">
     <div class="field">
         <input class="input--text" value="text goes here">
-    </div>
-    <div class="field">
-        <input class="input--text" placeholder="Disabled input" disabled="disabled">
     </div>
 </div>
 
 ```html
 <input class="input--text" value="text goes here">
-<input class="input--text" placeholder="Disabled input" disabled="disabled">
 ```
 
 ### Text area
 
 Declare text area inputs with the `input--textarea` class.
 
-A textarea can be disabled by adding the attribute `disabled="disabled"` to the textarea.
-
 <div class="sd-example">
     <div class="field">
         <textarea class="input--textarea">Text goes here</textarea>
-    </div>
-    <div class="field">
-        <textarea class="input--textarea" disabled="disabled">Disabled text area</textarea>
     </div>
 </div>
 
 ```html
 <textarea class="input--textarea">Text goes here</textarea>
-<textarea class="input--textarea" disabled="disabled">Disabled text area</textarea>
 ```
 
 ### Radio
 
 Enclose radio inputs within a container with the `input--radio` class. Then give the `input--radio__label` class to the label and the `input--radio__input` class to the input itself.
 
-An input radio can be disabled by adding the attribute `disabled="disabled"` to the input.
-
 <div class="sd-example">
     <div class="input--radio">
         <input id="exampleRadioId01" type="radio" value="01" name="inputRadioBox01" class="input--radio__input">
         <label for="exampleRadioId01" class="input--radio__label">Input radio</label>
-    </div>
-    <div class="input--radio">
-        <input id="exampleRadioId02" type="radio" value="01" name="inputRadioBox02" class="input--radio__input" disabled="disabled">
-        <label for="exampleRadioId02" class="input--radio__label">Disabled Input radio</label>
     </div>
 </div>
 
@@ -267,10 +249,6 @@ An input radio can be disabled by adding the attribute `disabled="disabled"` to 
 <div class="input--radio">
     <input id="exampleRadioId01" type="radio" value="01" name="inputRadioBox01" class="input--radio__input">
     <label for="exampleRadioId01" class="input--radio__label">Input radio</label>
-</div>
-<div class="input--radio">
-    <input id="exampleRadioId02" type="radio" value="01" name="inputRadioBox02" class="input--radio__input" disabled="disabled">
-    <label for="exampleRadioId02" class="input--radio__label">Disabled Input radio</label>
 </div>
 ```
 
@@ -289,10 +267,6 @@ Enclose multiple input--radio inside a `field` containter with the `role="group"
             <input type="radio" value="02" name="inputRadioBox" class="input--radio__input" id="exampleRadioId04">
             <label for="exampleRadioId04" class="input--radio__label">Input radio</label>
         </div>
-        <div class="input--radio">
-            <input type="radio" value="03" name="inputRadioBox" disabled="disabled" class="input--radio__input" id="exampleRadioId05">
-            <label for="exampleRadioId05" class="input--radio__label">Disabled input radio</label>
-        </div>
     </div>
 </div>
 
@@ -306,10 +280,6 @@ Enclose multiple input--radio inside a `field` containter with the `role="group"
     <div class="input--radio">
         <input type="radio" value="02" name="inputRadioBox" class="input--radio__input" id="exampleRadioId04">
         <label for="exampleRadioId04" class="input--radio__label">Input radio</label>
-    </div>
-    <div class="input--radio">
-        <input type="radio" value="03" name="inputRadioBox" disabled="disabled" class="input--radio__input" id="exampleRadioId05">
-        <label for="exampleRadioId05" class="input--radio__label">Disabled input radio</label>
     </div>
 </div>
 ```
@@ -364,8 +334,6 @@ Enclose checkbox inputs within a container with the `input--checkbox` class. The
 
 An input checkbox can be checked adding the attribute `checked="checked"`to the input.
 
-An input checkbox can be disabled adding the attribute `disabled="disabled"` to the input.
-
 An input checkbox can be set has indeterminate, but it's impossible to do it with an html attribute. To do so, you need to set the element with Javascript.
 
 
@@ -389,10 +357,6 @@ inputInstance.indeterminate = true;
     <label for="exampleCheckboxId02" class="input--checkbox__label">Checked Input Checkbox</label>
 </div>
 <div class="input--checkbox">
-    <input type="checkbox" name="checkboxName03" class="input--checkbox__input" value="value" disabled="disabled" id="exampleCheckboxId03">
-    <label for="exampleCheckboxId03" class="input--checkbox__label">Disabled Input Checkbox</label>
-</div>
-<div class="input--checkbox">
     <input type="checkbox" name="checkboxName04" class="input--checkbox__input" value="value" id="exampleCheckboxId04">
     <label for="exampleCheckboxId04" class="input--checkbox__label">Indeterminate Input Checkbox</label>
 </div>
@@ -405,16 +369,10 @@ The `input--switch` takes 100% of the width of its container, the label is displ
 To display the checkbox input as a switch, enclose it within a label with the `input--swicth` class.
 Then give the `input--switch__input` class to the input and the `input--switch__label` class to the span containing the label of the input.
 
-An input switch can be disabled adding the attribute `disabled="disabled"` to the input.
-
 <div class="sd-example">
     <label for="exampleSwitchId01" class="input--switch">
         <input type="checkbox" name="swicthName01" class="input--switch__input" value="value" id="exampleSwitchId01">
         <span class="input--switch__label">Input Switch Label</span>
-    </label>
-    <label for="exampleSwitchId02" class="input--switch">
-        <input type="checkbox" name="swicthName02" class="input--switch__input" value="value" disabled="disabled" id="exampleSwitchId02">
-        <span class="input--switch__label">Disabled Input Switch Label</span>
     </label>
 </div>
 
@@ -422,10 +380,6 @@ An input switch can be disabled adding the attribute `disabled="disabled"` to th
 <label for="exampleSwitchId01" class="input--switch">
     <input type="checkbox" name="swicthName01" class="input--switch__input" value="value" id="exampleSwitchId01">
     <span class="input--switch__label">Input Switch Label</span>
-</label>
-<label for="exampleSwitchId02" class="input--switch">
-    <input type="checkbox" name="swicthName02" class="input--switch__input" value="value" disabled="disabled" id="exampleSwitchId02">
-    <span class="input--switch__label">Disabled Input Switch Label</span>
 </label>
 ```
 
