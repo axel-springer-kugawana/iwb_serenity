@@ -108,7 +108,7 @@ Fields can contain error messages (e.g. to show validation errors related to the
 
 ## Warning messages
 
-Fields can contain warning messages (e.g. to show validation warning related to the input value). Declare a tag containing these messages with the `field__warning` class. Link the warning tag and the input with an `aria-labbelledby` refering to the warning tag id. Don't forget to add `aria-invalid="true"` on the input. The warning message is prefixed by a "warning"-type icon.
+Fields can contain warning messages (e.g. to show validation warning related to the input value). Declare a tag containing these messages with the `field__warning` class. Link the warning tag and the input with an `aria-labbelledby` refering to the warning tag id. Don't forget to add `aria-invalid="true"` on the input. The warning message is prefixed by a "exclamation"-type icon.
 
 <div class="sd-example">
     <div class="field">
@@ -123,6 +123,28 @@ Fields can contain warning messages (e.g. to show validation warning related to 
     <label id="exampleInput06LabelId" for="exampleInputId06" class="field__label">Label of the Input</label>
     <input id="exampleInputId06" class="input--text" value="" aria-labelledby="exampleInput06LabelId exampleInput06WarningId" aria-invalid="true">
     <p id="exampleInput06WarningId" class="field__warning">Warning message for input</p>
+</div>
+```
+
+## Success messages
+
+Fields can contain success messages (e.g. to show well right format value encoded related to the input value). Declare a tag containing these messages with the `field__success` class. Link the info tag and the input with an `aria-labbelledby` refering to the info tag id. Don't forget to add `aria-invalid="true"` on the input. The success message is prefixed by a "ok"-type icon.
+
+<div class="sd-example">
+    <div class="field">
+        <label id="exampleInput08LabelId" for="exampleInputId08" class="field__label">Label of the Input</label>
+        <input id="exampleInputId08" class="input--text" value="" aria-labelledby="exampleInput08LabelId exampleInput08SuccessId" aria-invalid="true">
+        <p id="exampleInput08SuccessId" class="field__success">Success message for input</p>
+    </div>
+</div>
+
+```html
+<div class="field">
+    <div class="field">
+        <label id="exampleInput08LabelId" for="exampleInputId08" class="field__label">Label of the Input</label>
+        <input id="exampleInputId08" class="input--text" value="" aria-labelledby="exampleInput08LabelId exampleInput08SuccessId" aria-invalid="true">
+        <p id="exampleInput08SuccessId" class="field__success">Success message for input</p>
+    </div>
 </div>
 ```
 
