@@ -126,6 +126,26 @@ Fields can contain warning messages (e.g. to show validation warning related to 
 </div>
 ```
 
+## Info messages
+
+Fields can contain info messages (e.g. to show waiting format value related to the input value). Declare a tag containing these messages with the `field__info` class. Link the info tag and the input with an `aria-labbelledby` refering to the info tag id. Don't forget to add `aria-invalid="true"` on the input. The info message is prefixed by a "info"-type icon.
+
+<div class="sd-example">
+    <div class="field">
+        <label id="exampleInput07LabelId" for="exampleInputId07" class="field__label">Label of the Input</label>
+        <input id="exampleInputId07" class="input--text" value="" aria-labelledby="exampleInput07LabelId exampleInput07InfoId" aria-invalid="true">
+        <p id="exampleInput07InfoId" class="field__info">Info message for input</p>
+    </div>
+</div>
+
+```html
+<div class="field">
+    <label id="exampleInput07LabelId" for="exampleInputId07" class="field__label">Label of the Input</label>
+    <input id="exampleInputId07" class="input--text" value="" aria-labelledby="exampleInput07LabelId exampleInput07InfoId" aria-invalid="true">
+    <p id="exampleInput07InfoId" class="field__info">Info message for input</p>
+</div>
+```
+
 ## Optional Field Label
 
 A field `label` can be notified as optional by adding an extra `span` with a `field__label--optional` class inside the `label`.

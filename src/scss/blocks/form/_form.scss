@@ -137,7 +137,7 @@
 %field_state_message {
     position: relative;
     font-size: $size-16;
-    padding-left: $size-24;
+    padding-left: $size-26;
     margin: $size-4 0 0 0;
     white-space: normal;
     display: inline-block;
@@ -173,46 +173,20 @@
 }
 
 .field__success {
-    position: relative;
+    @extend %field_state_message;
     color: $primary-blue-dd;
-    font-size: $size-16;
-    padding-left: $size-24;
-    margin: $size-4 0 0 0;
-    white-space: normal;
-    display: inline-block;
 
     &:before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 16px;
-        height: 16px;
-        transform: translateY(-50%);
-        background: url("#{$public-path}images/icons/icon-validation-error.svg");
+        background: url("#{$public-path}images/icons/icon-validation-success.svg");
     }
 }
 
 .field__info {
-    position: relative;
+    @extend %field_state_message;
     color: $primary-blue-dd;
-    font-size: $size-16;
-    padding-left: $size-24;
-    margin: $size-4 0 0 0;
-    white-space: normal;
-    display: inline-block;
 
     &:before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        width: 16px;
-        height: 16px;
-        transform: translateY(-50%);
-        background: url("#{$public-path}images/icons/icon-validation-error.svg");
+        background: url("#{$public-path}images/icons/icon-validation-info.svg");
     }
 }
 
