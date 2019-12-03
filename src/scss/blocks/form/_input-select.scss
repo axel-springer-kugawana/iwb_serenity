@@ -24,19 +24,19 @@
 .input--select__toggle,
 .input--select--mobile {
     min-height: 40px;
-    padding: $size-8 $size-32 $size-8 $size-14;
-    border: 2px solid $primary-blue-l;
-    border-radius: $size-22;
-    background: #fff url("#{$public-path}images/icons/icon-arrow-bottom.svg") no-repeat right $size-15 top 50%;
-    background-size: $size-8 $size-8;
+    padding: 0 $size-32 0 $size-14;
+    border: 1px solid $primary-blue-l;
+    border-radius: $size-8;
+    background: #fff url("#{$public-path}images/icons/icon-arrow-bottom.svg") no-repeat right $size-18 top 50%;
+    background-size: $size-10 $size-6;
     width: 100%;
     outline: none;
     appearance: none;
     text-align: left;
     font-weight: $font-weight-title;
-    font-family: $font-title;
-    font-size: $size-14;
-    color: $primary-blue-dd;
+    font-family: $font-body;
+    font-size: $size-16;
+    color: $primary-blue;
     cursor: pointer;
     transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic, border-color .2s $easeInOutCubic;
 
@@ -47,7 +47,6 @@
 
     &:focus {
         outline: none;
-        background-color: fade-out($primary-blue-lll, 0);
     }
 }
 
@@ -68,9 +67,8 @@
     z-index: z("dropdown");
     margin-top: $size-8;
     padding: $size-4 0;
-    border-radius: 2px;
-    border: 1px solid fade-out($primary-blue-l, .6);
-    box-shadow: 0 10px 30px -10px $primary-blue-l;
+    border-radius: 4px;
+    box-shadow: 0px -4px 16px $primary-blue-l;
     background: #fff;
     list-style-type: none;
     overflow-y: auto;
@@ -91,14 +89,14 @@
 .input--select__option {
     @include button-transparent(none);
     font-weight: $font-weight-title;
-    font-family: $font-title;
-    font-size: $size-12;
+    font-family: $font-body;
+    font-size: $size-14;
     color: $primary-blue-dd;
-    line-height: 1.4;
+    line-height: $size-20;
     cursor: pointer;
     width: 100%;
     text-align: left;
-    padding: $size-4 $size-10;
+    padding: $size-4 $size-12;
     display: block;
     word-break: break-all;
 
@@ -106,6 +104,7 @@
     &:hover {
         outline: none;
         background-color: $primary-blue-l;
+        color: #fff;
     }
 
     &.active {
@@ -123,9 +122,10 @@
 
 .input--select__option-group-title {
     color: $secondary-grey;
-    font-weight: $font-weight-title;
-    font-family: $font-title;
-    font-size: $size-12;
+    font-weight: $font-weight-body;
+    font-family: $font-body;
+    font-size: $size-14;
+    line-height: $size-20;
     pointer-events: none;
     background: $color-background;
     cursor: default;
@@ -178,9 +178,9 @@
 
 .input--select--mobile option {
     font-weight: $font-weight-title;
-    font-family: $font-title;
-    font-size: $size-12;
-    line-height: 1.4;
+    font-family: $font-body;
+    font-size: $size-14;
+    line-height: $size-20;
     padding: $size-4 $size-10;
 
     &:focus,
@@ -188,6 +188,7 @@
     &.active {
         outline: none;
         background-color: $primary-blue-l;
+        color: #FFF;
     }
 
     &,
