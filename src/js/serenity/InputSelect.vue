@@ -7,6 +7,7 @@
             @blur="closeList"
         >
             <button
+                :required="required ? true : false"
                 type="button"
                 class="input--select__toggle"
                 aria-haspopup="listbox"
@@ -87,6 +88,7 @@
             class="input--select input--select--mobile"
             v-model="internalValue"
             :aria-labelledby="inputLabelId"
+            :required="required ? true : false"
             @change="updateMobileValue">
             <template v-for="(option, index) in options">
                 <template v-if="Array.isArray(option.value)">
@@ -148,6 +150,7 @@ export default {
         },
         value: {
             type: [String, Number],
+            required: false,
             default: ""
         },
         mobileBreakpoint: {
@@ -159,6 +162,11 @@ export default {
             type: Number,
             required: false,
             default: 320
+        },
+        required: {
+            type: Boolean,
+            required: false,
+            default: false
         }
     },
     data() {
