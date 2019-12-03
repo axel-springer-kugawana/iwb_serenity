@@ -14,8 +14,7 @@
     opacity: 0;
 }
 
-.input--radio__label,
-.input--radio__label--error {
+.input--radio__label{
     position: relative;
     padding-left: $size-30;
     margin: 0;
@@ -30,8 +29,7 @@
 }
 
 // Fake Radio Input
-.input--radio__label:before,
-.input--radio__label--error:before {
+.input--radio__label:before {
     display: block;
     content: "";
     border-radius: 100%;
@@ -46,14 +44,13 @@
     transform: translateY(-50%);
 }
 
-.input--radio__label--error:before {
+.input--error .input--radio__label:before {
     border: 1px solid fade-out($functional-error, 0);
 }
 
 
 // Fake Radio Active
-.input--radio__label:after,
-.input--radio__label--error:after {
+.input--radio__label:after {
     display: block;
     content: "";
     border-radius: 100%;
@@ -68,7 +65,7 @@
     opacity: 0;
 }
 
-.input--radio__label--error:after {
+.input-error .input--radio__label:after {
     background: $functional-error;
 }
 
@@ -76,12 +73,11 @@
     border-color: fade-out($primary-blue-l, 0);
 }
 
-.input--radio__input:checked + .input--radio__label--error:before {
+.input--error .input--radio__input:checked + .input--radio__label:before {
     border-color: fade-out($functional-error, 0);
 }
 
-.input--radio__input:checked + .input--radio__label:after,
-.input--radio__input:checked + .input--radio__label--error:after{
+.input--radio__input:checked + .input--radio__label:after {
     opacity: 1;
 }
 

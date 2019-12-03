@@ -142,7 +142,7 @@
 
 // State messages
 // ---------------------
-%field_state_message {
+%field_message {
     position: relative;
     font-size: $size-16;
     padding-left: $size-26;
@@ -162,8 +162,8 @@
     }
 }
 
-.field__error {
-    @extend %field_state_message;
+.field__message--error {
+    @extend %field_message;
     color: $primary-blue-dd;
 
     &:before {
@@ -171,8 +171,8 @@
     }
 }
 
-.field__warning {
-    @extend %field_state_message;
+.field__message--warning {
+    @extend %field_message;
     color: $primary-blue-dd;
 
     &:before {
@@ -180,8 +180,8 @@
     }
 }
 
-.field__success {
-    @extend %field_state_message;
+.field__message--success {
+    @extend %field_message;
     color: $primary-blue-dd;
 
     &:before {
@@ -189,8 +189,8 @@
     }
 }
 
-.field__info {
-    @extend %field_state_message;
+.field__message--info {
+    @extend %field_message;
     color: $primary-blue-dd;
 
     &:before {
@@ -198,10 +198,10 @@
     }
 }
 
-.field__error:first-letter,
-.field__warning:first-letter,
-.field__success:first-letter,
-.field__info:first-letter {
+.field__message--error:first-letter,
+.field__message--warning:first-letter,
+.field__message--success:first-letter,
+.field__message--info:first-letter {
     text-transform: uppercase;
 }
 

@@ -88,21 +88,21 @@ For a more complex layout (3+ columns) or different layout per breakpoint, use t
 
 ## Error messages
 
-Fields can contain error messages (e.g. to show validation errors related to the input value). Declare a tag containing these messages with the `field__error` class. Link the error tag and the input with an `aria-labbelledby` refering to the error tag id. Don't forget to add `aria-invalid="true"` on the input. The error message is prefixed by a "danger"-type icon.
+Fields can contain error messages (e.g. to show validation errors related to the input value). Add the class `field__label--error` to the label of the field and the class `input--error` to the field. Declare a tag containing these messages with the `field__error` class. Link the error tag and the input with an `aria-labbelledby` refering to the error tag id. Don't forget to add `aria-invalid="true"` on the input. The error message is prefixed by a "danger"-type icon.
 
 <div class="sd-example">
     <div class="field">
         <label id="exampleInput05LabelId" for="exampleInputId05" class="field__label--error">Label of the Input</label>
-        <input id="exampleInputId05" class="input--text--error" value="" aria-labelledby="exampleInput05LabelId exampleInput05ErrorId" aria-invalid="true">
-        <p id="exampleInput05ErrorId" class="field__error">Error message for input</p>
+        <input id="exampleInputId05" class="input--text input--error" value="" aria-labelledby="exampleInput05LabelId exampleInput05ErrorId" aria-invalid="true">
+        <p id="exampleInput05ErrorId" class="field__message--error">Error message for input</p>
     </div>
 </div>
 
 ```html
 <div class="field">
     <label id="exampleInput05LabelId" for="exampleInputId05" class="field__label--error">Label of the Input</label>
-    <input id="exampleInputId05" class="input--text--error" value="" aria-labelledby="exampleInput05LabelId exampleInput05ErrorId" aria-invalid="true">
-    <p id="exampleInput05ErrorId" class="field__error">Error message for input</p>
+    <input id="exampleInputId05" class="input--text input--error" value="" aria-labelledby="exampleInput05LabelId exampleInput05ErrorId" aria-invalid="true">
+    <p id="exampleInput05ErrorId" class="field__message--error">Error message for input</p>
 </div>
 ```
 
@@ -114,7 +114,7 @@ Fields can contain warning messages (e.g. to show validation warning related to 
     <div class="field">
         <label id="exampleInput06LabelId" for="exampleInputId06" class="field__label">Label of the Input</label>
         <input id="exampleInputId06" class="input--text" value="" aria-labelledby="exampleInput06LabelId exampleInput06WarningId">
-        <p id="exampleInput06WarningId" class="field__warning">Warning message for input</p>
+        <p id="exampleInput06WarningId" class="field__message--warning">Warning message for input</p>
     </div>
 </div>
 
@@ -122,7 +122,7 @@ Fields can contain warning messages (e.g. to show validation warning related to 
 <div class="field">
     <label id="exampleInput06LabelId" for="exampleInputId06" class="field__label">Label of the Input</label>
     <input id="exampleInputId06" class="input--text" value="" aria-labelledby="exampleInput06LabelId exampleInput06WarningId">
-    <p id="exampleInput06WarningId" class="field__warning">Warning message for input</p>
+    <p id="exampleInput06WarningId" class="field__message--warning">Warning message for input</p>
 </div>
 ```
 
@@ -134,7 +134,7 @@ Fields can contain success messages (e.g. to show well right format value encode
     <div class="field">
         <label id="exampleInput08LabelId" for="exampleInputId08" class="field__label">Label of the Input</label>
         <input id="exampleInputId08" class="input--text" value="" aria-labelledby="exampleInput08LabelId exampleInput08SuccessId">
-        <p id="exampleInput08SuccessId" class="field__success">Success message for input</p>
+        <p id="exampleInput08SuccessId" class="field__message--success">Success message for input</p>
     </div>
 </div>
 
@@ -143,7 +143,7 @@ Fields can contain success messages (e.g. to show well right format value encode
     <div class="field">
         <label id="exampleInput08LabelId" for="exampleInputId08" class="field__label">Label of the Input</label>
         <input id="exampleInputId08" class="input--text" value="" aria-labelledby="exampleInput08LabelId exampleInput08SuccessId">
-        <p id="exampleInput08SuccessId" class="field__success">Success message for input</p>
+        <p id="exampleInput08SuccessId" class="field__message--success">Success message for input</p>
     </div>
 </div>
 ```
@@ -156,7 +156,7 @@ Fields can contain info messages (e.g. to show waiting format value related to t
     <div class="field">
         <label id="exampleInput07LabelId" for="exampleInputId07" class="field__label">Label of the Input</label>
         <input id="exampleInputId07" class="input--text" value="" aria-labelledby="exampleInput07LabelId exampleInput07InfoId">
-        <p id="exampleInput07InfoId" class="field__info">Info message for input</p>
+        <p id="exampleInput07InfoId" class="field__message--info">Info message for input</p>
     </div>
 </div>
 
@@ -164,7 +164,7 @@ Fields can contain info messages (e.g. to show waiting format value related to t
 <div class="field">
     <label id="exampleInput07LabelId" for="exampleInputId07" class="field__label">Label of the Input</label>
     <input id="exampleInputId07" class="input--text" value="" aria-labelledby="exampleInput07LabelId exampleInput07InfoId">
-    <p id="exampleInput07InfoId" class="field__info">Info message for input</p>
+    <p id="exampleInput07InfoId" class="field__message--info">Info message for input</p>
 </div>
 ```
 
@@ -284,33 +284,33 @@ Enclose multiple input--radio inside a `field` containter with the `role="group"
 </div>
 ```
 
-Input radio group can contain error messages (e.g. to show validation errors related to check of the input radio group). Declare a tag containing these messages with the `field__error` class. Link the error tag and the input with an `aria-labbelledby` refering to the error tag id. Don't forget to add `aria-invalid="true"` on the input. The error message is prefixed by a "danger"-type icon.
+Input radio group can contain error messages (e.g. to show validation errors related to check of the input radio group). Add the class `input-error` to the container of the input itself. Declare a tag containing these messages with the `field__error` class. Link the error tag and the input with an `aria-labbelledby` refering to the error tag id. Don't forget to add `aria-invalid="true"` on the input. The error message is prefixed by a "danger"-type icon.
 
 <div class="sd-example">
     <div class="field" role="group" aria-labelledby="exampleRadioGroupId02">
         <label id="exampleRadioGroupId02" class="field__label--error">Field radios with error</label>
-        <div class="input--radio">
+        <div class="input--radio input--error">
             <input type="radio" value="03" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId04" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio4LabelId" aria-invalid="true">
-            <label id="exampleInput0Radio4LabelId" for="exampleRadioId04" class="input--radio__label--error">Input radio</label>
+            <label id="exampleInput0Radio4LabelId" for="exampleRadioId04" class="input--radio__label">Input radio</label>
         </div>
-        <div class="input--radio">
+        <div class="input--radio input--error">
             <input type="radio" value="04" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId05" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio5LabelId" aria-invalid="true">
-            <label id="exampleInput0Radio5LabelId" for="exampleRadioId05" class="input--radio__label--error">Input radio</label>
+            <label id="exampleInput0Radio5LabelId" for="exampleRadioId05" class="input--radio__label">Input radio</label>
         </div>
-        <p id="exampleInputRadio01ErrorId" class="field__error">Error message for input radio</p>
+        <p id="exampleInputRadio01ErrorId" class="field__message--error">Error message for input radio</p>
     </div>
 </div>
 
 ```html
 <div class="field" role="group" aria-labelledby="exampleRadioGroupId02">
     <label id="exampleRadioGroupId02" class="field__label--error">Field radios with error</label>
-    <div class="input--radio">
+    <div class="input--radio input--error">
         <input type="radio" value="03" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId04" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio4LabelId" aria-invalid="true">
-        <label id="exampleInput0Radio4LabelId" for="exampleRadioId04" class="input--radio__label--error">Input radio</label>
+        <label id="exampleInput0Radio4LabelId" for="exampleRadioId04" class="input--radio__label">Input radio</label>
     </div>
-    <div class="input--radio">
+    <div class="input--radio input--error">
         <input type="radio" value="04" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId05" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio5LabelId" aria-invalid="true">
-        <label id="exampleInput0Radio5LabelId" for="exampleRadioId05" class="input--radio__label--error">Input radio</label>
+        <label id="exampleInput0Radio5LabelId" for="exampleRadioId05" class="input--radio__label">Input radio</label>
     </div>
     <p id="exampleInputRadio01ErrorId" class="field__error">Error message for input radio</p>
 </div>
@@ -392,10 +392,11 @@ inputInstance.indeterminate = true;
     <input type="checkbox" name="checkboxName03" class="input--checkbox__input" value="value" id="exampleCheckboxId03">
     <label for="exampleCheckboxId03" class="input--checkbox__label">Indeterminate Input Checkbox</label>
 </div>
-<div class="input--checkbox">
+<div class="input--checkbox input-error">
     <input type="checkbox" name="checkboxName04" class="input--checkbox__input" value="value" id="exampleCheckboxId04">
-    <label for="exampleCheckboxId04" class="input--checkbox__label--error">Error Input Checkbox</label>
+    <label for="exampleCheckboxId04" class="input--checkbox__label">Error Input Checkbox</label>
 </div>
+<p id="exampleInputCheckbox01ErrorId" class="field__message--error">Error message for input checkbox</p>
 
 ```
 
