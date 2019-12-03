@@ -14,27 +14,31 @@
     opacity: 0;
 }
 
-.input--radio__label {
+.input--radio__label,
+.input--radio__label--error {
     position: relative;
-    padding-left: $size-28;
+    padding-left: $size-30;
     margin: 0;
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
-    font-weight: $font-weight-title;
-    font-family: $font-title;
-    font-size: $size-12;
+    font-weight: $font-weight-body;
+    font-family: $font-body;
+    font-size: $size-16;
+    line-height: $size-18;
     color: $primary-blue-dd;
 }
 
 // Fake Radio Input
-.input--radio__label:before {
+.input--radio__label:before,
+.input--radio__label--error:before {
     display: block;
     content: "";
     border-radius: 100%;
-    height: $size-18;
-    width: $size-18;
-    border: 2px solid fade-out($primary-blue, .7);
+    height: $size-20;
+    width: $size-20;
+    background: $primary-blue-llll;
+    border: 1px solid fade-out($primary-blue-l, 0);
     left: 0;
     margin: auto;
     position: absolute;
@@ -42,16 +46,21 @@
     transform: translateY(-50%);
 }
 
+.input--radio__label--error:before {
+    border: 1px solid fade-out($functional-error, 0);
+}
+
 
 // Fake Radio Active
-.input--radio__label:after {
+.input--radio__label:after,
+.input--radio__label--error:after {
     display: block;
     content: "";
     border-radius: 100%;
-    height: $size-10;
-    width: $size-10;
+    height: $size-8;
+    width: $size-8;
     background: $primary-blue;
-    left: $size-4;
+    left: $size-6;
     margin: auto;
     position: absolute;
     top: 50%;
@@ -59,27 +68,26 @@
     opacity: 0;
 }
 
-.input--radio__input:checked + .input--radio__label:before {
-    border-color: fade-out($primary-blue, .9);
+.input--radio__label--error:after {
+    background: $functional-error;
 }
 
-.input--radio__input:checked + .input--radio__label:after {
+.input--radio__input:checked + .input--radio__label:before {
+    border-color: fade-out($primary-blue-l, 0);
+}
+
+.input--radio__input:checked + .input--radio__label--error:before {
+    border-color: fade-out($functional-error, 0);
+}
+
+.input--radio__input:checked + .input--radio__label:after,
+.input--radio__input:checked + .input--radio__label--error:after{
     opacity: 1;
 }
 
 // Focus State
 .input--radio__input:focus + .input--radio__label:before {
     border-color: $primary-blue-d;
-}
-
-// Disabled State
-.input--radio__input:disabled + .input--radio__label {
-    color: fade-out(#000, .8);
-    cursor: not-allowed;
-}
-
-.input--radio__input:disabled + .input--radio__label:before {
-    border-color: fade-out(#000, .9);
 }
 
 // Variation for radio inline

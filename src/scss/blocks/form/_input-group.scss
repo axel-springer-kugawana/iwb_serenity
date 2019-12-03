@@ -34,13 +34,13 @@
 .input-group__append,
 .input-group__from-to-label,
 .input-group--stepper__button {
-    font-family: $font-title;
+    font-family: $font-body;
     font-weight: $font-weight-title;
-    font-size: $size-12;
+    font-size: $size-16;
     color: $primary-blue-d;
     text-transform: uppercase;
-    line-height: $size-36;
-    border: 2px solid $primary-blue-l;
+    line-height: $size-38;
+    border: 1px solid $primary-blue-l;
     box-shadow: 0 0 0 2px inset #fff;
     min-height: $size-40;
 }
@@ -61,7 +61,7 @@
 // Prepend
 .input-group__prepend,
 .input-group--stepper__button--prepend {
-    padding: 0 $size-10 0 $size-16;
+    padding: 0 $size-10 0 $size-10;
     border-right: 0;
     order: -1;
 }
@@ -82,7 +82,7 @@
 // Append
 .input-group__append,
 .input-group--stepper__button--append {
-    padding: 0 $size-16 0 $size-10;
+    padding: 0 $size-10 0 $size-10;
     border-top-right-radius: $inputBorderRadius;
     border-bottom-right-radius: $inputBorderRadius;
     border-left: 0;

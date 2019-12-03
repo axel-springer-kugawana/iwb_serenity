@@ -26,6 +26,10 @@
 .input--switch__label {
     cursor: pointer;
     margin-right: $size-56;
+    font-family: $font-body;
+    font-weight: $font-weight-body;
+    font-size: $size-16;
+    color: $primary-blue-dd;
 }
 
 // Box around the switch

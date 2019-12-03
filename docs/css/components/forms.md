@@ -257,30 +257,62 @@ Enclose radio inputs within a container with the `input--radio` class. Then give
 Enclose multiple input--radio inside a `field` containter with the `role="group"` and a valid `aria-labelledby` attribute to indicate to assistive technologies that these input are part of the same group.
 
 <div class="sd-example">
-    <div class="field" role="group" aria-labelledby="exampleRadioGroupId03">
-        <label id="exampleRadioGroupId03" class="field__label">Field radios</label>
+    <div class="field" role="group" aria-labelledby="exampleRadioGroupId01">
+        <label id="exampleRadioGroupId01" class="field__label">Field radios</label>
         <div class="input--radio">
-            <input type="radio" value="01" name="inputRadioBox" class="input--radio__input" id="exampleRadioId03">
-            <label for="exampleRadioId03" class="input--radio__label">Input radio</label>
+            <input type="radio" value="01" name="inputRadioBox" class="input--radio__input" id="exampleRadioId02">
+            <label for="exampleRadioId02" class="input--radio__label">Input radio</label>
         </div>
         <div class="input--radio">
-            <input type="radio" value="02" name="inputRadioBox" class="input--radio__input" id="exampleRadioId04">
-            <label for="exampleRadioId04" class="input--radio__label">Input radio</label>
+            <input type="radio" value="02" name="inputRadioBox" class="input--radio__input" id="exampleRadioId03">
+            <label for="exampleRadioId03" class="input--radio__label">Input radio</label>
         </div>
     </div>
 </div>
 
 ```html
-<div class="field" role="group" aria-labelledby="exampleRadioGroupId03">
-    <label id="exampleRadioGroupId03" class="field__label">Field radios</label>
+<div class="field" role="group" aria-labelledby="exampleRadioGroupId01">
+    <label id="exampleRadioGroupId01" class="field__label">Field radios</label>
     <div class="input--radio">
-        <input type="radio" value="01" name="inputRadioBox" class="input--radio__input" id="exampleRadioId03">
-        <label for="exampleRadioId03" class="input--radio__label">Input radio</label>
+        <input type="radio" value="01" name="inputRadioBox" class="input--radio__input" id="exampleRadioId02">
+        <label for="exampleRadioId02" class="input--radio__label--error">Input radio</label>
     </div>
     <div class="input--radio">
-        <input type="radio" value="02" name="inputRadioBox" class="input--radio__input" id="exampleRadioId04">
-        <label for="exampleRadioId04" class="input--radio__label">Input radio</label>
+        <input type="radio" value="02" name="inputRadioBox" class="input--radio__input" id="exampleRadioId03">
+        <label for="exampleRadioId03" class="input--radio__label--error">Input radio</label>
     </div>
+</div>
+```
+
+Input radio group can contain error messages (e.g. to show validation errors related to check of the input radio group). Declare a tag containing these messages with the `field__error` class. Link the error tag and the input with an `aria-labbelledby` refering to the error tag id. Don't forget to add `aria-invalid="true"` on the input. The error message is prefixed by a "danger"-type icon.
+
+<div class="sd-example">
+    <div class="field" role="group" aria-labelledby="exampleRadioGroupId02">
+        <label id="exampleRadioGroupId02" class="field__label--error">Field radios with error</label>
+        <div class="input--radio">
+            <input type="radio" value="03" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId04" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio4LabelId" aria-invalid="true">
+            <label id="exampleInput0Radio4LabelId" for="exampleRadioId04" class="input--radio__label--error">Input radio</label>
+        </div>
+        <div class="input--radio">
+            <input type="radio" value="04" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId05" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio5LabelId" aria-invalid="true">
+            <label id="exampleInput0Radio5LabelId" for="exampleRadioId05" class="input--radio__label--error">Input radio</label>
+        </div>
+        <p id="exampleInputRadio01ErrorId" class="field__error">Error message for input radio</p>
+    </div>
+</div>
+
+```html
+<div class="field" role="group" aria-labelledby="exampleRadioGroupId02">
+    <label id="exampleRadioGroupId02" class="field__label--error">Field radios with error</label>
+    <div class="input--radio">
+        <input type="radio" value="03" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId04" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio4LabelId" aria-invalid="true">
+        <label id="exampleInput0Radio4LabelId" for="exampleRadioId04" class="input--radio__label--error">Input radio</label>
+    </div>
+    <div class="input--radio">
+        <input type="radio" value="04" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId05" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio5LabelId" aria-invalid="true">
+        <label id="exampleInput0Radio5LabelId" for="exampleRadioId05" class="input--radio__label--error">Input radio</label>
+    </div>
+    <p id="exampleInputRadio01ErrorId" class="field__error">Error message for input radio</p>
 </div>
 ```
 
@@ -357,9 +389,14 @@ inputInstance.indeterminate = true;
     <label for="exampleCheckboxId02" class="input--checkbox__label">Checked Input Checkbox</label>
 </div>
 <div class="input--checkbox">
-    <input type="checkbox" name="checkboxName04" class="input--checkbox__input" value="value" id="exampleCheckboxId04">
-    <label for="exampleCheckboxId04" class="input--checkbox__label">Indeterminate Input Checkbox</label>
+    <input type="checkbox" name="checkboxName03" class="input--checkbox__input" value="value" id="exampleCheckboxId03">
+    <label for="exampleCheckboxId03" class="input--checkbox__label">Indeterminate Input Checkbox</label>
 </div>
+<div class="input--checkbox">
+    <input type="checkbox" name="checkboxName04" class="input--checkbox__input" value="value" id="exampleCheckboxId04">
+    <label for="exampleCheckboxId04" class="input--checkbox__label--error">Error Input Checkbox</label>
+</div>
+
 ```
 
 ### Input Switch
