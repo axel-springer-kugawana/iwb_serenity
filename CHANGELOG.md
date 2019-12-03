@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.1 - 2019-12-03 - Hevea brasiliensis Hotfix 1
+### Changed
+- Input-select: Add an optional required prop
+- Input-select: Adapt documentation for missing props
+
 ## 1.1.0 - 2019-11-06 - Hevea brasiliensis
 ### Fixed
 - Input-select: Input Select: Fix issue with computed flat array option (now contain id for each options)
