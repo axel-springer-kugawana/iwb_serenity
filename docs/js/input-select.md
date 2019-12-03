@@ -90,19 +90,14 @@ Only one level of grouping is possible.
         type: Array,
         required: true
     },
-    value: {
-        type: String,
-        required: false,
-        default: ""
-    },
     inputLabelId: {
         type: String,
         required: true
     },
-    type: {
-        type: String,
+    value: {
+        type: [String, Number],
         required: false,
-        default: "inputSelectDefault"
+        default: ""
     },
     mobileBreakpoint: {
         type: String,
@@ -113,6 +108,11 @@ Only one level of grouping is possible.
         type: Number,
         required: false,
         default: 300
+    },
+    required: {
+        type: Boolean,
+        required: false,
+        default: false
     }
 }
 ```
@@ -135,7 +135,7 @@ Only one level of grouping is possible.
 
 * *value*:
 
-    A string representing the current option (if it match the value key of one of the options).
+    A string or number representing the current option (if it match the value key of one of the options).
 
 * *mobileBreakpoint*:
 
@@ -145,6 +145,12 @@ Only one level of grouping is possible.
 
 * *maxHeight*:
 
-    *default: 300*
+    *default: 320*
 
     A number use to define the max-height of the "select list". (Use to define the position of the box)
+
+* *required*:
+
+    *default:false*
+
+    A boolean that define if the element is required or not.
