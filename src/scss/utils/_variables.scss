@@ -45,6 +45,14 @@ $primary-green-ll: color-ll($primary-green) !default;
 $primary-green-lll: color-lll($primary-green) !default;
 //$primary-green-llll: color-llll($primary-green) !default;
 
+$secondary-bright-d: color-d($secondary-bright) !default;
+$secondary-bright-dd: color-dd($secondary-bright) !default;
+$secondary-bright-ddd: color-ddd($secondary-bright) !default;
+$secondary-bright-l: color-l($secondary-bright) !default;
+$secondary-bright-ll: color-ll($secondary-bright) !default;
+$secondary-bright-lll: color-lll($secondary-bright) !default;
+$secondary-bright-llll: color-llll($secondary-bright) !default;
+
 // Grey shader
 $grey-95: #f2f2f2 !default;
 $grey-85: #d8d8d8 !default;
@@ -66,7 +74,7 @@ $functional-warning: #ebca73 !default;
 // Form & buttons
 // ---------------------
 $inputBorderRadius: $size-8 !default;
-$buttonBorderRadius: $inputBorderRadius !default;
+$buttonBorderRadius: $size-22 !default;
 $inputGroupSelectLargeBorderRadius: $size-24 !default;
 
 // Responsive

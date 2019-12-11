@@ -28,7 +28,7 @@
     border: 1px solid $primary-blue-l;
     border-radius: $size-8;
     background: #fff url("#{$public-path}images/icons/icon-arrow-bottom.svg") no-repeat right $size-18 top 50%;
-    background-size: $size-10 $size-6;
+    background-size: $size-20 $size-20;
     width: 100%;
     outline: none;
     appearance: none;
@@ -68,7 +68,7 @@
     margin-top: $size-8;
     padding: $size-4 0;
     border-radius: 4px;
-    box-shadow: 0px -4px 16px $primary-blue-l;
+    box-shadow: 0 -4px 16px $primary-blue-l;
     background: #fff;
     list-style-type: none;
     overflow-y: auto;
@@ -184,17 +184,29 @@
     padding: $size-4 $size-10;
 
     &:focus,
-    &:hover,
-    &.active {
+    &:hover {
         outline: none;
         background-color: $primary-blue-l;
-        color: #FFF;
+        color: #fff;
+    }
+
+    &.active {
+        outline: none;
+        background-color: $primary-blue-d;
+        color: #fff;
     }
 
     &,
     &:not(:checked) {
-        color: $primary-blue-d; /* Prevent <option>s from becoming transparent due to the focusing transparent rules */
+        color: $primary-blue-dd; /* Prevent <option>s from becoming transparent due to the focusing transparent rules */
     }
+}
+
+.input--select--mobile optgroup {
+    color: $secondary-grey;
+    font-weight: $font-weight-body;
+    background: $color-background;
+    font-size: $size-14;
 }
 
 // Input--select--desktop
@@ -206,4 +218,15 @@
     @include media-query("desktop") {
         display: block;
     }
+}
+
+// Input--select--small
+// Small input select
+.input--select--small.input--select--mobile,
+.input--select--small .input--select__toggle {
+    min-height: 32px;
+    padding: 0 $size-32 0 $size-12;
+    background-size: $size-16 $size-16;
+    font-size: $size-14;
+    background-position: right $size-12 top 50%;
 }

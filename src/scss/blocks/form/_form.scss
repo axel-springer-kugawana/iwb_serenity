@@ -42,9 +42,10 @@
 // Field Title / Label / Description,
 .field__title,
 .field__label,
-.field__label--error {
+.field__label--error,
+.field__label--ingroup {
     display: block;
-    margin-bottom: $size-4;
+    margin-bottom: $size-2;
     font-family: $font-body;
     font-weight: $font-weight-title;
     font-size: $size-16;
@@ -93,6 +94,17 @@
 
 // Field Ingroup
 // Field of a group
+.field-group .field__title {
+    font-family: $font-title;
+    font-weight: $font-weight-title;
+    color: $primary-blue-dd;
+    font-size: $size-14;
+
+    @include media-query("desktop") {
+        font-size: $size-16;
+    }
+}
+
 .field--ingroup--inline {
     margin-bottom: $size-10;
 
@@ -146,7 +158,8 @@
     position: relative;
     font-size: $size-16;
     padding-left: $size-26;
-    margin: $size-4 0 0 0;
+    top: 0;
+    left: 0;
     white-space: normal;
     display: inline-block;
 
@@ -155,10 +168,11 @@
         display: block;
         position: absolute;
         top: 50%;
-        left: 0;
+        left: $size-2;
         width: 16px;
         height: 16px;
         transform: translateY(-50%);
+        background-size: $size-16 $size-16;
     }
 }
 
@@ -167,7 +181,7 @@
     color: $primary-blue-dd;
 
     &:before {
-        background: url("#{$public-path}images/icons/icon-validation-error.svg");
+        background-image: url("#{$public-path}images/icons/icon-validation-error.svg");
     }
 }
 
@@ -176,7 +190,7 @@
     color: $primary-blue-dd;
 
     &:before {
-        background: url("#{$public-path}images/icons/icon-validation-warning.svg");
+        background-image: url("#{$public-path}images/icons/icon-validation-warning.svg");
     }
 }
 
@@ -185,7 +199,7 @@
     color: $primary-blue-dd;
 
     &:before {
-        background: url("#{$public-path}images/icons/icon-validation-success.svg");
+        background-image: url("#{$public-path}images/icons/icon-validation-success.svg");
     }
 }
 
@@ -194,7 +208,7 @@
     color: $primary-blue-dd;
 
     &:before {
-        background: url("#{$public-path}images/icons/icon-validation-info.svg");
+        background-image: url("#{$public-path}images/icons/icon-validation-info.svg");
     }
 }
 
@@ -226,4 +240,16 @@
 
 .input--error {
     border-color: $functional-error;
+}
+
+// Warning State
+// ---------------------
+.input--warning {
+    border-color: $functional-warning;
+}
+
+// Modal theme
+// ---------------------
+.input--modal {
+    background-color: #fff;
 }

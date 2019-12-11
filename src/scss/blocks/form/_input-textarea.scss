@@ -2,12 +2,11 @@
   > Input Textarea
 \*------------------------------------*/
 
-.input--textarea,
-.input--textarea--error {
+.input--textarea {
     display: block;
     border: 1px solid $primary-blue-l;
     border-radius: $size-8;
-    background: #fff;
+    background: $primary-blue-llll;
     width: 100%;
     outline: none;
     padding: $size-4 $size-8 $size-16;
@@ -20,10 +19,6 @@
     &:focus {
         border-color: $primary-blue-d;
     }
-}
-
-.input--textarea-error {
-    border-color: $functional-error;
 }
 
 // Text area wrapper (use for counter)

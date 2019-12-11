@@ -12,11 +12,6 @@
             <input type="checkbox" name="checkboxName03" class="input--checkbox__input" value="value" id="exampleCheckboxId03">
             <label for="exampleCheckboxId03" class="input--checkbox__label">Indeterminate Input Checkbox</label>
         </div>
-        <div class="input--checkbox input--error">
-            <input type="checkbox" name="checkboxName04" class="input--checkbox__input" value="value" id="exampleCheckboxId04" aria-labelledby="exampleInputCheckbox01ErrorId exampleInputCheckbox04LabelId" aria-invalid="true">
-            <label id="exampleInputCheckbox04LabelId" for="exampleCheckboxId04" class="input--checkbox__label">Error Input Checkbox</label>
-        </div>
-        <p id="exampleInputCheckbox01ErrorId" class="field__message--error">Error message for input checkbox</p>
     </div>
 </template>
 

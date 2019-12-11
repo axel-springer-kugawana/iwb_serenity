@@ -5,9 +5,9 @@
 
 .input-search {
     display: flex;
-    padding: $size-4 $size-4 $size-4 $size-12;
-    border: 2px solid $primary-blue-l;
-    border-radius: $size-32;
+    padding: 0 $size-12;
+    border: 1px solid $primary-blue-l;
+    border-radius: $inputBorderRadius;
 
     &.focused {
         border-color: $primary-blue-d;
@@ -21,4 +21,12 @@
     outline: none;
     width: 100%;
     min-width: 0;
+    color: $primary-blue-dd;
+    line-height: $size-38;
+    min-height: $size-38;
+
+    // Placeholder Style
+    &::placeholder {
+        color: $primary-blue-l;
+    }
 }

@@ -2,6 +2,7 @@
     <div class="input--select-wrapper">
         <div
             class="input--select input--select--desktop"
+            :class="{ 'input--select--small' : small }"
             v-if="displayDesktopInput"
             v-click-outside="handleClickAway"
             @blur="closeList"
@@ -86,6 +87,7 @@
 
         <select
             class="input--select input--select--mobile"
+            :class="{ 'input--select--small' : small }"
             v-model="internalValue"
             :aria-labelledby="inputLabelId"
             :required="required ? true : false"
@@ -164,6 +166,11 @@ export default {
             default: 320
         },
         required: {
+            type: Boolean,
+            required: false,
+            default: false
+        },
+        small: {
             type: Boolean,
             required: false,
             default: false

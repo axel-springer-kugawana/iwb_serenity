@@ -5,7 +5,7 @@
 // Input Radio
 .input--radio {
     position: relative;
-    // margin-bottom: $size-10;
+    margin: $size-12 0 $size-14 0;
 }
 
 .input--radio__input {
@@ -44,11 +44,6 @@
     transform: translateY(-50%);
 }
 
-.input--error .input--radio__label:before {
-    border: 1px solid fade-out($functional-error, 0);
-}
-
-
 // Fake Radio Active
 .input--radio__label:after {
     display: block;
@@ -65,16 +60,8 @@
     opacity: 0;
 }
 
-.input-error .input--radio__label:after {
-    background: $functional-error;
-}
-
 .input--radio__input:checked + .input--radio__label:before {
     border-color: fade-out($primary-blue-l, 0);
-}
-
-.input--error .input--radio__input:checked + .input--radio__label:before {
-    border-color: fade-out($functional-error, 0);
 }
 
 .input--radio__input:checked + .input--radio__label:after {
@@ -84,6 +71,20 @@
 // Focus State
 .input--radio__input:focus + .input--radio__label:before {
     border-color: $primary-blue-d;
+}
+
+// Error State
+/*.input--error .input--radio__label:before {
+    border: 1px solid fade-out($functional-error, 0);
+}
+
+.input-error .input--radio__label:after {
+    background: $functional-error;
+}*/
+
+// Modal Theme
+.input--modal .input--radio__label:before {
+    background: #fff;
 }
 
 // Variation for radio inline

@@ -17,7 +17,7 @@
     }
 
     &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
-        outline: 2px solid $primary-blue-d;
+        outline: 1px solid $primary-blue-d;
     }
 }
 
@@ -65,17 +65,16 @@
     padding: $size-6 $size-12; // We substract 2px to padding (regarding the frontify doc) to take in account the 2px border
     background-color: $color;
     color: $primary-blue-dd;
-    border: 2px solid $color;
+    border: 1px solid $color;
     border-radius: $buttonBorderRadius;
-    text-transform: uppercase;
-    font-family: $font-title;
+    font-family: $font-body;
     font-size: $size-16;
     font-weight: $font-weight-title;
     transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic;
 
     // Hover, focus, active interactions
     &:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
-        color: #fff;
+        background-color: $primary-green-l;
     }
 
     &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]),

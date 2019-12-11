@@ -30,68 +30,54 @@
 }
 
 // Prepend & Append
+.input-group--prepend,
+.input-group--append,
+.input-group--stepper {
+    border: 1px solid $primary-blue-l;
+    border-radius: $inputBorderRadius;
+}
+
 .input-group__prepend,
 .input-group__append,
 .input-group__from-to-label,
 .input-group--stepper__button {
     font-family: $font-body;
     font-weight: $font-weight-title;
-    font-size: $size-16;
-    color: $primary-blue-d;
+    font-size: $size-18;
+    color: $primary-blue;
     text-transform: uppercase;
-    line-height: $size-38;
-    border: 1px solid $primary-blue-l;
-    box-shadow: 0 0 0 2px inset #fff;
-    min-height: $size-40;
-}
-
-.input-group__prepend,
-.input-group__append,
-.input-group__from-to-label,
-.input-group--stepper__button {
+    line-height: $size-32;
+    min-height: $size-32;
+    min-width: $size-34;
+    border: 1px solid $primary-blue-lll;
     background-color: $primary-blue-lll;
-}
-
-.input-group__main--prepend:focus ~ .input-group__prepend,
-.input-group__main--append:focus ~ .input-group__append,
-.input-group__main--append:focus ~ .input-group--stepper__button {
-    border-color: $primary-blue-d;
 }
 
 // Prepend
 .input-group__prepend,
 .input-group--stepper__button--prepend {
-    padding: 0 $size-10 0 $size-10;
-    border-right: 0;
+    padding: 0 $size-12 0 $size-12;
+    border-radius: $size-6;
+    margin-left: $size-2;
     order: -1;
 }
 
-.input-group__prepend,
-.input-group--stepper__button--prepend {
-    border-top-left-radius: $inputBorderRadius;
-    border-bottom-left-radius: $inputBorderRadius;
-}
-
 .input-group__main--prepend {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-left: 0;
+    border: 0;
+    background-color: #fff;
 }
-
 
 // Append
 .input-group__append,
 .input-group--stepper__button--append {
-    padding: 0 $size-10 0 $size-10;
-    border-top-right-radius: $inputBorderRadius;
-    border-bottom-right-radius: $inputBorderRadius;
-    border-left: 0;
+    padding: 0 $size-12 0 $size-12;
+    border-radius: $size-6;
+    margin-right: $size-2;
 }
 
 .input-group__main--append {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right: 0;
+    border: 0;
+    background-color: #fff;
 }
 
 // From To
@@ -119,47 +105,38 @@
 .input-group.focused .input-group__to,
 .input-group.focused .input-group__from-to-label,
 .input-group.focused .input-group--stepper__button {
-    border-color: $primary-blue-d;
+    border-color: $primary-blue-lll;
 }
 
 // Stepper
 .input-group--stepper__main {
     text-align: center;
+    background-color: #fff;
+    min-height: $size-38;
 }
 
 .input-group--stepper__button {
     cursor: pointer;
     position: relative;
-    font-size: $size-24;
+    font-size: $size-18;
+
+    &:hover {
+        background-color: $primary-blue-ll;
+        border-color: $primary-blue-ll;
+        color: $primary-blue-d;
+    }
 
     &:focus {
         outline: none;
         border-color: $primary-blue-d;
     }
 
-    &:focus::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: -2px;
-        width: 2px;
-        height: calc(100% + 4px); // 100% + 4px (addition of top and bottom border))
-        background: $primary-blue-d;
-    }
-
     &:disabled {
-        background: $grey-95;
-        color: $grey-65;
+        background: $grey-85;
+        color: $grey-55;
         cursor: not-allowed;
+        border-color: $grey-85;
     }
-}
-
-.input-group--stepper__button--prepend:focus::after {
-    right: -2px;
-}
-
-.input-group--stepper__button--append:focus::after {
-    left: -2px;
 }
 
 // Select

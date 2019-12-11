@@ -3,8 +3,7 @@
   Text Like Input
 \*------------------------------------*/
 
-.input--text,
-.input--text--error {
+.input--text {
     line-height: $size-38;
     padding: 0 $size-12;
     border: 1px solid $primary-blue-l;
@@ -25,10 +24,6 @@
     &::placeholder {
         color: $primary-blue-l;
     }
-}
-
-.input--text--error {
-    border-color: $functional-error;
 }
 
 // Variation for input number

@@ -18,6 +18,26 @@ A field is the grouping of a `label` and an `input`. Enclose those within a div 
 </div>
 ```
 
+## Field modal theme
+
+Fields also exist in a "modal" theme variation.
+
+The "modal" theme works better inside a very light blue background component.
+
+<div class="sd-example">
+    <div class="field">
+        <label for="exampleInputId09" class="field__label">Field Label</label>
+        <input id="exampleInputId09" class="input--text input--modal" value="text goes here">
+    </div>
+</div>
+
+```html
+<div class="field">
+    <label for="exampleInputId09" class="field__label">Field Label in group</label>
+    <input id="exampleInputId09" class="input--text input--modal" value="text goes here">
+</div>
+```
+
 ## Field Group
 
 Field group can be used to group multiple fields inside a group. A field group is a container with the `field-group` class. A field group can contain a `title` and a `description`.
@@ -26,7 +46,7 @@ A field label inside a `field-group` should use the `field__label--ingroup` clas
 
 <div class="sd-example">
     <div class="field-group">
-        <h2 class="field__title">Field Group Title</h2>
+        <h5 class="field__title">Field Group Title</h5>
         <p class="field__description">Field Group description</p>
         <div class="field">
             <label for="exampleInputId01" class="field__label--ingroup">Field label in group</label>
@@ -41,7 +61,7 @@ A field label inside a `field-group` should use the `field__label--ingroup` clas
 
 ```html
 <div class="field-group">
-    <h2 class="field__title">Field Group Title</h2>
+    <h5 class="field__title">Field Group Title</h5>
     <p class="field__description">Field Group description</p>
     <div class="field">
         <label for="exampleInputId01" class="field__label--ingroup">Field label in group</label>
@@ -113,7 +133,7 @@ Fields can contain warning messages (e.g. to show validation warning related to 
 <div class="sd-example">
     <div class="field">
         <label id="exampleInput06LabelId" for="exampleInputId06" class="field__label">Label of the Input</label>
-        <input id="exampleInputId06" class="input--text" value="" aria-labelledby="exampleInput06LabelId exampleInput06WarningId">
+        <input id="exampleInputId06" class="input--text input--warning" value="" aria-labelledby="exampleInput06LabelId exampleInput06WarningId">
         <p id="exampleInput06WarningId" class="field__message--warning">Warning message for input</p>
     </div>
 </div>
@@ -392,12 +412,30 @@ inputInstance.indeterminate = true;
     <input type="checkbox" name="checkboxName03" class="input--checkbox__input" value="value" id="exampleCheckboxId03">
     <label for="exampleCheckboxId03" class="input--checkbox__label">Indeterminate Input Checkbox</label>
 </div>
-<div class="input--checkbox input-error">
-    <input type="checkbox" name="checkboxName04" class="input--checkbox__input" value="value" id="exampleCheckboxId04">
-    <label for="exampleCheckboxId04" class="input--checkbox__label">Error Input Checkbox</label>
-</div>
-<p id="exampleInputCheckbox01ErrorId" class="field__message--error">Error message for input checkbox</p>
+```
 
+Input checkbox can contain error messages (e.g. to show validation errors related to check of the input checkbox group). Add the class `input-error` to the container of the input itself. Declare a tag containing these messages with the `field__error` class. Link the error tag and the input with an `aria-labbelledby` refering to the error tag id. Don't forget to add `aria-invalid="true"` on the input. The error message is prefixed by a "danger"-type icon.
+
+<div class="sd-example">
+    <div class="field" aria-labelledby="exampleCheckboxLabelId04">
+    <label id="exampleCheckboxLabelId04" class="field__label--error">Field checkbox with error</label>
+       <div class="input--checkbox input--error">
+           <input type="checkbox" name="checkboxName04" class="input--checkbox__input" value="value" id="exampleCheckboxId04" aria-labelledby="exampleInputCheckbox01ErrorId exampleCheckboxId04" aria-invalid="true">
+           <label for="exampleCheckboxId04" class="input--checkbox__label">Error Input Checkbox</label>
+       </div>
+       <p id="exampleInputCheckbox01ErrorId" class="field__message--error">Error message for input checkbox</p>
+    </div>
+</div>
+
+```html
+<div class="field" aria-labelledby="exampleCheckboxId">
+    <label id="exampleCheckboxId" class="field__label--error">Field checkbox with error</label>
+   <div class="input--checkbox input--error">
+       <input type="checkbox" name="checkboxName04" class="input--checkbox__input" value="value" id="exampleCheckboxId04"  aria-labelledby="exampleInputCheckbox01ErrorId exampleCheckboxId04" aria-invalid="true">
+       <label for="exampleCheckboxId04" class="input--checkbox__label">Error Input Checkbox</label>
+   </div>
+   <p id="exampleInputCheckbox01ErrorId" class="field__message--error">Error message for input checkbox</p>
+</div>
 ```
 
 ### Input Switch
@@ -432,7 +470,7 @@ Input Group Prepend, allow you to add a text block before an `input--text`.
 <div class="sd-example">
     <div class="field">
         <label id="inputGroupPrependLabel" for="inputGroupPrependExample" class="field__label">Input Group Label</label>
-        <div class="input-group">
+        <div class="input-group input-group--prepend">
             <input id="inputGroupPrependExample" name="inputGroupPrependName" type="text" placeholder="Placeholder" aria-labelledby="inputGroupPrependLabel inputGroupPrependPrefix" class="input-group__main--prepend input--text">
             <div id="inputGroupPrependPrefix" class="input-group__prepend">
                 <abbr title="Belgium" class="input-group__abbr">Be</abbr>
@@ -444,7 +482,7 @@ Input Group Prepend, allow you to add a text block before an `input--text`.
 ```html
 <div class="field">
     <label id="inputGroupPrependLabel" for="inputGroupPrependExample" class="field__label">Input Group Label</label>
-    <div class="input-group">
+    <div class="input-group input-group--prepend">
         <input id="inputGroupPrependExample" name="inputGroupPrependName" type="text" placeholder="Placeholder" aria-labelledby="inputGroupPrependLabel inputGroupPrependPrefix" class="input-group__main--prepend input--text">
         <div id="inputGroupPrependPrefix" class="input-group__prepend">
             <abbr title="Belgium" class="input-group__abbr">Be</abbr>
@@ -460,7 +498,7 @@ Input Group Append, allow you to add a text block after an `input--text`.
 <div class="sd-example">
     <div class="field">
         <label for="inputGroupApendExample" id="inputGroupApendLabel" class="field__label">Input Group Append</label>
-        <div class="input-group">
+        <div class="input-group input-group--append">
             <input id="inputGroupApendExample" name="inputGroupApendName" type="text" placeholder="Placeholder" aria-labelledby="inputGroupApendLabel inputGroupAppendSuffix" class="input-group__main--append input--text">
             <div id="inputGroupAppendSuffix" class="input-group__append">
                 <abbr title="Belgium" class="input-group__abbr">Be</abbr>
@@ -472,7 +510,7 @@ Input Group Append, allow you to add a text block after an `input--text`.
 ```html
 <div class="field">
     <label for="inputGroupApendExample" id="inputGroupApendLabel" class="field__label">Input Group Append</label>
-    <div class="input-group">
+    <div class="input-group input-group--append">
         <input id="inputGroupApendExample" name="inputGroupApendName" type="text" placeholder="Placeholder" aria-labelledby="inputGroupApendLabel inputGroupAppendSuffix" class="input-group__main--append input--text">
         <div id="inputGroupAppendSuffix" class="input-group__append">
             <abbr title="Belgium" class="input-group__abbr">Be</abbr>

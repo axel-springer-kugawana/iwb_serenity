@@ -78,6 +78,34 @@ Only one level of grouping is possible.
 ></serenityInputSelect>
 ```
 
+## Select size
+
+Serenity provides a boolean prop (small) for small input select.
+
+<div class="sd-example">
+    <Example-InputSelectSmall></Example-InputSelectSmall>
+</div>
+
+```html
+<label class="field__label" id="inputSelectSmallExampleLabelId" for="inputSelectSmallExampleId">Small Input Select:</label>
+<serenityInputSelect
+    :small="true"
+    id="inputSelectSmallExampleId"
+    inputLabelId="inputSelectSmallExampleLabelId"
+    :options="[
+        {'value': 'select-value-01', 'label': 'Jenny'},
+        {'value': 'select-value-02', 'label': 'Boby'},
+        {'value': 'select-value-03', 'label': 'Bob'},
+        {'value': 'select-value-04', 'label': 'John'},
+        {'value': 'select-value-05', 'label': 'Jean', 'disabled': true},
+        {'value': 'select-value-06', 'label': 'Robert'},
+        {'value': 'select-value-07', 'label': 'Marie'},
+        {'value': 'select-value-08', 'label': 'Marc'},
+        {'value': 'select-value-09', 'label': 'Julie'}
+    ]"
+></serenityInputSelect>
+```
+
 ## Props
 
 ```json
@@ -113,6 +141,11 @@ Only one level of grouping is possible.
         type: Boolean,
         required: false,
         default: false
+    },
+    small: {
+     type: Boolean,
+     required: false,
+     default: false
     }
 }
 ```
@@ -154,3 +187,9 @@ Only one level of grouping is possible.
     *default:false*
 
     A boolean that define if the element is required or not.
+    
+* *small*:
+    
+    *default:false*
+    
+    A boolean that define if the element is small or not.

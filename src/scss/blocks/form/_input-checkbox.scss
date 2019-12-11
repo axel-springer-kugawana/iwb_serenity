@@ -4,7 +4,7 @@
 
 .input--checkbox {
     position: relative;
-    margin-bottom: $size-10;
+    margin: $size-12 0 $size-14 0;
 }
 
 .input--checkbox__input {
@@ -24,11 +24,8 @@
     font-family: $font-body;
     font-size: $size-16;
     color: $primary-blue-dd;
+    line-height: $size-18;
 }
-
-/*.input--error .input--checkbox__label {
-    color: $functional-error;
-}*/
 
 // Fake Checkbox Input
 .input--checkbox__label:before {
@@ -38,6 +35,7 @@
     height: $size-20;
     width: $size-20;
     border: 1px solid fade-out($primary-blue, 0);
+    background-color: $primary-blue-llll;
     left: 0;
     margin: auto;
     position: absolute;
@@ -45,21 +43,18 @@
     transform: translateY(-50%);
 }
 
-.input--error  .input--checkbox__label:before {
-    border: 1px solid fade-out($functional-error, 0);
-}
-
-
 // Fake Checkbox Active
 .input--checkbox__label:after {
-    background: url("#{$public-path}images/icons/icon-checkmark.svg") no-repeat;
+    background-image: url("#{$public-path}images/icons/icon-checkmark.svg");
+    background-repeat: no-repeat;
+    background-size: $size-20 $size-20;
     content: "";
     display: block;
     position: absolute;
     fill: #fff;
-    height: $size-10;
-    width: $size-14;
-    left: $size-3;
+    height: $size-20;
+    width: $size-20;
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
@@ -70,44 +65,17 @@
 
 .input--checkbox__input:checked + .input--checkbox__label:before {
     border-color: $primary-blue;
-    background: $primary-blue;
-}
-
-.input--error  .input--checkbox__input:checked + .input--checkbox__label:before {
-    border-color: $functional-error;
-    background: $functional-error;
+    background-color: $primary-blue;
 }
 
 .input--checkbox__input:checked + .input--checkbox__label:after {
     opacity: 1;
 }
 
-// Focus State
-.input--checkbox__input:focus + .input--checkbox__label:before {
-    border-color: $primary-blue-d;
-}
-
-.input--error .input--checkbox__input:focus + .input--checkbox__label:before {
-    border-color: $functional-error;
-}
-
-.input--checkbox__input:checked:focus + .input--checkbox__label:before {
-    border-color: $primary-blue-d;
-}
-
-.input--error .input--checkbox__input:checked:focus + .input--checkbox__label:before {
-    border-color: $functional-error;
-}
-
 // Fake undeterminate
 .input--checkbox__input:indeterminate + .input--checkbox__label:before {
     border-color: $primary-blue;
-    background: $primary-blue;
-}
-
-.input--error .input--checkbox__input:indeterminate + .input--checkbox__label:before {
-    border-color: $functional-error;
-    background: $functional-error;
+    background-color: $primary-blue;
 }
 
 .input--checkbox__input:indeterminate + .input--checkbox__label:after {
@@ -115,24 +83,39 @@
     display: block;
     position: absolute;
     fill: #fff;
-    height: $size-2;
-    width: $size-11;
-    left: $size-4;
-    top: 50%;
-    transform: translateY(-50%);
+    height: $size-20;
+    width: $size-20;
     line-height: 100%;
     color: #fff;
     margin: auto;
     opacity: 1;
-    background: url("#{$public-path}images/icons/icon-checkmark-partial.svg") no-repeat;
+    background-image: url("#{$public-path}images/icons/icon-checkmark-partial.svg");
+    background-repeat: no-repeat;
 }
 
 // Focus State
+.input--checkbox__input:focus + .input--checkbox__label:before {
+    border-color: $primary-blue-d;
+}
+
 .input--checkbox__input:indeterminate:focus + .input--checkbox__label:before {
     border-color: $primary-blue-d;
 }
 
-.input--error .input--checkbox__input:indeterminate:focus + .input--checkbox__label:before {
+.input--checkbox__input:checked:focus + .input--checkbox__label:before {
+    border-color: $primary-blue-d;
+}
+
+// Error State
+/*.input--error .input--checkbox__input + .input--checkbox__label:before {
     border-color: $functional-error;
 }
 
+.input--error .input--checkbox__input:checked + .input--checkbox__label:before {
+    border-color: $primary-blue-d;
+}*/
+
+// Modal State
+.input--modal .input--checkbox__input + .input--checkbox__label:before{
+    background-color: #fff;
+}
