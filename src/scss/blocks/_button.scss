@@ -256,8 +256,8 @@
 
     // Icons
     .button__icon {
-        margin-left: -$size-4;
-        margin-right: $size-2;
+        margin-left: -$size-2;
+        margin-right: $size-8;
         width: $size-24;
         height: $size-24;
 
@@ -300,20 +300,13 @@
         }
     }
 
-    /*&:focus .button__icon,
-    &:active .button__icon,
-    &.button--active .button__icon {
-        @if $theme == "dark" {
-            fill: #fff;
-        }
-        @else {
-            fill: $color;
-        }
-    }*/
-
     .button__icon--left {
         margin-right: $size-4;
         margin-left: 0;
+    }
+
+    .button__label {
+        text-decoration: underline;
     }
 }
 // Button Transparent
