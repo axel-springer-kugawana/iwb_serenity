@@ -15,10 +15,6 @@
     &:active {
         text-decoration: none;
     }
-
-    &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
-        outline: 1px solid $primary-blue-d;
-    }
 }
 
 // Specific for icon and label
@@ -38,22 +34,6 @@
     left: 0;
 }
 
-// Disable state
-%button-disable,
-.button:disabled,
-.button[aria-disabled="true"],
-.button.button-disabled {
-    outline: none;
-    cursor: not-allowed;
-    pointer-events: none;
-    color: $grey-65;
-
-    @include media-query("desktop") {
-        cursor: not-allowed;
-        pointer-events: auto;
-    }
-}
-
 // Button Mixin
 // ---------------------
 
@@ -62,7 +42,7 @@
 // eg. button--primary
 @mixin button-plain($color, $theme: "bright") {
     position: relative;
-    padding: $size-6 $size-12; // We substract 2px to padding (regarding the frontify doc) to take in account the 2px border
+    padding: $size-7 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
     background-color: $color;
     color: $primary-blue-dd;
     border: 1px solid $color;
@@ -73,13 +53,16 @@
     transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic;
 
     // Hover, focus, active interactions
-    &:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
-        background-color: $primary-green-l;
+    &:hover {
+        background-color: color-l($color);
+        border-color: color-l($color);
     }
 
-    &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]),
-    &.button-disabled:focus:not([disabled="disabled"]):not([aria-disabled="true"]) {
+    &:focus,
+    &:active,
+    &.button--active {
         outline: none;
+        border-radius: $buttonBorderRadius;
 
         @if $theme == "dark" {
             border-color: #fff;
@@ -89,41 +72,29 @@
         }
     }
 
-    &:active:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
-        border-color: color-ddd($color);
-        background-color: color-ddd($color);
-    }
-
-    // Disabled state
-    &:disabled,
-    &[disabled="disabled"],
-    &[aria-disabled="true"],
-    &.button-disabled {
-        background-color: $grey-95;
-        border-color: $grey-95;
-    }
-
     // Icons
     .button__icon {
         display: inline-block;
         line-height: 100%;
         vertical-align: middle;
-        margin-right: 2px;
-        fill: $color;
+        margin-left: -$size-4;
+        margin-right: $size-2;
+        width: $size-24;
+        height: $size-24;
+        fill: $primary-blue-dd;
     }
 }
 
-// Button Outline
-// Button with transparent background and a colored border
+// Button Outline Colored
+// Button with transparent background, a colored border, and a colored label on dark mode
 // eg. button--secondary
-@mixin button-outline($color, $theme: "bright") {
+@mixin button-outline-colored($color, $theme: "bright") {
     position: relative;
-    padding: $size-6 $size-12; // We substract 2px to padding (regarding the frontify doc) to take in account the 2px border
+    padding: $size-7 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
     background-color: transparent;
-    border: 2px solid $color;
+    border: 1px solid $color;
     border-radius: $buttonBorderRadius;
-    text-transform: uppercase;
-    font-family: $font-title;
+    font-family: $font-body;
     font-size: $size-16;
     font-weight: $font-weight-title;
     transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic;
@@ -140,35 +111,27 @@
         display: inline-block;
         line-height: 100%;
         vertical-align: middle;
-        // margin-top: 1px; // Margin top magic number for visualy "aligned" icon
-        margin-right: 2px;
-        fill: $color;
+        margin-left: -$size-4;
+        margin-right: $size-2;
+        width: $size-24;
+        height: $size-24;
+
+        @if $theme == "dark" {
+            fill: $color;
+        }
+        @else {
+            fill: $primary-blue-dd;
+        }
     }
 
     // Hover, focus, active interactions
-    &:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
-        color: #fff;
-        background-color: $color;
+    &:hover {
+        background-color: color-lll($color);
+        border-color: $color;
     }
 
-    &:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) .button__icon {
-        fill: #fff;
-    }
-
-    &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]),
-    &.button--active {
-
-        @if $theme == "dark" {
-            background-color: transparent;
-            color: #fff;
-        }
-        @else {
-            background-color: $color;
-        }
-    }
-
-    &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]),
-    &.button-disabled:focus:not([aria-disabled="true"]),
+    &:focus,
+    &:active,
     &.button--active {
         outline: none;
 
@@ -176,11 +139,12 @@
             border-color: #fff;
         }
         @else {
-            border-color: $primary-blue-dd;
+            border-color: $primary-blue-d;
         }
     }
 
-    &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) .button__icon,
+    &:focus .button__icon,
+    &:active .button__icon,
     &.button--active .button__icon {
         @if $theme == "dark" {
             fill: #fff;
@@ -189,104 +153,169 @@
             fill: $primary-blue-dd;
         }
     }
+}
 
-    &:active:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
-        border-color: color-ddd($color);
-        background-color: transparent;
+// Button Outline White
+// Button with transparent background, a colored border, and white label on dark mode
+// eg. button--tertiary
+@mixin button-outline-white($color, $theme: "bright") {
+    position: relative;
+    padding: $size-7 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
+    background-color: transparent;
+    border: 1px solid color-ll($color);
+    border-radius: $buttonBorderRadius;
+    font-family: $font-body;
+    font-size: $size-16;
+    font-weight: $font-weight-title;
+    transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic;
+
+    @if $theme == "dark" {
+        color: #fff;
+    }
+    @else {
+        color: $color;
+    }
+
+    // Icons
+    .button__icon {
+        display: inline-block;
+        line-height: 100%;
+        vertical-align: middle;
+        margin-left: -$size-4;
+        margin-right: $size-2;
+        width: $size-24;
+        height: $size-24;
 
         @if $theme == "dark" {
-            color: color-ddd($color);
+            fill: #fff;
         }
         @else {
-            color: $primary-blue-dd;
+            fill: $color;
         }
     }
 
-    &:active:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) .button__icon {
-        fill: color-ddd($color);
+    // Hover, focus, active interactions
+    &:hover {
+        outline: none;
+        background-color: color-lll($color);
     }
 
-    // Disabled state
-    &:disabled,
-    &[disabled="disabled"],
-    &[aria-disabled="true"],
-    &.button-disabled {
-        border-color: $grey-95;
+    &:hover .button__icon {
+        @if $theme == "dark" {
+            fill: #fff;
+        }
+        @else {
+            fill: $color;
+        }
     }
 
-    &:disabled .button__icon,
-    &[disabled="disabled"] .button__icon,
-    &[aria-disabled="true"] .button__icon,
-    &.button-disabled .button__icon {
-        fill: $grey-65;
+    &:focus,
+    &:active,
+    &.button--active {
+        outline: none;
+
+        @if $theme == "dark" {
+            border-color: #fff;
+        }
+        @else {
+            border-color: $primary-blue-d;
+        }
+    }
+
+    &:focus .button__icon,
+    &:active .button__icon,
+    &.button--active .button__icon {
+        @if $theme == "dark" {
+            fill: #fff;
+        }
+        @else {
+            fill: $color;
+        }
     }
 }
 
 // Button Text
 // Button with transparent background and no border
 // eg. button--text
-@mixin button-text($color) {
+@mixin button-text($color, $theme:"bright") {
     position: relative;
-    padding: 0;
+    padding: 0 $size-2;
     background-color: transparent;
-    color: $primary-blue-dd;
     border: 0;
-    font-size: $size-12;
-    font-family: $font-title;
+    font-size: $size-14;
+    font-family: $font-body;
     font-weight: $font-weight-title;
+    text-decoration: underline;
 
-    &:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
-        box-shadow: 0 -1px 0 0 $color inset;
-        color: $primary-blue-dd;
+    @if $theme == "dark" {
+        color: #fff;
     }
-
-    // 2019-11-28 : Used anymore ?
-    /*&:focus:not([disabled="disabled"]):not([aria-disabled="true"]) {
-        box-shadow: 0 -1px 0 0 $primary-ddd inset;
-    }
-
-    &:active:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
-        box-shadow: 0 -1px 0 0 color-ddd($color) inset;
-    }*/
-
-    &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
-        outline: none;
-    }
-
-    &:disabled,
-    &[disabled="disabled"],
-    &:disabled .button__icon,
-    &[disabled="disabled"] .button__icon,
-    &[aria-disabled="true"] .button__icon,
-    &.button-disabled .button__icon {
-        color: $grey-65;
+    @else {
+        color: $color;
     }
 
     // Icons
     .button__icon {
-        fill: $color;
-        width: $size-12;
-        height: $size-12;
-        margin-left: $size-4;
+        margin-left: -$size-4;
+        margin-right: $size-2;
+        width: $size-24;
+        height: $size-24;
+
+        @if $theme == "dark" {
+            fill: #fff;
+        }
+        @else {
+            fill: $color;
+        }
     }
+
+    &:hover {
+        text-decoration: underline;
+        @if $theme == "dark" {
+            color: color-l($color);
+        }
+        @else {
+            color: color-d($color);
+        }
+    }
+
+    &:hover .button__icon {
+        @if $theme == "dark" {
+            fill: color-l($color);
+        }
+        @else {
+            fill: color-d($color);
+        }
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+        text-decoration: underline;
+        @if $theme == "dark" {
+            box-shadow: 0 0 $size-2 color-ll($color), inset 0 0 $size-2 color-ll($color);
+        }
+        @else {
+            box-shadow: 0 0 $size-2 $color, inset 0 0 $size-2 $color;
+        }
+    }
+
+    /*&:focus .button__icon,
+    &:active .button__icon,
+    &.button--active .button__icon {
+        @if $theme == "dark" {
+            fill: #fff;
+        }
+        @else {
+            fill: $color;
+        }
+    }*/
 
     .button__icon--left {
         margin-right: $size-4;
         margin-left: 0;
     }
-
-    &:active:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) .button__icon {
-        fill: color-ddd($color);
-    }
-
-    &:disabled .button__icon,
-    &[disabled="disabled"] .button__icon,
-    &[aria-disabled="true"] .button__icon,
-    &.button-disabled .button__icon {
-        fill: $grey-65;
-    }
 }
-
 // Button Transparent
 // Button without any "style"
 // e.g. Card Bookmark classified button
@@ -327,18 +356,34 @@
 // Button Secondary
 %button--secondary,
 .button--secondary {
-    @include button-outline($green);
+    @include button-outline-colored($green);
 }
 
 %button--secondary--dark,
 .button--secondary--dark {
-    @include button-outline($green, "dark");
+    @include button-outline-colored($green, "dark");
+}
+
+// Button Tertiary
+%button--tertiary,
+.button--tertiary {
+    @include button-outline-white($blue);
+}
+
+%button--tertiary--dark,
+.button--tertiary--dark {
+    @include button-outline-white($blue, "dark");
 }
 
 // Button Text
 %button--text,
 .button--text {
-    @include button-text($green);
+    @include button-text($blue);
+}
+
+%button--text--dark,
+.button--text--dark {
+    @include button-text($blue, "dark");
 }
 
 // Button Bright
@@ -385,8 +430,8 @@
 // eg. Button use in PP Header
 %button--size-small,
 .button--size-small {
-    font-size: $size-12;
-    padding: $size-6 $size-10;
+    padding-top: $size-2;
+    padding-bottom: $size-2;
 }
 
 // Button Short Label
