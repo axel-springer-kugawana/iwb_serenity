@@ -54,8 +54,8 @@
 
     // Hover, focus, active interactions
     &:hover {
-        background-color: color-l($color);
-        border-color: color-l($color);
+        background-color: $primary-blue-l;
+        border-color: $primary-blue-l;
     }
 
     &:focus,
@@ -126,8 +126,14 @@
 
     // Hover, focus, active interactions
     &:hover {
-        background-color: color-lll($color);
         border-color: $color;
+
+        @if $theme == "dark" {
+            background-color: rgba(101, 215, 141, .35); // $primary-green
+        }
+        @else {
+            background-color: $primary-green-lll;
+        }
     }
 
     &:focus,
@@ -162,7 +168,7 @@
     position: relative;
     padding: $size-7 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
     background-color: transparent;
-    border: 1px solid color-ll($color);
+    border: 1px solid $primary-blue-ll;
     border-radius: $buttonBorderRadius;
     font-family: $font-body;
     font-size: $size-16;
@@ -197,7 +203,13 @@
     // Hover, focus, active interactions
     &:hover {
         outline: none;
-        background-color: color-lll($color);
+
+        @if $theme == "dark" {
+            background-color: rgba(63, 109, 167, .35); // $primary-blue
+        }
+        @else {
+            background-color: $primary-blue-lll;
+        }
     }
 
     &:hover .button__icon {
@@ -272,19 +284,19 @@
     &:hover {
         text-decoration: underline;
         @if $theme == "dark" {
-            color: color-l($color);
+            color: $primary-blue-l;
         }
         @else {
-            color: color-d($color);
+            color: $primary-blue-d;
         }
     }
 
     &:hover .button__icon {
         @if $theme == "dark" {
-            fill: color-l($color);
+            fill: $primary-blue-l;
         }
         @else {
-            fill: color-d($color);
+            fill: $primary-blue-d;
         }
     }
 
@@ -293,7 +305,7 @@
         outline: none;
         text-decoration: underline;
         @if $theme == "dark" {
-            box-shadow: 0 0 $size-2 color-ll($color), inset 0 0 $size-2 color-ll($color);
+            box-shadow: 0 0 $size-2 $primary-blue-ll, inset 0 0 $size-2 $primary-blue-ll;
         }
         @else {
             box-shadow: 0 0 $size-2 $color, inset 0 0 $size-2 $color;
@@ -338,51 +350,51 @@
 // Button Primary
 %button--primary,
 .button--primary {
-    @include button-plain($green);
+    @include button-plain($primary-green);
 }
 
 %button--primary--dark,
 .button--primary--dark {
-    @include button-plain($green, "dark");
+    @include button-plain($primary-green, "dark");
 }
 
 // Button Secondary
 %button--secondary,
 .button--secondary {
-    @include button-outline-colored($green);
+    @include button-outline-colored($primary-green);
 }
 
 %button--secondary--dark,
 .button--secondary--dark {
-    @include button-outline-colored($green, "dark");
+    @include button-outline-colored($primary-green, "dark");
 }
 
 // Button Tertiary
 %button--tertiary,
 .button--tertiary {
-    @include button-outline-white($blue);
+    @include button-outline-white($primary-blue);
 }
 
 %button--tertiary--dark,
 .button--tertiary--dark {
-    @include button-outline-white($blue, "dark");
+    @include button-outline-white($primary-blue, "dark");
 }
 
 // Button Text
 %button--text,
 .button--text {
-    @include button-text($blue);
+    @include button-text($primary-blue);
 }
 
 %button--text--dark,
 .button--text--dark {
-    @include button-text($blue, "dark");
+    @include button-text($primary-blue, "dark");
 }
 
 // Button Bright
 %button--bright,
 .button--bright {
-    @include button-plain($bright);
+    @include button-plain($secondary-blue);
 }
 
 // Button Square

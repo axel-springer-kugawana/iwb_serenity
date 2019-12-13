@@ -13,45 +13,27 @@ $line-height-body: 1.5 !default;
 
 // Colors
 // ---------------------
-$blue: #3f6da7 !default;
-$green: #65d78d !default;
-$grey: #63697d !default;
-$fresh: #3cbcfc !default;
-$bright: #cd4c02 !default;
-
 // Primary
-$primary-blue: $blue !default;
-$primary-green: $green !default;
+$primary-blue: #3f6da7 !default;
+$primary-green: #65d78d !default;
 
 // Secondary
-$secondary-grey: $grey !default;
-$secondary-fresh: $fresh !default;
-$secondary-bright: $bright !default;
+$secondary-grey: #63697d !default;
+$secondary-blue: #3cbcfc !default;
+$secondary-orange: #cd4c02 !default;
 
 // Shade
-$primary-blue-d: color-d($primary-blue) !default;
-$primary-blue-dd: color-dd($primary-blue) !default;
-$primary-blue-ddd: color-ddd($primary-blue) !default;
-$primary-blue-l: color-l($primary-blue) !default;
-$primary-blue-ll: color-ll($primary-blue) !default;
-$primary-blue-lll: color-lll($primary-blue) !default;
-$primary-blue-llll: color-llll($primary-blue) !default;
+$primary-blue-d: #28476d !default;
+$primary-blue-dd: #1c3452 !default;
+$primary-blue-ddd: #132031 !default;
+$primary-blue-l: #81a0c5 !default;
+$primary-blue-ll: #c4d3e4 !default;
+$primary-blue-lll: #ebf0f6 !default;
+$primary-blue-llll: #f7f9fb !default;
 
-$primary-green-d: color-d($primary-green) !default;
-$primary-green-dd: color-dd($primary-green) !default;
-$primary-green-ddd: color-ddd($primary-green) !default;
-$primary-green-l: color-l($primary-green) !default;
-$primary-green-ll: color-ll($primary-green) !default;
-$primary-green-lll: color-lll($primary-green) !default;
-//$primary-green-llll: color-llll($primary-green) !default;
-
-$secondary-bright-d: color-d($secondary-bright) !default;
-$secondary-bright-dd: color-dd($secondary-bright) !default;
-$secondary-bright-ddd: color-ddd($secondary-bright) !default;
-$secondary-bright-l: color-l($secondary-bright) !default;
-$secondary-bright-ll: color-ll($secondary-bright) !default;
-$secondary-bright-lll: color-lll($secondary-bright) !default;
-$secondary-bright-llll: color-llll($secondary-bright) !default;
+$primary-green-l: #9be5b5 !default;
+$primary-green-ll: #cff3dc !default;
+$primary-green-lll: #eefbf2 !default;
 
 // Grey shader
 $grey-95: #f2f2f2 !default;
