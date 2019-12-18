@@ -14,16 +14,24 @@ Display a simple button with the *button* class.
 
 Serenity provides a few default styles for your buttons: *primary*, *secondary*, *tertiary* and *text* buttons. Enable them by using a modifier.
 
-<button class="button button--primary">Primary button</button>
-<button class="button button--secondary">Secondary button</button>
-<button class="button button--tertiary">Tertiary button</button>
-<button class="button button--text">Text button</button>
+<button class="button button--primary"><span class="button__label">Primary button</span></button>
+<button class="button button--secondary"><span class="button__label">Secondary button</span></button>
+<button class="button button--tertiary"><span class="button__label">Tertiary button</span></button>
+<button class="button button--text"><span class="button__label">Text button</span></button>
 
 ```html
-<button class="button button--primary">Primary button</button>
-<button class="button button--secondary">Secondary button</button>
-<button class="button button--tertiary">Tertiary button</button>
-<button class="button button--text">Text button</button>
+<button class="button button--primary">
+    <span class="button__label">Primary button</span>
+</button>
+<button class="button button--secondary">
+    <span class="button__label">Secondary button</span>
+</button>
+<button class="button button--tertiary">
+    <span class="button__label">Tertiary button</span>
+</button>
+<button class="button button--text">
+    <span class="button__label">Text button</span>
+</button>
 ```
 
 ## Button dark theme
@@ -32,30 +40,52 @@ Button primary and button secondary also exist in a "dark" theme variation.
 
 The differences with the default theme are not big, but the "dark" works better inside a dark background component.
 
-<button class="button button--primary--dark">Primary dark button</button>
-<button class="button button--secondary--dark">Secondary dark button</button>
-<button class="button button--tertiary--dark">Tertiary dark button</button>
-<button class="button button--text--dark">Text button</button>
+<button class="button button--primary--dark">
+    <span class="button__label">Primary dark button</span>
+</button>
+<button class="button button--secondary--dark">
+    <span class="button__label">Secondary dark button</span>
+</button>
+<button class="button button--tertiary--dark">
+    <span class="button__label">Tertiary dark button</span>
+</button>
+<button class="button button--text--dark">
+    <span class="button__label">Text button</span>
+</button>
 
 ```html
-<button class="button button--primary--dark">Primary dark button</button>
-<button class="button button--secondary--dark">Secondary dark button</button>
-<button class="button button--tertiary--dark">Tertiary dark button</button>
-<button class="button button--text--dark">Text button</button>
+<button class="button button--primary--dark">
+    <span class="button__label">Primary dark button</span>
+</button>
+<button class="button button--secondary--dark">
+    <span class="button__label">Secondary dark button</span>
+</button>
+<button class="button button--tertiary--dark">
+    <span class="button__label">Tertiary dark </span>
+</button>
+<button class="button button--text--dark">
+    <span class="button__label">Text button</span>
+</button>
 ```
 
 ## Button size
 
 Serenity provides a modifier (`size-small`) for small buttons.
 
-<button class="button button--primary button--size-small">Small primary button </button>
-<button class="button button--secondary button--size-small">Small secondary button </button>
-<button class="button button--tertiary button--size-small">Small tertiary button </button>
+<button class="button button--primary button--size-small"><span class="button__label">Small primary button</span></button>
+<button class="button button--secondary button--size-small"><span class="button__label">Small secondary button</span></button>
+<button class="button button--tertiary button--size-small"><span class="button__label">Small tertiary button</span></button>
 
 ```html
-<button class="button button--primary button--size-small">Small primary button </button>
-<button class="button button--secondary button--size-small">Small secondary button </button>
-<button class="button button--tertiary button--size-small">Small tertiary button </button>
+<button class="button button--primary button--size-small">
+    <span class="button__label">Small primary button</span>
+</button>
+<button class="button button--secondary button--size-small">
+    <span class="button__label">Small secondary button</span>
+</button>
+<button class="button button--tertiary button--size-small">
+    <span class="button__label">Small tertiary button</span>
+</button>
 ```
 
 ## Button icon
@@ -83,7 +113,8 @@ You can put an SVG icon inside a button using the `button__icon` and `button__la
 <button class="button button--text">
     <svg class="button__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M21 11.59V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v4.58l3 3.01L9.3 9.3a.996.996 0 0 1 1.41 0L14 12.59l3.29-3.3c.39-.39 1.03-.39 1.42 0l2.29 2.3zm0 2.84l-3-3.01-3.3 3.28a.996.996 0 0 1-1.41 0L10 11.41l-3.3 3.3a.996.996 0 0 1-1.41 0L3 12.42V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-4.57z"/>
-    </svg><span class="button__label">Click me!</span>
+    </svg>
+    <span class="button__label">Click me!</span>
 </button>
 
 ```html

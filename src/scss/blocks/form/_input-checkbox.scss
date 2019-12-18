@@ -34,7 +34,7 @@
     border-radius: 2px;
     height: $size-20;
     width: $size-20;
-    border: 1px solid fade-out($primary-blue, 0);
+    border: 1px solid $primary-blue;
     background-color: $primary-blue-llll;
     left: 0;
     margin: auto;

@@ -42,7 +42,7 @@
 // eg. button--primary
 @mixin button-plain($color, $theme: "bright") {
     position: relative;
-    padding: $size-7 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
+    padding: $size-6 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
     background-color: $color;
     color: $primary-blue-dd;
     border: 1px solid $color;
@@ -251,13 +251,12 @@
 // eg. button--text
 @mixin button-text($color, $theme:"bright") {
     position: relative;
-    padding: 0 $size-2;
+    padding: 0;
     background-color: transparent;
     border: 0;
     font-size: $size-14;
     font-family: $font-body;
     font-weight: $font-weight-title;
-    text-decoration: underline;
 
     @if $theme == "dark" {
         color: #fff;
@@ -268,8 +267,6 @@
 
     // Icons
     .button__icon {
-        margin-left: -$size-2;
-        margin-right: $size-8;
         width: $size-24;
         height: $size-24;
 
@@ -282,7 +279,6 @@
     }
 
     &:hover {
-        text-decoration: underline;
         @if $theme == "dark" {
             color: $primary-blue-l;
         }
@@ -303,7 +299,6 @@
     &:focus,
     &:active {
         outline: none;
-        text-decoration: underline;
         @if $theme == "dark" {
             box-shadow: 0 0 $size-2 $primary-blue-ll, inset 0 0 $size-2 $primary-blue-ll;
         }
@@ -312,13 +307,10 @@
         }
     }
 
-    .button__icon--left {
-        margin-right: $size-4;
-        margin-left: 0;
-    }
-
     .button__label {
         text-decoration: underline;
+        margin-left: $size-4;
+        margin-right: $size-4;
     }
 }
 // Button Transparent
