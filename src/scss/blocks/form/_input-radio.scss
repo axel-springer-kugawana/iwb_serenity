@@ -23,7 +23,7 @@
     cursor: pointer;
     font-weight: $font-weight-body;
     font-family: $font-body;
-    font-size: $size-16;
+    font-size: $size-14;
     line-height: $size-18;
     color: $primary-blue-dd;
 }
@@ -32,6 +32,7 @@
 .input--radio__label:before {
     display: block;
     content: "";
+    font-size: $size-16;
     border-radius: 100%;
     height: $size-20;
     width: $size-20;
@@ -48,6 +49,7 @@
 .input--radio__label:after {
     display: block;
     content: "";
+    font-size: $size-16;
     border-radius: 100%;
     height: $size-8;
     width: $size-8;
@@ -74,13 +76,13 @@
 }
 
 // Error State
-/*.input--error .input--radio__label:before {
+.input--error .input--radio__label:before {
     border: 1px solid fade-out($functional-error, 0);
 }
 
 .input-error .input--radio__label:after {
     background: $functional-error;
-}*/
+}
 
 // Modal Theme
 .input--modal .input--radio__label:before {

@@ -22,7 +22,7 @@
     cursor: pointer;
     font-weight: $font-weight-body;
     font-family: $font-body;
-    font-size: $size-16;
+    font-size: $size-14;
     color: $primary-blue-dd;
     line-height: $size-18;
 }
@@ -34,7 +34,7 @@
     border-radius: 2px;
     height: $size-20;
     width: $size-20;
-    border: 1px solid $primary-blue;
+    border: 1px solid $primary-blue-l;
     background-color: $primary-blue-llll;
     left: 0;
     margin: auto;
@@ -107,13 +107,13 @@
 }
 
 // Error State
-/*.input--error .input--checkbox__input + .input--checkbox__label:before {
+.input--error .input--checkbox__input + .input--checkbox__label:before {
     border-color: $functional-error;
 }
 
 .input--error .input--checkbox__input:checked + .input--checkbox__label:before {
     border-color: $primary-blue-d;
-}*/
+}
 
 // Modal State
 .input--modal .input--checkbox__input + .input--checkbox__label:before{

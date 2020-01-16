@@ -93,26 +93,23 @@ h5,
 h6,
 .title--6,
 %title--6 {
-    font-family: $font-body;
-    font-style: italic;
-    font-weight: 700;
+    @extend %title;
     color: $primary-blue-dd;
-    font-size: $size-16;
+    font-size: $size-13;
 }
 
 // Small
 // ---------------------
 small,
 .small,
-.small--primary,
 .small--dark {
     font-size: $size-14;
     color: $color-body;
 }
 
-.small--primary,
-.small--xs--primary {
-    color: $primary-blue;
+.small--xs,
+.small--xs--dark {
+    font-size: $size-13;
 }
 
 .small--dark,
@@ -120,22 +117,24 @@ small,
     color: $primary-blue-dd;
 }
 
-.small--xs,
-.small--xs--primary,
-.small--xs--dark {
-    font-size: $size-12;
-}
-
 // Link
 // ---------------------
 
 a {
     color: $color-link;
+    font-weight: normal;
+    text-decoration: underline;
     background-color: transparent; // Remove the gray background on active links in IE 10.
     -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.
 
     @include hover {
         color: $color-link-hover;
+    }
+
+    &:focus,
+    &:active {
+        outline: none;
+        box-shadow: 0 0 $size-2 $primary-blue, inset 0 0 $size-2 $primary-blue;
     }
 }
 
@@ -157,12 +156,6 @@ a:not([href]):not([tabindex]) {
     &:focus {
         outline: 0;
     }
-}
-
-// Text Color Utility
-// ---------------------
-.text-primary {
-    color: $primary-blue;
 }
 
 // Position Utility
