@@ -34,7 +34,7 @@
 .input-group--append,
 .input-group--stepper {
     border: 1px solid $primary-blue-l;
-    border-radius: $inputBorderRadius;
+    border-radius: $input-border-radius;
 }
 
 .input-group__prepend,
@@ -158,8 +158,8 @@
     color: $primary-blue-d;
     border: 2px solid $primary-blue-l;
     border-right: 0;
-    border-top-left-radius: $inputGroupSelectLargeBorderRadius;
-    border-bottom-left-radius: $inputGroupSelectLargeBorderRadius;
+    border-top-left-radius: $input-group-select-large-border-radius;
+    border-bottom-left-radius: $input-group-select-large-border-radius;
     padding: 0 $size-14;
     line-height: 1;
     min-height: $size-44;
@@ -168,8 +168,8 @@
 
     &:only-child {
         border-right: 2px solid $primary-blue-l;
-        border-top-right-radius: $inputBorderRadius;
-        border-bottom-right-radius: $inputBorderRadius;
+        border-top-right-radius: $input-border-radius;
+        border-bottom-right-radius: $input-border-radius;
     }
 
     &:focus {
@@ -207,8 +207,8 @@
 
 .input-group--select__input:only-child,
 .input-group--select__submit {
-    border-top-right-radius: $inputGroupSelectLargeBorderRadius;
-    border-bottom-right-radius: $inputGroupSelectLargeBorderRadius;
+    border-top-right-radius: $input-group-select-large-border-radius;
+    border-bottom-right-radius: $input-group-select-large-border-radius;
 }
 
 .input-group--select__submit {

@@ -7,7 +7,7 @@
     display: flex;
     padding: 0 $size-12;
     border: 1px solid $primary-blue-l;
-    border-radius: $inputBorderRadius;
+    border-radius: $input-border-radius;
 
     &.focused {
         border-color: $primary-blue-d;
