@@ -23,13 +23,12 @@
 // Error state
 .input-group--error:not(.focused) .input-group__from:not(:focus),
 .input-group--error:not(.focused) .input-group__to:not(:focus),
-.input-group--error:not(.focused) .input-group__from-to-label,
 .input-group--error:not(.focused) .input-group--stepper__button:not(:focus),
 .input-group--error:not(.focused) .input-group__main:not(:focus) {
     border-color: $functional-error;
 }
 
-// Prepend & Append
+// Prepend, Append & Stepper
 .input-group--prepend,
 .input-group--append,
 .input-group--stepper {
@@ -39,7 +38,6 @@
 
 .input-group__prepend,
 .input-group__append,
-.input-group__from-to-label,
 .input-group--stepper__button {
     font-family: $font-body;
     font-weight: $font-weight-title;
@@ -51,61 +49,6 @@
     min-width: $size-34;
     border: 1px solid $primary-blue-lll;
     background-color: $primary-blue-lll;
-}
-
-// Prepend
-.input-group__prepend,
-.input-group--stepper__button--prepend {
-    padding: 0 $size-12 0 $size-12;
-    border-radius: $size-6;
-    margin-left: $size-2;
-    order: -1;
-}
-
-.input-group__main--prepend {
-    border: 0;
-    background-color: #fff;
-}
-
-// Append
-.input-group__append,
-.input-group--stepper__button--append {
-    padding: 0 $size-12 0 $size-12;
-    border-radius: $size-6;
-    margin-right: $size-2;
-}
-
-.input-group__main--append {
-    border: 0;
-    background-color: #fff;
-}
-
-// From To
-.input-group__from {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-right: 0;
-    padding-right: 0;
-}
-
-.input-group__to {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    border-left: 0;
-}
-
-.input-group__from-to-label {
-    border-left: 0;
-    border-right: 0;
-    padding: 0 $size-8;
-    margin-bottom: 0;
-}
-
-.input-group.focused .input-group__from,
-.input-group.focused .input-group__to,
-.input-group.focused .input-group__from-to-label,
-.input-group.focused .input-group--stepper__button {
-    border-color: $primary-blue-lll;
 }
 
 // Stepper
@@ -138,6 +81,38 @@
         border-color: $grey-85;
     }
 }
+
+.input-group.focused .input-group--stepper__button {
+    border-color: $primary-blue-lll;
+}
+
+// Prepend
+.input-group__prepend,
+.input-group--stepper__button--prepend {
+    padding: 0 $size-12 0 $size-12;
+    border-radius: $size-6;
+    margin-left: $size-2;
+    order: -1;
+}
+
+.input-group__main--prepend {
+    border: 0;
+    background-color: #fff;
+}
+
+// Append
+.input-group__append,
+.input-group--stepper__button--append {
+    padding: 0 $size-12 0 $size-12;
+    border-radius: $size-6;
+    margin-right: $size-2;
+}
+
+.input-group__main--append {
+    border: 0;
+    background-color: #fff;
+}
+
 
 // Select
 // ---------------------

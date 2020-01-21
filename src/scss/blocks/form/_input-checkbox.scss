@@ -45,8 +45,7 @@
 
 // Fake Checkbox Active
 .input--checkbox__label:after {
-    background-image: url("#{$public-path}images/icons/icon-checkmark.svg");
-    background-repeat: no-repeat;
+    background: url("#{$public-path}images/icons/icon-checkmark.svg") no-repeat;
     background-size: $size-20 $size-20;
     content: "";
     display: block;
