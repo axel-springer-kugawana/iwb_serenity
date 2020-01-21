@@ -9,6 +9,7 @@
     text-decoration: none;
     text-align: center;
     cursor: pointer;
+    line-height: 1;
 
     &:hover,
     &:focus,
@@ -22,6 +23,10 @@
 .button__icon {
     display: inline-block;
     vertical-align: middle;
+}
+
+.button__label {
+    line-height: $size-20;
 }
 
 // IE 11 FIX
@@ -42,7 +47,7 @@
 // eg. button--primary
 @mixin button-plain($color, $theme: "bright") {
     position: relative;
-    padding: $size-6 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
+    padding: $size-9 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
     background-color: $color;
     color: $primary-blue-dd;
     border: 1px solid $color;
@@ -79,8 +84,6 @@
         vertical-align: middle;
         margin-left: -$size-4;
         margin-right: $size-2;
-        width: $size-24;
-        height: $size-24;
         fill: $primary-blue-dd;
     }
 }
@@ -90,7 +93,7 @@
 // eg. button--secondary
 @mixin button-outline-colored($color, $theme: "bright") {
     position: relative;
-    padding: $size-7 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
+    padding: $size-9 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
     background-color: transparent;
     border: 1px solid $color;
     border-radius: $buttonBorderRadius;
@@ -113,8 +116,6 @@
         vertical-align: middle;
         margin-left: -$size-4;
         margin-right: $size-2;
-        width: $size-24;
-        height: $size-24;
 
         @if $theme == "dark" {
             fill: $color;
@@ -166,7 +167,7 @@
 // eg. button--tertiary
 @mixin button-outline-white($color, $theme: "bright") {
     position: relative;
-    padding: $size-7 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
+    padding: $size-9 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
     background-color: transparent;
     border: 1px solid $primary-blue-ll;
     border-radius: $buttonBorderRadius;
@@ -189,8 +190,6 @@
         vertical-align: middle;
         margin-left: -$size-4;
         margin-right: $size-2;
-        width: $size-24;
-        height: $size-24;
 
         @if $theme == "dark" {
             fill: #fff;
@@ -427,8 +426,17 @@
 // eg. Button use in PP Header
 %button--size-small,
 .button--size-small {
-    padding-top: $size-2;
-    padding-bottom: $size-2;
+    padding-top: $size-4;
+    padding-bottom: $size-6;
+}
+
+// Size Button
+// Specific button size for button with an icon inside
+// eg. Button use in PP Page to save
+%button--size-icon,
+.button--size-icon {
+    padding-top: $size-7;
+    padding-bottom: $size-7;
 }
 
 // Button Short Label
