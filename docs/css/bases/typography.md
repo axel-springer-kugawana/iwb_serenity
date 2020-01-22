@@ -74,7 +74,7 @@ Some inline HTML elements are also available.
 <p><u>This line of text will render as underlined</u></p>
 ```
 
-### Small (and small-xs)
+### Small (and small--xs)
 
 `small` is an inline element with some extra variation. It also exists in primary or dark colored variations.
 
@@ -88,15 +88,17 @@ Some inline HTML elements are also available.
     <p>This line contains a <small class="small--dark">small (in dark color)</small> element</p>
 ```
 
-`small-xs` element (a smaller variation of small) (also exists in primary or dark colored variation).
+`small--xs` element (a smaller variation of small) (also exists in primary or dark colored variation).
 
 <div class="sd-example">
     <p>This line contains a <small class="small--xs">small-xs</small> element</p>
+    <p>This line contains a <small class="small--xs--primary">small-xs (in primary color)</small> element</p>
     <p>This line contains a <small class="small--xs--dark">small-xs (in dark color)</small> element</p>
 </div>
 
 ```html
     <p>This line contains a <small class="small--xs">small-xs</small> element</p>
+    <p>This line contains a <small class="small--xs--primary">small-xs (in primary color)</small> element</p>
     <p>This line contains a <small class="small--xs--dark">small-xs (in dark color)</small> element</p>
 ```
 

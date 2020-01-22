@@ -92,25 +92,25 @@ Serenity provides a modifier (`size-small`) for small buttons.
 
 You can put an SVG icon inside a button using the `button__icon` and `button__label` child classes.
 
-<button class="button button--primary">
+<button class="button button--primary button--size-icon">
     <svg class="button__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M21 11.59V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v4.58l3 3.01L9.3 9.3a.996.996 0 0 1 1.41 0L14 12.59l3.29-3.3c.39-.39 1.03-.39 1.42 0l2.29 2.3zm0 2.84l-3-3.01-3.3 3.28a.996.996 0 0 1-1.41 0L10 11.41l-3.3 3.3a.996.996 0 0 1-1.41 0L3 12.42V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-4.57z"/>
     </svg>
     <span class="button__label">Click me!</span>
 </button>
-<button class="button button--secondary">
+<button class="button button--secondary button--size-icon">
     <svg class="button__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M21 11.59V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v4.58l3 3.01L9.3 9.3a.996.996 0 0 1 1.41 0L14 12.59l3.29-3.3c.39-.39 1.03-.39 1.42 0l2.29 2.3zm0 2.84l-3-3.01-3.3 3.28a.996.996 0 0 1-1.41 0L10 11.41l-3.3 3.3a.996.996 0 0 1-1.41 0L3 12.42V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-4.57z"/>
     </svg>
     <span class="button__label">Click me!</span>
 </button>
-<button class="button button--tertiary">
+<button class="button button--tertiary button--size-icon">
     <svg class="button__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M21 11.59V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v4.58l3 3.01L9.3 9.3a.996.996 0 0 1 1.41 0L14 12.59l3.29-3.3c.39-.39 1.03-.39 1.42 0l2.29 2.3zm0 2.84l-3-3.01-3.3 3.28a.996.996 0 0 1-1.41 0L10 11.41l-3.3 3.3a.996.996 0 0 1-1.41 0L3 12.42V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-4.57z"/>
     </svg>
     <span class="button__label">Click me!</span>
 </button>
-<button class="button button--text">
+<button class="button button--text button--size-icon">
     <svg class="button__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M21 11.59V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v4.58l3 3.01L9.3 9.3a.996.996 0 0 1 1.41 0L14 12.59l3.29-3.3c.39-.39 1.03-.39 1.42 0l2.29 2.3zm0 2.84l-3-3.01-3.3 3.28a.996.996 0 0 1-1.41 0L10 11.41l-3.3 3.3a.996.996 0 0 1-1.41 0L3 12.42V19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-4.57z"/>
     </svg>
