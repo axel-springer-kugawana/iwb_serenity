@@ -51,7 +51,7 @@
     background-color: $color;
     color: $primary-blue-dd;
     border: 1px solid $color;
-    border-radius: $buttonBorderRadius;
+    border-radius: $button-border-radius;
     font-family: $font-body;
     font-size: $size-16;
     font-weight: $font-weight-title;
@@ -67,7 +67,7 @@
     &:active,
     &.button--active {
         outline: none;
-        border-radius: $buttonBorderRadius;
+        border-radius: $button-border-radius;
 
         @if $theme == "dark" {
             border-color: #fff;
@@ -96,7 +96,7 @@
     padding: $size-9 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
     background-color: transparent;
     border: 1px solid $color;
-    border-radius: $buttonBorderRadius;
+    border-radius: $button-border-radius;
     font-family: $font-body;
     font-size: $size-16;
     font-weight: $font-weight-title;
@@ -170,7 +170,7 @@
     padding: $size-9 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
     background-color: transparent;
     border: 1px solid $primary-blue-ll;
-    border-radius: $buttonBorderRadius;
+    border-radius: $button-border-radius;
     font-family: $font-body;
     font-size: $size-16;
     font-weight: $font-weight-title;

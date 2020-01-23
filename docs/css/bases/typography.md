@@ -22,7 +22,8 @@ All HTML headings, `<h1>` through `<h5>`, are available.
     <h2>Title Level 2</h2>
     <h3>Title Level 3</h3>
     <h4>Title Level 4</h4>
-    <h5>Title Level 5</h5>
+    <h5>Title Level 5</h5>    
+    <h6>Title Level 6</h6>
 </div>
 
 ```html
@@ -31,6 +32,8 @@ All HTML headings, `<h1>` through `<h5>`, are available.
 <h3>Title Level 3</h3>
 <h4>Title Level 4</h4>
 <h5>Title Level 5</h5>
+<h6>Title Level 6</h6>
+
 ```
 
 `.title--1` through `.title--5` classes are also available if you need to match a heading style on another type of element.
@@ -41,6 +44,7 @@ All HTML headings, `<h1>` through `<h5>`, are available.
     <p class="title--3">Title Level 3</p>
     <p class="title--4">Title Level 4</p>
     <p class="title--5">Title Level 5</p>
+    <p class="title--6">Title Level 6</p>
 </div>
 
 ```html
@@ -49,6 +53,7 @@ All HTML headings, `<h1>` through `<h5>`, are available.
 <p class="title--3">Title Level 3</p>
 <p class="title--4">Title Level 4</p>
 <p class="title--5">Title Level 5</p>
+<p class="title--6">Title Level 6</p>
 ```
 
 ## Inline text elements
@@ -75,28 +80,26 @@ Some inline HTML elements are also available.
 
 <div class="sd-example">
     <p>This line contains a <small>small</small> element</p>
-    <p>This line contains a <small class="small--primary">small (in primary color)</small> element</p>
     <p>This line contains a <small class="small--dark">small (in dark color)</small> element</p>
 </div>
 
 ```html
     <p>This line contains a <small>small</small> element</p>
-    <p>This line contains a <small class="small--primary">small (in primary color)</small> element</p>
     <p>This line contains a <small class="small--dark">small (in dark color)</small> element</p>
 ```
 
 `small--xs` element (a smaller variation of small) (also exists in primary or dark colored variation).
 
 <div class="sd-example">
-    <p>This line contains a <small class="small--xs">small--xs</small> element</p>
-    <p>This line contains a <small class="small--xs--primary">small--xs (in primary color)</small> element</p>
-    <p>This line contains a <small class="small--xs--dark">small--xs (in dark color)</small> element</p>
+    <p>This line contains a <small class="small--xs">small-xs</small> element</p>
+    <p>This line contains a <small class="small--xs--primary">small-xs (in primary color)</small> element</p>
+    <p>This line contains a <small class="small--xs--dark">small-xs (in dark color)</small> element</p>
 </div>
 
 ```html
-    <p>This line contains a <small class="small--xs">small--xs</small> element</p>
-    <p>This line contains a <small class="small--xs--primary">small--xs (in primary color)</small> element</p>
-    <p>This line contains a <small class="small--xs--dark">small--xs (in dark color)</small> element</p>
+    <p>This line contains a <small class="small--xs">small-xs</small> element</p>
+    <p>This line contains a <small class="small--xs--primary">small-xs (in primary color)</small> element</p>
+    <p>This line contains a <small class="small--xs--dark">small-xs (in dark color)</small> element</p>
 ```
 
 ### Text Utility
@@ -105,16 +108,13 @@ Serenity provides some text utility to help you easily change the alignment or t
 
 * `text-center` class is used to align text in the center of it's container.
 * `text-right` class is used to align text on the right of it's container.
-* `text-primary` class is used to set the color of the text with the $color-primary value.
 
 <div class="sd-example">
     <p class="text-center">Centered aligned text</p>
     <p class="text-right">Right aligned text</p>
-    <p class="text-primary">Primary colored text</p>
 </div>
 
 ```html
 <p class="text-center">Centered aligned text</p>
 <p class="text-right">Right aligned text</p>
-<p class="text-primary">Primary colored text</p>
 ```

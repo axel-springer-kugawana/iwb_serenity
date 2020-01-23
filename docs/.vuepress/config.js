@@ -59,8 +59,15 @@ module.exports = {
                 text: 'Js',
                 link: '/js/',
                 children: [{
-                    text: 'Input Select',
-                    link: '/js/input-select.html'
+                    text: 'Inputs',
+                    link: '/js/inputs/',
+                    children: [{
+                        text: 'Input Select',
+                        link: '/js/inputs/input-select.html'
+                    }, {
+                        text: 'Input Group Stepper',
+                        link: '/js/inputs/input-group-stepper.html'
+                    }]
                 }]
             }, {
                 text: 'Github',
