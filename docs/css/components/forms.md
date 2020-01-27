@@ -18,26 +18,6 @@ A field is the grouping of a `label` and an `input`. Enclose those within a div 
 </div>
 ```
 
-## Field modal theme
-
-Fields also exist in a "modal" theme variation.
-
-The "modal" theme works better inside a very light blue background component.
-
-<div class="sd-example">
-    <div class="field">
-        <label for="exampleInputId09" class="field__label">Field Label</label>
-        <input id="exampleInputId09" class="input--text input--modal" value="text goes here">
-    </div>
-</div>
-
-```html
-<div class="field">
-    <label for="exampleInputId09" class="field__label">Field Label in group</label>
-    <input id="exampleInputId09" class="input--text input--modal" value="text goes here">
-</div>
-```
-
 ## Field Group
 
 Field group can be used to group multiple fields inside a group. A field group is a container with the `field-group` class. A field group can contain a `title` and a `description`.
@@ -516,5 +496,25 @@ Input Group Append, allow you to add a text block after an `input--text`.
             <abbr title="Belgium" class="input-group__abbr">Be</abbr>
         </div>
     </div>
+</div>
+```
+
+## Input modal theme
+
+Input also exists in a "modal" theme variation.
+
+The "modal" theme works better inside a very light blue background component.
+
+<div class="sd-example">
+    <div class="field">
+        <label for="exampleInputId09" class="field__label">Field Label</label>
+        <input id="exampleInputId09" class="input--text input--modal" value="text goes here">
+    </div>
+</div>
+
+```html
+<div class="field">
+    <label for="exampleInputId09" class="field__label">Field Label in group</label>
+    <input id="exampleInputId09" class="input--text input--modal" value="text goes here">
 </div>
 ```
