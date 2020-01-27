@@ -122,12 +122,10 @@
 
 .input--select__option-group-title {
     color: $secondary-grey;
-    font-weight: $font-weight-body;
     font-family: $font-body;
     font-size: $size-14;
     line-height: $size-20;
     pointer-events: none;
-    background: $color-background;
     cursor: default;
     padding-left: $size-12;
     position: relative;
@@ -204,8 +202,6 @@
 
 .input--select--mobile optgroup {
     color: $secondary-grey;
-    font-weight: $font-weight-body;
-    background: $color-background;
     font-size: $size-14;
 }
 
