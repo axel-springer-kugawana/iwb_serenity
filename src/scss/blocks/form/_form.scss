@@ -154,7 +154,7 @@
 
 // State messages
 // ---------------------
-%field_message {
+%field-message {
     position: relative;
     font-size: $size-16;
     padding-left: $size-26;
@@ -177,7 +177,7 @@
 }
 
 .field__message--error {
-    @extend %field_message;
+    @extend %field-message;
     color: $primary-blue-dd;
 
     &:before {
@@ -186,7 +186,7 @@
 }
 
 .field__message--warning {
-    @extend %field_message;
+    @extend %field-message;
     color: $primary-blue-dd;
 
     &:before {
@@ -195,7 +195,7 @@
 }
 
 .field__message--success {
-    @extend %field_message;
+    @extend %field-message;
     color: $primary-blue-dd;
 
     &:before {
@@ -204,7 +204,7 @@
 }
 
 .field__message--info {
-    @extend %field_message;
+    @extend %field-message;
     color: $primary-blue-dd;
 
     &:before {
