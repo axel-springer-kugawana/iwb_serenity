@@ -26,8 +26,8 @@
     min-height: 40px;
     padding: 0 $size-32 0 $size-14;
     border: 1px solid $primary-blue-l;
-    border-radius: $size-8;
-    background: #fff url("#{$public-path}images/icons/icon-arrow-bottom.svg") no-repeat right $size-18 top 50%;
+    border-radius: $input-border-radius;
+    background: #fff url("#{$public-path}images/icons/icon-arrow-bottom.svg") no-repeat right $size-12 top 50%;
     background-size: $size-20 $size-20;
     width: 100%;
     outline: none;
@@ -40,13 +40,17 @@
     cursor: pointer;
     transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic, border-color .2s $easeInOutCubic;
 
-    &:hover,
-    &:focus {
-        border-color: $primary-blue-d;
+    &:hover {
+        background-color: $primary-blue-lll;
     }
 
     &:focus {
+        border-color: $primary-blue-d;
         outline: none;
+    }
+
+    &[aria-expanded="true"] {
+        transform: scaleY(-1);
     }
 }
 
@@ -54,6 +58,12 @@
     display: block;
     overflow: hidden;
     white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.input--select__toggle[aria-expanded="true"] .input--select__toggle-label,
+.input--select--mobile[aria-expanded="true"] .input--select__toggle-label {
+    transform: scaleY(-1);
 }
 
 // Input Select List
