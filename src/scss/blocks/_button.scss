@@ -130,7 +130,7 @@
         border-color: $color;
 
         @if $theme == "dark" {
-            background-color: rgba(101, 215, 141, .35); // $primary-green
+            background-color: rgba(101, 215, 141, .3); // $primary-green
         }
         @else {
             background-color: $primary-green-lll;
