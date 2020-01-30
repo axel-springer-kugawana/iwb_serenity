@@ -89,6 +89,21 @@
     background: #fff;
 }
 
+// Disabled State
+.input--radio__input:disabled + .input--radio__label {
+    color: $grey-85;
+    cursor: not-allowed;
+}
+
+.input--radio__input:disabled + .input--radio__label:before {
+    border: 1px solid $grey-85;
+    background: $grey-95;
+}
+
+.input--radio__input:disabled + .input--radio__label:after {
+    background: $grey-85;
+}
+
 // Variation for radio inline
 .input--radio--inline {
     margin-bottom: $size-10;
