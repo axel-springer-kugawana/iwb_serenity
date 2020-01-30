@@ -4,7 +4,7 @@
 
 .input--textarea {
     display: block;
-    border: 1px solid $primary-blue-l;
+    border: 1px solid $primary-blue-ll;
     border-radius: $size-8;
     background: $primary-blue-llll;
     width: 100%;
@@ -14,10 +14,14 @@
     height: auto;
     min-height: $size-100;
     overflow: hidden;
-    color: $primary-blue-dd;
+    color: $primary-blue-d;
 
     &:focus {
         border-color: $primary-blue-d;
+    }
+
+    &::placeholder {
+        color: $primary-blue-l;
     }
 }
 

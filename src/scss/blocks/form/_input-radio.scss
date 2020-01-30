@@ -37,7 +37,7 @@
     height: $size-20;
     width: $size-20;
     background: $primary-blue-llll;
-    border: 1px solid $primary-blue-l;
+    border: 1px solid $primary-blue-ll;
     left: 0;
     margin: auto;
     position: absolute;
@@ -63,7 +63,7 @@
 }
 
 .input--radio__input:checked + .input--radio__label:before {
-    border-color: $primary-blue-l;
+    border-color: $primary-blue-ll;
 }
 
 .input--radio__input:checked + .input--radio__label:after {
@@ -80,7 +80,7 @@
     border: 1px solid fade-out($functional-error, 0);
 }
 
-.input-error .input--radio__label:after {
+.input--error .input--radio__label:after {
     background: $functional-error;
 }
 

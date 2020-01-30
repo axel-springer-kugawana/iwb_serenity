@@ -6,10 +6,10 @@
 .input--text {
     line-height: $size-38;
     padding: 0 $size-12;
-    border: 1px solid $primary-blue-l;
+    border: 1px solid $primary-blue-ll;
     border-radius: $input-border-radius;
     font-size: $size-16;
-    color: $primary-blue-dd;
+    color: $primary-blue-d;
     outline: none;
     width: 100%;
     min-height: $size-40;
@@ -20,7 +20,6 @@
         border-color: $primary-blue-d;
     }
 
-    // Placeholder Style
     &::placeholder {
         color: $primary-blue-l;
     }

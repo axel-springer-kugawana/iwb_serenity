@@ -243,6 +243,10 @@ Enclose radio inputs within a container with the `input--radio` class. Then give
         <input id="exampleRadioId01" type="radio" value="01" name="inputRadioBox01" class="input--radio__input">
         <label for="exampleRadioId01" class="input--radio__label">Input radio</label>
     </div>
+    <div class="input--radio">
+        <input id="exampleRadioId02" type="radio" value="01" name="inputRadioBox02" class="input--radio__input" disabled="disabled">
+        <label for="exampleRadioId02" class="input--radio__label">Disabled Input radio</label>
+    </div>
 </div>
 
 ```html
@@ -250,6 +254,11 @@ Enclose radio inputs within a container with the `input--radio` class. Then give
     <input id="exampleRadioId01" type="radio" value="01" name="inputRadioBox01" class="input--radio__input">
     <label for="exampleRadioId01" class="input--radio__label">Input radio</label>
 </div>
+<div class="input--radio">
+    <input id="exampleRadioId02" type="radio" value="01" name="inputRadioBox02" class="input--radio__input" disabled="disabled">
+    <label for="exampleRadioId02" class="input--radio__label">Disabled Input radio</label>
+</div>
+
 ```
 
 #### Radio group
@@ -260,12 +269,16 @@ Enclose multiple input--radio inside a `field` containter with the `role="group"
     <div class="field" role="group" aria-labelledby="exampleRadioGroupId01">
         <label id="exampleRadioGroupId01" class="field__label">Field radios</label>
         <div class="input--radio">
-            <input type="radio" value="01" name="inputRadioBox" class="input--radio__input" id="exampleRadioId02">
-            <label for="exampleRadioId02" class="input--radio__label">Input radio</label>
+            <input type="radio" value="01" name="inputRadioBox" class="input--radio__input" id="exampleRadioId03">
+            <label for="exampleRadioId03" class="input--radio__label">Input radio</label>
         </div>
         <div class="input--radio">
-            <input type="radio" value="02" name="inputRadioBox" class="input--radio__input" id="exampleRadioId03">
-            <label for="exampleRadioId03" class="input--radio__label">Input radio</label>
+            <input type="radio" value="02" name="inputRadioBox" class="input--radio__input" id="exampleRadioId04">
+            <label for="exampleRadioId04" class="input--radio__label">Input radio</label>
+        </div>
+        <div class="input--radio">
+            <input type="radio" value="03" name="inputRadioBox" class="input--radio__input" disabled="disabled" id="exampleRadioId05">
+            <label for="exampleRadioId05" class="input--radio__label">Disabled Input radio</label>
         </div>
     </div>
 </div>

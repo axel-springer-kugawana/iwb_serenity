@@ -132,11 +132,12 @@
 .field__label--optional {
     display: inline-block;
     text-transform: lowercase;
-    font-size: $size-12;
+    font-size: $size-13;
 }
 
 // Field Label Extra use to display minor extra info inside a label
 .field__label--extra {
+    font-size: $size-14;
     font-weight: $font-weight-body;
 }
 
