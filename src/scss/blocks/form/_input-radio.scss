@@ -80,10 +80,6 @@
     border: 1px solid fade-out($functional-error, 0);
 }
 
-.input--error .input--radio__label:after {
-    background: $functional-error;
-}
-
 // Modal Theme
 .input--modal .input--radio__label:before {
     background: #fff;

@@ -287,12 +287,16 @@ Enclose multiple input--radio inside a `field` containter with the `role="group"
 <div class="field" role="group" aria-labelledby="exampleRadioGroupId01">
     <label id="exampleRadioGroupId01" class="field__label">Field radios</label>
     <div class="input--radio">
-        <input type="radio" value="01" name="inputRadioBox" class="input--radio__input" id="exampleRadioId02">
-        <label for="exampleRadioId02" class="input--radio__label--error">Input radio</label>
+        <input type="radio" value="01" name="inputRadioBox" class="input--radio__input" id="exampleRadioId03">
+        <label for="exampleRadioId03" class="input--radio__label">Input radio</label>
     </div>
     <div class="input--radio">
-        <input type="radio" value="02" name="inputRadioBox" class="input--radio__input" id="exampleRadioId03">
-        <label for="exampleRadioId03" class="input--radio__label--error">Input radio</label>
+        <input type="radio" value="02" name="inputRadioBox" class="input--radio__input" id="exampleRadioId04">
+        <label for="exampleRadioId04" class="input--radio__label">Input radio</label>
+    </div>
+    <div class="input--radio">
+        <input type="radio" value="03" name="inputRadioBox" class="input--radio__input" disabled="disabled" id="exampleRadioId05">
+        <label for="exampleRadioId05" class="input--radio__label">Disabled Input radio</label>
     </div>
 </div>
 ```
@@ -303,12 +307,12 @@ Input radio group can contain error messages (e.g. to show validation errors rel
     <div class="field" role="group" aria-labelledby="exampleRadioGroupId02">
         <label id="exampleRadioGroupId02" class="field__label--error">Field radios with error</label>
         <div class="input--radio input--error">
-            <input type="radio" value="03" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId04" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio4LabelId" aria-invalid="true">
-            <label id="exampleInput0Radio4LabelId" for="exampleRadioId04" class="input--radio__label">Input radio</label>
+            <input type="radio" value="03" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId06" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio4LabelId" aria-invalid="true">
+            <label id="exampleInput0Radio6LabelId" for="exampleRadioId06" class="input--radio__label">Input radio</label>
         </div>
         <div class="input--radio input--error">
-            <input type="radio" value="04" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId05" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio5LabelId" aria-invalid="true">
-            <label id="exampleInput0Radio5LabelId" for="exampleRadioId05" class="input--radio__label">Input radio</label>
+            <input type="radio" value="04" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId07" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio5LabelId" aria-invalid="true">
+            <label id="exampleInput0Radio7LabelId" for="exampleRadioId07" class="input--radio__label">Input radio</label>
         </div>
         <p id="exampleInputRadio01ErrorId" class="field__message--error">Error message for input radio</p>
     </div>
@@ -318,12 +322,12 @@ Input radio group can contain error messages (e.g. to show validation errors rel
 <div class="field" role="group" aria-labelledby="exampleRadioGroupId02">
     <label id="exampleRadioGroupId02" class="field__label--error">Field radios with error</label>
     <div class="input--radio input--error">
-        <input type="radio" value="03" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId04" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio4LabelId" aria-invalid="true">
-        <label id="exampleInput0Radio4LabelId" for="exampleRadioId04" class="input--radio__label">Input radio</label>
+        <input type="radio" value="03" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId06" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio4LabelId" aria-invalid="true">
+        <label id="exampleInput0Radio6LabelId" for="exampleRadioId06" class="input--radio__label">Input radio</label>
     </div>
     <div class="input--radio input--error">
-        <input type="radio" value="04" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId05" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio5LabelId" aria-invalid="true">
-        <label id="exampleInput0Radio5LabelId" for="exampleRadioId05" class="input--radio__label">Input radio</label>
+        <input type="radio" value="04" name="inputRadioBoxError" class="input--radio__input" id="exampleRadioId07" aria-labelledby="exampleInputRadio01ErrorId exampleInput0Radio5LabelId" aria-invalid="true">
+        <label id="exampleInput0Radio7LabelId" for="exampleRadioId07" class="input--radio__label">Input radio</label>
     </div>
     <p id="exampleInputRadio01ErrorId" class="field__error">Error message for input radio</p>
 </div>
@@ -338,16 +342,16 @@ Then use a `field__label--ingroup--inline`class on the label and a `input--radio
         <label id="exampleRadioGroupId002" class="field__label--ingroup--inline">Input radio group inline</label>
         <div class="input--ingroup--inline">
             <div class="input--radio input--radio--inline">
-                <input type="radio" value="true" name="radioName" class="input--radio__input" id="exampleRadioId06">
-                <label for="exampleRadioId06" class="input--radio__label">Input radio inline</label>
-            </div>
-            <div class="input--radio input--radio--inline">
-                <input type="radio" value="false" name="radioName" class="input--radio__input" id="exampleRadioId07">
-                <label for="exampleRadioId07" class="input--radio__label">Input radio inline</label>
-            </div>
-            <div class="input--radio input--radio--inline">
-                <input type="radio" value="skip" name="radioName" class="input--radio__input" id="exampleRadioId08">
+                <input type="radio" value="true" name="radioName" class="input--radio__input" id="exampleRadioId08">
                 <label for="exampleRadioId08" class="input--radio__label">Input radio inline</label>
+            </div>
+            <div class="input--radio input--radio--inline">
+                <input type="radio" value="false" name="radioName" class="input--radio__input" id="exampleRadioId09">
+                <label for="exampleRadioId09" class="input--radio__label">Input radio inline</label>
+            </div>
+            <div class="input--radio input--radio--inline">
+                <input type="radio" value="skip" name="radioName" class="input--radio__input" id="exampleRadioId10">
+                <label for="exampleRadioId10" class="input--radio__label">Input radio inline</label>
             </div>
         </div>
     </div>
@@ -358,16 +362,16 @@ Then use a `field__label--ingroup--inline`class on the label and a `input--radio
     <label id="exampleRadioGroupId002" class="field__label--ingroup--inline">Input radio group inline</label>
     <div class="input--ingroup--inline">
         <div class="input--radio input--radio--inline">
-            <input type="radio" value="true" name="radioName" class="input--radio__input" id="exampleRadioId06">
-            <label for="exampleRadioId06" class="input--radio__label">Input radio inline</label>
-        </div>
-        <div class="input--radio input--radio--inline">
-            <input type="radio" value="false" name="radioName" class="input--radio__input" id="exampleRadioId07">
-            <label for="exampleRadioId07" class="input--radio__label">Input radio inline</label>
-        </div>
-        <div class="input--radio input--radio--inline">
-            <input type="radio" value="skip" name="radioName" class="input--radio__input" id="exampleRadioId08">
+            <input type="radio" value="true" name="radioName" class="input--radio__input" id="exampleRadioId08">
             <label for="exampleRadioId08" class="input--radio__label">Input radio inline</label>
+        </div>
+        <div class="input--radio input--radio--inline">
+            <input type="radio" value="false" name="radioName" class="input--radio__input" id="exampleRadioId09">
+            <label for="exampleRadioId09" class="input--radio__label">Input radio inline</label>
+        </div>
+        <div class="input--radio input--radio--inline">
+            <input type="radio" value="skip" name="radioName" class="input--radio__input" id="exampleRadioId10">
+            <label for="exampleRadioId10" class="input--radio__label">Input radio inline</label>
         </div>
     </div>
 </div>

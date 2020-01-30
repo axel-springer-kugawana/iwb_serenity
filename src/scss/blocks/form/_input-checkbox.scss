@@ -116,12 +116,9 @@
     border-color: $primary-blue-d;
 }
 
+.input--checkbox__input:checked:focus + .input--checkbox__label:before,
 .input--checkbox__input:indeterminate:focus + .input--checkbox__label:before {
-    border-color: $primary-blue-d;
-}
-
-.input--checkbox__input:checked:focus + .input--checkbox__label:before {
-    border-color: $primary-blue-d;
+    box-shadow: inset 0 0 1px 1px $primary-blue-d;
 }
 
 // Error State
