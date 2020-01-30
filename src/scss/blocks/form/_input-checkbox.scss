@@ -71,6 +71,25 @@
     opacity: 1;
 }
 
+// Disabled State
+.input--checkbox__input:disabled + .input--checkbox__label {
+    color: $grey-85;
+    cursor: not-allowed;
+}
+
+.input--checkbox__input:disabled + .input--checkbox__label:before {
+    border: 1px solid $grey-85;
+    background: $grey-95;
+}
+
+.input--checkbox__input:disabled:checked + .input--checkbox__label:before {
+    background: $grey-85;
+}
+
+.input--checkbox__input:disabled + .input--radio__label:after {
+    background: $grey-85;
+}
+
 // Fake undeterminate
 .input--checkbox__input:indeterminate + .input--checkbox__label:before {
     border-color: $primary-blue;

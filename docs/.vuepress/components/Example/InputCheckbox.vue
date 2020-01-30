@@ -9,8 +9,12 @@
             <label for="exampleCheckboxId02" class="input--checkbox__label">Checked Input Checkbox</label>
         </div>
         <div class="input--checkbox">
-            <input type="checkbox" name="checkboxName03" class="input--checkbox__input" value="value" id="exampleCheckboxId03">
-            <label for="exampleCheckboxId03" class="input--checkbox__label">Indeterminate Input Checkbox</label>
+            <input type="checkbox" name="checkboxName03" class="input--checkbox__input" value="value" disabled="disabled" id="exampleCheckboxId03">
+            <label for="exampleCheckboxId03" class="input--checkbox__label">Disabled Input Checkbox</label>
+        </div>
+        <div class="input--checkbox">
+            <input type="checkbox" name="checkboxName04" class="input--checkbox__input" value="value" id="exampleCheckboxId04">
+            <label for="exampleCheckboxId04" class="input--checkbox__label">Indeterminate Input Checkbox</label>
         </div>
     </div>
 </template>
@@ -19,8 +23,8 @@
 
 export default {
     mounted: function() {
-        var exampleCheckboxId03 = document.getElementById("exampleCheckboxId03");
-        exampleCheckboxId03.indeterminate = true;
+        var exampleCheckboxId04 = document.getElementById("exampleCheckboxId04");
+        exampleCheckboxId04.indeterminate = true;
     },
 }
 </script>
