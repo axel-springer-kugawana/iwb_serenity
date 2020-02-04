@@ -13,8 +13,7 @@ body {
 
 // Container
 // ---------------------
-.container,
-.container--no-gutter {
+.container {
     position: relative;
     width: 100%;
     max-width: $max-width-x-small;
@@ -41,19 +40,6 @@ body {
 
 .container {
     padding: 0 $size-20;
-
-    @include media-query("medium") {
-        padding: 0;
-    }
-}
-
-// Container variation without gutter on x-small breakpoint but one on small
-.container--no-gutter {
-    padding: 0;
-
-    @include media-query("small") {
-        padding: 0 $size-20;
-    }
 
     @include media-query("medium") {
         padding: 0;
