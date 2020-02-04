@@ -77,8 +77,8 @@
     z-index: z("dropdown");
     margin-top: $size-8;
     padding: $size-4 0;
-    border-radius: 4px;
-    box-shadow: 0 -4px 16px $primary-blue-l;
+    border-radius: $size-4;
+    box-shadow: 0 -4px 16px rgba(79, 127, 182, .25); // $primary-blue
     background: #fff;
     list-style-type: none;
     overflow-y: auto;

@@ -35,7 +35,7 @@
     height: $size-20;
     width: $size-20;
     border: 1px solid $primary-blue-l;
-    background-color: $primary-blue-llll;
+    background: $primary-blue-llll;
     left: 0;
     margin: auto;
     position: absolute;
@@ -64,7 +64,7 @@
 
 .input--checkbox__input:checked + .input--checkbox__label:before {
     border-color: $primary-blue;
-    background-color: $primary-blue;
+    background: $primary-blue;
 }
 
 .input--checkbox__input:checked + .input--checkbox__label:after {
@@ -93,7 +93,7 @@
 // Fake undeterminate
 .input--checkbox__input:indeterminate + .input--checkbox__label:before {
     border-color: $primary-blue;
-    background-color: $primary-blue;
+    background: $primary-blue;
 }
 
 .input--checkbox__input:indeterminate + .input--checkbox__label:after {
@@ -132,5 +132,20 @@
 
 // Modal State
 .input--modal .input--checkbox__input + .input--checkbox__label:before{
-    background-color: #fff;
+    background: #fff;
+}
+
+.input--modal .input--checkbox__input:checked + .input--checkbox__label:before,
+.input--modal .input--checkbox__input:indeterminate + .input--checkbox__label:before {
+    border-color: $primary-blue;
+    background: $primary-blue;
+}
+
+.input--modal .input--checkbox__input:disabled + .input--checkbox__label:before {
+    background: $grey-95;
+}
+
+.input--modal .input--checkbox__input:disabled:checked + .input--checkbox__label:before {
+    background: $grey-85;
+    border-color: $grey-85;
 }
