@@ -54,6 +54,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    width: calc(100% - #{$size-36});
 }
 
 .input--select__toggle-icon {
@@ -63,17 +64,18 @@
     display: inline-block;
     position: absolute;
     right: $size-10;
-    top: $size-8;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .input--select__toggle[aria-expanded="true"] .input--select__toggle-icon {
-    transform: scaleY(-1);
+    transform: translateY(-50%) scaleY(-1);
 }
 
 .input--select--mobile {
     padding: 0 $size-32 0 $size-14;
     background-size: $size-24 $size-24;
-    background-position: top $size-9 right $size-15;
+    background-position: top $size-7 right $size-8;
     background-repeat: no-repeat;
 }
 
