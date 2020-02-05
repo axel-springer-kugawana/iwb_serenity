@@ -24,11 +24,10 @@
 .input--select__toggle,
 .input--select--mobile {
     min-height: 40px;
-    padding: 0 $size-32 0 $size-14;
+    padding: $size-6 0 0 $size-12;
     border: 1px solid $primary-blue-l;
     border-radius: $input-border-radius;
-    background: #fff url("#{$public-path}images/icons/icon-arrow-bottom.svg") no-repeat right $size-12 top 50%;
-    background-size: $size-20 $size-20;
+    background-color: #fff;
     width: 100%;
     outline: none;
     appearance: none;
@@ -48,22 +47,42 @@
         border-color: $primary-blue-d;
         outline: none;
     }
-
-    &[aria-expanded="true"] {
-        transform: scaleY(-1);
-    }
 }
 
 .input--select__toggle-label {
-    display: block;
+    display: inline-block;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
-.input--select__toggle[aria-expanded="true"] .input--select__toggle-label,
-.input--select--mobile[aria-expanded="true"] .input--select__toggle-label {
+.input--select__toggle-icon {
+    fill: $primary-blue;
+    width: $size-24;
+    height: $size-24;
+    display: inline-block;
+    position: absolute;
+    right: $size-10;
+    top: $size-8;
+}
+
+.input--select__toggle[aria-expanded="true"] .input--select__toggle-icon {
     transform: scaleY(-1);
+}
+
+.input--select--mobile {
+    padding: 0 $size-32 0 $size-14;
+    background-size: $size-24 $size-24;
+    background-position: top $size-9 right $size-15;
+    background-repeat: no-repeat;
+}
+
+.input--select--mobile--collapsed {
+    background-image: url("#{$public-path}images/icons/icon-arrow-bottom.svg");
+}
+
+.input--select--mobile--expanded {
+    background-image: url("#{$public-path}images/icons/icon-arrow-top.svg");
 }
 
 // Input Select List
