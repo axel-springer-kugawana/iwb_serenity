@@ -25,7 +25,7 @@
 .input--select--mobile {
     min-height: 40px;
     padding: $size-6 0 0 $size-12;
-    border: 1px solid $primary-blue-l;
+    border: 1px solid $primary-blue-ll;
     border-radius: $input-border-radius;
     background-color: #fff;
     width: 100%;
@@ -68,6 +68,10 @@
     transform: translateY(-50%);
 }
 
+.input--select__toggle[aria-expanded="true"] {
+    background-color: $primary-blue-lll;
+}
+
 .input--select__toggle[aria-expanded="true"] .input--select__toggle-icon {
     transform: translateY(-50%) scaleY(-1);
 }
@@ -85,6 +89,7 @@
 
 .input--select--mobile--expanded {
     background-image: url("#{$public-path}images/icons/icon-arrow-top.svg");
+    background-color: $primary-blue-lll;
 }
 
 // Input Select List
