@@ -158,6 +158,28 @@ a:not([href]):not([tabindex]) {
     }
 }
 
+// Link External
+// Link with destination outside of the current website
+// Add a small icon on right of the link
+// ---------------------
+.link--external {
+    &::after {
+        content: "";
+        display: inline-block;
+        background-image: url("#{$public-path}images/icons/material/sprite-link-external.svg");
+        background-repeat: no-repeat;
+        width: $size-14;
+        height: $size-16;
+        background-size: $size-30 $size-14;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    &:hover::after {
+        background-position: calc(100% + #{$size-2}) 0;
+    }
+}
+
 // Position Utility
 // ---------------------
 .text-center {
