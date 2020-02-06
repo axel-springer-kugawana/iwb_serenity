@@ -8,7 +8,7 @@
     display: inline-block;
     margin-bottom: $size-10;
     width: 100%;
-    line-height: $size-28;
+    line-height: $size-36;
 }
 
 // Hide checkbox
@@ -21,11 +21,13 @@
 // Label
 .input--switch__label {
     cursor: pointer;
-    margin-right: $size-56;
     font-family: $font-body;
     font-weight: $font-weight-body;
     font-size: $size-16;
     color: $primary-blue-dd;
+    line-height: $size-20;
+    display: inline-block;
+    width: calc(100% - #{$size-70});
 }
 
 // Box around the switch
@@ -36,12 +38,12 @@
     top: 50%;
     transform: translateY(-50%);
     right: 0;
-    width: $size-48;
-    height: $size-28;
+    width: $size-70;
+    height: $size-36;
     background-color: $primary-blue-llll;
-    border-radius: $size-30;
+    border-radius: $size-20;
     transition: background-color .4s $easeInOutCubic;
-    border: 1px solid $grey-85;
+    border: 1px solid $primary-blue-ll;
     cursor: pointer;
 }
 
@@ -51,52 +53,33 @@
     position: absolute;
     content: "";
     top: 50%;
-    transform: translate(-$size-20, -50%);
-    right: 1px; // 1px to avoid element to stick to the border
-    height: $size-26;
-    width: $size-26;
+    transform: translate(-$size-36, -50%);
+    right: 0;
+    height: $size-32;
+    width: $size-32;
     background-color: $color-background;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .4);
     transition: transform .4s $easeInOutCubic;
-    border-radius: $size-28;
+    border-radius: $size-20;
+    border: 1px solid $primary-blue;
 }
 
 // Checked State
 .input--switch__input:checked + .input--switch__label::before {
-    border: 1px solid $primary-blue;
+    border: 1px solid $primary-blue-ll;
     background-color: $primary-blue;
 }
 
 .input--switch__input:checked + .input--switch__label::after {
-    transform: translate(0, -50%);
-    box-shadow: 0 0 5px 0 fade-out($primary-blue-l, .5);
+    transform: translate(-$size-2, -50%);
 }
 
 // Focus State
 .input--switch__input:active + .input--switch__label::before,
 .input--switch__input:focus + .input--switch__label::before {
-    border: 1px solid $primary-blue-ddd;
+    border: 1px solid $primary-blue-dd;
 }
 
-// Disabled State
-.input--switch__input:disabled + .input--switch__label::before {
-    border-color: $grey-85;
-    background-color: $color-background;
-    cursor: not-allowed;
-}
-
-.input--switch__input:disabled ~ .input--switch__label {
-    color: $grey-85;
-    cursor: not-allowed;
-}
-
-.input--switch__input:disabled + .input--switch__label::after,
-.input--switch__input:disabled:checked + .input--switch__label::after {
-    background-color: $grey-85;
-    box-shadow: 0 0 5px 0 fade-out($primary-blue-l, .75);
-}
-
-.input--switch__input:disabled:checked + .input--switch__label::before {
-    border-color: $grey-85;
-    background-color: $grey-95;
+// Hover State
+.input--switch__input:hover + .input--switch__label::before {
+    background-color: $primary-blue-ll;
 }
