@@ -15,6 +15,7 @@
     min-height: $size-100;
     overflow: hidden;
     color: $primary-blue-d;
+    line-height: $size-22;
 
     &:focus {
         border-color: $primary-blue-d;
@@ -34,8 +35,8 @@
 // ---------------------
 .input--text__counter,
 .text-area__counter {
-    font-size: $size-10;
-    font-weight: $font-weight-title;
+    font-size: $size-13;
+    font-weight: $font-weight-body;
     color: $color-body;
 }
 
@@ -43,11 +44,11 @@
     display: block;
     text-align: right;
     margin-top: $size-2;
-    padding-right: $size-14;
+    padding-right: $size-8;
 }
 
 .text-area__counter {
     position: absolute;
-    right: $size-8;
-    bottom: $size-6;
+    right: $size-5;
+    bottom: 0;
 }

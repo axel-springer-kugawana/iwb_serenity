@@ -163,6 +163,7 @@
     left: 0;
     white-space: normal;
     display: inline-block;
+    line-height: $size-20;
 
     &:before {
         content: "";
