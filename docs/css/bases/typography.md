@@ -22,7 +22,7 @@ All HTML headings, `<h1>` through `<h5>`, are available.
     <h2>Title Level 2</h2>
     <h3>Title Level 3</h3>
     <h4>Title Level 4</h4>
-    <h5>Title Level 5</h5>    
+    <h5>Title Level 5</h5>
     <h6>Title Level 6</h6>
 </div>
 
@@ -54,6 +54,26 @@ All HTML headings, `<h1>` through `<h5>`, are available.
 <p class="title--4">Title Level 4</p>
 <p class="title--5">Title Level 5</p>
 <p class="title--6">Title Level 6</p>
+```
+
+## Link
+
+Links are style by default, there is no need of a specific class use of `a` tag is enought. It include **:hover** and **:focus** style.
+
+`link--external` class can be use to indicated that the link destination is "outside" of the current website.
+
+<div class="sd-example">
+    <p>
+        This line contains a <a href="#">link</a> element
+    </p>
+    <p>
+        This line contains an external link to <a href="https//immoweb.be" class="link--external" title="Open the Immoweb Website">Immoweb</a>.
+    </p>
+</div>
+
+```html
+<p>This line contains a <a href="#">link</a> element</p>
+<p>This line contains an external link to <a href="https//immoweb.be" class="link--external" title="Open the Immoweb Website">Immoweb</a>.</p>
 ```
 
 ## Inline text elements
