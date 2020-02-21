@@ -85,6 +85,8 @@
         margin-left: -$size-4;
         margin-right: $size-2;
         fill: $primary-blue-dd;
+        width: $size-18;
+        height: $size-18;
     }
 }
 
@@ -116,6 +118,8 @@
         vertical-align: middle;
         margin-left: -$size-4;
         margin-right: $size-2;
+        width: $size-18;
+        height: $size-18;
 
         @if $theme == "dark" {
             fill: $color;
@@ -190,6 +194,8 @@
         vertical-align: middle;
         margin-left: -$size-4;
         margin-right: $size-2;
+        width: $size-18;
+        height: $size-18;
 
         @if $theme == "dark" {
             fill: #fff;
@@ -266,8 +272,8 @@
 
     // Icons
     .button__icon {
-        width: $size-24;
-        height: $size-24;
+        width: $size-18;
+        height: $size-18;
 
         @if $theme == "dark" {
             fill: #fff;
