@@ -16,7 +16,6 @@
 
     @include media-query("desktop") {
         border-bottom: 1px solid $primary-blue-lll;
-        box-shadow: 0 10px 30px -10px $primary-blue-lll;
     }
 }
 
@@ -56,18 +55,22 @@
     display: inline-block;
 
     @include media-query("desktop") {
-        // width: column-width(2, desktop, none);
-        margin-right: $gutter;
+        margin-right: $gutter * 2; // 40px
     }
 
     @include media-query("widescreen") {
         width: 12.3125rem; // 197px
-        margin-right: $gutter * 2;
+        margin-right: $gutter * 2.4; // 48px
     }
 }
 
 .top-navigation__logo-link {
     text-decoration: none;
+    display: block;
+
+    @include media-query("desktop") {
+        height: 54px;
+    }
 }
 
 .top-navigation__image {
