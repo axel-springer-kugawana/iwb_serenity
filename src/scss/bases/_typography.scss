@@ -176,7 +176,7 @@ a:not([href]):not([tabindex]) {
     }
 
     &:hover::after {
-        background-position: calc(100% + #{$size-2}) 0;
+        background-position: calc(100%) 0;
     }
 }
 
