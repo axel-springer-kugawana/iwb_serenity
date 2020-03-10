@@ -68,6 +68,7 @@
     &.button--active {
         outline: none;
         border-radius: $button-border-radius;
+        box-shadow: none;
 
         @if $theme == "dark" {
             border-color: #fff;
@@ -145,6 +146,7 @@
     &:active,
     &.button--active {
         outline: none;
+        box-shadow: none;
 
         @if $theme == "dark" {
             border-color: #fff;
@@ -230,6 +232,7 @@
     &:active,
     &.button--active {
         outline: none;
+        box-shadow: none;
 
         @if $theme == "dark" {
             border-color: #fff;
