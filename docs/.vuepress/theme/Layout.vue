@@ -7,7 +7,7 @@
                 <div class="top-navigation__header">
                     <div class="top-navigation__logo sd-top-navigation-logo">
                         <a href="/iwb_serenity" class="top-navigation__logo-link">
-                            <img src="/iwb_serenity/images/logos/immoweb-serenity.svg" :alt="$site.title" />
+                            <img src="/iwb_serenity/images/logos/immoweb-serenity.svg" :alt="$site.title" class="top-navigation__image"/>
                         </a>
                     </div>
                 </div>
