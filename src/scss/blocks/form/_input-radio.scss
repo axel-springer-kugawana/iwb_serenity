@@ -81,6 +81,10 @@
 }
 
 // Modal Theme
+.input--modal.input--radio {
+    background-color: transparent;
+}
+
 .input--modal .input--radio__label:before {
     background: #fff;
 }
