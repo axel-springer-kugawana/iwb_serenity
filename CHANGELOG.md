@@ -1,5 +1,49 @@
 # Changelog
 
+## 2.0.0-rc.1 - 2020-03-18
+### Removed
+- Buttons:  Disabled state
+- Titles: Dark variations (title--X--dark)
+- Layout: container--no-gutter
+- Colors: Blue, Green, bright, fresh, blue-firefly
+- Colors: Secondary dark shade
+- Colors: Bright and fresh shade
+- Colors: Bright and fresh shade
+- Colors: All deprecated colors ($storm-grey, $grey-94, $grey-91, $grey-61, $grey-50)
+
+### Changed
+- Colors: functional-success, error and warning
+- Colors: color body
+- Colors: primary by primary-blue,
+- Colors: secondary by primary-green,
+- Colors: primary shade by primary-blue shade
+- Colors: primary shade by primary-blue shade
+- Colors: Secondary light shade by primary-green shade
+- Messages: Warning, infos and success styles
+- Form: Input text styles
+- Form: Input checkbox and radios styles
+- Form: Input errors styles
+- Form: Input switch styles
+- Form: Textarea switch styles
+- Input-select: Input styles
+- Buttons: Styles
+- Typography: Title, text and link typography style
+- Top-navigation: Update style
+- Icons: Update icon-arrow-down.svg and icon-placeholder.svg
+- Rename variable XxxBorderRadius to xxx-border-radius
+- Fix typo in doc
+
+### Rename
+- Colors: $inputBorderRadius to $input-border-radius
+- Colors: $buttonBorderRadius to $button-border-radius
+- Colors: $inputGroupSelectLargeBorderRadius to $input-group-select-large-border-radius
+
+### Added
+- Input-group-stepper Javascript component
+- Form: Input modal theme for input text
+- Typography: link--external
+- Colors: Add orange-flag
+
 ## 1.1.1 - 2019-12-03 - Hevea brasiliensis Hotfix 1
 ### Changed
 - Input-select: Add an optional required prop
