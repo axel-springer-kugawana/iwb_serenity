@@ -101,20 +101,13 @@ h6,
 // Small
 // ---------------------
 small,
-.small,
-.small--dark {
+.small {
     font-size: $size-14;
     color: $color-body;
 }
 
-.small--xs,
-.small--xs--dark {
+.small--xs {
     font-size: $size-13;
-}
-
-.small--dark,
-.small--xs--dark {
-    color: $primary-blue-dd;
 }
 
 // Link
