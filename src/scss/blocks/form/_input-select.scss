@@ -96,8 +96,7 @@
 // ---------------------
 .input--select__list {
     position: absolute;
-    width: calc(100% - 20px);
-    min-width: 200px;
+    min-width: 100%;
     left: 50%;
     transform: translateX(-50%);
     z-index: z("dropdown");
@@ -134,7 +133,7 @@
     text-align: left;
     padding: $size-4 $size-12;
     display: block;
-    word-break: break-all;
+    white-space: nowrap;
 
     &:focus,
     &:hover {
