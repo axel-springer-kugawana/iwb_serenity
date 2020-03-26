@@ -13,10 +13,7 @@
     min-height: 3.5rem;
     z-index: z("top-navigation");
     background: #fff;
-
-    @include media-query("desktop") {
-        border-bottom: 1px solid $primary-blue-lll;
-    }
+    border-bottom: 1px solid $primary-blue-lll;
 }
 
 .top-navigation.open {
