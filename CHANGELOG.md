@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.0-rc.2 - 2020-04-01
+### Changed
+- Form: Input select small
+
+###Added
+- Typography: Dark style
+
 ## 2.0.0-rc.1 - 2020-03-18
 ### Removed
 - Buttons:  Disabled state

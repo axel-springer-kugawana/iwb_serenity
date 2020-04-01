@@ -15,7 +15,7 @@ These two fonts are not loaded inside the CSS, you have to include them in the `
 
 ## Title
 
-All HTML headings, `<h1>` through `<h5>`, are available.
+All HTML headings, `<h1>` through `<h6>`, are available,
 
 <div class="sd-example">
     <h1>Title Level 1</h1>
@@ -36,7 +36,7 @@ All HTML headings, `<h1>` through `<h5>`, are available.
 
 ```
 
-`.title--1` through `.title--5` classes are also available if you need to match a heading style on another type of element.
+`.title--1` through `.title--6` classes are also available if you need to match a heading style on another type of element.
 
 <div class="sd-example">
     <p class="title--1">Title Level 1</p>
@@ -81,6 +81,7 @@ Links are style by default, there is no need of a specific class use of `a` tag 
 Some inline HTML elements are also available.
 
 <div class="sd-example">
+    <p>This line contains a <span class="dark">dark</span> element</p>
     <p>This line contains a <strong>strong</strong> element</p>
     <p>This line contains a <em>em</em> element</p>
     <p>This line contains a <del>strikethrough</del> element</p>
@@ -88,15 +89,16 @@ Some inline HTML elements are also available.
 </div>
 
 ```html
+<p>This line contains a <span class="dark">dark</span> element</p>
 <p>This line contains a <strong>strong</strong> element</p>
 <p>This line contains a <em>em</em> element</p>
 <p>This line contains a <del>strikethrough</del> element</p>
 <p><u>This line of text will render as underlined</u></p>
 ```
 
-### Small (and small--xs)
+### Small (and small-xs)
 
-`small` is an inline element with some extra variation. It also exists in primary or dark colored variations.
+`small` is an inline element with some extra variation. It also exists in dark colored variation.
 
 <div class="sd-example">
     <p>This line contains a <small>small</small> element</p>
@@ -108,17 +110,15 @@ Some inline HTML elements are also available.
     <p>This line contains a <small class="small--dark">small (in dark color)</small> element</p>
 ```
 
-`small--xs` element (a smaller variation of small) (also exists in primary or dark colored variation).
+`small-xs` element (a smaller variation of small) (also exists in dark colored variation).
 
 <div class="sd-example">
     <p>This line contains a <small class="small--xs">small-xs</small> element</p>
-    <p>This line contains a <small class="small--xs--primary">small-xs (in primary color)</small> element</p>
     <p>This line contains a <small class="small--xs--dark">small-xs (in dark color)</small> element</p>
 </div>
 
 ```html
     <p>This line contains a <small class="small--xs">small-xs</small> element</p>
-    <p>This line contains a <small class="small--xs--primary">small-xs (in primary color)</small> element</p>
     <p>This line contains a <small class="small--xs--dark">small-xs (in dark color)</small> element</p>
 ```
 
