@@ -130,7 +130,11 @@
     border-color: $primary-blue-d;
 }
 
-// Modal State
+// Modal Theme
+.input--modal.input--checkbox {
+    background-color: transparent;
+}
+
 .input--modal .input--checkbox__input + .input--checkbox__label:before{
     background: #fff;
 }

@@ -54,7 +54,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    width: calc(100% - #{$size-36});
+    width: calc(100% - #{$size-32});
 }
 
 .input--select__toggle-icon {
@@ -96,8 +96,7 @@
 // ---------------------
 .input--select__list {
     position: absolute;
-    width: calc(100% - 20px);
-    min-width: 200px;
+    min-width: 100%;
     left: 50%;
     transform: translateX(-50%);
     z-index: z("dropdown");
@@ -134,7 +133,7 @@
     text-align: left;
     padding: $size-4 $size-12;
     display: block;
-    word-break: break-all;
+    white-space: nowrap;
 
     &:focus,
     &:hover {
@@ -257,8 +256,17 @@
 .input--select--small.input--select--mobile,
 .input--select--small .input--select__toggle {
     min-height: 32px;
-    padding: 0 $size-32 0 $size-12;
+    padding-right: $size-36;
     background-size: $size-16 $size-16;
     font-size: $size-14;
     background-position: right $size-12 top 50%;
+}
+
+.input--select--small .input--select__toggle-label {
+    width: 100%;
+    line-height: $size-18;
+}
+
+.input--select--small .input--select__toggle-icon {
+    right: $size-7;
 }
