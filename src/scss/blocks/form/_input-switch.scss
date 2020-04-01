@@ -82,3 +82,13 @@
 .input--switch__input:hover + .input--switch__label::before {
     background-color: $primary-blue-ll;
 }
+
+// Modal theme
+.input--modal.input--switch {
+    background-color: transparent;
+}
+
+.input--modal .input--switch__label:before {
+    background: #fff;
+}
+
