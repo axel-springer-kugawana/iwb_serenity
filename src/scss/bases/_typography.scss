@@ -98,15 +98,29 @@ h6,
     font-size: $size-13;
 }
 
+// Dark
+// ---------------------
+.dark {
+    color: $primary-blue-dd;
+}
+
 // Small
 // ---------------------
 small,
-.small {
+.small,
+.small--dark {
     font-size: $size-14;
     color: $color-body;
 }
 
-.small--xs {
+.small--dark,
+.small--xs--dark {
+    color: $primary-blue-dd;
+}
+
+.small--xs,
+.small--xs--primary,
+.small--xs--dark {
     font-size: $size-13;
 }
 
