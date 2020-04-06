@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0-rc.3 - 2020-04-06
+### Changed
+- Form: Input select
+
 ## 2.0.0-rc.2 - 2020-04-01
 ### Changed
 - Form: Input select small
