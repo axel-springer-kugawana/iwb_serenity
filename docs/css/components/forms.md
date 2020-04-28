@@ -25,7 +25,7 @@ Field group can be used to group multiple fields inside a group. A field group i
 A field label inside a `field-group` should use the `field__label--ingroup` class.
 
 <div class="sd-example">
-    <div class="field-group">
+    <div class="field-group">       
         <h5 class="field__title">Field Group Title</h5>
         <p class="field__description">Field Group description</p>
         <div class="field">

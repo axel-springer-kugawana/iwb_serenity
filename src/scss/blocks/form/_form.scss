@@ -28,10 +28,15 @@
 // Field
 // ---------------------
 .field,
+.field-row {
+    position: relative;
+    margin-bottom: $size-16;
+}
+
 .field-group,
 .field--ingroup {
     position: relative;
-    margin-bottom: $size-16;
+    margin-bottom: $size-10;
 }
 
 // Field Text align
@@ -39,7 +44,7 @@
     text-align: center;
 }
 
-// Field Title / Label / Description,
+// Field Header, Field Title / Label / Description
 .field__title,
 .field__label,
 .field__label--error,
@@ -66,8 +71,8 @@
 }
 
 .field__title,
-.field__label,
 .field__description,
+.field__label,
 .field__label--ingroup {
     color: $secondary-grey;
 }
@@ -97,13 +102,15 @@
 .field-group .field__title {
     font-family: $font-title;
     font-weight: $font-weight-title;
+    font-size: $size-16;
     color: $primary-blue-dd;
-    font-size: $size-14;
-
-    @include media-query("desktop") {
-        font-size: $size-16;
-    }
 }
+
+/*.field-group .field__header .field__title,
+.field-group .field__header .field__description {
+    margin-bottom: 0;
+    color: $primary-blue-dd;
+}*/
 
 .field--ingroup--inline {
     margin-bottom: $size-10;
