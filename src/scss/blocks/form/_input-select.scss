@@ -25,7 +25,7 @@
 .input--select--mobile {
     min-height: 40px;
     padding: $size-6 0 0 $size-12;
-    border: 1px solid $primary-blue-ll;
+    border: 1px solid $primary-blue-l;
     border-radius: $input-border-radius;
     background-color: #fff;
     width: 100%;
@@ -103,6 +103,7 @@
     margin-top: $size-8;
     padding: $size-4 0;
     border-radius: $size-4;
+    border: 1px solid $primary-blue-ll;
     box-shadow: 0 2px 10px rgba(79, 127, 182, .25); // $primary-blue
     background: #fff;
     list-style-type: none;
@@ -131,15 +132,15 @@
     cursor: pointer;
     width: 100%;
     text-align: left;
-    padding: $size-4 $size-12;
+    padding: $size-6 $size-12;
     display: block;
     white-space: nowrap;
 
     &:focus,
     &:hover {
         outline: none;
-        background-color: $primary-blue-l;
-        color: #fff;
+        background-color: $primary-blue-ll;
+        color: $primary-blue-d;
     }
 
     &.active {
