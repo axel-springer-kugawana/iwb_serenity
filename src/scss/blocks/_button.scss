@@ -175,7 +175,6 @@
     position: relative;
     padding: $size-9 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
     background-color: transparent;
-    border: 1px solid $primary-blue-ll;
     border-radius: $button-border-radius;
     font-family: $font-body;
     font-size: $size-16;
@@ -184,9 +183,11 @@
 
     @if $theme == "dark" {
         color: #fff;
+        border: 1px solid #fff;
     }
     @else {
         color: $color;
+        border: 1px solid $primary-blue-l;
     }
 
     // Icons
