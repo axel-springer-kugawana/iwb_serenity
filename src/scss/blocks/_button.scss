@@ -266,6 +266,8 @@
     font-size: $size-14;
     font-family: $font-body;
     font-weight: $font-weight-title;
+    display: flex;
+    align-items: center;
 
     @if $theme == "dark" {
         color: #fff;
@@ -320,6 +322,7 @@
         text-decoration: underline;
         margin-left: $size-4;
         margin-right: $size-4;
+        text-align: left;
     }
 }
 // Button Transparent
