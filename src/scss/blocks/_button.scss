@@ -266,6 +266,8 @@
     font-size: $size-14;
     font-family: $font-body;
     font-weight: $font-weight-title;
+    display: flex;
+    align-items: center;
 
     @if $theme == "dark" {
         color: #fff;
@@ -289,7 +291,7 @@
 
     &:hover {
         @if $theme == "dark" {
-            color: $primary-blue-l;
+            color: $primary-blue-ll;
         }
         @else {
             color: $primary-blue-d;
@@ -298,7 +300,7 @@
 
     &:hover .button__icon {
         @if $theme == "dark" {
-            fill: $primary-blue-l;
+            fill: $primary-blue-ll;
         }
         @else {
             fill: $primary-blue-d;
@@ -320,6 +322,7 @@
         text-decoration: underline;
         margin-left: $size-4;
         margin-right: $size-4;
+        text-align: left;
     }
 }
 // Button Transparent
