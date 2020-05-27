@@ -20,17 +20,18 @@ A field is the grouping of a `label` and an `input`. Enclose those within a div 
 
 ## Field Group
 
-Field group can be used to group multiple fields inside a group. A field group is a container with the `field-group` class. A field group can contain a `title` and a `description`.
+Field group can be used to group multiple fields inside a group. A field group is a container with the `field-group` class. A field group can contain a `title`, a `description` and an `annotation-text`.
 
 A field label inside a `field-group` should use the `field__label--ingroup` class.
 
 <div class="sd-example">
-    <div class="field-group">       
+    <div class="field-group">
         <h5 class="field__title">Field Group Title</h5>
         <p class="field__description">Field Group description</p>
         <div class="field">
             <label for="exampleInputId01" class="field__label--ingroup">Field label in group</label>
             <input id="exampleInputId01" class="input--text" value="text goes here">
+            <p class="field__annotation-text">Annotation text to provide extra information about an input or a field.</p>
         </div>
         <div class="field">
             <label for="exampleInputId02" class="field__label--ingroup">Field label in group</label>
@@ -46,6 +47,7 @@ A field label inside a `field-group` should use the `field__label--ingroup` clas
     <div class="field">
         <label for="exampleInputId01" class="field__label--ingroup">Field label in group</label>
         <input id="exampleInputId01" class="input--text" value="text goes here">
+        <p class="field__annotation-text">Annotation text to provide extra information about an input or a field.</p>
     </div>
     <div class="field">
         <label for="exampleInputId02" class="field__label--ingroup">Field label in group</label>

@@ -66,14 +66,16 @@
 .field__title,
 .field__label,
 .field__label--error,
-.field__description {
+.field__description,
+.field__annotation-text {
     word-break: break-word;
 }
 
 .field__title,
 .field__description,
 .field__label,
-.field__label--ingroup {
+.field__label--ingroup,
+.field__annotation-text {
     color: $secondary-grey;
 }
 
@@ -84,6 +86,11 @@
 .field__description,
 .field__label--ingroup {
     font-size: $size-16;
+}
+
+.field__annotation-text {
+    font-size: $size-14;
+    margin: $size-8 0 0;
 }
 
 // Label Icon
