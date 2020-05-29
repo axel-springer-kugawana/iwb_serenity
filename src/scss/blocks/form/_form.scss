@@ -160,11 +160,21 @@
 // ---------------------
 .field-row {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+
+    @include media-query("desktop") {
+        flex-direction: row;
+    }
+
 }
 
 .field-row__item {
-    width: calc(50% - 10px);
+    width: 100%;
+
+    @include media-query("desktop") {
+        width: calc(50% - #{$size-10});
+    }
 }
 
 // State messages
