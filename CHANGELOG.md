@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.0.0-rc-4 - 2020-00-00
+### Changed
+- Form: Field row styles
+- Form: Input text styles
+- Form: Input select styles
+- Form: Input radios styles
+- Form: Input switch styles
+- Form: Textarea switch styles
+- Form: Input group styles
+- Buttons: Border style
+- Colors: Primary-blue-l
+
+###Added
+- Form: Field annotation text
+
 ## 2.0.0-rc.3 - 2020-04-06
 ### Changed
 - Form: Input select
