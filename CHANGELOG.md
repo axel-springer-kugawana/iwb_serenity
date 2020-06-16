@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.0-rc-4 - 2020-00-00
+## 2.0.0-rc.4 - 2020-06-16
 ### Changed
 - Form: Field row styles
 - Form: Input text styles

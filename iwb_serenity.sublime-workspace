@@ -528,20 +528,28 @@
 			}
 		},
 		{
-			"contents": "Searching 16 files for \".input--textarea\" (case sensitive)\n\n0 matches\n\nSearching 25 files for \"input--textarea\" (case sensitive)\n\nC:\\Users\\acrucifix\\code\\iwb_serenity\\src\\scss\\blocks\\form\\_input-textarea.scss:\n    3  \\*------------------------------------*/\n    4  \n    5: .input--textarea {\n    6      display: block;\n    7      border: 2px solid $primary-ll;\n\n1 match in 1 file\n\n\nSearching 25 files for \"checkbox__label\" (case sensitive)\n\nC:\\Users\\acrucifix\\code\\iwb_serenity\\src\\scss\\blocks\\form\\_input-checkbox.scss:\n   14  }\n   15  \n   16: .input--checkbox__label {\n   17      position: relative;\n   18      padding-left: $size-28;\n   ..\n   28  \n   29  // Fake Checkbox Input\n   30: .input--checkbox__label:before {\n   31      display: block;\n   32      content: \"\";\n   ..\n   44  \n   45  // Fake Checkbox Active\n   46: .input--checkbox__label:after {\n   47      background: url(\"#{$public-path}images/icons/icon-checkmark.svg\") no-repeat;\n   48      content: \"\";\n   ..\n   61  }\n   62  \n   63: .input--checkbox__input:checked + .input--checkbox__label:before {\n   64      border-color: $secondary;\n   65      background: $secondary;\n   66  }\n   67  \n   68: .input--checkbox__input:checked + .input--checkbox__label:after {\n   69      opacity: 1;\n   70  }\n   71  \n   72  // Focus State\n   73: .input--checkbox__input:focus + .input--checkbox__label:before {\n   74      border-color: $primary-dd;\n   75  }\n   76  \n   77: .input--checkbox__input:checked:focus + .input--checkbox__label:before {\n   78      border-color: $primary-dd;\n   79  }\n   80  \n   81  // Disabled State\n   82: .input--checkbox__input:disabled + .input--checkbox__label {\n   83      color: fade-out(#000, .8);\n   84      cursor: not-allowed;\n   85  }\n   86  \n   87: .input--checkbox__input:disabled + .input--checkbox__label:before {\n   88      border-color: fade-out(#000, .9);\n   89  }\n   90  \n   91  // Fake undeterminate\n   92: .input--checkbox__input:indeterminate + .input--checkbox__label:before {\n   93      border-color: $secondary;\n   94      background: $secondary;\n   95  }\n   96  \n   97: .input--checkbox__input:indeterminate + .input--checkbox__label:after {\n   98      content: \"\";\n   99      display: block;\n  ...\n  113  \n  114  // Focus State\n  115: .input--checkbox__input:indeterminate:focus + .input--checkbox__label:before {\n  116      border-color: $primary-dd;\n  117  }\n\n12 matches in 1 file\n\n\nSearching 16 files for \"exampleInputId05\" (case sensitive)\n\nC:\\Users\\acrucifix\\code\\iwb_serenity\\docs\\css\\components\\forms.md:\n   93  <div class=\"sd-example\">\n   94      <div class=\"field\">\n   95:         <label for=\"exampleInputId05\" class=\"field__label\">Label goes here</label>\n   96:         <input id=\"exampleInputId05\" class=\"input--text\" value=\"text goes here\">\n   97          <p class=\"field__error\">Error message goes here</p>\n   98      </div>\n   ..\n  101  ```html\n  102  <div class=\"field\">\n  103:     <label for=\"exampleInputId05\" class=\"field__label\">Label goes here</label>\n  104:     <input id=\"exampleInputId05\" class=\"input--text\" value=\"text goes here\">\n  105      <p class=\"field__error\">Error message goes here</p>\n  106  </div>\n\n4 matches in 1 file\n\n\nSearching 25 files for \"0.\" (case sensitive)\n\nC:\\Users\\acrucifix\\code\\iwb_serenity\\src\\scss\\bases\\_typography.scss:\n  155  a {\n  156      color: $color-link;\n  157:     background-color: transparent; // Remove the gray background on active links in IE 10.\n  158      -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.\n  159  \n\nC:\\Users\\acrucifix\\code\\iwb_serenity\\src\\scss\\utils\\_sizes.scss:\n   26  $size-14: .875rem;\n   27  $size-12: .75rem;\n   28: $size-11: 0.6875rem;\n   29  $size-10: .625rem;\n   30  $size-8: .5rem;\n\n2 matches across 2 files\n\n\nSearching 25 files for \".input--radio__label\" (case sensitive)\n\nC:\\Users\\acrucifix\\code\\iwb_serenity\\src\\scss\\blocks\\form\\_input-radio.scss:\n   15  }\n   16  \n   17: .input--radio__label {\n   18      position: relative;\n   19      padding-left: $size-28;\n   ..\n   29  \n   30  // Fake Radio Input\n   31: .input--radio__label:before {\n   32      display: block;\n   33      content: \"\";\n   ..\n   45  \n   46  // Fake Radio Active\n   47: .input--radio__label:after {\n   48      display: block;\n   49      content: \"\";\n   ..\n   60  }\n   61  \n   62: .input--radio__input:checked + .input--radio__label:before {\n   63      border-color: fade-out($primary, .9);\n   64  }\n   65  \n   66: .input--radio__input:checked + .input--radio__label:after {\n   67      opacity: 1;\n   68  }\n   69  \n   70  // Focus State\n   71: .input--radio__input:focus + .input--radio__label:before {\n   72      border-color: $primary-dd;\n   73  }\n   74  \n   75: // .input--radio__input:checked:focus + .input--radio__label:before {\n   76  //     border-color: $primary-dd;\n   77  // }\n   78  \n   79  // Disabled State\n   80: .input--radio__input:disabled + .input--radio__label {\n   81      color: fade-out(#000, .8);\n   82      cursor: not-allowed;\n   83  }\n   84  \n   85: .input--radio__input:disabled + .input--radio__label:before {\n   86      border-color: fade-out(#000, .9);\n   87  }\n\n9 matches in 1 file\n",
+			"contents": "Searching 16 files for \".input--textarea\" (case sensitive)\n\n0 matches\n\nSearching 25 files for \"input--textarea\" (case sensitive)\n\nC:\\Users\\acrucifix\\code\\iwb_serenity\\src\\scss\\blocks\\form\\_input-textarea.scss:\n    3  \\*------------------------------------*/\n    4  \n    5: .input--textarea {\n    6      display: block;\n    7      border: 2px solid $primary-ll;\n\n1 match in 1 file\n\n\nSearching 25 files for \"checkbox__label\" (case sensitive)\n\nC:\\Users\\acrucifix\\code\\iwb_serenity\\src\\scss\\blocks\\form\\_input-checkbox.scss:\n   14  }\n   15  \n   16: .input--checkbox__label {\n   17      position: relative;\n   18      padding-left: $size-28;\n   ..\n   28  \n   29  // Fake Checkbox Input\n   30: .input--checkbox__label:before {\n   31      display: block;\n   32      content: \"\";\n   ..\n   44  \n   45  // Fake Checkbox Active\n   46: .input--checkbox__label:after {\n   47      background: url(\"#{$public-path}images/icons/icon-checkmark.svg\") no-repeat;\n   48      content: \"\";\n   ..\n   61  }\n   62  \n   63: .input--checkbox__input:checked + .input--checkbox__label:before {\n   64      border-color: $secondary;\n   65      background: $secondary;\n   66  }\n   67  \n   68: .input--checkbox__input:checked + .input--checkbox__label:after {\n   69      opacity: 1;\n   70  }\n   71  \n   72  // Focus State\n   73: .input--checkbox__input:focus + .input--checkbox__label:before {\n   74      border-color: $primary-dd;\n   75  }\n   76  \n   77: .input--checkbox__input:checked:focus + .input--checkbox__label:before {\n   78      border-color: $primary-dd;\n   79  }\n   80  \n   81  // Disabled State\n   82: .input--checkbox__input:disabled + .input--checkbox__label {\n   83      color: fade-out(#000, .8);\n   84      cursor: not-allowed;\n   85  }\n   86  \n   87: .input--checkbox__input:disabled + .input--checkbox__label:before {\n   88      border-color: fade-out(#000, .9);\n   89  }\n   90  \n   91  // Fake undeterminate\n   92: .input--checkbox__input:indeterminate + .input--checkbox__label:before {\n   93      border-color: $secondary;\n   94      background: $secondary;\n   95  }\n   96  \n   97: .input--checkbox__input:indeterminate + .input--checkbox__label:after {\n   98      content: \"\";\n   99      display: block;\n  ...\n  113  \n  114  // Focus State\n  115: .input--checkbox__input:indeterminate:focus + .input--checkbox__label:before {\n  116      border-color: $primary-dd;\n  117  }\n\n12 matches in 1 file\n\n\nSearching 16 files for \"exampleInputId05\" (case sensitive)\n\nC:\\Users\\acrucifix\\code\\iwb_serenity\\docs\\css\\components\\forms.md:\n   93  <div class=\"sd-example\">\n   94      <div class=\"field\">\n   95:         <label for=\"exampleInputId05\" class=\"field__label\">Label goes here</label>\n   96:         <input id=\"exampleInputId05\" class=\"input--text\" value=\"text goes here\">\n   97          <p class=\"field__error\">Error message goes here</p>\n   98      </div>\n   ..\n  101  ```html\n  102  <div class=\"field\">\n  103:     <label for=\"exampleInputId05\" class=\"field__label\">Label goes here</label>\n  104:     <input id=\"exampleInputId05\" class=\"input--text\" value=\"text goes here\">\n  105      <p class=\"field__error\">Error message goes here</p>\n  106  </div>\n\n4 matches in 1 file\n\n\nSearching 25 files for \"0.\" (case sensitive)\n\nC:\\Users\\acrucifix\\code\\iwb_serenity\\src\\scss\\bases\\_typography.scss:\n  155  a {\n  156      color: $color-link;\n  157:     background-color: transparent; // Remove the gray background on active links in IE 10.\n  158      -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.\n  159  \n\nC:\\Users\\acrucifix\\code\\iwb_serenity\\src\\scss\\utils\\_sizes.scss:\n   26  $size-14: .875rem;\n   27  $size-12: .75rem;\n   28: $size-11: 0.6875rem;\n   29  $size-10: .625rem;\n   30  $size-8: .5rem;\n\n2 matches across 2 files\n\n\nSearching 25 files for \".input--radio__label\" (case sensitive)\n\nC:\\Users\\acrucifix\\code\\iwb_serenity\\src\\scss\\blocks\\form\\_input-radio.scss:\n   15  }\n   16  \n   17: .input--radio__label {\n   18      position: relative;\n   19      padding-left: $size-28;\n   ..\n   29  \n   30  // Fake Radio Input\n   31: .input--radio__label:before {\n   32      display: block;\n   33      content: \"\";\n   ..\n   45  \n   46  // Fake Radio Active\n   47: .input--radio__label:after {\n   48      display: block;\n   49      content: \"\";\n   ..\n   60  }\n   61  \n   62: .input--radio__input:checked + .input--radio__label:before {\n   63      border-color: fade-out($primary, .9);\n   64  }\n   65  \n   66: .input--radio__input:checked + .input--radio__label:after {\n   67      opacity: 1;\n   68  }\n   69  \n   70  // Focus State\n   71: .input--radio__input:focus + .input--radio__label:before {\n   72      border-color: $primary-dd;\n   73  }\n   74  \n   75: // .input--radio__input:checked:focus + .input--radio__label:before {\n   76  //     border-color: $primary-dd;\n   77  // }\n   78  \n   79  // Disabled State\n   80: .input--radio__input:disabled + .input--radio__label {\n   81      color: fade-out(#000, .8);\n   82      cursor: not-allowed;\n   83  }\n   84  \n   85: .input--radio__input:disabled + .input--radio__label:before {\n   86      border-color: fade-out(#000, .9);\n   87  }\n\n9 matches in 1 file\n\n\nSearching 25 files for \"field-row\" (case sensitive)\n\nC:\\Users\\acrucifix\\code\\iwb_serenity\\src\\scss\\blocks\\form\\_form.scss:\n   29  // ---------------------\n   30  .field,\n   31: .field-row {\n   32      position: relative;\n   33      margin-bottom: $size-16;\n   ..\n  159  // Use to display field side by side\n  160  // ---------------------\n  161: .field-row {\n  162      display: flex;\n  163      justify-content: space-between;\n  164  }\n  165  \n  166: .field-row__item {\n  167      width: calc(50% - 10px);\n  168  }\n\n3 matches in 1 file\n\n\nSearching 25 files for \"#1C3452\" (case sensitive)\n\n0 matches\n\nSearching 25 files for \"#1c3452\" (case sensitive)\n\nC:\\Users\\acrucifix\\code\\iwb_serenity\\src\\scss\\utils\\_variables.scss:\n   24  // Shade\n   25  $primary-blue-d: #28476d !default;\n   26: $primary-blue-dd: #1c3452 !default;\n   27  $primary-blue-ddd: #132031 !default;\n   28  $primary-blue-l: #6288b9 !default;\n\n1 match in 1 file\n",
 			"settings":
 			{
-				"buffer_size": 5130,
+				"buffer_size": 6059,
 				"line_ending": "Windows",
 				"name": "Find Results",
 				"scratch": true
 			}
 		},
 		{
+			"file": "src/js/serenity/InputSelect.vue",
+			"settings":
+			{
+				"buffer_size": 29397,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "src/scss/blocks/form/_input-radio.scss",
 			"settings":
 			{
-				"buffer_size": 2149,
+				"buffer_size": 2516,
 				"line_ending": "Windows"
 			}
 		},
@@ -549,7 +557,7 @@
 			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 3294,
+				"buffer_size": 3084,
 				"line_ending": "Windows"
 			}
 		},
@@ -557,7 +565,8 @@
 			"file": "docs/css/components/forms.md",
 			"settings":
 			{
-				"buffer_size": 19488,
+				"buffer_size": 27219,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
@@ -565,7 +574,7 @@
 			"file": "src/scss/blocks/form/_input-checkbox.scss",
 			"settings":
 			{
-				"buffer_size": 2647,
+				"buffer_size": 3823,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -574,33 +583,16 @@
 			"file": "src/scss/blocks/form/_input-textarea.scss",
 			"settings":
 			{
-				"buffer_size": 902,
+				"buffer_size": 1060,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/scss/utils/_sizes.scss",
+			"file": "src/scss/blocks/form/_input-select.scss",
 			"settings":
 			{
-				"buffer_size": 735,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "CHANGELOG.md",
-			"settings":
-			{
-				"buffer_size": 4127,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/scss/utils/_variables.scss",
-			"settings":
-			{
-				"buffer_size": 4443,
+				"buffer_size": 5916,
 				"line_ending": "Windows"
 			}
 		}
@@ -797,16 +789,18 @@
 	"file_history":
 	[
 		"/C/Users/acrucifix/code/iwb_serenity/src/scss/utils/_variables.scss",
+		"/C/Users/acrucifix/code/iwb_serenity/CHANGELOG.md",
+		"/C/Users/acrucifix/code/iwb_serenity/src/scss/utils/_sizes.scss",
+		"/C/Users/acrucifix/code/iwb_serenity/package.json",
+		"/C/Users/acrucifix/code/iwb_serenity/src/scss/blocks/form/_form.scss",
 		"/C/Users/acrucifix/code/iwb_serenity/src/scss/utils/_mixins.scss",
 		"/C/Users/acrucifix/code/iwb_serenity/src/scss/blocks/_button.scss",
 		"/C/Users/acrucifix/code/iwb_serenity/README.md",
 		"/C/Users/acrucifix/code/iwb_serenity/LICENSE",
 		"/C/Users/acrucifix/code/iwb_serenity/deploy-manual.md",
-		"/C/Users/acrucifix/code/iwb_serenity/package.json",
 		"/C/Users/acrucifix/code/iwb_serenity/docs/css/bases/reset.md",
 		"/C/Users/acrucifix/code/iwb_serenity/docs/.vuepress/config.js",
 		"/C/Users/acrucifix/code/iwb_serenity/docs/.vuepress/theme/Layout.vue",
-		"/C/Users/acrucifix/code/iwb_serenity/src/scss/utils/_sizes.scss",
 		"/C/Users/acrucifix/code/iwb_serenity/docs/css/components/buttons.md",
 		"/C/Users/acrucifix/code/iwb_serenity/src/scss/blocks/form/_input-select.scss",
 		"/C/Users/acrucifix/code/iwb_serenity/src/scss/blocks/_top-navigation.scss",
@@ -816,7 +810,6 @@
 		"/C/Users/acrucifix/code/iwb_serenity/src/scss/init.scss",
 		"/C/Users/acrucifix/code/iwb_serenity/src/scss/layout/_layout.scss",
 		"/C/Users/acrucifix/code/iwb_serenity/build/webpack.config.js",
-		"/C/Users/acrucifix/code/iwb_serenity/CHANGELOG.md",
 		"/C/Users/acrucifix/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
 		"/C/Users/acrucifix/code/iwb_serenity/babel.config.js",
 		"/C/Users/acrucifix/code/iwb_serenity/src/js/serenity.js",
@@ -833,7 +826,6 @@
 		"/C/Users/acrucifix/code/iwb_serenity/src/scss/utils/_functions.scss",
 		"/C/Users/acrucifix/code/iwb_serenity/src/scss/blocks/form/_input-switch.scss",
 		"/C/Users/acrucifix/code/iwb_serenity/dist/images/icons/icon-checkmark-partial.svg",
-		"/C/Users/acrucifix/code/iwb_serenity/src/scss/blocks/form/_form.scss",
 		"/C/Users/acrucifix/code/iwb_serenity/src/images/icons/icon-arrow-bottom.svg",
 		"/C/Users/acrucifix/code/iwb_serenity/docs/.vuepress/components/Example/InputCheckbox.vue",
 		"/C/Users/acrucifix/Desktop/immoweb-beta.htm",
@@ -996,6 +988,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"#1c3452",
+			"#1C3452",
+			"field-row",
+			"description",
 			"breakpoints",
 			"cfcfcf",
 			"05",
@@ -1119,11 +1115,7 @@
 			"input--select__list",
 			"input-group--select__button--prepend",
 			"input--select--ingroup",
-			"\ninput--select--ingroup",
-			"input--select--ingroup",
-			"input-group--select__button",
-			"input--select__toggle-label",
-			"input-group--select__button--prepend"
+			"\ninput--select--ingroup"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1148,7 +1140,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1164,8 +1156,8 @@
 						"selection":
 						[
 							[
-								305,
-								305
+								384,
+								384
 							]
 						],
 						"settings":
@@ -1251,24 +1243,24 @@
 								{
 									"1":
 									[
-										304,
-										305
+										383,
+										384
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/dot.png",
-										"region.yellowish brackethighlighter.default"
+										"Packages/BracketHighlighter/icons/round_bracket.png",
+										"region.yellowish"
 									]
 								},
 								"open":
 								{
 									"1":
 									[
-										294,
-										295
+										371,
+										372
 									]
 								},
 								"unmatched":
@@ -1277,90 +1269,93 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
 							],
-							"color_helper.box_height": 19,
+							"color_helper.box_height": 18,
 							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Ocean.tmTheme",
 							"color_helper.file_palette":
 							[
 							],
+							"color_helper.preview_meta":
+							{
+							},
 							"color_helper.scan":
 							{
 								"allowed_colors":
 								[
-									"hwb",
 									"webcolors",
-									"gray",
-									"hex",
-									"hwba",
-									"graya",
 									"hexa_compressed",
-									"rgba",
+									"gray",
 									"hex_compressed",
-									"rgb",
-									"hsla",
+									"rgba",
 									"hsl",
-									"hexa"
+									"graya",
+									"hwb",
+									"rgb",
+									"hexa",
+									"hsla",
+									"hwba",
+									"hex"
 								],
 								"compress_hex_output": true,
 								"current_ext": ".md",
 								"current_syntax": "Markdown/Markdown",
 								"enabled": true,
-								"last_updated": 1572960666.2,
+								"last_updated": 1591858863.11,
 								"scan_completion_scopes":
 								[
 								],
@@ -1381,7 +1376,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1389,7 +1384,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5130,
+						"buffer_size": 6059,
 						"regions":
 						{
 							"match":
@@ -1508,6 +1503,22 @@
 									[
 										5025,
 										5045
+									],
+									[
+										5310,
+										5319
+									],
+									[
+										5479,
+										5488
+									],
+									[
+										5585,
+										5594
+									],
+									[
+										5936,
+										5943
 									]
 								],
 								"scope": ""
@@ -1516,8 +1527,8 @@
 						"selection":
 						[
 							[
-								4197,
-								4197
+								5918,
+								5934
 							]
 						],
 						"settings":
@@ -1617,70 +1628,70 @@
 								{
 									"1":
 									[
-										4085,
-										4086
+										5320,
+										5321
 									]
 								}
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
 								"bh_round_close",
 								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
 							],
-							"color_helper.box_height": 19,
+							"color_helper.box_height": 18,
 							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Ocean.tmTheme",
 							"color_helper.file_palette":
 							[
@@ -1693,13 +1704,13 @@
 								"current_ext": null,
 								"current_syntax": "Default/Find Results",
 								"enabled": false,
-								"last_updated": 1572960666.2
+								"last_updated": 1591858863.11
 							},
 							"default_dir": "C:\\Users\\acrucifix\\code\\iwb_serenity",
 							"detect_indentation": false,
 							"git_gutter_is_enabled": false,
 							"line_numbers": false,
-							"output_tag": 6,
+							"output_tag": 9,
 							"result_base_dir": "",
 							"result_file_regex": "^([^ \t].*):$",
 							"result_line_regex": "^ +([0-9]+):",
@@ -1708,27 +1719,191 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2603.0,
+						"translation.y": 3816.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "src/scss/blocks/form/_input-radio.scss",
+					"file": "src/js/serenity/InputSelect.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2149,
+						"buffer_size": 29397,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								905,
-								905
+								7240,
+								7240
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										7313,
+										7314
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										7239,
+										7240
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"color_helper.box_height": 18,
+							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Ocean.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"gray",
+									"hwb",
+									"webcolors",
+									"hex",
+									"hwba",
+									"graya",
+									"rgba",
+									"hex_compressed",
+									"rgb",
+									"hexa",
+									"hsla",
+									"hsl",
+									"hexa_compressed"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".vue",
+								"current_syntax": "Vue Syntax Highlight/Vue Component",
+								"enabled": true,
+								"last_updated": 1591102705.18,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
+							},
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Vue Syntax Highlight/Vue Component.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2772.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/scss/blocks/form/_input-radio.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2516,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1828,21 +2003,6 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
@@ -1853,11 +2013,31 @@
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
@@ -1868,27 +2048,22 @@
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
 							],
-							"color_helper.box_height": 19,
+							"color_helper.box_height": 18,
 							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Ocean.tmTheme",
 							"color_helper.file_palette":
 							[
-								"#000000ff"
+								"#ffffffff"
 							],
 							"color_helper.preview_meta":
 							{
@@ -1897,25 +2072,25 @@
 							{
 								"allowed_colors":
 								[
+									"gray",
 									"hwb",
 									"webcolors",
-									"gray",
 									"hex",
 									"hwba",
 									"graya",
-									"hexa_compressed",
 									"rgba",
 									"hex_compressed",
 									"rgb",
+									"hexa",
 									"hsla",
 									"hsl",
-									"hexa"
+									"hexa_compressed"
 								],
 								"compress_hex_output": true,
 								"current_ext": ".scss",
 								"current_syntax": "Sass/Syntaxes/SCSS",
 								"enabled": true,
-								"last_updated": 1572960666.2,
+								"last_updated": 1591102705.18,
 								"scan_completion_scopes":
 								[
 									"source.scss meta.property-value.css -comment -string",
@@ -1937,24 +2112,24 @@
 						"translation.y": 416.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "package.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3294,
+						"buffer_size": 3084,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								968,
-								968
+								0,
+								0
 							]
 						],
 						"settings":
@@ -2055,24 +2230,24 @@
 								{
 									"1":
 									[
-										1046,
-										1047
+										3082,
+										3083
 									]
 								},
 								"icon":
 								{
 									"1":
 									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"region.greenish"
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
 									]
 								},
 								"open":
 								{
 									"1":
 									[
-										892,
-										893
+										0,
+										1
 									]
 								},
 								"unmatched":
@@ -2081,21 +2256,6 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
@@ -2106,11 +2266,31 @@
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
@@ -2121,21 +2301,16 @@
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
 							],
 							"color_helper.box_height": 19,
 							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Ocean.tmTheme",
@@ -2154,7 +2329,7 @@
 							},
 							"git_gutter_is_enabled": true,
 							"syntax": "Packages/zzz A File Icon zzz/aliases/JSON (NPM).sublime-syntax",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -2165,24 +2340,27 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "docs/css/components/forms.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19488,
+						"buffer_size": 27219,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4467,
-								4467
+								2100,
+								2100
 							]
 						],
 						"settings":
 						{
+							"SL.312.region_keys":
+							[
+							],
 							"SL.78.region_keys":
 							[
 							],
@@ -2278,61 +2456,61 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
 							],
 							"color_helper.box_height": 19,
 							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Ocean.tmTheme",
@@ -2346,25 +2524,25 @@
 							{
 								"allowed_colors":
 								[
-									"hwb",
-									"webcolors",
-									"gray",
+									"hexa",
 									"hex",
+									"hsl",
+									"hex_compressed",
+									"hwb",
+									"hexa_compressed",
+									"hsla",
+									"gray",
+									"rgba",
+									"webcolors",
 									"hwba",
 									"graya",
-									"hexa_compressed",
-									"rgba",
-									"hex_compressed",
-									"rgb",
-									"hsla",
-									"hsl",
-									"hexa"
+									"rgb"
 								],
 								"compress_hex_output": true,
 								"current_ext": ".md",
 								"current_syntax": "Markdown/Markdown",
 								"enabled": true,
-								"last_updated": 1572960666.2,
+								"last_updated": 1590495850.98,
 								"scan_completion_scopes":
 								[
 								],
@@ -2384,27 +2562,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2131.0,
+						"translation.y": 483.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "src/scss/blocks/form/_input-checkbox.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2647,
+						"buffer_size": 3823,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								569,
-								569
+								0,
+								0
 							]
 						],
 						"settings":
@@ -2629,16 +2807,16 @@
 						"translation.y": 136.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "src/scss/blocks/form/_input-textarea.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 902,
+						"buffer_size": 1060,
 						"regions":
 						{
 						},
@@ -2870,578 +3048,60 @@
 						"translation.y": 57.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
-					"buffer": 7,
-					"file": "src/scss/utils/_sizes.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 735,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								715,
-								715
-							]
-						],
-						"settings":
-						{
-							"SL.19.region_keys":
-							[
-							],
-							"SL.359.region_keys":
-							[
-							],
-							"SL.76.region_keys":
-							[
-							],
-							"SL.90.region_keys":
-							[
-							],
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"color_helper.box_height": 18,
-							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Ocean.tmTheme",
-							"color_helper.file_palette":
-							[
-							],
-							"color_helper.preview_meta":
-							{
-							},
-							"color_helper.scan":
-							{
-								"allowed_colors":
-								[
-									"hex",
-									"hsl",
-									"hexa_compressed",
-									"hwba",
-									"gray",
-									"webcolors",
-									"rgb",
-									"hwb",
-									"hexa",
-									"hsla",
-									"rgba",
-									"graya",
-									"hex_compressed"
-								],
-								"compress_hex_output": true,
-								"current_ext": ".scss",
-								"current_syntax": "Sass/Syntaxes/SCSS",
-								"enabled": true,
-								"last_updated": 1574670662.58,
-								"scan_completion_scopes":
-								[
-									"source.scss meta.property-value.css -comment -string",
-									"source.sass meta.property-value.css -comment -string"
-								],
-								"scan_scopes":
-								[
-									"source.sass meta.property-value.css -comment -string",
-									"source.scss meta.property-value.css -comment -string"
-								],
-								"use_hex_argb": false
-							},
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 55.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "package.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3294,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1859,
-								1869
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										1869,
-										1870
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"region.greenish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										1858,
-										1859
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										1869,
-										1870
-									]
-								},
-								"icon":
-								{
-									"1":
-									[
-										"Packages/BracketHighlighter/icons/double_quote.png",
-										"region.greenish"
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										1858,
-										1859
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"color_helper.box_height": 18,
-							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Ocean.tmTheme",
-							"color_helper.file_palette":
-							[
-							],
-							"color_helper.preview_meta":
-							{
-							},
-							"color_helper.scan":
-							{
-								"current_ext": ".json",
-								"current_syntax": "zzz A File Icon zzz/aliases/JSON (NPM)",
-								"enabled": false,
-								"last_updated": 1574670662.58
-							},
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/zzz A File Icon zzz/aliases/JSON (NPM).sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
 					"buffer": 8,
-					"file": "CHANGELOG.md",
+					"file": "src/scss/blocks/form/_input-select.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4127,
+						"buffer_size": 5916,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								320,
-								320
+								2002,
+								1990
 							]
 						],
 						"settings":
 						{
-							"SL.199.region_keys":
-							[
-							],
 							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
 							"bracket_highlighter.locations":
 							{
 								"close":
 								{
+									"1":
+									[
+										2002,
+										2003
+									]
 								},
 								"icon":
 								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
 								},
 								"open":
 								{
+									"1":
+									[
+										1989,
+										1990
+									]
 								},
 								"unmatched":
 								{
@@ -3449,381 +3109,123 @@
 							},
 							"bracket_highlighter.regions":
 							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
 							],
 							"color_helper.box_height": 18,
 							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Ocean.tmTheme",
 							"color_helper.file_palette":
 							[
-							],
-							"color_helper.preview_meta":
-							{
-							},
-							"color_helper.scan":
-							{
-								"allowed_colors":
-								[
-									"hex",
-									"hsl",
-									"hexa_compressed",
-									"hwba",
-									"gray",
-									"webcolors",
-									"rgb",
-									"hwb",
-									"hexa",
-									"hsla",
-									"rgba",
-									"graya",
-									"hex_compressed"
-								],
-								"compress_hex_output": true,
-								"current_ext": ".md",
-								"current_syntax": "Markdown/Markdown",
-								"enabled": true,
-								"last_updated": 1574670662.58,
-								"scan_completion_scopes":
-								[
-								],
-								"scan_scopes":
-								[
-									"meta.declaration-list.css -support.type.property-name.css -comment -string",
-									"meta.property-value.css -comment -string",
-									"meta.value.css -comment -string",
-									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
-									"meta.tag.any.html meta.attribute-with-value.style.html"
-								],
-								"use_hex_argb": false
-							},
-							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "src/scss/utils/_variables.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4443,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								173,
-								207
-							]
-						],
-						"settings":
-						{
-							"SL.436.region_keys":
-							[
-							],
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.clone": -1,
-							"bracket_highlighter.clone_locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.clone_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content"
-							],
-							"color_helper.box_height": 18,
-							"color_helper.color_scheme": "Packages/Boxy Theme/schemes/Boxy Ocean.tmTheme",
-							"color_helper.file_palette":
-							[
-								"#0e1a29ff",
-								"#32bbffff",
-								"#3d6ca9ff",
-								"#63697eff",
-								"#65d78dff",
-								"#6bc97dff",
-								"#70768cff",
-								"#737373ff",
-								"#808080ff",
-								"#91273fff",
-								"#9b9b9bff",
-								"#a6a6a6ff",
-								"#d8d8d8ff",
-								"#e9e9e9ff",
-								"#eccb6dff",
-								"#efefefff",
-								"#f2f2f2ff",
-								"#f7752aff",
+								"#000000ff",
+								"#4f7fb640@2",
 								"#ffffffff"
 							],
 							"color_helper.preview_meta":
 							{
-								"349":
+								"2534":
 								[
-									8238990802498307734,
-									7,
-									"hex",
-									1108877022705604643,
-									1,
-									"1575296681.802068"
-								],
-								"375":
-								[
-									1557865735680805552,
-									7,
-									"hex",
-									1108877022705604643,
+									8556672019829756896,
+									23,
+									"rgba",
+									2763413332110425280,
 									2,
-									"1575296681.805059"
+									"1591713067.825774"
 								],
-								"402":
+								"2592":
 								[
-									7698673477086030194,
-									7,
-									"hex",
-									1108877022705604643,
-									3,
-									"1575296681.80805"
-								],
-								"428":
-								[
-									2210287481723200879,
-									7,
-									"hex",
-									1108877022705604643,
+									6588284455268960065,
 									4,
-									"1575296681.81204"
+									"hex_compressed",
+									-1133054519360895997,
+									3,
+									"1591713067.829764"
 								],
-								"462":
+								"637":
 								[
-									8027352182540961340,
-									7,
-									"hex",
-									1108877022705604643,
-									5,
-									"1575296681.817026"
+									6588284455268960065,
+									4,
+									"hex_compressed",
+									-1133054519360895997,
+									1,
+									"1591713064.84263"
 								]
 							},
 							"color_helper.scan":
 							{
 								"allowed_colors":
 								[
-									"hex",
-									"hsl",
-									"hexa_compressed",
-									"hwba",
 									"gray",
-									"webcolors",
-									"rgb",
 									"hwb",
+									"webcolors",
+									"hex",
+									"hwba",
+									"graya",
+									"rgba",
+									"hex_compressed",
+									"rgb",
 									"hexa",
 									"hsla",
-									"rgba",
-									"graya",
-									"hex_compressed"
+									"hsl",
+									"hexa_compressed"
 								],
 								"compress_hex_output": true,
 								"current_ext": ".scss",
 								"current_syntax": "Sass/Syntaxes/SCSS",
 								"enabled": true,
-								"last_updated": 1574670662.58,
+								"last_updated": 1591102705.18,
 								"scan_completion_scopes":
 								[
 									"source.scss meta.property-value.css -comment -string",
@@ -3842,10 +3244,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 720.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -3923,6 +3325,22 @@
 		"selected_items":
 		[
 			[
+				"input-se",
+				"src\\scss\\blocks\\form\\_input-select.scss"
+			],
+			[
+				"inputS",
+				"src\\js\\serenity\\InputSelect.vue"
+			],
+			[
+				"form.",
+				"docs\\css\\components\\forms.md"
+			],
+			[
+				"form",
+				"src\\scss\\blocks\\form\\_form.scss"
+			],
+			[
 				"variable",
 				"src\\scss\\utils\\_variables.scss"
 			],
@@ -3945,10 +3363,6 @@
 			[
 				"deployMa",
 				"deploy-manual.md"
-			],
-			[
-				"form.",
-				"docs\\css\\components\\forms.md"
 			],
 			[
 				"size",
@@ -4039,10 +3453,6 @@
 				"src\\images\\icons\\icon-arrow-bottom.svg"
 			],
 			[
-				"input-se",
-				"src\\scss\\blocks\\form\\_input-select.scss"
-			],
-			[
 				"typog",
 				"src\\scss\\bases\\_typography.scss"
 			],
@@ -4077,10 +3487,6 @@
 			[
 				"parti",
 				"dist\\images\\icons\\icon-checkmark-partial.svg"
-			],
-			[
-				"form",
-				"src\\scss\\blocks\\form\\_form.scss"
 			],
 			[
 				"visibi",
@@ -4137,10 +3543,6 @@
 			[
 				"CHANGE",
 				"CHANGELOG.md"
-			],
-			[
-				"inputS",
-				"src\\js\\serenity\\InputSelect.vue"
 			],
 			[
 				"changel",
@@ -4455,7 +3857,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
