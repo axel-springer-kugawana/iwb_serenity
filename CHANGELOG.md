@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0 - 2020-07-07
+### Fixed
+- Form: Input select label alignement for Safari
+
 ## 2.0.0-rc.4 - 2020-06-16
 ### Changed
 - Form: Field row styles
