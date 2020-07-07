@@ -24,7 +24,9 @@
 .input--select__toggle,
 .input--select--mobile {
     min-height: 40px;
-    padding: $size-6 0 0 $size-12;
+    line-height: 100%;
+    // padding: $size-6 0 0 $size-12;
+    padding: 0 0 0 $size-12;
     border: 1px solid $primary-blue-l;
     border-radius: $input-border-radius;
     background-color: #fff;
@@ -50,7 +52,7 @@
 }
 
 .input--select__toggle-label {
-    display: inline-block;
+    // display: inline-block;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
