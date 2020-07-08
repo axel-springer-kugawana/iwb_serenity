@@ -11,10 +11,12 @@
                 :required="required ? true : false"
                 type="button"
                 class="input--select__toggle"
+                :class="{ 'input--error': invalid }"
                 aria-haspopup="listbox"
                 :id="id"
                 :aria-expanded="listOpen ? 'true' : 'false'"
-                :aria-labelledby="`${inputLabelId} ${id}`"
+                :aria-labelledby="ariaLabelledbyValue"
+                :aria-invalid="invalid ? 'true' : false"
                 @click="toggleList"
                 @keydown.down="handleKeyDown">
                 <span class="input--select__toggle-label">
@@ -96,10 +98,11 @@
 
         <select
             class="input--select input--select--mobile input--select--mobile--collapsed"
-            :class="{ 'input--select--small' : small }"
+            :class="{ 'input--select--small' : small, 'input--error': invalid }"
             v-model="internalValue"
-            :aria-labelledby="inputLabelId"
+            :aria-labelledby="ariaLabelledbyValue"
             :required="required ? true : false"
+            :aria-invalid="invalid ? 'true' : false"
             ref="selectMobile"
             @click="manageMobileClass"
             @change="updateMobileValue">
@@ -186,6 +189,16 @@
                 type: Boolean,
                 required: false,
                 default: false
+            },
+            invalid: {
+                type: Boolean,
+                required: false,
+                default: false
+            },
+            inputErrorLabelId: {
+                type: String,
+                required: false,
+                default: ""
             }
         },
         data() {
@@ -255,6 +268,17 @@
                 });
 
                 return this.flattenDeep(flatArray);
+            },
+            ariaLabelledbyValue: function() {
+
+                let value = this.inputLabelId + ' ' + this.id;
+
+
+                if (this.inputErrorLabelId) {
+                    value = value.concat(' ', this.inputErrorLabelId)
+                }
+
+                return value;
             }
         },
         watch: {

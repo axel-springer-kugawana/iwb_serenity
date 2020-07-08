@@ -106,6 +106,43 @@ Serenity provides a boolean prop (small) for small input select.
 ></serenityInputSelect>
 ```
 
+## Error messages
+
+Select can be marked as invalid by setting the prop `invalid` (boolean)  to true. This prop will display the select with a red border, and mark it as invalid.
+
+Keep in mind that you should probably use this in combination with recommendation for [field error messages](../../css/components/forms.md#error-messages). To link the select with the error message, use the prop `inputErrorLabelId`(string), refering to the error message id.
+
+<div class="sd-example">
+    <Example-InputSelectError></Example-InputSelectError>
+</div>
+
+
+```html
+<div class="sd-example">
+    <div class="field">
+        <label class="field__label--error" id="inputSelectErrorLabelId" for="inputSelectErrorExampleId">Input Select With Errors:</label>
+        <serenityInputSelect
+            :invalid="true"
+            inputErrorLabelId="inputSelectErrorMessageId"
+            id="inputSelectErrorExampleId"
+            inputLabelId="inputSelectErrorLabelId"
+            :options="[
+                {'value': 'select-value-01', 'label': 'Jenny'},
+                {'value': 'select-value-02', 'label': 'Boby'},
+                {'value': 'select-value-03', 'label': 'Bob'},
+                {'value': 'select-value-04', 'label': 'John'},
+                {'value': 'select-value-05', 'label': 'Jean', 'disabled': true},
+                {'value': 'select-value-06', 'label': 'Robert'},
+                {'value': 'select-value-07', 'label': 'Marie'},
+                {'value': 'select-value-08', 'label': 'Marc'},
+                {'value': 'select-value-09', 'label': 'Julie'}
+            ]"
+        ></serenityInputSelect>
+        <p id="inputSelectErrorMessageId" class="field__message--error">Error message for select</p>
+    </div>
+</div>
+```
+
 ## Props
 
 ```json
@@ -143,9 +180,19 @@ Serenity provides a boolean prop (small) for small input select.
         default: false
     },
     small: {
-     type: Boolean,
-     required: false,
-     default: false
+        type: Boolean,
+        required: false,
+        default: false
+    },
+    invalid: {
+        type: Boolean,
+        required: false,
+        default: false
+    },
+    inputErrorLabelId: {
+        type: String,
+        required: false,
+        default: ""
     }
 }
 ```
@@ -184,12 +231,22 @@ Serenity provides a boolean prop (small) for small input select.
 
 * *required*:
 
-    *default:false*
+    *default: false*
 
     A boolean that define if the element is required or not.
-    
+
 * *small*:
-    
-    *default:false*
-    
+
+    *default: false*
+
     A boolean that define if the element is small or not.
+
+* *invalid*:
+
+    *default: false*
+
+    A boolean that define if the element is invalid or not.
+
+* inputErrorLabelId:
+
+    A string use refering to the id of the error message (Use by `aria-labbeledby` attribute for accessibility purpose).
