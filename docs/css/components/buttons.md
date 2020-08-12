@@ -68,6 +68,105 @@ The differences with the default theme are not big, but the "dark" works better 
 </button>
 ```
 
+## Button disabled state
+
+All buttons can have a disabled state by adding the attribute *disabled="disabled"*.
+
+<button class="button button--primary" disabled="disabled">
+    <span class="button__label">Primary button</span>
+</button>
+<button class="button button--secondary" disabled="disabled">
+    <span class="button__label">Secondary button</span>
+</button>
+<button class="button button--tertiary" disabled="disabled">
+    <span class="button__label">Tertiary button</span>
+</button>
+<button class="button button--text" disabled="disabled">
+    <span class="button__label">Text button</span>
+</button>
+
+```html
+<button class="button button--primary" disabled="disabled">
+    <span class="button__label">Primary button</span>
+</button>
+<button class="button button--secondary" disabled="disabled">
+    <span class="button__label">Secondary button</span>
+</button>
+<button class="button button--tertiary" disabled="disabled">
+    <span class="button__label">Tertiary button</span>
+</button>
+<button class="button button--text" disabled="disabled">
+    <span class="button__label">Text button</span>
+</button>
+```
+
+If you need to use the disabled state on an ```<a>``` element, keep in mind that it behaves a bit differently than a ```<button>```:
+
+::: warning
+* `<a>` don’t support the disabled attribute, so you must add the `.button-disabled` class to make it visually appear disabled.
+* Disabled buttons link should include the `aria-disabled="true"` attribute to indicate the state of the element to accessibility devices. Eventually a `tabindex=-'1'`could be add.
+:::
+
+<a href="" class="button button--primary button-disabled" aria-disabled="true" tabindex="-1" role="button">
+    <span class="button__label">Primary button</span>
+</a>
+<a href="" class="button button--secondary button-disabled" aria-disabled="true" tabindex="-1" role="button">
+    <span class="button__label">Secondary button</span>
+</a>
+<a href="" class="button button--tertiary button-disabled" aria-disabled="true" tabindex="-1" role="button">
+    <span class="button__label">Tertiary button</span>
+</a>
+<a href="" class="button button--text button-disabled" aria-disabled="true" tabindex="-1" role="button">
+    <span class="button__label">Text button</span>
+</a>
+
+```html
+<a href="#" class="button button--primary button-disabled" aria-disabled="true" tabindex="-1" role="button">
+    <span class="button__label">Primary button</span>
+</a>
+<a href="#" class="button button--secondary button-disabled" aria-disabled="true" tabindex="-1" role="button">
+    <span class="button__label">Secondary button</span>
+</a>
+<a href="" class="button button--tertiary button-disabled" aria-disabled="true" tabindex="-1" role="button">
+    <span class="button__label">Tertiary button</span>
+</a>
+<a href="#" class="button button--text button-disabled" aria-disabled="true" tabindex="-1" role="button">
+    <span class="button__label">Text button</span>
+</a>
+```
+
+:::tip Note
+In some case you cannot use the `disabled` html or aria attribute. (e.g. the button should be focusable for accessible reason), but you still need to give it a disabled style. In this case the `.button-disabled` class alone can also be used. Note that the button is still focusable so he have a focus style.
+:::
+
+<button class="button button--primary button-disabled">
+    <span class="button__label">Primary button</span>
+</button>
+<button class="button button--secondary button-disabled">
+    <span class="button__label">Secondary button</span>
+</button>
+<button class="button button--tertiary button-disabled">
+    <span class="button__label">Tertiary button</span>
+</button>
+<button class="button button--text button-disabled">
+    <span class="button__label">Text button</span>
+</button>
+
+```html
+<button class="button button--primary button-disabled">
+    <span class="button__label">Primary button</span>
+</button>
+<button class="button button--secondary button-disabled">
+    <span class="button__label">Secondary button</span>
+</button>
+<button class="button button--tertiary button-disabled">
+    <span class="button__label">Tertiary button</span>
+</button>
+<button class="button button--text button-disabled">
+    <span class="button__label">Text button</span>
+</button>
+```
+
 ## Button size
 
 Serenity provides a modifier (`size-small`) for small buttons.
@@ -75,6 +174,7 @@ Serenity provides a modifier (`size-small`) for small buttons.
 <button class="button button--primary button--size-small"><span class="button__label">Small primary button</span></button>
 <button class="button button--secondary button--size-small"><span class="button__label">Small secondary button</span></button>
 <button class="button button--tertiary button--size-small"><span class="button__label">Small tertiary button</span></button>
+<button class="button button--text button--size-small"><span class="button__label">Small text button</span></button>
 
 ```html
 <button class="button button--primary button--size-small">
@@ -86,6 +186,10 @@ Serenity provides a modifier (`size-small`) for small buttons.
 <button class="button button--tertiary button--size-small">
     <span class="button__label">Small tertiary button</span>
 </button>
+<button class="button button--text button--size-small">
+    <span class="button__label">Small text button</span>
+</button>
+
 ```
 
 ## Button icon

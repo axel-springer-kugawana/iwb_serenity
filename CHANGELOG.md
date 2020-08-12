@@ -6,6 +6,7 @@
 
 ### Added
 - Buttons: Disabled state
+- Buttons: Manage small size for text button
 
 ## 2.0.1 - 2020-07-09
 ### Fixed

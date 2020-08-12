@@ -318,7 +318,7 @@
     padding: 0;
     background-color: transparent;
     border: 0;
-    font-size: $size-14;
+    font-size: $size-16;
     font-family: $font-body;
     font-weight: $font-weight-title;
 
@@ -377,6 +377,10 @@
         margin-left: $size-4;
         margin-right: $size-4;
         text-align: left;
+    }
+
+    &.button--size-small {
+        font-size: $size-14;
     }
 
     // Disabled state
