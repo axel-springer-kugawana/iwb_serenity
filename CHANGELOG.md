@@ -1,15 +1,19 @@
 # Changelog
 
+## 2.0.2 - 2020-08-12
+### Fixed
+- Form: Fix regression of input Select (increase line-height of selected label)
+
 ## 2.0.1 - 2020-07-09
 ### Fixed
-- Form: Fix regression of input Select (Add ellipsis in label if width is too small)
+- Form: Fix regression of input Select (add ellipsis in label if width is too small)
 
 ### Added
 - Form: Input select error style
 
 ## 2.0.0 - 2020-07-07
 ### Fixed
-- Form: Input select label alignement for Safari
+- Form: Input select label alignment for Safari
 
 ## 2.0.0-rc.4 - 2020-06-16
 ### Changed

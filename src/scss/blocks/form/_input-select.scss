@@ -23,9 +23,8 @@
 
 .input--select__toggle,
 .input--select--mobile {
-    min-height: 40px;
-    line-height: 100%;
-    // padding: $size-6 0 0 $size-12;
+    min-height: $size-40;
+    line-height: 1.15;
     padding: 0 0 0 $size-12;
     border: 1px solid $primary-blue-l;
     border-radius: $input-border-radius;
