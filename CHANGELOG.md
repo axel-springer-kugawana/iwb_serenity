@@ -4,6 +4,9 @@
 ### Fixed
 - Form: Fix regression of input Select (increase line-height of selected label)
 
+### Added
+- Buttons: Disabled state
+
 ## 2.0.1 - 2020-07-09
 ### Fixed
 - Form: Fix regression of input Select (add ellipsis in label if width is too small)
