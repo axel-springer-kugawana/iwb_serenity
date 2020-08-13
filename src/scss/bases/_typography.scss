@@ -187,6 +187,12 @@ a:not([href]):not([tabindex]) {
     }
 }
 
+// Link Bold
+// ---------------------
+.link--bold {
+    font-weight: $font-weight-title;
+}
+
 // Position Utility
 // ---------------------
 .text-center {
@@ -195,4 +201,8 @@ a:not([href]):not([tabindex]) {
 
 .text-right {
     text-align: right;
+}
+
+.text-bold {
+    font-weight: $font-weight-title;
 }

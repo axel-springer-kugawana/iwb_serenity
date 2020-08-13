@@ -61,6 +61,7 @@ All HTML headings, `<h1>` through `<h6>`, are available,
 Links are style by default, there is no need of a specific class use of `a` tag is enought. It include **:hover** and **:focus** style.
 
 `link--external` class can be use to indicated that the link destination is "outside" of the current website.
+`link--bold` class can be use to highlight the link.
 
 <div class="sd-example">
     <p>
@@ -69,11 +70,16 @@ Links are style by default, there is no need of a specific class use of `a` tag 
     <p>
         This line contains an external link to <a href="https//immoweb.be" class="link--external" title="Open the Immoweb Website">Immoweb</a>.
     </p>
+    <p>
+        This line contains a bold <a href="#" class="link--bold">link</a> element
+    </p>
 </div>
 
 ```html
 <p>This line contains a <a href="#">link</a> element</p>
 <p>This line contains an external link to <a href="https//immoweb.be" class="link--external" title="Open the Immoweb Website">Immoweb</a>.</p>
+<p>This line contains a bold <a href="#" class="link--bold">link</a> element</p>
+
 ```
 
 ## Inline text elements
@@ -124,17 +130,20 @@ Some inline HTML elements are also available.
 
 ### Text Utility
 
-Serenity provides some text utility to help you easily change the alignment or the color of the current text from the markup.
+Serenity provides some text utility to help you easily change the alignment, the color or the highlighting of the current text from the markup.
 
 * `text-center` class is used to align text in the center of it's container.
 * `text-right` class is used to align text on the right of it's container.
+* `text-bold` class is used to highlight a part or whole of text.
 
 <div class="sd-example">
     <p class="text-center">Centered aligned text</p>
     <p class="text-right">Right aligned text</p>
+    <p class="text-bold">Bold text</p>
 </div>
 
 ```html
 <p class="text-center">Centered aligned text</p>
 <p class="text-right">Right aligned text</p>
+<p class="text-bold">Bold text</p>
 ```
