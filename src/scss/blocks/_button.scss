@@ -381,6 +381,8 @@
 
     &.button--size-small {
         font-size: $size-14;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     // Disabled state
