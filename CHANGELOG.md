@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.2 - 2020-08-12
+## 2.0.2 - 2020-08-14
 ### Fixed
 - Form: Fix regression of input Select (increase line-height of selected label)
 
