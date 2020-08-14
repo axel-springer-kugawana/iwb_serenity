@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.2 - 2020-08-14
+## 2.0.3 - 2020-08-14
 ### Fixed
 - Form: Fix regression of input Select (increase line-height of selected label)
 
@@ -11,6 +11,9 @@
 
 ### Changed
 - Split mixins files in separated files
+
+## 2.0.2 - 2020-08-12
+### Wrong version
 
 ## 2.0.1 - 2020-07-09
 ### Fixed
