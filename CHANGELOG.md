@@ -9,6 +9,9 @@
 - Buttons: Manage small size for text button
 - Typography: Bold style
 
+### Changed
+- Split mixins files in separated files
+
 ## 2.0.1 - 2020-07-09
 ### Fixed
 - Form: Fix regression of input Select (add ellipsis in label if width is too small)
