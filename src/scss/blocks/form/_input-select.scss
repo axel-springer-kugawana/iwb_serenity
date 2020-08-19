@@ -8,6 +8,7 @@
 .input--select-wrapper {
     width: 100%;
     margin-bottom: $size-20;
+    line-height: 1;
 
     @include media-query("desktop") {
         width: auto;
@@ -79,6 +80,7 @@
 
 .input--select--mobile {
     padding: 0 $size-32 0 $size-14;
+    line-height: $size-38;
     background-size: $size-24 $size-24;
     background-position: top $size-7 right $size-8;
     background-repeat: no-repeat;
