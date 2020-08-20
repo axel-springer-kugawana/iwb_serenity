@@ -37,6 +37,10 @@
         @else {
             border-color: $primary-blue-dd;
         }
+
+        &:only-child {
+            margin: 0;
+        }
     }
 
     // Disabled state
@@ -97,6 +101,10 @@
         }
         @else {
             fill: $primary-blue-dd;
+        }
+
+        &:only-child {
+            margin: 0;
         }
     }
 
@@ -191,6 +199,10 @@
         @else {
             fill: $color;
         }
+
+        &:only-child {
+            margin: 0;
+        }
     }
 
     // Hover, focus, active interactions
@@ -284,6 +296,10 @@
         }
         @else {
             fill: $color;
+        }
+
+        &:only-child {
+            margin: 0;
         }
     }
 
