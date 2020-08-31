@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.4 - 2020-08-31
+### Fixed
+- Form: Input select, fix allignement on small breakpoint for Firefox
+
+### Changed
+- Buttons: Remove margin on icon if the icon is the only-child.
+
+
 ## 2.0.3 - 2020-08-14
 ### Fixed
 - Form: Fix regression of input Select (increase line-height of selected label)
