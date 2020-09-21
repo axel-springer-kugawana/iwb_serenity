@@ -249,13 +249,13 @@
 
 // Error State
 // ---------------------
-.input--text,
-.input--number,
-.text-area {
-    &:invalid {
-        box-shadow: none;
-    }
-}
+// .input--text,
+// .input--number,
+// .text-area {
+//     &:invalid {
+//         box-shadow: none;
+//     }
+// }
 
 .input--error {
     border-color: $functional-error;

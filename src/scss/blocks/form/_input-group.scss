@@ -26,6 +26,7 @@
 .input-group--error:not(.focused) .input-group--stepper__button:not(:focus),
 .input-group--error:not(.focused) .input-group__main:not(:focus) {
     border-color: $functional-error;
+    box-shadow: 0 0 0 1px $functional-error;
 }
 
 // Prepend, Append & Stepper
@@ -51,11 +52,31 @@
     background-color: $primary-blue-lll;
 }
 
+.input-group--prepend .input--text,
+.input-group--append .input--text {
+    box-shadow: none;
+}
+
+.input-group--prepend.focused,
+.input-group--append.focused {
+    border-color: $primary-blue-dd;
+    box-shadow: 0 0 0 1px $primary-blue-dd;
+}
+
 // Stepper
+.input-group--stepper.focused {
+    border-color: $primary-blue-dd;
+    box-shadow: 0 0 0 1px $primary-blue-dd;
+}
+
 .input-group--stepper__main {
     text-align: center;
     background-color: #fff;
     min-height: $size-38;
+
+    &:focus {
+        box-shadow: none;
+    }
 }
 
 .input-group--stepper__button {
@@ -72,6 +93,7 @@
     &:focus {
         outline: none;
         border-color: $primary-blue-d;
+        box-shadow: 0 0 0 1px $primary-blue-d;
     }
 
     &:disabled {
@@ -84,6 +106,7 @@
 
 .input-group.focused .input-group--stepper__button {
     border-color: $primary-blue-lll;
+    // box-shadow: 0 0 0 1px $primary-blue-d;
 }
 
 // Prepend
@@ -194,4 +217,5 @@
 
 .input-group--select__input:focus ~ .input-group--select__submit {
     border-color: $primary-blue-d;
+    box-shadow: 0 0 0 1px $primary-blue-d;
 }

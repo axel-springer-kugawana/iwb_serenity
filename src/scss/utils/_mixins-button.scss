@@ -29,13 +29,14 @@
     &.button--active {
         outline: none;
         border-radius: $button-border-radius;
-        box-shadow: none;
 
         @if $theme == "dark" {
             border-color: #fff;
+            box-shadow: 0 0 0 1px #fff;
         }
         @else {
             border-color: $primary-blue-dd;
+            box-shadow: 0 0 0 1px $primary-blue-dd;
         }
 
         &:only-child {
@@ -128,9 +129,11 @@
 
         @if $theme == "dark" {
             border-color: #fff;
+            box-shadow: 0 0 0 1px #fff;
         }
         @else {
             border-color: $primary-blue-d;
+            box-shadow: 0 0 0 1px $primary-blue-d;
         }
     }
 
@@ -234,9 +237,11 @@
 
         @if $theme == "dark" {
             border-color: #fff;
+            box-shadow: 0 0 0 1px #fff;
         }
         @else {
             border-color: $primary-blue-d;
+            box-shadow: 0 0 0 1px $primary-blue-d;
         }
     }
 

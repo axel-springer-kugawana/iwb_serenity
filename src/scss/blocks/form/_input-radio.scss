@@ -73,6 +73,7 @@
 // Focus State
 .input--radio__input:focus + .input--radio__label:before {
     border-color: $primary-blue-d;
+    box-shadow: 0 0 0 1px $primary-blue-d;
 }
 
 // Error State
