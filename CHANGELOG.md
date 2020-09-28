@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.5-rc.1 - 2020-09-28
+### Changed
+- Form: Broader focus style for input
+
 ## 2.0.4 - 2020-08-31
 ### Fixed
 - Form: Input select, fix allignement on small breakpoint for Firefox
