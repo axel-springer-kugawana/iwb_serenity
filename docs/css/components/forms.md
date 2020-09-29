@@ -252,6 +252,22 @@ Declare text area inputs with the `input--textarea` class.
 <textarea class="input--textarea">Text goes here</textarea>
 ```
 
+An input-text can also be set has `readonly` or `disabled`.
+
+<div class="sd-example">
+    <div class="field">
+        <textarea class="input--textarea" readonly>Readonly textarea</textarea>
+    </div>
+    <div class="field">
+        <textarea class="input--textarea" disabled>Disabled textarea</textarea>
+    </div>
+</div>
+
+```html
+<textarea class="input--textarea" readonly>Readonly textarea</textarea>
+<textarea class="input--textarea" disabled>Disabled textarea</textarea>
+```
+
 ### Radio
 
 Enclose radio inputs within a container with the `input--radio` class. Then give the `input--radio__label` class to the label and the `input--radio__input` class to the input itself.

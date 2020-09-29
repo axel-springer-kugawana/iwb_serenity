@@ -26,6 +26,16 @@
     &::placeholder {
         color: $primary-blue-l;
     }
+
+    &:read-only,
+    &:disabled {
+        background: $grey-95;
+        border-color: $secondary-grey;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
 }
 
 // Text area wrapper (use for counter)
