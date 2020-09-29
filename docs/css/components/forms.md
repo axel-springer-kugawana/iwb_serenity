@@ -222,6 +222,22 @@ Declare text inputs with the `input--text` class.
 <input class="input--text" value="text goes here">
 ```
 
+An input-text can also be set has `readonly` or `disabled`.
+
+<div class="sd-example">
+    <div class="field">
+        <input class="input--text" readonly value="Readonly input">
+    </div>
+    <div class="field">
+        <input class="input--text" disabled value="Disabled input">
+    </div>
+</div>
+
+```html
+<input class="input--text" readonly value="Readonly input">
+<input class="input--text" disabled value="Disabled input">
+```
+
 ### Text area
 
 Declare text area inputs with the `input--textarea` class.
