@@ -24,7 +24,9 @@
     &::placeholder {
         color: $primary-blue-l;
     }
+}
 
+input.input--text {
     &:read-only,
     &:disabled {
         background: $grey-95;

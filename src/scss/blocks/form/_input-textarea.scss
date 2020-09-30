@@ -26,7 +26,9 @@
     &::placeholder {
         color: $primary-blue-l;
     }
+}
 
+textarea.input--textarea {
     &:read-only,
     &:disabled {
         background: $grey-95;
