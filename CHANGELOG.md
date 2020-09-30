@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.5-rc.3 - 2020-09-30
+### Fix
+- Form: Fix readonly on input-text (only apply on input or textarea)
+
 ## 2.0.5-rc.2 - 2020-09-30
 ### Added
 - Form: Add readonly and disabled to textarea
