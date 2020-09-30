@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.5-rc.2 - 2020-09-30
+### Added
+- Form: Add readonly and disabled to textarea
+- Form: Add readonly and disabled to input-text
+
+### Changed
+- Form: Change checkbox checked focus state (ligther background)
+
 ## 2.0.5-rc.1 - 2020-09-28
 ### Changed
 - Form: Broader focus style for input
