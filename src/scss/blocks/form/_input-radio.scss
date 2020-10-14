@@ -123,3 +123,7 @@
         }
     }
 }
+
+.input--radio--inline + .field__message--error {
+    display: block;
+}
