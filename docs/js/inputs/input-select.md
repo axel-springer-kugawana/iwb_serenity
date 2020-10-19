@@ -78,6 +78,35 @@ Only one level of grouping is possible.
 ></serenityInputSelect>
 ```
 
+### Disabled and readonly
+
+Select can be set to disabled or readonly, by using the boolean props (disabled/readonly).
+
+<div class="sd-example">
+    <Example-InputSelectDisabled></Example-InputSelectDisabled>
+</div>
+
+```html
+<div class="sd-example">
+    <div class="field">
+        <serenityInputSelect
+            :disabled="true"
+            id="inputSelectDisabledExampleId"
+            inputLabelId="inputSelectDisabledExampleLabelId"
+            :options="[...]"
+        ></serenityInputSelect>
+    </div>
+    <div class="field">
+        <serenityInputSelect
+            :readonly="true"
+            id="inputSelectReadonlyExampleId"
+            inputLabelId="inputSelectReadonlyExampleLabelId"
+            :options="[...]"
+        ></serenityInputSelect>
+    </div>
+</div>
+```
+
 ## Select size
 
 Serenity provides a boolean prop (small) for small input select.
@@ -193,6 +222,16 @@ Keep in mind that you should probably use this in combination with recommendatio
         type: String,
         required: false,
         default: ""
+    },
+    disabled: {
+        type: Boolean,
+        required: false,
+        default: false
+    },
+    readonly: {
+        type: Boolean,
+        required: false,
+        default: false
     }
 }
 ```
@@ -250,3 +289,15 @@ Keep in mind that you should probably use this in combination with recommendatio
 * inputErrorLabelId:
 
     A string use refering to the id of the error message (Use by `aria-labbeledby` attribute for accessibility purpose).
+
+* *disabled*:
+
+    *default: false*
+
+    A boolean that define if the element is disabled or not.
+
+* *readonly*:
+
+    *default: false*
+
+    A boolean that define if the element is readonly or not.

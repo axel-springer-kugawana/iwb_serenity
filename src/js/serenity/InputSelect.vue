@@ -8,6 +8,8 @@
             @blur="closeList"
         >
             <button
+                :disabled="disabled ? true : false"
+                :readonly="readonly ? true : false"
                 :required="required ? true : false"
                 type="button"
                 class="input--select__toggle"
@@ -101,6 +103,8 @@
             :class="{ 'input--select--small' : small, 'input--error': invalid }"
             v-model="internalValue"
             :aria-labelledby="ariaLabelledbyValue"
+            :disabled="disabled ? true : false"
+            :readonly="readonly ? true : false"
             :required="required ? true : false"
             :aria-invalid="invalid ? 'true' : false"
             ref="selectMobile"
@@ -199,6 +203,16 @@
                 type: String,
                 required: false,
                 default: ""
+            },
+            disabled: {
+                type: Boolean,
+                required: false,
+                default: false
+            },
+            readonly: {
+                type: Boolean,
+                required: false,
+                default: false
             }
         },
         data() {
@@ -346,63 +360,69 @@
              * [toggleList Open / Close the options list based on current status]
              */
             toggleList: function() {
-                // Close previous opened list
-                var listComponent = document.getElementsByClassName("input--select-wrapper");
-                if (listComponent.length > 0) {
-                    for (var z = 0; z < listComponent.length; z++) {
-                        if (this.id != listComponent[z].__vue__.id) {
-                            if (listComponent[z].__vue__.listOpen != false) {
-                                listComponent[z].__vue__.listOpen = false;
+                if (!this.readonly && !this.disabled) {
+                    // Close previous opened list
+                    var listComponent = document.getElementsByClassName("input--select-wrapper");
+                    if (listComponent.length > 0) {
+                        for (var z = 0; z < listComponent.length; z++) {
+                            if (this.id != listComponent[z].__vue__.id) {
+                                if (listComponent[z].__vue__.listOpen != false) {
+                                    listComponent[z].__vue__.listOpen = false;
+                                }
                             }
                         }
                     }
-                }
 
-                if (this.listOpen === true) {
-                    this.closeList();
-                } else {
-                    this.openList();
+                    if (this.listOpen === true) {
+                        this.closeList();
+                    } else {
+                        this.openList();
+                    }
                 }
             },
             /**
              * [openList Open the options list]
              */
             openList: function() {
-                this.adjustPosition();
-                this.listOpen = true;
+                if (!this.readonly && !this.disabled) {
+                    this.adjustPosition();
+                    this.listOpen = true;
 
-                const listbox = document.getElementById(`${this.id}-list`);
+                    const listbox = document.getElementById(`${this.id}-list`);
 
-                // Dirty timeout 0s to makesure listbox is present in dom and allow focus on it
-                // Could probably be replace by a Vue.nextThick()
-                window.setTimeout(() => {
-                    listbox.focus();
+                    // Dirty timeout 0s to makesure listbox is present in dom and allow focus on it
+                    // Could probably be replace by a Vue.nextThick()
+                    window.setTimeout(() => {
+                        listbox.focus();
 
-                    window.addEventListener("wheel", this.handleScrollWhenListIsOpened, {passive: false});
-                    window.addEventListener("DOMMouseScroll", this.handleScrollWhenListIsOpened, {passive: false});
-                }, 0);
+                        window.addEventListener("wheel", this.handleScrollWhenListIsOpened, {passive: false});
+                        window.addEventListener("DOMMouseScroll", this.handleScrollWhenListIsOpened, {passive: false});
+                    }, 0);
+                }
             },
             /**
              * [closeList Close the options list]
              */
             closeList: function(focusOnToggle = true) {
-                if(this.listOpen === true) {
-                    this.listOpen = false;
+                if (!this.readonly && !this.disabled) {
+                    if(this.listOpen === true) {
+                        this.listOpen = false;
 
-                    if (focusOnToggle) {
-                        const listToggle = document.getElementById(`${this.id}`);
+                        if (focusOnToggle) {
+                            const listToggle = document.getElementById(`${this.id}`);
 
-                        // Dirty timeout 0s to makesure listToggle is present in dom and allow focus on it
-                        // Could probably be replace by a Vue.nextThick()
-                        window.setTimeout(() => {
-                            listToggle.focus();
-                        }, 0);
+                            // Dirty timeout 0s to makesure listToggle is present in dom and allow focus on it
+                            // Could probably be replace by a Vue.nextThick()
+                            window.setTimeout(() => {
+                                listToggle.focus();
+                            }, 0);
+                        }
+
+                        window.removeEventListener("wheel", this.handleScrollWhenListIsOpened);
+                        window.removeEventListener("DOMMouseScroll", this.handleScrollWhenListIsOpened);
+                        // Each time the list is closed, emit the value to parent
+                        this.$emit("update-value", this.internalValue);
                     }
-
-                    window.removeEventListener("wheel", this.handleScrollWhenListIsOpened);
-                    window.removeEventListener("DOMMouseScroll", this.handleScrollWhenListIsOpened);
-                    // Each time the list is closed, emit the value to parent
-                    this.$emit("update-value", this.internalValue);
                 }
             },
             /**
@@ -456,15 +476,17 @@
              * @param  {object} event [Native Dom Event]
              */
             handleKeyUp: function(event) {
-                event.preventDefault();
+                if (!this.readonly && !this.disabled) {
+                    event.preventDefault();
 
-                if(this.listOpen === false) {
-                    this.openList();
-                }
+                    if(this.listOpen === false) {
+                        this.openList();
+                    }
 
-                if (this.currentPosition > 0) {
-                    var position = this.currentPosition - 1;
-                    this.updateCurrentOption(position);
+                    if (this.currentPosition > 0) {
+                        var position = this.currentPosition - 1;
+                        this.updateCurrentOption(position);
+                    }
                 }
             },
             /**
@@ -472,14 +494,16 @@
              * @param  {object} event [Native Dom Event]
              */
             handleKeyDown: function(event) {
-                event.preventDefault();
-                if(this.listOpen === false) {
-                    this.openList();
-                }
+                if (!this.readonly && !this.disabled) {
+                    event.preventDefault();
+                    if(this.listOpen === false) {
+                        this.openList();
+                    }
 
-                if (this.currentPosition < this.flatOptions.length - 1) {
-                    var position = this.currentPosition + 1;
-                    this.updateCurrentOption(position);
+                    if (this.currentPosition < this.flatOptions.length - 1) {
+                        var position = this.currentPosition + 1;
+                        this.updateCurrentOption(position);
+                    }
                 }
             },
             /**

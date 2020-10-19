@@ -78,6 +78,43 @@ Only one level of grouping is possible.
 ></serenityInputSelect>
 ```
 
+### Disabled and readonly
+
+Disabled and.
+
+<div class="sd-example">
+    <Example-InputSelectDisabled></Example-InputSelectDisabled>
+</div>
+
+```html
+<label class="field__label" id="inputSelectExampleLabelId" for="inputSelectExampleId">Default Input Select:</label>
+<serenityInputSelect
+    id="inputSelectExampleId"
+    inputLabelId="inputSelectExampleLabelId"
+    :options="[
+        {'value': 'select-value-01', 'label': 'Jenny'},
+        {'value': 'select-value-02', 'label': 'Boby'},
+        {'value': 'select-value-03', 'label': 'Bob'},
+        {'value': 'select-value-04', 'label': 'John'},
+        {'value': 'select-value-05', 'label': 'Jean', 'disabled': true},
+        {'value': 'select-value-06', 'label': 'Robert'},
+        {'value': 'select-value-07', 'label': 'Marie'},
+        {'value': 'select-value-08', 'label': 'Marc'},
+        {'value': 'select-value-09', 'label': 'Julie'}
+    ]"
+></serenityInputSelect>
+```
+
+
+<div class="sd-example">
+    <div class="field">
+        <
+    </div>
+    <div class="field">
+        <input class="input--text" disabled value="Disabled input">
+    </div>
+</div>
+
 ## Props
 
 ```json
