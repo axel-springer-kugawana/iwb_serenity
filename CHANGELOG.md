@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.5-rc.4 - 2020-10-20
+### Added
+- Input Select: Add disabled and read-only state to input-select
+
+### Change
+- Form: Force field error in block for input--radio--inline
+
 ## 2.0.5-rc.3 - 2020-09-30
 ### Fix
 - Form: Fix readonly on input-text (only apply on input or textarea)
