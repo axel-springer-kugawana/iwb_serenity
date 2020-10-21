@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.5-rc.5 - 2020-10-21
+### Fixed
+- Input Select: Fix issue with read-only state
+
 ## 2.0.5-rc.4 - 2020-10-20
 ### Added
 - Input Select: Add disabled and read-only state to input-select
