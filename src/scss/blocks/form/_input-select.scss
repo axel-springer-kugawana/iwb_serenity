@@ -52,13 +52,15 @@
     }
 }
 
-.input--select__toggle:read-only,
+.input--select__toggle--readonly,
+.input--select--mobile--readonly,
 .input--select__toggle:disabled {
     // background: $grey-95;
     border-color: $secondary-grey;
 }
 
-.input--select__toggle:read-only:hover {
+.input--select__toggle--readonly:hover,
+.input--select--mobile--readonly:hover {
     cursor: default;
 }
 
@@ -67,16 +69,18 @@
 }
 
 .input--select__toggle:disabled:hover,
-.input--select__toggle:read-only:hover {
+.input--select__toggle--readonly:hover,
+.input--select--mobile--readonly:hover {
     background-color: transparent;
 }
 
-.input--select__toggle:read-only .input--select__toggle-label,
+.input--select__toggle--readonly .input--select__toggle-label,
+.input--select--mobile--readonly,
 .input--select__toggle:disabled .input--select__toggle-label {
     color: $secondary-grey;
 }
 
-.input--select__toggle:read-only .input--select__toggle-icon,
+.input--select__toggle--readonly .input--select__toggle-icon,
 .input--select__toggle:disabled .input--select__toggle-icon {
     fill: $secondary-grey;
 }

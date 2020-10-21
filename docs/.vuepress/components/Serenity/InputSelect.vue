@@ -9,11 +9,10 @@
         >
             <button
                 :disabled="disabled ? true : false"
-                :readonly="readonly ? true : false"
                 :required="required ? true : false"
                 type="button"
                 class="input--select__toggle"
-                :class="{ 'input--error': invalid }"
+                :class="{ 'input--error': invalid, 'input--select__toggle--readonly': readonly  }"
                 aria-haspopup="listbox"
                 :id="id"
                 :aria-expanded="listOpen ? 'true' : 'false'"
@@ -100,11 +99,10 @@
 
         <select
             class="input--select input--select--mobile input--select--mobile--collapsed"
-            :class="{ 'input--select--small' : small, 'input--error': invalid }"
+            :class="{ 'input--select--small' : small, 'input--error': invalid, 'input--select--mobile--readonly': (readonly || disabled) }"
             v-model="internalValue"
             :aria-labelledby="ariaLabelledbyValue"
-            :disabled="disabled ? true : false"
-            :readonly="readonly ? true : false"
+            :disabled="(disabled || readonly) ? true : false"
             :required="required ? true : false"
             :aria-invalid="invalid ? 'true' : false"
             ref="selectMobile"

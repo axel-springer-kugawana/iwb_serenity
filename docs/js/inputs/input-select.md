@@ -82,6 +82,10 @@ Only one level of grouping is possible.
 
 Select can be set to disabled or readonly, by using the boolean props (disabled/readonly).
 
+:::tip Note
+Note that an `readonly` cannot be apply to native input select, in concequence the `readonly` mobile version of input select is equivalent to `disabled`.
+:::
+
 <div class="sd-example">
     <Example-InputSelectDisabled></Example-InputSelectDisabled>
 </div>
