@@ -69,6 +69,11 @@
     @include button-plain($primary-green, "dark");
 }
 
+%button--primary--masquerade,
+.button--primary--masquerade {
+    @include button-plain($functional-warning, "masquerade");
+}
+
 // Button Secondary
 %button--secondary,
 .button--secondary {
@@ -80,6 +85,11 @@
     @include button-outline-colored($primary-green, "dark");
 }
 
+%button--secondary--masquerade,
+.button--secondary--masquerade {
+    @include button-outline-colored($functional-warning, "masquerade");
+}
+
 // Button Tertiary
 %button--tertiary,
 .button--tertiary {
@@ -89,6 +99,11 @@
 %button--tertiary--dark,
 .button--tertiary--dark {
     @include button-outline-white($primary-blue, "dark");
+}
+
+%button--tertiary--masquerade,
+.button--tertiary--masquerade {
+    @include button-outline-white($primary-blue, "masquerade");
 }
 
 // Button Text

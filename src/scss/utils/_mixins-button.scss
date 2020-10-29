@@ -20,8 +20,14 @@
 
     // Hover, focus, active interactions
     &:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
-        background-color: $primary-green-l;
-        border-color: $primary-green-l;
+        @if $theme == "masquerade" {
+            background-color: $functional-warning-l;
+            border-color: $functional-warning-l;
+        }
+        @else {
+            background-color: $primary-green-l;
+            border-color: $primary-green-l;
+        }
     }
 
     &:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]),
@@ -113,7 +119,10 @@
     &:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
         border-color: $color;
 
-        @if $theme == "dark" {
+        @if $theme == "masquerade" {
+            background-color: $functional-warning-lll;
+        }
+        @else if $theme == "dark" {
             background-color: rgba(101, 215, 141, .3); // $primary-green
         }
         @else {
@@ -181,6 +190,10 @@
         color: #fff;
         border: 1px solid #fff;
     }
+    @else if $theme == "masquerade" {
+        color: $color;
+        border: 1px solid $functional-warning-d;
+    }
     @else {
         color: $color;
         border: 1px solid $primary-blue-l;
@@ -212,7 +225,10 @@
     &:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
         outline: none;
 
-        @if $theme == "dark" {
+        @if $theme == "masquerade" {
+            background-color: $functional-warning-lll;
+        }
+        @else if $theme == "dark" {
             background-color: rgba(63, 109, 167, .35); // $primary-blue
         }
         @else {
