@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.5 - 2020-11-05
+### Added
+- Form: Masquerade theme for buttons
+
 ## 2.0.5-rc.5 - 2020-10-21
 ### Fixed
 - Input Select: Fix issue with read-only state
