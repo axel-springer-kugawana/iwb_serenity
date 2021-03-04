@@ -194,15 +194,15 @@ A field `label` can be enhanced with an extra `span` with a `field__label--extra
 
 <div class="sd-example">
     <div class="field">
-        <label for="exampleInputLabelExtra00" class="field__label">Field Label <span class="field__label--extra">(extra informations)</span></label>
+        <label for="exampleInputLabelExtra00" class="field__label">Field Label <span class="field__label--extra">(extra information)</span></label>
         <input id="exampleInputLabelExtra00" class="input--text" value="text goes here">
     </div>
 </div>
 
 ```html
 <div class="field">
-    <label for="exampleInputLabelOptional00" class="field__label">Field Label <span class="field__label--extra">(optional)</span></label>
-    <input id="exampleInputLabelOptional00" class="input--text" value="text goes here">
+    <label for="exampleInputLabelExtra00" class="field__label">Field Label <span class="field__label--extra">(extra information)</span></label>
+    <input id="exampleInputLabelExtra00" class="input--text" value="text goes here">
 </div>
 ```
 

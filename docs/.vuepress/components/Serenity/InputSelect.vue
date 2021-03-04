@@ -332,9 +332,9 @@
         },
         mounted: function() {
             // Responsive Behavior
-            var mediaQueriesList = window.matchMedia("screen and (" + this.mobileBreakpoint + ")");
+            let mediaQueriesList = window.matchMedia("screen and (" + this.mobileBreakpoint + ")");
 
-            var screenTest = (e) => {
+            let screenTest = (e) => {
                 if (e.matches) {
                     this.displayDesktopInput = true;
                 } else {
@@ -664,18 +664,22 @@
                 const currentOption = document.getElementById(this.currentOptionId);
 
                 if(currentOption !== null) {
-                    const currentOptionTop = currentOption.offsetTop;
-                    const currentOptionHeight = currentOption.offsetHeight;
 
-                    const optionsListHeight = this.$refs.list.offsetHeight;
+                    // Waiting for Vue.nextTick so $refs is updated.
+                    this.$nextTick(function () {
+                        const currentOptionTop = currentOption.offsetTop;
+                        const currentOptionHeight = currentOption.offsetHeight;
 
-                    if (currentOptionTop >= optionsListHeight) {
-                        this.$refs.list.scrollTop = currentOptionTop;
-                    }
+                        const optionsListHeight = this.$refs.list.offsetHeight;
 
-                    if (currentOptionTop <= this.$refs.list.scrollTop) {
-                        this.$refs.list.scrollTop = currentOptionTop;
-                    }
+                        if (currentOptionTop >= optionsListHeight) {
+                            this.$refs.list.scrollTop = currentOptionTop;
+                        }
+
+                        if (currentOptionTop <= this.$refs.list.scrollTop) {
+                            this.$refs.list.scrollTop = currentOptionTop;
+                        }
+                    })
                 }
             },
             /**

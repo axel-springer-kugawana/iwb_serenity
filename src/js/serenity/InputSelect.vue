@@ -332,9 +332,9 @@
         },
         mounted: function() {
             // Responsive Behavior
-            var mediaQueriesList = window.matchMedia("screen and (" + this.mobileBreakpoint + ")");
+            let mediaQueriesList = window.matchMedia("screen and (" + this.mobileBreakpoint + ")");
 
-            var screenTest = (e) => {
+            let screenTest = (e) => {
                 if (e.matches) {
                     this.displayDesktopInput = true;
                 } else {

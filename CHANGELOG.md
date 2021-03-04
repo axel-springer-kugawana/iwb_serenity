@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.6 - 2021-03-04
+### Fixed
+- Form: Input select, fix error js undefined when using $refs 
+
 ## 2.0.5 - 2020-11-05
 ### Added
 - Buttons: Masquerade theme
@@ -25,7 +29,7 @@
 - Form: Add readonly and disabled to input-text
 
 ### Changed
-- Form: Change checkbox checked focus state (ligther background)
+- Form: Change checkbox checked focus state (lighter background)
 
 ## 2.0.5-rc.1 - 2020-09-28
 ### Changed
@@ -33,7 +37,7 @@
 
 ## 2.0.4 - 2020-08-31
 ### Fixed
-- Form: Input select, fix allignement on small breakpoint for Firefox
+- Form: Input select, fix alignment on small breakpoint for Firefox
 
 ### Changed
 - Buttons: Remove margin on icon if the icon is the only-child.
@@ -177,7 +181,7 @@
 
 ### Fixed
 - Top Navigation: Remove unused padding on desktop
-- Input Checkbox: Roleback input--checkbox fix (fix issue apply by commit e8d6dcc)
+- Input Checkbox: Rollback input--checkbox fix (fix issue apply by commit e8d6dcc)
 - Input Select: Do not focus back on input toggle if click outside the element
 
 ### Removed
@@ -195,7 +199,7 @@
 
 ## 0.0.13 - 2019-07-04
 ### Changed
-- Input Checbox: Add indeterminate state
+- Input Checkbox: Add indeterminate state
 
 ### Fixed
 - Fix typo in doc for grid
@@ -220,7 +224,7 @@
 
 ## 0.0.10 - 2019-04-29
 ### Changed
-- Change default link state (now undelrine, darke color on hover)
+- Change default link state (now underline, darker color on hover)
 - Update docs (Add favicons, logos, refactor menu)
 
 ## 0.0.9 - 2019-04-09
@@ -245,7 +249,7 @@
 - Input Select: Increase max-height of input--select__list tp 325px
 
 ### Fixed
-- Forms: Force field-label allignement to left
+- Forms: Force field-label alignment to left
 - Input Select: Cancel page jump when space is pressed
 
 ## 0.0.6 - 2019-02-06
