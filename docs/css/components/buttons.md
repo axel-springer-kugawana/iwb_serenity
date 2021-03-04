@@ -38,7 +38,7 @@ Serenity provides a few default styles for your buttons: *primary*, *secondary*,
 
 Button primary and button secondary also exist in a "dark" theme variation.
 
-The differences with the default theme are not big, but the "dark" works better inside a dark background component.
+The differences with the default theme are not big, but the "dark" theme works better inside a dark background component.
 
 <button class="button button--primary--dark">
     <span class="button__label">Primary dark button</span>
@@ -61,10 +61,37 @@ The differences with the default theme are not big, but the "dark" works better 
     <span class="button__label">Secondary dark button</span>
 </button>
 <button class="button button--tertiary--dark">
-    <span class="button__label">Tertiary dark </span>
+    <span class="button__label">Tertiary dark button </span>
 </button>
 <button class="button button--text--dark">
-    <span class="button__label">Text button</span>
+    <span class="button__label">Text dark button</span>
+</button>
+```
+
+
+## Button masquerade theme 
+
+Button primary, button secondary and button tertiary also exist in a "masquerade" theme variation, to stage a type of user in a website.
+
+<button class="button button--primary--masquerade">
+    <span class="button__label">Primary masquerade button</span>
+</button>
+<button class="button button--secondary--masquerade">
+    <span class="button__label">Secondary masquerade button</span>
+</button>
+<button class="button button--tertiary--masquerade">
+    <span class="button__label">Tertiary masquerade button</span>
+</button>
+
+```html
+<button class="button button--primary--masquerade">
+    <span class="button__label">Primary masquerade button</span>
+</button>
+<button class="button button--secondary--masquerade">
+    <span class="button__label">Secondary masquerade button</span>
+</button>
+<button class="button button--tertiary--masquerade">
+    <span class="button__label">Tertiary masquerade button </span>
 </button>
 ```
 
