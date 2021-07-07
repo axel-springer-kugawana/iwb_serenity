@@ -1,6 +1,9 @@
-// fonts
-$font-title: "Montserrat", sans-serif !default;
-$font-body: "PT Sans", sans-serif !default;
+/**
+ * Fonts stacks selected with the help of https://meowni.ca/font-style-matcher
+ * and https://www.cssfontstack.com
+ */
+$font-title: "Montserrat", "Verdana", system-ui, -apple-system, sans-serif !default;
+$font-body: "PT Sans", "Trebuchet MS", system-ui, -apple-system, sans-serif !default;
 
 // sizes
 $base-size: 100% !default;
