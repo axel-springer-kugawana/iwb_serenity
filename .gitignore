@@ -1,4 +1,5 @@
 /node_modules
+/docs/.vuepress/dist
 npm-debug.log
 yarn-error.log
 .phpstorm.meta.php
