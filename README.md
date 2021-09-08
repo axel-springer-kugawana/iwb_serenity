@@ -1,6 +1,6 @@
-# iwb_serenity
+# Serenity
 
-Internal front-end framework for Immoweb.
+Internal front-end framework for [Immoweb](https://immoweb.be).
 
 [Read the Serenity docs](https://axel-springer-kugawana.github.io/iwb_serenity/)
 
@@ -10,6 +10,7 @@ Internal front-end framework for Immoweb.
 - [Dev](#dev)
 - [File structure](#file-structure)
 - [Documentation](#documentation)
+- [Test your changes without releasing](#test-your-changes-without-releasing)
 
 ## Quick start
 
@@ -51,33 +52,40 @@ iwb_serenity/
 
 ## Documentation
 
-Serenity documentation, included in this repo inside the `/docs` folder, is built with [Vue Press](https://vuepress.vuejs.org/) and publicly hosted on GitHub Pages. The docs may also be run locally.
+Serenity documentation can be consulted in the `/docs` folder or [online](https://axel-springer-kugawana.github.io/iwb_serenity) (thanks to [GitHub Pages](https://docs.github.com/en/pages).
 
-### Running documentation locally
+### Running the documentation locally
 
-1. Make sure you have [node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) installed.
-2. Run `npm install` to install Node.js dependencies.
-3. Run `npm start` to compile CSS and JavaScript files, generate the docs, and watch for changes.
-4. The doc is accessible in your browser at this url `http://localhost:8080`.
+1. Make sure you have [Node.js and npm installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+2. Run `npm ci` to install Node.js dependencies.
+3. Run `npm start` to compile CSS and JavaScript files, generate the docs, and watch for changes (which is suitable for development) or `npm run docs:build` to build the documentation website in `/doc/.vuepress/dist`.
+4. To browse the documentation:
+ - If you ran `npm start`, you can browse the documentation on [`http://localhost:8080`](http://localhost:8080).
+ - If you ran `npm run docs:build`, the documentation website is in `/doc/.vuepress/dist`.
 
-#### Test Serenity in your Website whitout release
+### Deploying the documentation
 
-It could be usefull to test your change in your real environement before publishing them, it can be easily achieve with the [npm link](https://docs.npmjs.com/cli/link.html) feature.
+Thanks to a [GitHub action](https://github.com/axel-springer-kugawana/iwb_serenity/blob/master/.github/workflows/deploy-doc.yml), the documentation website is automatically deployed when a [release tag](https://github.com/axel-springer-kugawana/iwb_serenity/releases) is created.
 
-In the following how to, `Serenity Project` refers to your local Serenity source, `Your Project` refers to your local project that use Serenity.
+To trigger a deployment at another moment:
+1. Go to _Actions_ / [_Deploy Documentation_](https://github.com/axel-springer-kugawana/iwb_serenity/actions/workflows/deploy-doc.yml).
+2. Click _Run workflow_, let the default branch on `master` and click _Run workflow_.
+3. Wait a couple of seconds for the dispatched action to appear in the list below the button.
 
-1. Inside `Your Project`, manually delete the iwb_serenity folder in the node_modules folder.
+## Test your changes without releasing
+
+To test your changes in a real-world project before publishing a new version of Serenity, use the [`npm link`](https://docs.npmjs.com/cli/link.html) feature.
+
+In the following how-to, `Serenity Project` refers to your local Serenity source, `Your Project` refers to your local project that use Serenity.
+
+1. Inside `Your Project`, manually delete `node_modules/iwb_serenity`.
 2. Inside the `Serenity Project`, run `npm link`.
 3. Inside `Your Project`, run `npm link iwb_serenity`.
 
-Now your project use the iwb_serenity local version.
+Now your project uses the `iwb_serenity` local version.
 
-To role back this to a default state (Use the release Serenity version).
+To roll back to the default state:
 
 1. Inside `Your Project`, run `npm unlink iwb_serenity`.
 2. Inside the `Serenity Project`, run `npm unlink`.
-3. Inside `Your Project`, eventually reinstall the desired version of serenity, run `npm install iwb_serenity`.
-
-### Deploy documentation
-
-To deploy the documentation on [Github Pages](https://axel-springer-kugawana.github.io/iwb_serenity/), run `deploy.sh` script (It may ask your credential). It will generate the build of the documentation and push it on the *gh-pages* branch (use by github to display the documentation page).
+3. Inside `Your Project`, eventually reinstall the desired version of serenity (`npm install iwb_serenity`).
