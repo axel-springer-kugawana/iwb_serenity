@@ -60,8 +60,8 @@ Serenity documentation can be consulted in the `/docs` folder or [online](https:
 2. Run `npm ci` to install Node.js dependencies.
 3. Run `npm start` to compile CSS and JavaScript files, generate the docs, and watch for changes (which is suitable for development) or `npm run docs:build` to build the documentation website in `/doc/.vuepress/dist`.
 4. To browse the documentation:
- - If you ran `npm start`, you can browse the documentation on [`http://localhost:8080`](http://localhost:8080).
- - If you ran `npm run docs:build`, the documentation website is in `/doc/.vuepress/dist`.
+  - If you ran `npm start`, you can browse the documentation on [`http://localhost:8080`](http://localhost:8080).
+  - If you ran `npm run docs:build`, the documentation website is in `/doc/.vuepress/dist`.
 
 ### Deploying the documentation
 
