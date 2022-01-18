@@ -1,0 +1,62 @@
+{
+    "name": "iwb-serenity-password-vue-2",
+    "version": "0.1.0",
+    "description": "A Vue 2 password component for iwb_serenity",
+    "sideEffects": false,
+    "exports": "./src/index.ts",
+    "module": "./src/index.ts",
+    "main": "./src/index.ts",
+    "style": "src/components/password.scss",
+    "engines": {
+        "node": ">=10"
+    },
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build --target lib src/build.js",
+        "lint": "vue-cli-service lint"
+    },
+    "files": [
+        "src/**/*.scss",
+        "src/**/*.js",
+        "src/**/*.ts",
+        "src/**/*.vue",
+        "types/**/*.d.ts"
+    ],
+    "types": "./types/index.d.ts",
+    "keywords": [
+        "vue",
+        "component",
+        "input",
+        "password"
+    ],
+    "homepage": "https://github.com/axel-springer-kugawana/iwb_serenity/vue/vue-2-components/password",
+    "author": "",
+    "license": "MIT",
+    "repository": "https://github.com/axel-springer-kugawana/iwb_serenity.git",
+    "bugs": {
+        "url": "https://github.com/axel-springer-kugawana/iwb_serenity/issues"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "nanoid": "^3",
+        "vue": "^2"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^4.18.0",
+        "@typescript-eslint/parser": "^4.18.0",
+        "@vue/cli-plugin-babel": "~4.5.0",
+        "@vue/cli-plugin-eslint": "~4.5.0",
+        "@vue/cli-plugin-typescript": "~4.5.0",
+        "@vue/cli-service": "~4.5.0",
+        "@vue/eslint-config-typescript": "^7.0.0",
+        "eslint": "^6.7.2",
+        "eslint-plugin-vue": "^6.2.2",
+        "iwb_serenity": "^2.0.6",
+        "node-sass": "^4.12.0",
+        "sass-loader": "^8.0.2",
+        "typescript": "~4.1.5",
+        "vue-template-compiler": "^2.6.11"
+    }
+}
