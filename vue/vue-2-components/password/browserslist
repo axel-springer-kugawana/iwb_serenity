@@ -1,0 +1,29 @@
+# Based on Array.flat support (https://caniuse.com/?search=array.flat)
+
+# On 25/11/2021, covers:
+# - 96.82% of Immoweb audience for last 30 days
+# - 97.54% of Belgium (`npx browserslist --coverage=be`)
+# - 95.88% of Europe (`npx browserslist --coverage=alt-eu`)
+
+# This configuration file has no impact on the exported bundled:
+# it only has an influence on package development (using `App.vue`).
+
+> 0.3% in BE
+not dead
+
+# Android
+Android >= 5 # webview
+and_chr >= 69
+and_ff >=64
+Samsung >=10
+
+# iOS
+ios_saf >= 12
+
+# Desktop
+Chrome >= 69
+Edge >= 79
+Firefox >= 62
+not IE 11
+Opera >= 56
+Safari >= 12
