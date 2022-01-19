@@ -1,6 +1,6 @@
 # Password
 
-A password field as a form of a Vue component for [Serenity](https://github.com/axel-springer-kugawana/iwb_serenity) ([Immoweb](https://immoweb.be)’s design system).
+A password field as a form of a Vue 2 component for [Serenity](https://github.com/axel-springer-kugawana/iwb_serenity) ([Immoweb](https://immoweb.be)’s design system).
 
 It includes a password reveal button.
 
@@ -44,7 +44,7 @@ In a Vue component:
 
 <script>
 import Vue from "vue";
-import iwPassword from "iwb-serenity-password";
+import iwPassword from "iwb-serenity-password-vue-2";
 
 export default Vue.extend({
     data: function() {
@@ -62,22 +62,22 @@ Additionally, you can check the [demo app](src/App.vue).
 
 This component works in project including:
 
-- [Vue 3](https://v3.vuejs.org) (**for other versions of Vue, see [`iwb-serenity-password`](https://github.com/axel-springer-kugawana/iwb_serenity/vue/components/password)**)
+- [Vue 2](https://vuejs.org/v2/guide) (**for other versions of Vue, see [`iwb-serenity-password`](https://github.com/axel-springer-kugawana/iwb_serenity/packages/vue-password)**)
 - [Serenity 2](https://github.com/axel-springer-kugawana/iwb_serenity/tree/b1925e087647ff8b95ce548fe77c5957dedfafa4), for the base CSS used by this package styles.
 
 1. Run this command in your terminal:
 
 ```sh
-npm install iwb-serenity-password
+npm install iwb-serenity-password-vue-2
 ```
 
 2. Register the component in the `<script>` part of a Vue component:
 
 ```js
-import { defineComponent } from 'vue'
-import iwPassword from "iwb-serenity-password";
+import Vue from "vue";
+import iwPassword from "iwb-serenity-password-vue-2";
 
-export default defineComponent({
+export default Vue.extend({
     components: {
         iwPassword: Password, // register <iw-password>
     },
@@ -90,7 +90,7 @@ export default defineComponent({
 $public-path: "/public";
 
 @import "iwb_serenity/src/scss/serenity";
-@import "iwb-serenity-password"; // this import the styles
+@import "iwb-serenity-password-vue-2"; // this import the styles
 ```
 
 ## Props
@@ -102,7 +102,7 @@ The attributes accepted by the component.
 
 ### `v-model` (string)
 
-Learn [more about `v-model` in Vue’s documentation](https://v3.vuejs.org/guide/component-basics.html#using-v-model-on-components).
+Learn [more about `v-model` in Vue’s documentation](https://vuejs.org/v2/guide/components.html#Using-v-model-on-Components).
 
 ### `name` (string)
 
@@ -152,7 +152,7 @@ git clone git@github.com:axel-springer-kugawana/iwb_serenity.git
 2. Go to this folder:
 
 ```sh
-cd iwb_serenity/vue/components/password
+cd iwb_serenity/packages/vue-2-password
 ```
 
 3. Install dependencies:
@@ -174,7 +174,7 @@ Be aware that it may not work for testing the styles, and that the project that 
 ```js
 module.exports = {
     // many things…
-    
+
     // add this:
     configureWebpack: {
         /**
@@ -196,10 +196,19 @@ module.exports = {
 }
 ```
 
-5. (to be documented: add tests)
+5. Ignore TypeScript errors
 
-6. Submit your changes by [opening a pull request](https://github.com/axel-springer-kugawana/iwb_serenity/pulls).
+Though the component can be consumed by an app using TypeScript, it throws a type error while developing. We have chosen to not use [_class components_](https://class-component.vuejs.org/), which is the only way to have Vue 2 packages fully compliant with TypeScript. As a workaround, the entry point still is a TypeScript file (`src/index.ts`) and contains a compatible component declaration.
+
+For reference, this is the type error you can ignore:
+
+`ERROR in …/iwb_serenity/packages/vue-2-password/src/index.ts(8,7):
+8:7 Type '{ props: { value: { type: StringConstructor; required: boolean; default: string; }; label: { type: StringConstructor; required: boolean; }; showPasswordLabel: { ...; }; hidePasswordLabel: { ...; }; name: { ...; }; error: { ...; }; inModal: { ...; }; }; data: () => any; computed: { ...; }; methods: { ...; }; }' is missing the following properties from type 'VueConstructor<Vue>': extend, nextTick, set, delete, and 10 more.`
+
+6. (to be documented: add tests)
+
+7. Submit your changes by [opening a pull request](https://github.com/axel-springer-kugawana/iwb_serenity/pulls).
 
 ## License
 
-The _iwb-serenity-password_ package is open-sourced software licensed under the [MIT license](LICENSE).
+The _iwb-serenity-password-vue-2_ package is open-sourced software licensed under the [MIT license](LICENSE).

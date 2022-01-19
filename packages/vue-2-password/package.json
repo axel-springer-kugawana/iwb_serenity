@@ -29,7 +29,7 @@
         "input",
         "password"
     ],
-    "homepage": "https://github.com/axel-springer-kugawana/iwb_serenity/vue/vue-2-components/password",
+    "homepage": "https://github.com/axel-springer-kugawana/iwb_serenity/packages/vue-2-password",
     "author": "",
     "license": "MIT",
     "repository": "https://github.com/axel-springer-kugawana/iwb_serenity.git",
