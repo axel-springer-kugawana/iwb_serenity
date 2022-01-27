@@ -1,15 +1,15 @@
 # Typography
 
-## Font-family:
+## Fonts
 
-By default, the font-family for titles is [Montserrat](https://fonts.google.com/specimen/Montserrat) and [PT Sans](https://fonts.google.com/specimen/PT+Sans) for other text.
+By default, the `font-family` for titles is [Montserrat](https://fonts.google.com/specimen/Montserrat) while any other text gets [PT Sans](https://fonts.google.com/specimen/PT+Sans).
 
 If these fonts are not available, they will fall back on other fonts, depending on which ones are available on your system. The font stacks are:
 
 - `"Montserrat", "Verdana", system-ui, -apple-system, sans-serif !default;`
 - `"PT Sans", "Trebuchet MS", system-ui, -apple-system, sans-serif !default;`
 
-These two fonts are not loaded by Serenity. You can include them either by using Google Fonts CDN either by self-hosting the fonts and writing your own `@font-face` declarations.
+These two fonts are not loaded by Serenity. You can include them either by using Google Fonts CDN either by (preferably) self-hosting the fonts and writing your own `@font-face` declarations.
 
 Using Google Fonts, link these stylesheets in the `<head>` tag of your page.
 
@@ -38,7 +38,6 @@ All HTML headings, `<h1>` through `<h6>`, are available,
 <h4>Title Level 4</h4>
 <h5>Title Level 5</h5>
 <h6>Title Level 6</h6>
-
 ```
 
 `.title--1` through `.title--6` classes are also available if you need to match a heading style on another type of element.
