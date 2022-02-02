@@ -115,9 +115,9 @@ $columns-amount: 12 !default;
 $gutter: 1.25rem !default;
 
 $max-column-width-small: calc(($max-width-small - ($gutter * $columns-amount)) / $columns-amount);
-$max-column-width-medium: ($max-width-medium - ($gutter * $columns-amount)) / $columns-amount;
-$max-column-width-desktop: ($max-width-desktop - ($gutter * $columns-amount)) / $columns-amount;
-$max-column-width-widescreen: ($max-width-widescreen - ($gutter * $columns-amount)) / $columns-amount;
+$max-column-width-medium: calc(($max-width-medium - ($gutter * $columns-amount)) / $columns-amount);
+$max-column-width-desktop: calc(($max-width-desktop - ($gutter * $columns-amount)) / $columns-amount);
+$max-column-width-widescreen: calc(($max-width-widescreen - ($gutter * $columns-amount)) / $columns-amount);
 
 // Transition
 // ---------------------
