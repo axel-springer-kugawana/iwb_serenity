@@ -16,6 +16,7 @@
         "lint": "vue-cli-service lint"
     },
     "files": [
+        "CHANGELOG.md",
         "src/**/*.scss",
         "src/**/*.js",
         "src/**/*.ts",
