@@ -6,6 +6,7 @@ yarn-error.log
 .phpstorm.meta.php
 /.vscode/
 /.idea
+.npmrc
 
 *.sublime-project
 *.sublime-workspace
