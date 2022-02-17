@@ -97,7 +97,7 @@ Button primary, button secondary and button tertiary also exist in a "masquerade
 
 ## Button disabled state
 
-All buttons can have a disabled state by adding the attribute *disabled="disabled"*.
+All buttons can have a disabled state by adding the attribute `disabled="disabled"`.
 
 <button class="button button--primary" disabled="disabled">
     <span class="button__label">Primary button</span>
@@ -131,7 +131,7 @@ If you need to use the disabled state on an ```<a>``` element, keep in mind that
 
 ::: warning
 * `<a>` don’t support the disabled attribute, so you must add the `.button-disabled` class to make it visually appear disabled.
-* Disabled buttons link should include the `aria-disabled="true"` attribute to indicate the state of the element to accessibility devices. Eventually a `tabindex=-'1'`could be add.
+* Disabled buttons link should include the `aria-disabled="true"` attribute to indicate the state of the element to accessibility devices. Eventually a `tabindex="-1"`could be added.
 :::
 
 <a href="" class="button button--primary button-disabled" aria-disabled="true" tabindex="-1" role="button">
