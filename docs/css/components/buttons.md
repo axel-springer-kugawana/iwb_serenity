@@ -127,7 +127,7 @@ All buttons can have a disabled state by adding the attribute `disabled="disable
 </button>
 ```
 
-If you need to use the disabled state on a ```<a>``` element, keep in mind that it behaves a bit differently than a ```<button>```:
+If you need to use the disabled state on an ```<a>``` element, keep in mind that it behaves a bit differently than a ```<button>```:
 
 ::: warning
 * `<a>` don’t support the disabled attribute, so you must add the `.button-disabled` class to make it visually appear disabled.
