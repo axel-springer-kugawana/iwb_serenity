@@ -93,6 +93,8 @@ $public-path: "/public";
 @import "iwb-serenity-password-vue-2"; // this import the styles
 ```
 
+⚠️ Projects bundled with [Vite](https://vitejs.dev) should use `@import "iwb-serenity-password-vue-2/scss";` (because Vite doesn’t seem to handle `sass` nor `style` fields in libraries `package.json`).
+
 ## Props
 
 The attributes accepted by the component.
