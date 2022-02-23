@@ -17,7 +17,8 @@
             name="login-password"
             :label="`Password`"
             :show-password-label="`Show password`"
-            :hide-password-label="`Hide password`"
+            :password-shown-text="`Password is shown`"
+            :password-hidden-text="`Password is hidden`"
         />
 
         <iw-password
@@ -25,7 +26,8 @@
             name="login-password"
             :label="`Password field in a modal`"
             :show-password-label="`Show password`"
-            :hide-password-label="`Hide password`"
+            :password-shown-text="`Password is shown`"
+            :password-hidden-text="`Password is hidden`"
             :in-modal="true"
         />
 
@@ -34,7 +36,8 @@
             name="login-password"
             :label="`Password with an error`"
             :show-password-label="`Show password`"
-            :hide-password-label="`Hide password`"
+            :password-shown-text="`Password is shown`"
+            :password-hidden-text="`Password is hidden`"
             error="I’m an error message."
         />
     </form>

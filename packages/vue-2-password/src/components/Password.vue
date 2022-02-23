@@ -32,11 +32,10 @@
                 class="password__btn button button--transparent button--text"
                 :class="{ 'password__btn--hidden': empty }"
                 :id="`show-login-password-${id}`"
-                :ariaLabel="toggleLabel"
-                :title="toggleLabel"
+                :aria-pressed="revealed"
                 @click="toggle"
             >
-                <span class="sr-only">{{ toggleLabel }}</span>
+                <span class="sr-only">{{ showPasswordLabel }}</span>
                 <svg
                     width="24"
                     height="24"
@@ -60,6 +59,7 @@
                     />
                 </svg>
             </button>
+            <span class="sr-only" aria-live="polite">{{ stateText }}</span>
         </div>
         <p
             v-if="error && !empty"
@@ -92,7 +92,12 @@ export default {
             required: true,
         },
 
-        hidePasswordLabel: {
+        passwordHiddenText: {
+            type: String,
+            required: true,
+        },
+
+        passwordShownText: {
             type: String,
             required: true,
         },
@@ -129,8 +134,8 @@ export default {
             return this.type == "text";
         },
 
-        toggleLabel: function() {
-            return this.revealed ? this.hidePasswordLabel : this.showPasswordLabel;
+        stateText: function() {
+            return this.revealed ? this.passwordShownText : this.passwordHiddenText;
         },
     },
 

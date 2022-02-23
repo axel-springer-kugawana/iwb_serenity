@@ -4,7 +4,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
-Nothing.
+### Changed
+
+- Drop the `hide-password-label` attribute, now unused.
+- Add `password-shown-text` and `password-hidden-text` to announce the state of the password visibility to screen readers.
+
+### Fixed
+
+- There was no proper screen reader announcements when the password visibility changes.
 
 ## v0.2.0 (2022-02-22)
 
