@@ -114,9 +114,13 @@ The [`name`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input#att
 
 The displayed label of the field.
 
-### `show-password-label` (string) and `hide-password-label` (string)
+### `show-password-label` (string)
 
-The label of the password revealer button when the password isn’t revealed (`show-password-label` or revealed (`hide-password-label`).
+The label of the password revealer button.
+
+### `password-hidden-text` (string) and `password-shown-text` (string)
+
+The text announced by screen readers when the password isn’t revealed (`password-hidden-text`) or revealed (`password-shown-text`).
 
 ### `in-modal` (?boolean)
 
