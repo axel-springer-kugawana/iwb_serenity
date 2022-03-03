@@ -128,7 +128,7 @@ export default defineComponent({
         return {
             id: nanoid(6),
             type: "password",
-            empty: this.modelValue.length == 0,
+            empty: true,
         };
     },
 

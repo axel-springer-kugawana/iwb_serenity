@@ -125,7 +125,7 @@ export default {
         return {
             id: nanoid(6),
             type: "password",
-            empty: this.value.length == 0,
+            empty: true,
         };
     },
 

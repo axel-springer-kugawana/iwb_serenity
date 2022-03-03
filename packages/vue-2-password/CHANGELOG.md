@@ -13,6 +13,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - There was no proper screen reader announcements when the password visibility changes.
 
+### Demo app
+
+- The default value for the “password with error” is now an empty string (was `123`), like other passwords.
+
 ## v0.2.0 (2022-02-22)
 
 ### Changed

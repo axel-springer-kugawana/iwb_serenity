@@ -56,7 +56,7 @@ export default defineComponent({
         return {
             password: "",
             passwordInModal: "",
-            passwordWithError: "123",
+            passwordWithError: "",
         };
     },
 });

@@ -59,7 +59,7 @@ export default Vue.extend({
         return {
             password: "",
             passwordInModal: "",
-            passwordWithError: "123",
+            passwordWithError: "",
         };
     },
 });
