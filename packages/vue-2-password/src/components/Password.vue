@@ -6,7 +6,7 @@
     <div class="field">
         <label
             :for="id"
-            :class="error && !empty ? 'field__label--error' : 'field__label'"
+            :class="error ? 'field__label--error' : 'field__label'"
             :id="`label-${id}`"
         >
             {{ label }}
@@ -17,13 +17,13 @@
                 autocomplete="current-password"
                 class="input--text"
                 :class="{
-                    'input--error' : error && !empty,
+                    'input--error' : error,
                     'input--modal' : inModal,
                 }"
                 :id="id"
                 :name="name"
-                :aria-labelledby="`label-${id} ${error && !empty ? `label-error-${id}` : ''}`"
-                :aria-invalid="error && !empty"
+                :aria-labelledby="`label-${id} ${error ? `label-error-${id}` : ''}`"
+                :aria-invalid="error"
                 @input="handleInput"
                 @change="handleChange"
             >
@@ -62,7 +62,7 @@
             <span class="sr-only" aria-live="polite">{{ stateText }}</span>
         </div>
         <p
-            v-if="error && !empty"
+            v-if="error"
             class="field__message--error"
             :id="`label-error-${id}`"
         >

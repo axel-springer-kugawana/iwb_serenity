@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
+- Allow to show errors when password is empty
 - Drop the `hide-password-label` attribute, now unused.
 - Add `password-shown-text` and `password-hidden-text` to announce the state of the password visibility to screen readers.
 
