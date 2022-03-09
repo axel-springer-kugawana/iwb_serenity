@@ -17,7 +17,7 @@
         <iw-password
             v-model="password"
             name="login-password"
-            :label="`Password`"
+            :label="`Current password`"
             :show-password-label="`Show password`"
             :password-shown-text="`Password is shown`"
             :password-hidden-text="`Password is hidden`"
@@ -26,7 +26,8 @@
         <iw-password
             v-model="passwordInModal"
             name="login-password"
-            :label="`Password field in a modal`"
+            autocomplete="new-password"
+            :label="`New password. This field is in a modal and has a different background color.`"
             :show-password-label="`Show password`"
             :password-shown-text="`Password is shown`"
             :password-hidden-text="`Password is hidden`"
@@ -36,7 +37,8 @@
         <iw-password
             v-model="passwordWithError"
             name="login-password"
-            :label="`Password with an error`"
+            autocomplete="new-password"
+            :label="`Confirm password. This field also has an error.`"
             :show-password-label="`Show password`"
             :password-shown-text="`Password is shown`"
             :password-hidden-text="`Password is hidden`"

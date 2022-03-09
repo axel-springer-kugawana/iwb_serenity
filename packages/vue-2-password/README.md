@@ -11,12 +11,14 @@ It includes a password reveal button.
 - [Props](#props)
 	- [`v-model`](#v-model-string)
 	- [`name`](#name-string)
+    - [`autocomplete`](#autocomplete-string)
 	- [`label`](#label-string)
 	- [`show-password-label`](#show-password-label-string-and-hide-password-label-string)
 	- [`hide-password-label`](#show-password-label-string-and-hide-password-label-string)
 	- [`in-modal`](#in-modal-boolean)
 	- [`error`](#error-string)
 - [Events](#events)
+- [Accessibility](#accessibility)
 - Various
 	- [Changelog](#changelog)
 	- [Development](#development)
@@ -36,7 +38,8 @@ In a Vue component:
             name="login-password"
             label="Password"
             show-password-label="Show password"
-            hide-password-label="Hide password"
+            password-shown-text="Password is shown"
+            password-hidden-text="Password is hidden"
         />
 
     </form>
@@ -106,9 +109,13 @@ The attributes accepted by the component.
 
 Learn [more about `v-model` in Vue’s documentation](https://vuejs.org/v2/guide/components.html#Using-v-model-on-Components).
 
-### `name` (string)
+### `name` (?string)
 
-The [`name`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input#attr-name) parameter of the `<input type="password" name="this-value">`.
+The [`name`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input#attr-name) parameter in `<input type="password" name="this-value">`. It defaults to `password`.
+
+### `autocomplete` (?string)
+
+The [`autocomplete`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input#attr-autocomplete) parameter in `<input type="password" autocomplete="this-value">`. It defaults to [`current-password`](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-autocomplete-current-password), as it’s the most common use case. For a new password or a password change, [`new-password`](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fe-autocomplete-new-password) is recommended.
 
 ### `label` (string)
 

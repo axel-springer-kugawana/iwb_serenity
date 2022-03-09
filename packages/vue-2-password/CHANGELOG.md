@@ -5,6 +5,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## Unreleased
 
 ### New
+
+- Allow customization of the `autocomplete` attribute with an optional `autocomplete` prop. The default value remains `current-password`.
 - Add `aria-required` attribute on the password field.
 
 ### Changed

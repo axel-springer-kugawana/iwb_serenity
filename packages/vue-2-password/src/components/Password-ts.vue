@@ -19,7 +19,7 @@
         <div class="password">
             <input
                 :type="type"
-                autocomplete="current-password"
+                :autocomplete="autocomplete"
                 class="input--text"
                 :class="{
                     'input--error' : error,
@@ -89,6 +89,8 @@ export default Vue.extend({
             default: ""
         },
 
+        // Labels and accessible texts
+
         label: {
             type: String,
             required: true,
@@ -109,22 +111,32 @@ export default Vue.extend({
             required: true,
         },
 
+        // Field names (`name`, `autocomplete`)
+
         name: {
             type: String,
             required: false,
-            default: "password"
+            default: "password",
+        },
+
+        autocomplete: {
+            type: String,
+            required: false,
+            default: "current-password",
+        },
+
+        // Various
+
+        inModal: {
+            type: Boolean,
+            required: false,
+            default: false,
         },
 
         error: {
             type: String,
             required: false,
             default: "",
-        },
-
-        inModal: {
-            type: Boolean,
-            required: false,
-            default: false,
         },
     },
 
