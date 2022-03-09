@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+Nothing
+
+## v0.3.0 (2022-03-09)
+
 ### New
 
 - Allow customization of the `autocomplete` attribute with an optional `autocomplete` prop. The default value remains `current-password`.
@@ -28,6 +32,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Under the hood
 
 - Update `nanoid` and build tools dependencies.
+- Move `vue` to dev dependencies, which should lower the installed weight.
 
 ### Demo app
 

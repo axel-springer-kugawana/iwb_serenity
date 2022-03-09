@@ -1,6 +1,6 @@
 {
     "name": "iwb-serenity-password",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "A Vue password component for iwb_serenity",
     "sideEffects": false,
     "exports": {
@@ -46,8 +46,7 @@
         "access": "public"
     },
     "dependencies": {
-        "nanoid": "^3",
-        "vue": "^3"
+        "nanoid": "^3"
     },
     "devDependencies": {
         "@types/jest": "^24.0.19",
@@ -67,6 +66,7 @@
         "node-sass": "^4.12.0",
         "sass-loader": "^8.0.2",
         "typescript": "~4.1.5",
+        "vue": "^3",
         "vue-jest": "^5.0.0-0"
     }
 }
