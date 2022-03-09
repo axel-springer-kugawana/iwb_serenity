@@ -149,6 +149,22 @@ If you still need to listent to its unique event (`input`), be aware that the co
 
 Typically, this happens on `blur`, when the field loses its `focus`. The component doesn’t fire an event for each key the user types.
 
+## Accessibility
+
+A password is always a required field, so the user expects it to be required. To indicate that requirement to assistive technologies, the component is using [`aria-required`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-required).
+
+The [`required`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) attribute was dismissed for two reasons:
+- It has accessibility flaws: when submiting a login form with an empty password, the password field is focused and the screen reader (VoiceOver) announces “please fill this field” but doesn’t announce the name of the field.
+- Currently, our apps only rely on server-side validation.
+
+The field is marked as invalid (using [`aria-invalid`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-invalid)) only when an error message is provided. When it is, the error message is appended to the field accessible label (using [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)).
+
+The password reveal button is only visible (and focusable) when the field isn’t empty. Its label never changes (“show password”), but the announcement varies when the password is shown/hidden:
+- the `<button>` makes use of [`aria-pressed`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-pressed);
+- a live region ([`aria-live="polite"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-pressed)) is explicit about the state: (e.g. “The password is visible|hidden”).
+
+[More background, resources and discussions](https://github.com/axel-springer-kugawana/iwb_serenity/pull/21) in the pull request.
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md).

@@ -20,6 +20,14 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - There was no proper screen reader announcements when the password visibility changes.
 - Fix `aria-invalid` being either an empty string either the error message instead of `true` or `false`.
 
+### Documentation
+
+- Document accessibility decisions.
+
+### Under the hood
+
+- Update `nanoid` and build tools dependencies.
+
 ### Demo app
 
 - The default value for the “password with error” is now an empty string (was `123`), like other passwords.
