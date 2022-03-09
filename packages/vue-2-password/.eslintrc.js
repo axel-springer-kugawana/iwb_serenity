@@ -34,6 +34,9 @@ module.exports = {
             "svg": "any"
         }],
         "vue/html-closing-bracket-newline": 0,
+        "vue/max-attributes-per-line": ["error", {
+            "singleline": 4,
+        }],
         "vue/multiline-html-element-content-newline": 0,
         "vue/singleline-html-element-content-newline": 0,
         "vue/html-closing-bracket-spacing": 0,
