@@ -2,6 +2,8 @@
     <form
         id="app"
         class="container"
+        method="post"
+        @submit.prevent
     >
         <label for="user">
             Username:
@@ -40,6 +42,8 @@
             :password-hidden-text="`Password is hidden`"
             error="I’m an error message."
         />
+
+        <button class="button button--primary">Submit</button>
     </form>
 </template>
 
@@ -48,10 +52,11 @@ import { defineComponent } from 'vue';
 import Password from "./components/Password.vue";
 
 export default defineComponent({
-  name: 'App',
-  components: {
+    name: 'App',
+    components: {
         iwPassword: Password,
-  },
+    },
+
     data: function() {
         return {
             password: "",

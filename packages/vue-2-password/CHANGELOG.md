@@ -17,6 +17,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Demo app
 
 - The default value for the “password with error” is now an empty string (was `123`), like other passwords.
+- The `<form>` is now a real submittable `POST` form with a `<button>`, but prevented (it doesn’t submit anything).
 
 ## v0.2.0 (2022-02-22)
 
