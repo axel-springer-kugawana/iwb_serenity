@@ -19,6 +19,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - There was no proper screen reader announcements when the password visibility changes.
 - Fix `aria-invalid` being either an empty string either the error message instead of `true` or `false`.
+- Keep the same border color when the visibility button is focused: instead of red, it now inherits from the default color (blue).
 
 ### Documentation
 
