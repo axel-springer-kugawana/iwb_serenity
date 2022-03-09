@@ -23,7 +23,7 @@
                 :id="id"
                 :name="name"
                 :aria-labelledby="`label-${id} ${error ? `label-error-${id}` : ''}`"
-                :aria-invalid="error"
+                :aria-invalid="!!error"
                 @input="handleInput"
                 @change="handleChange"
             >
