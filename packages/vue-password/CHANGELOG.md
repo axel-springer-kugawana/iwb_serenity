@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## Unreleased
 
+### New
+- Add `aria-required` attribute on the password field.
+
 ### Changed
 
 - Allow to show errors when password is empty
