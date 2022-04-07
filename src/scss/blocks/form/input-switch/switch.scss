@@ -1,0 +1,33 @@
+/*------------------------------------*\
+    > Input Switch
+    A standalone checkbox looking like a switch (on/off) button.
+    It also has icons to better express various states (on/off/disabled/waiting).
+
+    It can be wrapped in a `<label>`
+
+    Files and HTML structure:
+
+    _ctn.scss           .switch
+                        (container)
+                         |
+    _checkbox.scss       |- input[type=checkbox].switch__input
+                         |  (real checkbox, hidden)
+                         |
+                         |- .switch__checkbox
+                             | (visual checkbox and toggle, using pseudo-elements)
+                             |
+    _icons.scss              |- svg.switch__svg.switch__svg--check ✔️
+                             |- svg.switch__svg.switch__svg--cross ✖️
+                             |
+    _waiting-dots.scss       |- .switch__bouncing-dots •••
+                                | (using pseudo-elements + 1 child)
+                                |
+                                |- .switch__bouncing-dot
+
+\*------------------------------------*/
+
+@import 'label'; // styles for the <label> around
+@import 'ctn';
+@import 'checkbox';
+@import 'icons';
+@import 'waiting-dots';

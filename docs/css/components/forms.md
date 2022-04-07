@@ -475,24 +475,139 @@ Input checkbox can contain error messages (e.g. to show validation errors relate
 
 ### Input Switch
 
-The `input--switch` takes 100% of the width of its container, the label is displayed on the left and the "switch" button on the right.
+The _switch_ is a checkbox looking like a _toggle_. It comes with the following features:
+- can be wrapped in `<label class="switch-label">`, which provides minimal alignment;
+- it has optional icons near the toggle;
+- support for [checkboxes with an `indeterminate` state](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate_state_checkboxes), `disabled` and `aria-disabled`;
+- two sizes: the default is the “Big” one, and `.switch--small` is the small one;
+- a “waiting” state (`.switch--waiting`), showing small bouncing dots;
+- motion.
 
-To display the checkbox input as a switch, enclose it within a label with the `input--swicth` class.
-Then give the `input--switch__input` class to the input and the `input--switch__label` class to the span containing the label of the input.
+Here’s the most minimal switch without icons nor _waiting_ capability. The `.switch__checkbox` element is the one shaping the visual toggle.
 
 <div class="sd-example">
-    <label for="exampleSwitchId01" class="input--switch">
-        <input type="checkbox" name="swicthName01" class="input--switch__input" value="value" id="exampleSwitchId01">
-        <span class="input--switch__label">Input Switch Label</span>
-    </label>
+    <div class="switch">
+        <input type="checkbox" class="switch__input" id="exampleSwitchWithNoLabel">
+        <span class="switch__checkbox"></span>
+    </div>
+</div>
+
+
+```html
+<div class="switch">
+    <input type="checkbox" class="switch__input" id="exampleSwitchWithNoLabel">
+    <span class="switch__checkbox"></span>
+</div>
+```
+
+The same in a label (`.switch-label`), and with a small size, using `switch--small`:
+
+<div class="sd-example">
+    <Example-InputSwitch :icons="false" :small="true"/>
 </div>
 
 ```html
-<label for="exampleSwitchId01" class="input--switch">
-    <input type="checkbox" name="swicthName01" class="input--switch__input" value="value" id="exampleSwitchId01">
-    <span class="input--switch__label">Input Switch Label</span>
+<label for="exampleSwitchMinimalSmall" class="switch-label">
+    I’m a label
+    <div class="switch switch--small">
+        <input type="checkbox" class="switch__input" id="exampleSwitchMinimalSmall">
+        <span class="switch__checkbox"></span>
+    </div>
 </label>
 ```
+
+With icons and bouncing dots (you won’t see them bouncing here):
+
+<div class="sd-example">
+    <Example-InputSwitch/>
+</div>
+
+```html
+<label for="exampleSwitchWithMostFeatures" class="switch-label">
+    I’m a label
+    <div class="switch">
+        <input type="checkbox" class="switch__input" id="exampleSwitchWithMostFeatures">
+        <span class="switch__checkbox">
+            <!-- Check icon ✔️ -->
+            <svg class="switch__svg switch__svg--check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 9" width="20" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 5.5L3.43934 7.93934L10.3787 1"/></svg>
+            <!-- Cross icon ✖️ -->
+            <svg class="switch__svg switch__svg--cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1.06 1 9 8.94"/><path d="M1 8.94 8.94 1"/></svg>
+            <!-- Bouncing dots ••• -->
+            <span class="switch__bouncing-dots">
+                <span class="switch__bouncing-dot"></span>
+            </span>
+        </span>
+    </div>
+</label>
+```
+
+To put the switch in a waiting state:
+- use the `switch--waiting` class;
+- add `aria-disabled="true"` (or `disabled`);
+- use JavaScript to set `element.indeterminate` to true;
+- make sure the HTML contains the `.switch__bouncing-dots` element in the visual checkbox.
+
+Once the waiting state is over, reverse the 3 first step.
+
+<div class="sd-example">
+    <Example-InputSwitch
+        :icons="false"
+        :indeterminate="true"
+        :disabled="true"
+        :waiting="true"
+    />
+</div>
+
+```html
+<label for="exampleSwitchIdWaiting" class="switch-label">
+    I’m a label
+    <div class="switch switch--waiting"> <!-- 👈  CSS class -->
+        <input type="checkbox" disabled class="switch__input" id="exampleSwitchIdWaiting">
+        <span class="switch__checkbox">
+            <span class="switch__bouncing-dots">
+                <span class="switch__bouncing-dot"></span>
+            </span>
+        </span>
+    </div>
+</label>
+```
+
+A switch can be in an indeterminate state without being disabled or in a waiting state:
+
+<div class="sd-example">
+    <Example-InputSwitch :indeterminate="true" :small="true" />
+</div>
+
+```html
+<label for="exampleSwitchIndeterminate" class="switch-label">
+    I’m a label
+    <div class="switch switch--small">
+        <input type="checkbox" class="switch__input" id="exampleSwitchIndeterminate">
+        <span class="switch__checkbox"></span>
+    </div>
+</label>
+```
+
+And finally, a disabled unchecked switch:
+
+
+<div class="sd-example">
+    <Example-InputSwitch :disabled="true"/>
+</div>
+
+```html
+
+<label for="exampleSwitchDisabled" class="switch-label">
+    I’m a label
+    <div class="switch">
+        <!-- `disabled` attribute 👇 -->
+        <input type="checkbox" disabled class="switch__input" id="exampleSwitchDisabled">
+        <span class="switch__checkbox"></span>
+    </div>
+</label>
+```
+
+If for some reason you can’t access the HTML (when the switch is a framework component, for example) and you don’t want the icons, you can still use the `switch--no-icons` CSS class.
 
 ## Input Group
 

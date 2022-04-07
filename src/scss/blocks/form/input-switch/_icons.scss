@@ -1,0 +1,34 @@
+.switch__svg {
+    position: absolute;
+
+    opacity: var(--switch-toggle-visible, 1);
+
+    transition: var(--switch-motion) $easeInOutCubic;
+    transition-property: opacity, stroke, transform;
+}
+
+// Visible when checked (`--checked` is 1).
+.switch__svg--check {
+    stroke: var(--switch-check-color, #fff);
+
+    transform:
+        translateX(-70%)
+        unquote('scale(max(0, var(--checked)))'); // 0 or 1
+
+    .switch--small & {
+        width: $size-12;
+        height: $size-9;
+    }
+}
+
+// Visible when unchecked (`--checked` is -1).
+.switch__svg--cross {
+    transform:
+        translateX(80%)
+        unquote('scale(min(0, var(--checked)))'); // 0 or -1
+
+    .switch--small & {
+        width: $size-10;
+        height: $size-10;
+    }
+}

@@ -1,0 +1,86 @@
+.switch {
+    position: relative;
+    display: inline-flex; // prevent parent line-height to increase the height
+
+    /**
+     * Is it checked? Value modified in `.switch__input` (checkbox.scss).
+     *
+     * -1: `:not(:checked)` is the initial value.
+     *  0: `:indeterminate`
+     *  1: `:checked`
+     *
+     */
+    --checked: -1;
+
+    // container size
+    --switch-w: #{$size-70};
+    --switch-h: #{$size-36-fixed};
+
+    // colors
+    --switch-bg: #{$primary-blue-llll};
+    --switch-borders: #{$primary-blue-l};
+
+    // toggle (circle)
+    --switch-toggle-diameter: #{$size-32}; // size
+    --switch-toggle-translate-x: #{$size-17}; // horizontal movement
+
+    // waiting dots (•••) size
+    --switch-waiting-dot-diameter: #{$size-4};
+
+    // motion duration
+    --switch-motion: .3s;
+
+    // Should be `:focus-visible` instead, but Safari 15.4+ */
+    &:not(:focus-within) { --switch-focus-outline: 0; }
+    &:focus-within { --switch-focus-outline: 1; }
+
+    /**
+     * Colors changing on hover, depending on the checkbox state:
+     * - disabled: none;
+     * - unchecked or indeterminate: background goes blueLL;
+     * - checked: checkmark icon goes blueDD.
+     */
+    &:hover {
+        :not(:disabled):not([aria-disabled=true]) {
+            + .switch__checkbox {
+                --switch-bg: #{$primary-blue-ll};
+                --switch-check-color: #{$primary-blue-dd};
+            }
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        --switch-motion: 0s;
+    }
+}
+
+// Small switch. The default one is named “Big” in the design.
+
+.switch--small {
+
+    // container
+    --switch-w: #{$size-46};
+    --switch-h: #{$size-24};
+
+    // toggle
+    --switch-toggle-diameter: #{$size-18};
+    --switch-toggle-translate-x: #{$size-11};
+
+    // dots
+    --switch-waiting-dot-diameter: #{$size-3};
+}
+
+// Switch is waiting •••
+
+.switch--waiting {
+    --switch-toggle-visible: 0;
+    --switch-waiting-dots-visible: 1;
+}
+
+// Hide icons
+
+.switch--no-icons {
+    .switch__svg {
+        display: none;
+    }
+}

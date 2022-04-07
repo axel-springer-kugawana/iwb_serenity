@@ -1,0 +1,47 @@
+/**
+ * 3 dots, positioned in a grid:
+ *
+ * 1. left:   `.switch__bouncing-dots::before`
+ * 2. middle: `.switch__bouncing-dot`
+ * 3. right:  `.switch__bouncing-dots::after`
+ *
+ * Their animation is delayed so they bounce one after the other.
+ */
+.switch__bouncing-dots {
+    position: absolute;
+
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--switch-waiting-dot-diameter);
+
+    opacity: var(--switch-waiting-dots-visible, 0);
+    transform: scale(var(--switch-waiting-dots-visible, 0));
+
+    transition:
+        var(--switch-motion) /* duration */
+        cubic-bezier(0.28, 1.07, 0.62, 0.96)
+        calc(var(--switch-waiting-dots-visible, 0) * .15s); /* delay */
+    transition-property: opacity, transform;
+
+    &::before { content: ''; --switch-bounce-delay: 0s; }
+    &::after { content: ''; --switch-bounce-delay: .2s; }
+}
+
+// Dots size and color/
+.switch__bouncing-dots::before,
+.switch__bouncing-dots::after,
+.switch__bouncing-dot {
+    width: var(--switch-waiting-dot-diameter);
+    height: var(--switch-waiting-dot-diameter);
+
+    background: currentColor;
+    border-radius: 50%;
+
+    animation: switch-bouncing 1s infinite var(--switch-bounce-delay, .1s);
+}
+
+@keyframes switch-bouncing {
+    10% { transform: translateY(0%)}
+    25% { transform: translateY(-100%)}
+    40% { transform: translateY(0%)}
+}
