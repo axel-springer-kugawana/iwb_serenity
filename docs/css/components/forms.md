@@ -476,45 +476,126 @@ Input checkbox can contain error messages (e.g. to show validation errors relate
 ### Input Switch
 
 The _switch_ is a checkbox looking like a _toggle_. It comes with the following features:
-- can be wrapped in `<label class="switch-label">`, which provides minimal alignment;
-- it has optional icons near the toggle;
-- support for [checkboxes with an `indeterminate` state](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate_state_checkboxes), `disabled` and `aria-disabled`;
+- can be wrapped in `<label class="switch-label">`, which provides minimal vertical alignment;
 - two sizes: the default is the “Big” one, and `.switch--small` is the small one;
+- customizable space around the switch checkbox, using classes and custom properties;
+- optional icons near the toggle;
+- support for [checkboxes with an `indeterminate` state](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate_state_checkboxes), `disabled` and `aria-disabled`;
 - a “waiting” state (`.switch--waiting`), showing small bouncing dots;
 - motion.
 
-Here’s the most minimal switch without icons nor _waiting_ capability. The `.switch__checkbox` element is the one shaping the visual toggle.
+::: warning
+> This replaces the previous `.input--switch` component. Though it’s a breaking change, it was not used in any app. If you’ve used it in the past, you can replicate the same behaviour with the following replacement.
+:::
+
+#### Switch without label nor icons
+
+The `.switch__checkbox` element is the one shaping the visual toggle.
+
+The default size is _Big_ and the small one requires the `.switch--small` class.
 
 <div class="sd-example">
     <div class="switch">
-        <input type="checkbox" class="switch__input" id="exampleSwitchWithNoLabel">
+        <input type="checkbox" class="switch__input">
         <span class="switch__checkbox"></span>
     </div>
 </div>
 
+<div class="sd-example">
+    <div class="switch switch--small">
+        <input type="checkbox" class="switch__input">
+        <span class="switch__checkbox"></span>
+    </div>
+</div>
 
 ```html
+<!-- Default size -->
 <div class="switch">
-    <input type="checkbox" class="switch__input" id="exampleSwitchWithNoLabel">
+    <input type="checkbox" class="switch__input">
+    <span class="switch__checkbox"></span>
+</div>
+
+<!-- Small size -->
+<div class="switch switch--small">  <!-- 👈  CSS class -->
+    <input type="checkbox" class="switch__input">
     <span class="switch__checkbox"></span>
 </div>
 ```
 
-The same in a label (`.switch-label`), and with a small size, using `switch--small`:
+#### Switch label and space around the switch
+
+The same in a label (`.switch-label`). This class only helps with vertical alignment.
 
 <div class="sd-example">
-    <Example-InputSwitch :icons="false" :small="true"/>
+    <label for="exampleSwitchMinimal" class="switch-label">
+        I’m the label and there’s no space before the checkbox.
+        <div class="switch switch--small">
+            <input type="checkbox" class="switch__input" id="exampleSwitchMinimal">
+            <span class="switch__checkbox"></span>
+        </div>
+    </label>
 </div>
 
 ```html
 <label for="exampleSwitchMinimalSmall" class="switch-label">
-    I’m a label
+    I’m the label and there’s no space before the checkbox.
     <div class="switch switch--small">
         <input type="checkbox" class="switch__input" id="exampleSwitchMinimalSmall">
         <span class="switch__checkbox"></span>
     </div>
 </label>
 ```
+
+The previous example lacks of space around the checkbox, which can be solved using `.switch--margin-right` or `.switch--margin-left` to set a default margin (8px). To customize the space between the switch and its label, use the following custom properties: `--switch-margin-right` and `--switch-margin-left`.
+
+<div class="sd-example">
+    <label for="exampleSwitchMinimalNoSpace" class="switch-label">
+        <div class="switch">
+            <input type="checkbox" class="switch__input" id="exampleSwitchMinimalNoSpace">
+            <span class="switch__checkbox"></span>
+        </div>
+        <span>I’m a label and there’s <strong>no space before the checkbox</strong></span>.
+    </label>
+    <Example-InputSwitch :icons="false" switch-position="left">
+        <span>I’m a label on the left with <strong>default space</strong> on the right.</span>
+    </Example-InputSwitch>
+    <Example-InputSwitch :icons="false" switch-position="left" style="--switch-margin-right: 3rem;">
+        <span>I’m a label on the left with <strong>custom space</strong> on the right.</span>
+    </Example-InputSwitch>
+</div>
+
+```html
+<!-- No space -->
+<label for="exampleSwitchMinimalNoSpace" class="switch-label">
+    <div class="switch">
+        <input type="checkbox" class="switch__input" id="exampleSwitchMinimalNoSpace">
+        <span class="switch__checkbox"></span>
+    </div>
+    <span>I’m a label and there’s <strong>no space before the checkbox</strong></span>.
+</label>
+
+<!-- Default space -->
+<label for="exampleSwitchWithDefaultSpace" class="switch-label">
+    <div class="switch switch--margin-right"> <!-- 👈  CSS class -->
+        <input type="checkbox" class="switch__input" id="exampleSwitchWithDefaultSpace">
+        <span class="switch__checkbox"></span>
+    </div>
+    <span>I’m a label on the left with <strong>default space</strong> on the right.</span>
+</label>
+
+<!-- Custom space -->
+<label for="exampleSwitchWithCustomSpace" class="switch-label">
+    <div class="switch" style="--switch-margin-left: 3rem;"> <!-- 👈  CSS custom property -->
+        <input type="checkbox" class="switch__input" id="exampleSwitchWithCustomSpace">
+        <span class="switch__checkbox"></span>
+    </div>
+    <span>I’m a label on the left with <strong>custom space</strong> on the right.</span>
+</label>
+```
+
+In the previous examples, the label is after the `.switch`. To accomplish that, change the HTML order.
+
+#### Switch icons and waiting state
 
 With icons and bouncing dots (you won’t see them bouncing here):
 
@@ -525,7 +606,7 @@ With icons and bouncing dots (you won’t see them bouncing here):
 ```html
 <label for="exampleSwitchWithMostFeatures" class="switch-label">
     I’m a label
-    <div class="switch">
+    <div class="switch switch--margin-right">
         <input type="checkbox" class="switch__input" id="exampleSwitchWithMostFeatures">
         <span class="switch__checkbox">
             <!-- Check icon ✔️ -->
@@ -561,7 +642,7 @@ Once the waiting state is over, reverse the 3 first step.
 ```html
 <label for="exampleSwitchIdWaiting" class="switch-label">
     I’m a label
-    <div class="switch switch--waiting"> <!-- 👈  CSS class -->
+    <div class="switch switch--margin-right switch--waiting"> <!-- 👈  CSS class -->
         <input type="checkbox" disabled class="switch__input" id="exampleSwitchIdWaiting">
         <span class="switch__checkbox">
             <span class="switch__bouncing-dots">
@@ -572,6 +653,8 @@ Once the waiting state is over, reverse the 3 first step.
 </label>
 ```
 
+#### Indeterminate switch
+
 A switch can be in an indeterminate state without being disabled or in a waiting state:
 
 <div class="sd-example">
@@ -581,12 +664,14 @@ A switch can be in an indeterminate state without being disabled or in a waiting
 ```html
 <label for="exampleSwitchIndeterminate" class="switch-label">
     I’m a label
-    <div class="switch switch--small">
+    <div class="switch switch--small switch--margin-right">
         <input type="checkbox" class="switch__input" id="exampleSwitchIndeterminate">
         <span class="switch__checkbox"></span>
     </div>
 </label>
 ```
+
+#### Disabled switch
 
 And finally, a disabled unchecked switch:
 
@@ -599,7 +684,7 @@ And finally, a disabled unchecked switch:
 
 <label for="exampleSwitchDisabled" class="switch-label">
     I’m a label
-    <div class="switch">
+    <div class="switch switch--margin-right">
         <!-- `disabled` attribute 👇 -->
         <input type="checkbox" disabled class="switch__input" id="exampleSwitchDisabled">
         <span class="switch__checkbox"></span>

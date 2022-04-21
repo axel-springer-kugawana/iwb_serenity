@@ -1,7 +1,16 @@
 <template>
     <div>
-        <label for="exampleSwitchIndeterminate" class="switch-label">
-            I’m a label
+         <label
+            :for="id"
+            class="switch-label"
+            :class="{
+                'switch--margin-left': switchPosition == 'right',
+                'switch--margin-right': switchPosition != 'right',
+            }"
+        >
+            <slot v-if="switchPosition == 'right'">
+                I’m a label
+            </slot>
             <div
                 class="switch"
                 :class="{
@@ -10,7 +19,7 @@
                     'switch--no-icons': !icons,
                 }"
             >
-                <input ref="switch" type="checkbox" class="switch__input" id="exampleSwitchIndeterminate" :disabled="disabled" :aria-disabled="ariaDisabled">
+                <input ref="switch" type="checkbox" class="switch__input" :id="id" :disabled="disabled" :aria-disabled="ariaDisabled">
                 <span class="switch__checkbox">
                     <!-- Check icon ✔️ -->
                     <svg class="switch__svg switch__svg--check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 9" width="20" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 5.5L3.43934 7.93934L10.3787 1"/></svg>
@@ -22,6 +31,9 @@
                     </span>
                 </span>
             </div>
+            <slot v-if="switchPosition != 'right'">
+                I’m a label
+            </slot>
         </label>
     </div>
 </template>
@@ -48,6 +60,16 @@ export default {
         waiting: {
             default :false,
         },
+        switchPosition: {
+            required: false,
+            default: 'left',
+        }
+    },
+
+    data() {
+        return {
+            id: 'switch-' + (Math.random() * 1000000).toFixed(0)
+        }
     },
 
     watch: {
