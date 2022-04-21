@@ -1,4 +1,4 @@
-.switch__input {
+.toggle__input {
     position: absolute;
     z-index: 1;
     left: 0;
@@ -13,7 +13,7 @@
 
     // indeterminate
     &:indeterminate {
-        + .switch__checkbox {
+        + .toggle__checkbox {
             --checked: 0;
         }
     }
@@ -26,17 +26,17 @@
      * Other browsers don’t.
      */
     &:checked:not(:indeterminate) {
-        + .switch__checkbox {
+        + .toggle__checkbox {
             --checked: 1;
 
-            --switch-bg: #{$primary-blue};
-            --switch-check-color: #fff;
+            --toggle-bg: #{$primary-blue};
+            --toggle-check-color: #fff;
         }
 
         &:disabled,
         &[aria-disabled=true] {
-            + .switch__checkbox {
-                --switch-bg: #{$grey-65};
+            + .toggle__checkbox {
+                --toggle-bg: #{$grey-65};
             }
         }
     }
@@ -46,33 +46,33 @@
     &[aria-disabled=true] {
         cursor: not-allowed;
 
-        + .switch__checkbox {
-            --switch-bg: #{$grey-95};
-            --switch-borders: #{$grey-55};
-            --switch-sliding-border: #{$grey-55};
+        + .toggle__checkbox {
+            --toggle-bg: #{$grey-95};
+            --toggle-borders: #{$grey-55};
+            --toggle-sliding-border: #{$grey-55};
             color: $grey-55;
         }
     }
 }
 
-// Box around the switch
-.switch__checkbox {
+// Box around the toggle
+.toggle__checkbox {
     position: relative;
 
-    width: var(--switch-w);
-    height: var(--switch-h);
+    width: var(--toggle-w);
+    height: var(--toggle-h);
 
     // Center (horizontally and vertically) the circle, all icons and the dots.
     display: inline-flex;
     justify-content: center;
     align-items: center;
 
-    background-color: var(--switch-bg);
-    border: $size-1 solid var(--switch-borders);
+    background-color: var(--toggle-bg);
+    border: $size-1 solid var(--toggle-borders);
     border-radius: $size-20;
     color: $primary-blue-dd;
 
-    transition: background-color var(--switch-motion) $easeInOutCubic;
+    transition: background-color var(--toggle-motion) $easeInOutCubic;
 
     // Outline, shown on focus
     &::before {
@@ -83,31 +83,31 @@
 
         border: $size-2 solid;
         border-radius: $size-20;
-        opacity: var(--switch-focus-outline);
+        opacity: var(--toggle-focus-outline);
     }
 
     // Sliding circle, can move and become invisible
     &::after {
         content: '';
 
-        width: calc(var(--switch-toggle-diameter));
-        height: calc(var(--switch-toggle-diameter));
+        width: calc(var(--toggle-toggle-diameter));
+        height: calc(var(--toggle-toggle-diameter));
 
         background-color: $color-background;
         border-radius: $size-20;
-        border: $size-1 solid var(--switch-sliding-border, $primary-blue);
+        border: $size-1 solid var(--toggle-sliding-border, $primary-blue);
 
-        opacity: var(--switch-toggle-visible, 1);
+        opacity: var(--toggle-toggle-visible, 1);
         transform:
             // checked: translate to right
             // indeterminate: stay in center
             // unchecked: translate to left
-            translateX(calc(var(--checked) * var(--switch-toggle-translate-x)))
+            translateX(calc(var(--checked) * var(--toggle-toggle-translate-x)))
 
             // scale to 0 when dots are visible
-            scale(var(--switch-toggle-visible, 1));
+            scale(var(--toggle-toggle-visible, 1));
 
-        transition: var(--switch-motion) $easeInOutCubic;
+        transition: var(--toggle-motion) $easeInOutCubic;
         transition-property: opacity, transform;
     }
 }

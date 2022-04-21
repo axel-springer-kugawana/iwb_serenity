@@ -1,0 +1,47 @@
+/**
+ * 3 dots, positioned in a grid:
+ *
+ * 1. left:   `.toggle__bouncing-dots::before`
+ * 2. middle: `.toggle__bouncing-dot`
+ * 3. right:  `.toggle__bouncing-dots::after`
+ *
+ * Their animation is delayed so they bounce one after the other.
+ */
+.toggle__bouncing-dots {
+    position: absolute;
+
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--toggle-waiting-dot-diameter);
+
+    opacity: var(--toggle-waiting-dots-visible, 0);
+    transform: scale(var(--toggle-waiting-dots-visible, 0));
+
+    transition:
+        var(--toggle-motion) /* duration */
+        cubic-bezier(0.28, 1.07, 0.62, 0.96)
+        calc(var(--toggle-waiting-dots-visible, 0) * .15s); /* delay */
+    transition-property: opacity, transform;
+
+    &::before { content: ''; --toggle-bounce-delay: 0s; }
+    &::after { content: ''; --toggle-bounce-delay: .2s; }
+}
+
+// Dots size and color/
+.toggle__bouncing-dots::before,
+.toggle__bouncing-dots::after,
+.toggle__bouncing-dot {
+    width: var(--toggle-waiting-dot-diameter);
+    height: var(--toggle-waiting-dot-diameter);
+
+    background: currentColor;
+    border-radius: 50%;
+
+    animation: toggle-bouncing 1s infinite var(--toggle-bounce-delay, .1s);
+}
+
+@keyframes toggle-bouncing {
+    10% { transform: translateY(0%)}
+    25% { transform: translateY(-100%)}
+    40% { transform: translateY(0%)}
+}

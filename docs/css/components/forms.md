@@ -473,165 +473,165 @@ Input checkbox can contain error messages (e.g. to show validation errors relate
 </div>
 ```
 
-### Input Switch
+### Input Toggle
 
-The _switch_ is a checkbox looking like a _toggle_. It comes with the following features:
-- can be wrapped in `<label class="switch-label">`, which provides minimal vertical alignment;
-- two sizes: the default is the “Big” one, and `.switch--small` is the small one;
-- customizable space around the switch checkbox, using classes and custom properties;
+The _toggle_ is a checkbox. It comes with the following features:
+- can be wrapped in `<label class="toggle-label">`, which provides minimal vertical alignment;
+- two sizes: the default is the “Big” one, and `.toggle--small` is the small one;
+- customizable space around the toggle checkbox, using classes and custom properties;
 - optional icons near the toggle;
 - support for [checkboxes with an `indeterminate` state](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate_state_checkboxes), `disabled` and `aria-disabled`;
-- a “waiting” state (`.switch--waiting`), showing small bouncing dots;
+- a “waiting” state (`.toggle--waiting`), showing small bouncing dots;
 - motion.
 
 ::: warning
 > This replaces the previous `.input--switch` component. Though it’s a breaking change, it was not used in any app. If you’ve used it in the past, you can replicate the same behaviour with the following replacement.
 :::
 
-#### Switch without label nor icons
+#### Toggle without label nor icons
 
-The `.switch__checkbox` element is the one shaping the visual toggle.
+The `.toggle__checkbox` element is the one shaping the visual toggle.
 
-The default size is _Big_ and the small one requires the `.switch--small` class.
+The default size is _Big_ and the small one requires the `.toggle--small` class.
 
 <div class="sd-example">
-    <div class="switch">
-        <input type="checkbox" class="switch__input">
-        <span class="switch__checkbox"></span>
+    <div class="toggle">
+        <input type="checkbox" class="toggle__input">
+        <span class="toggle__checkbox"></span>
     </div>
 </div>
 
 <div class="sd-example">
-    <div class="switch switch--small">
-        <input type="checkbox" class="switch__input">
-        <span class="switch__checkbox"></span>
+    <div class="toggle toggle--small">
+        <input type="checkbox" class="toggle__input">
+        <span class="toggle__checkbox"></span>
     </div>
 </div>
 
 ```html
 <!-- Default size -->
-<div class="switch">
-    <input type="checkbox" class="switch__input">
-    <span class="switch__checkbox"></span>
+<div class="toggle">
+    <input type="checkbox" class="toggle__input">
+    <span class="toggle__checkbox"></span>
 </div>
 
 <!-- Small size -->
-<div class="switch switch--small">  <!-- 👈  CSS class -->
-    <input type="checkbox" class="switch__input">
-    <span class="switch__checkbox"></span>
+<div class="toggle toggle--small">  <!-- 👈  CSS class -->
+    <input type="checkbox" class="toggle__input">
+    <span class="toggle__checkbox"></span>
 </div>
 ```
 
-#### Switch label and space around the switch
+#### Toggle label and space around the toggle
 
-The same in a label (`.switch-label`). This class only helps with vertical alignment.
+The same in a label (`.toggle-label`). This class only helps with vertical alignment.
 
 <div class="sd-example">
-    <label for="exampleSwitchMinimal" class="switch-label">
+    <label for="exampleToggleMinimal" class="toggle-label">
         I’m the label and there’s no space before the checkbox.
-        <div class="switch switch--small">
-            <input type="checkbox" class="switch__input" id="exampleSwitchMinimal">
-            <span class="switch__checkbox"></span>
+        <div class="toggle toggle--small">
+            <input type="checkbox" class="toggle__input" id="exampleToggleMinimal">
+            <span class="toggle__checkbox"></span>
         </div>
     </label>
 </div>
 
 ```html
-<label for="exampleSwitchMinimalSmall" class="switch-label">
+<label for="exampleToggleMinimalSmall" class="toggle-label">
     I’m the label and there’s no space before the checkbox.
-    <div class="switch switch--small">
-        <input type="checkbox" class="switch__input" id="exampleSwitchMinimalSmall">
-        <span class="switch__checkbox"></span>
+    <div class="toggle toggle--small">
+        <input type="checkbox" class="toggle__input" id="exampleToggleMinimalSmall">
+        <span class="toggle__checkbox"></span>
     </div>
 </label>
 ```
 
-The previous example lacks of space around the checkbox, which can be solved using `.switch--margin-right` or `.switch--margin-left` to set a default margin (8px). To customize the space between the switch and its label, use the following custom properties: `--switch-margin-right` and `--switch-margin-left`.
+The previous example lacks of space around the checkbox, which can be solved using `.toggle--margin-right` or `.toggle--margin-left` to set a default margin (8px). To customize the space between the toggle and its label, use the following custom properties: `--toggle-margin-right` and `--toggle-margin-left`.
 
 <div class="sd-example">
-    <label for="exampleSwitchMinimalNoSpace" class="switch-label">
-        <div class="switch">
-            <input type="checkbox" class="switch__input" id="exampleSwitchMinimalNoSpace">
-            <span class="switch__checkbox"></span>
+    <label for="exampleToggleMinimalNoSpace" class="toggle-label">
+        <div class="toggle">
+            <input type="checkbox" class="toggle__input" id="exampleToggleMinimalNoSpace">
+            <span class="toggle__checkbox"></span>
         </div>
         <span>I’m a label and there’s <strong>no space before the checkbox</strong></span>.
     </label>
-    <Example-InputSwitch :icons="false" switch-position="left">
+    <Example-InputToggle :icons="false" toggle-position="left">
         <span>I’m a label on the left with <strong>default space</strong> on the right.</span>
-    </Example-InputSwitch>
-    <Example-InputSwitch :icons="false" switch-position="left" style="--switch-margin-right: 3rem;">
+    </Example-InputToggle>
+    <Example-InputToggle :icons="false" toggle-position="left" style="--toggle-margin-right: 3rem;">
         <span>I’m a label on the left with <strong>custom space</strong> on the right.</span>
-    </Example-InputSwitch>
+    </Example-InputToggle>
 </div>
 
 ```html
 <!-- No space -->
-<label for="exampleSwitchMinimalNoSpace" class="switch-label">
-    <div class="switch">
-        <input type="checkbox" class="switch__input" id="exampleSwitchMinimalNoSpace">
-        <span class="switch__checkbox"></span>
+<label for="exampleToggleMinimalNoSpace" class="toggle-label">
+    <div class="toggle">
+        <input type="checkbox" class="toggle__input" id="exampleToggleMinimalNoSpace">
+        <span class="toggle__checkbox"></span>
     </div>
     <span>I’m a label and there’s <strong>no space before the checkbox</strong></span>.
 </label>
 
 <!-- Default space -->
-<label for="exampleSwitchWithDefaultSpace" class="switch-label">
-    <div class="switch switch--margin-right"> <!-- 👈  CSS class -->
-        <input type="checkbox" class="switch__input" id="exampleSwitchWithDefaultSpace">
-        <span class="switch__checkbox"></span>
+<label for="exampleToggleWithDefaultSpace" class="toggle-label">
+    <div class="toggle toggle--margin-right"> <!-- 👈  CSS class -->
+        <input type="checkbox" class="toggle__input" id="exampleToggleWithDefaultSpace">
+        <span class="toggle__checkbox"></span>
     </div>
     <span>I’m a label on the left with <strong>default space</strong> on the right.</span>
 </label>
 
 <!-- Custom space -->
-<label for="exampleSwitchWithCustomSpace" class="switch-label">
-    <div class="switch" style="--switch-margin-left: 3rem;"> <!-- 👈  CSS custom property -->
-        <input type="checkbox" class="switch__input" id="exampleSwitchWithCustomSpace">
-        <span class="switch__checkbox"></span>
+<label for="exampleToggleWithCustomSpace" class="toggle-label">
+    <div class="toggle" style="--toggle-margin-left: 3rem;"> <!-- 👈  CSS custom property -->
+        <input type="checkbox" class="toggle__input" id="exampleToggleWithCustomSpace">
+        <span class="toggle__checkbox"></span>
     </div>
     <span>I’m a label on the left with <strong>custom space</strong> on the right.</span>
 </label>
 ```
 
-In the previous examples, the label is after the `.switch`. To accomplish that, change the HTML order.
+In the previous examples, the label is after the `.toggle`. To accomplish that, change the HTML order.
 
-#### Switch icons and waiting state
+#### Toggle icons and waiting state
 
 With icons and bouncing dots (you won’t see them bouncing here):
 
 <div class="sd-example">
-    <Example-InputSwitch/>
+    <Example-InputToggle/>
 </div>
 
 ```html
-<label for="exampleSwitchWithMostFeatures" class="switch-label">
+<label for="exampleToggleWithMostFeatures" class="toggle-label">
     I’m a label
-    <div class="switch switch--margin-right">
-        <input type="checkbox" class="switch__input" id="exampleSwitchWithMostFeatures">
-        <span class="switch__checkbox">
+    <div class="toggle toggle--margin-right">
+        <input type="checkbox" class="toggle__input" id="exampleToggleWithMostFeatures">
+        <span class="toggle__checkbox">
             <!-- Check icon ✔️ -->
-            <svg class="switch__svg switch__svg--check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 9" width="20" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 5.5L3.43934 7.93934L10.3787 1"/></svg>
+            <svg class="toggle__svg toggle__svg--check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 9" width="20" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 5.5L3.43934 7.93934L10.3787 1"/></svg>
             <!-- Cross icon ✖️ -->
-            <svg class="switch__svg switch__svg--cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1.06 1 9 8.94"/><path d="M1 8.94 8.94 1"/></svg>
+            <svg class="toggle__svg toggle__svg--cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1.06 1 9 8.94"/><path d="M1 8.94 8.94 1"/></svg>
             <!-- Bouncing dots ••• -->
-            <span class="switch__bouncing-dots">
-                <span class="switch__bouncing-dot"></span>
+            <span class="toggle__bouncing-dots">
+                <span class="toggle__bouncing-dot"></span>
             </span>
         </span>
     </div>
 </label>
 ```
 
-To put the switch in a waiting state:
-- use the `switch--waiting` class;
+To put the toggle in a waiting state:
+- use the `toggle--waiting` class;
 - add `aria-disabled="true"` (or `disabled`);
 - use JavaScript to set `element.indeterminate` to true;
-- make sure the HTML contains the `.switch__bouncing-dots` element in the visual checkbox.
+- make sure the HTML contains the `.toggle__bouncing-dots` element in the visual checkbox.
 
 Once the waiting state is over, reverse the 3 first step.
 
 <div class="sd-example">
-    <Example-InputSwitch
+    <Example-InputToggle
         :icons="false"
         :indeterminate="true"
         :disabled="true"
@@ -640,59 +640,59 @@ Once the waiting state is over, reverse the 3 first step.
 </div>
 
 ```html
-<label for="exampleSwitchIdWaiting" class="switch-label">
+<label for="exampleToggleIdWaiting" class="toggle-label">
     I’m a label
-    <div class="switch switch--margin-right switch--waiting"> <!-- 👈  CSS class -->
-        <input type="checkbox" disabled class="switch__input" id="exampleSwitchIdWaiting">
-        <span class="switch__checkbox">
-            <span class="switch__bouncing-dots">
-                <span class="switch__bouncing-dot"></span>
+    <div class="toggle toggle--margin-right toggle--waiting"> <!-- 👈  CSS class -->
+        <input type="checkbox" disabled class="toggle__input" id="exampleToggleIdWaiting">
+        <span class="toggle__checkbox">
+            <span class="toggle__bouncing-dots">
+                <span class="toggle__bouncing-dot"></span>
             </span>
         </span>
     </div>
 </label>
 ```
 
-#### Indeterminate switch
+#### Indeterminate toggle
 
-A switch can be in an indeterminate state without being disabled or in a waiting state:
+A toggle can be in an indeterminate state without being disabled or in a waiting state:
 
 <div class="sd-example">
-    <Example-InputSwitch :indeterminate="true" :small="true" />
+    <Example-InputToggle :indeterminate="true" :small="true" />
 </div>
 
 ```html
-<label for="exampleSwitchIndeterminate" class="switch-label">
+<label for="exampleToggleIndeterminate" class="toggle-label">
     I’m a label
-    <div class="switch switch--small switch--margin-right">
-        <input type="checkbox" class="switch__input" id="exampleSwitchIndeterminate">
-        <span class="switch__checkbox"></span>
+    <div class="toggle toggle--small toggle--margin-right">
+        <input type="checkbox" class="toggle__input" id="exampleToggleIndeterminate">
+        <span class="toggle__checkbox"></span>
     </div>
 </label>
 ```
 
-#### Disabled switch
+#### Disabled toggle
 
-And finally, a disabled unchecked switch:
+And finally, a disabled unchecked toggle:
 
 
 <div class="sd-example">
-    <Example-InputSwitch :disabled="true"/>
+    <Example-InputToggle :disabled="true"/>
 </div>
 
 ```html
 
-<label for="exampleSwitchDisabled" class="switch-label">
+<label for="exampleToggleDisabled" class="toggle-label">
     I’m a label
-    <div class="switch switch--margin-right">
+    <div class="toggle toggle--margin-right">
         <!-- `disabled` attribute 👇 -->
-        <input type="checkbox" disabled class="switch__input" id="exampleSwitchDisabled">
-        <span class="switch__checkbox"></span>
+        <input type="checkbox" disabled class="toggle__input" id="exampleToggleDisabled">
+        <span class="toggle__checkbox"></span>
     </div>
 </label>
 ```
 
-If for some reason you can’t access the HTML (when the switch is a framework component, for example) and you don’t want the icons, you can still use the `switch--no-icons` CSS class.
+If for some reason you can’t access the HTML (when the toggle is a framework component, for example) and you don’t want the icons, you can still use the `toggle--no-icons` CSS class.
 
 ## Input Group
 
