@@ -2,6 +2,9 @@
     position: relative;
     display: inline-flex; // prevent parent line-height to increase the height
 
+    margin-right: var(--switch-margin-right, var(--switch-internal-margin-right, 0));
+    margin-left: var(--switch-margin-left, var(--switch-internal-margin-left, 0));
+
     /**
      * Is it checked? Value modified in `.switch__input` (checkbox.scss).
      *
@@ -53,6 +56,11 @@
         --switch-motion: 0s;
     }
 }
+
+// Sensible default for the switch margin on its right or on its left.
+
+.switch--margin-right { --switch-internal-margin-right: #{$size-8}; }
+.switch--margin-left { --switch-internal-margin-left: #{$size-8}; }
 
 // Small switch. The default one is named “Big” in the design.
 
