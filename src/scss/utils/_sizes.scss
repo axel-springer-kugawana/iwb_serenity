@@ -1,10 +1,10 @@
 /*------------------------------------*\
   > Sizes
-  Size declaration reusable everywhere (for font-size, margin, etc)
+  Reusable size declaration (for font-size, margin…)
 \*------------------------------------*/
 
-// Table convertation 'px' to 'rem'
-// size-xx (xx stand for the desired size in pixel)
+// Conversion table: 'px' to 'rem'
+// size-xx (xx stands for the desired size in pixel)
 // ---------------------
 $size-100: 6.25rem;
 $size-70: 4.375rem;
@@ -14,8 +14,7 @@ $size-46: 2.875rem;
 $size-44: 2.75rem;
 $size-40: 2.5rem;
 $size-38: 2.375rem;
-$size-36-fixed: 2.25rem;
-$size-36: 2.225rem; // 35.6px :oops:, kept to avoid breaking other apps.
+$size-36: 2.25rem;
 $size-34: 2.125rem;
 $size-33: 2.0625rem;
 $size-32: 2rem;
