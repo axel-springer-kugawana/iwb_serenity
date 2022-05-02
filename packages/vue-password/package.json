@@ -1,0 +1,72 @@
+{
+    "name": "iwb-serenity-password",
+    "version": "0.3.0",
+    "description": "A Vue password component for iwb_serenity",
+    "sideEffects": false,
+    "exports": {
+        ".": "./src/index.ts",
+        "./scss": "./src/components/password.scss"
+    },
+    "module": "./src/index.ts",
+    "main": "./src/index.ts",
+    "sass": "src/components/password.scss",
+    "style": "src/components/password.scss",
+    "engines": {
+        "node": ">=10"
+    },
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build --target lib src/index.ts",
+        "test:unit": "vue-cli-service test:unit",
+        "lint": "vue-cli-service lint"
+    },
+    "files": [
+        "CHANGELOG.md",
+        "src/**/*.scss",
+        "src/**/*.js",
+        "src/**/*.ts",
+        "src/**/*.vue",
+        "types/**/*.d.ts"
+    ],
+    "types": "./types/index.d.ts",
+    "keywords": [
+        "vue",
+        "component",
+        "input",
+        "password"
+    ],
+    "homepage": "https://github.com/axel-springer-kugawana/iwb_serenity/packages/vue-password",
+    "author": "",
+    "license": "MIT",
+    "repository": "https://github.com/axel-springer-kugawana/iwb_serenity.git",
+    "bugs": {
+        "url": "https://github.com/axel-springer-kugawana/iwb_serenity/issues"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "nanoid": "^3"
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.19",
+        "@typescript-eslint/eslint-plugin": "^4.18.0",
+        "@typescript-eslint/parser": "^4.18.0",
+        "@vue/cli-plugin-babel": "~4.5.0",
+        "@vue/cli-plugin-eslint": "~4.5.0",
+        "@vue/cli-plugin-typescript": "~4.5.0",
+        "@vue/cli-plugin-unit-jest": "~4.5.0",
+        "@vue/cli-service": "~4.5.0",
+        "@vue/compiler-sfc": "^3.2.31",
+        "@vue/eslint-config-typescript": "^7.0.0",
+        "@vue/test-utils": "^2.0.0-0",
+        "eslint": "^6.7.2",
+        "eslint-plugin-vue": "^7.0.0",
+        "iwb_serenity": "^2.0.6",
+        "node-sass": "^4.12.0",
+        "sass-loader": "^8.0.2",
+        "typescript": "~4.1.5",
+        "vue": "^3",
+        "vue-jest": "^5.0.0-0"
+    }
+}
