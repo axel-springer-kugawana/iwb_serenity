@@ -27,6 +27,13 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
+  "files": [
+    "CHANGELOG.md",
+    "src",
+    "dist",
+    "docs",
+    "!docs/.vuepress/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/axel-springer-kugawana/iwb_serenity.git"
