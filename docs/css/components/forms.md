@@ -473,26 +473,226 @@ Input checkbox can contain error messages (e.g. to show validation errors relate
 </div>
 ```
 
-### Input Switch
+### Input Toggle
 
-The `input--switch` takes 100% of the width of its container, the label is displayed on the left and the "switch" button on the right.
+The _toggle_ is a checkbox. It comes with the following features:
+- can be wrapped in `<label class="toggle-label">`, which provides minimal vertical alignment;
+- two sizes: the default is the “Big” one, and `.toggle--small` is the small one;
+- customizable space around the toggle checkbox, using classes and custom properties;
+- optional icons near the toggle;
+- support for [checkboxes with an `indeterminate` state](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#indeterminate_state_checkboxes), `disabled` and `aria-disabled`;
+- a “waiting” state (`.toggle--waiting`), showing small bouncing dots;
+- motion.
 
-To display the checkbox input as a switch, enclose it within a label with the `input--swicth` class.
-Then give the `input--switch__input` class to the input and the `input--switch__label` class to the span containing the label of the input.
+::: warning
+> This replaces the previous `.input--switch` component. Though it’s a breaking change, it was not used in any app. If you’ve used it in the past, you can replicate the same behaviour with the following replacement.
+:::
+
+#### Toggle without label nor icons
+
+The `.toggle__checkbox` element is the one shaping the visual toggle.
+
+The default size is _Big_ and the small one requires the `.toggle--small` class.
 
 <div class="sd-example">
-    <label for="exampleSwitchId01" class="input--switch">
-        <input type="checkbox" name="swicthName01" class="input--switch__input" value="value" id="exampleSwitchId01">
-        <span class="input--switch__label">Input Switch Label</span>
+    <div class="toggle">
+        <input type="checkbox" class="toggle__input">
+        <span class="toggle__checkbox"></span>
+    </div>
+</div>
+
+<div class="sd-example">
+    <div class="toggle toggle--small">
+        <input type="checkbox" class="toggle__input">
+        <span class="toggle__checkbox"></span>
+    </div>
+</div>
+
+```html
+<!-- Default size -->
+<div class="toggle">
+    <input type="checkbox" class="toggle__input">
+    <span class="toggle__checkbox"></span>
+</div>
+
+<!-- Small size -->
+<div class="toggle toggle--small">  <!-- 👈  CSS class -->
+    <input type="checkbox" class="toggle__input">
+    <span class="toggle__checkbox"></span>
+</div>
+```
+
+#### Toggle label and space around the toggle
+
+The same in a label (`.toggle-label`). This class only helps with vertical alignment.
+
+<div class="sd-example">
+    <label for="exampleToggleMinimal" class="toggle-label">
+        I’m the label and there’s no space before the checkbox.
+        <div class="toggle toggle--small">
+            <input type="checkbox" class="toggle__input" id="exampleToggleMinimal">
+            <span class="toggle__checkbox"></span>
+        </div>
     </label>
 </div>
 
 ```html
-<label for="exampleSwitchId01" class="input--switch">
-    <input type="checkbox" name="swicthName01" class="input--switch__input" value="value" id="exampleSwitchId01">
-    <span class="input--switch__label">Input Switch Label</span>
+<label for="exampleToggleMinimalSmall" class="toggle-label">
+    I’m the label and there’s no space before the checkbox.
+    <div class="toggle toggle--small">
+        <input type="checkbox" class="toggle__input" id="exampleToggleMinimalSmall">
+        <span class="toggle__checkbox"></span>
+    </div>
 </label>
 ```
+
+The previous example lacks of space around the checkbox, which can be solved using `.toggle--margin-right` or `.toggle--margin-left` to set a default margin (8px). To customize the space between the toggle and its label, use the following custom properties: `--toggle-margin-right` and `--toggle-margin-left`.
+
+<div class="sd-example">
+    <label for="exampleToggleMinimalNoSpace" class="toggle-label">
+        <div class="toggle">
+            <input type="checkbox" class="toggle__input" id="exampleToggleMinimalNoSpace">
+            <span class="toggle__checkbox"></span>
+        </div>
+        <span>I’m a label and there’s <strong>no space before the checkbox</strong></span>.
+    </label>
+    <Example-InputToggle :icons="false" toggle-position="left">
+        <span>I’m a label on the left with <strong>default space</strong> on the right.</span>
+    </Example-InputToggle>
+    <Example-InputToggle :icons="false" toggle-position="left" style="--toggle-margin-right: 3rem;">
+        <span>I’m a label on the left with <strong>custom space</strong> on the right.</span>
+    </Example-InputToggle>
+</div>
+
+```html
+<!-- No space -->
+<label for="exampleToggleMinimalNoSpace" class="toggle-label">
+    <div class="toggle">
+        <input type="checkbox" class="toggle__input" id="exampleToggleMinimalNoSpace">
+        <span class="toggle__checkbox"></span>
+    </div>
+    <span>I’m a label and there’s <strong>no space before the checkbox</strong></span>.
+</label>
+
+<!-- Default space -->
+<label for="exampleToggleWithDefaultSpace" class="toggle-label">
+    <div class="toggle toggle--margin-right"> <!-- 👈  CSS class -->
+        <input type="checkbox" class="toggle__input" id="exampleToggleWithDefaultSpace">
+        <span class="toggle__checkbox"></span>
+    </div>
+    <span>I’m a label on the left with <strong>default space</strong> on the right.</span>
+</label>
+
+<!-- Custom space -->
+<label for="exampleToggleWithCustomSpace" class="toggle-label">
+    <div class="toggle" style="--toggle-margin-left: 3rem;"> <!-- 👈  CSS custom property -->
+        <input type="checkbox" class="toggle__input" id="exampleToggleWithCustomSpace">
+        <span class="toggle__checkbox"></span>
+    </div>
+    <span>I’m a label on the left with <strong>custom space</strong> on the right.</span>
+</label>
+```
+
+In the previous examples, the label is after the `.toggle`. To accomplish that, change the HTML order.
+
+#### Toggle icons and waiting state
+
+With icons and bouncing dots (you won’t see them bouncing here):
+
+<div class="sd-example">
+    <Example-InputToggle/>
+</div>
+
+```html
+<label for="exampleToggleWithMostFeatures" class="toggle-label">
+    I’m a label
+    <div class="toggle toggle--margin-right">
+        <input type="checkbox" class="toggle__input" id="exampleToggleWithMostFeatures">
+        <span class="toggle__checkbox">
+            <!-- Check icon ✔️ -->
+            <svg class="toggle__svg toggle__svg--check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 9" width="20" height="15" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 5.5L3.43934 7.93934L10.3787 1"/></svg>
+            <!-- Cross icon ✖️ -->
+            <svg class="toggle__svg toggle__svg--cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M1.06 1 9 8.94"/><path d="M1 8.94 8.94 1"/></svg>
+            <!-- Bouncing dots ••• -->
+            <span class="toggle__bouncing-dots">
+                <span class="toggle__bouncing-dot"></span>
+            </span>
+        </span>
+    </div>
+</label>
+```
+
+To put the toggle in a waiting state:
+- use the `toggle--waiting` class;
+- add `aria-disabled="true"` (or `disabled`);
+- use JavaScript to set `element.indeterminate` to true;
+- make sure the HTML contains the `.toggle__bouncing-dots` element in the visual checkbox.
+
+Once the waiting state is over, reverse the 3 first step.
+
+<div class="sd-example">
+    <Example-InputToggle
+        :icons="false"
+        :indeterminate="true"
+        :disabled="true"
+        :waiting="true"
+    />
+</div>
+
+```html
+<label for="exampleToggleIdWaiting" class="toggle-label">
+    I’m a label
+    <div class="toggle toggle--margin-right toggle--waiting"> <!-- 👈  CSS class -->
+        <input type="checkbox" disabled class="toggle__input" id="exampleToggleIdWaiting">
+        <span class="toggle__checkbox">
+            <span class="toggle__bouncing-dots">
+                <span class="toggle__bouncing-dot"></span>
+            </span>
+        </span>
+    </div>
+</label>
+```
+
+#### Indeterminate toggle
+
+A toggle can be in an indeterminate state without being disabled or in a waiting state:
+
+<div class="sd-example">
+    <Example-InputToggle :indeterminate="true" :small="true" />
+</div>
+
+```html
+<label for="exampleToggleIndeterminate" class="toggle-label">
+    I’m a label
+    <div class="toggle toggle--small toggle--margin-right">
+        <input type="checkbox" class="toggle__input" id="exampleToggleIndeterminate">
+        <span class="toggle__checkbox"></span>
+    </div>
+</label>
+```
+
+#### Disabled toggle
+
+And finally, a disabled unchecked toggle:
+
+
+<div class="sd-example">
+    <Example-InputToggle :disabled="true"/>
+</div>
+
+```html
+
+<label for="exampleToggleDisabled" class="toggle-label">
+    I’m a label
+    <div class="toggle toggle--margin-right">
+        <!-- `disabled` attribute 👇 -->
+        <input type="checkbox" disabled class="toggle__input" id="exampleToggleDisabled">
+        <span class="toggle__checkbox"></span>
+    </div>
+</label>
+```
+
+If for some reason you can’t access the HTML (when the toggle is a framework component, for example) and you don’t want the icons, you can still use the `toggle--no-icons` CSS class.
 
 ## Input Group
 
