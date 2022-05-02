@@ -4,22 +4,22 @@
 
 ### Changes
 
-- The `.input--switch` HTML/CSS component has been replaced by a `.toggle` HTML/CSS component to match more use cases (bac5aee).
-- The fonts stack has been improved, but you now have to declare the fonts by yourself. See usage notes in the [commit](cf55585).
+- The `.input--switch` HTML/CSS component has been replaced by a `.toggle` HTML/CSS component to match more use cases ([bac5aee](https://github.com/axel-springer-kugawana/iwb_serenity/commit/bac5aee1d80230f1d1da1f17467066896c5fc6bb)).
+- The fonts stack has been improved, but you now have to declare the fonts by yourself ([cf55585](https://github.com/axel-springer-kugawana/iwb_serenity/commit/cf555858e55fe294795128b89d2508147d34e402)).
 
 ### New
 
-- Increase compatibility with [dart-sass](https://github.com/sass/dart-sass) by enforcing `calc` (9c4950c).
+- Increase compatibility with [dart-sass](https://github.com/sass/dart-sass) by enforcing `calc` ([9c4950c](https://github.com/axel-springer-kugawana/iwb_serenity/commit/9c4950c99eace8c0b1685340d7fde5ba022e28ed)).
 
 ### Fixed
 
-- Wrong project license declaration in package.json (ec181b1).
-- Reduce the number of files include in the package (c8aa228).
+- Wrong project license declaration in package.json ([ec181b1](https://github.com/axel-springer-kugawana/iwb_serenity/commit/ec181b19e12631d04d86ee58c6b3f243d3cc331c)).
+- Reduce the number of files include in the package ([c8aa228](https://github.com/axel-springer-kugawana/iwb_serenity/commit/c8aa228ccde50f946acb556009a0f9fba850f70d)).
 
 ### Docs
 
-- Fix typo in buttons documentation (367e1c7).
-- The documentation website is now automatically deployed on release tag using a GitHub action (3ec3bde, 27b8460).
+- Fix typo in buttons documentation ([367e1c7](https://github.com/axel-springer-kugawana/iwb_serenity/commit/367e1c71e31dda04a26ae0ea4afbae4822aa1367)).
+- The documentation website is now automatically deployed on release tag using a GitHub action ([3ec3bde](https://github.com/axel-springer-kugawana/iwb_serenity/commit/3ec3bdecb38ef6a126a62551f542b769de4d42dd), [27b8460](https://github.com/axel-springer-kugawana/iwb_serenity/commit/27b846061c988285ac08a84a96237792595850f0)).
 
 ## 2.0.6 - 2021-03-04
 
