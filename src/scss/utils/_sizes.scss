@@ -6,12 +6,17 @@
 // Conversion table: 'px' to 'rem'
 // size-xx (xx stands for the desired size in pixel)
 // ---------------------
+$size-200: 12.5rem;
 $size-100: 6.25rem;
 $size-70: 4.375rem;
+$size-60: 3.75rem;
 $size-56: 3.5rem;
+$size-54: 3.375rem;
+$size-50: 3.125rem;
 $size-48: 3rem;
 $size-46: 2.875rem;
 $size-44: 2.75rem;
+$size-42: 2.625rem;
 $size-40: 2.5rem;
 $size-38: 2.375rem;
 $size-36: 2.25rem;
@@ -20,6 +25,7 @@ $size-33: 2.0625rem;
 $size-32: 2rem;
 $size-30: 1.875rem;
 $size-28: 1.75rem;
+$size-25: 1.5625rem;
 $size-26: 1.625rem;
 $size-24: 1.5rem;
 $size-22: 1.375rem;

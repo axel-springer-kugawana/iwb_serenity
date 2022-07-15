@@ -10,10 +10,14 @@
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 3.5rem;
+    min-height: $size-50;
     z-index: z("top-navigation");
     background: #fff;
     border-bottom: 1px solid $primary-blue-lll;
+
+    @include media-query("desktop") {
+        min-height: $size-56;
+    }
 }
 
 .top-navigation.open {
@@ -21,66 +25,424 @@
 }
 
 // Top Navigation Header
-// Contain the logo and menu button
 // ---------------------
-.top-navigation__header,
-.top-navigation__header--centered {
-    padding: $size-16 $size-16 $size-16 $size-30;
-
-    @include media-query("desktop") {
-        padding: 0;
-    }
-}
-
 .top-navigation__header {
-    @include media-query("desktop") {
-        background: transparent;
-        display: inline-block;
-    }
-}
+    position: relative;
 
-// Centered variation of top-navigation
-// e.g beta landing page
-.top-navigation__header--centered {
-    width: 100%;
+    @include media-query("desktop") {
+        position: static;
+    }
 }
 
 // Top Navigation Logo
 // ---------------------
 .top-navigation__logo {
-    width: 7.375rem; // 118px
-    display: inline-block;
+    position: relative;
+    padding: $size-13 $size-16 $size-13 $size-20;
 
     @include media-query("desktop") {
-        margin-right: $gutter * 2; // 40px
+        margin-right: $size-14;
+        padding: 0;
+        position: static;
+        background: transparent;
+        display: inline-block;
     }
 
     @include media-query("widescreen") {
-        width: 12.3125rem; // 197px
-        margin-right: $gutter * 2.4; // 48px
+        margin-right: $size-34;
     }
 }
 
 .top-navigation__logo-link {
     text-decoration: none;
     display: block;
+}
 
-    @include media-query("desktop") {
-        height: 54px;
+.top-navigation__logo-image {
+    height: $size-20;
+
+    @include media-query("widescreen") {
+        height: $size-25;
     }
 }
 
-.top-navigation__image {
+// Top Navigation Menu
+// ---------------------
+.top-navigation__menu {
+    display: none;
+    flex-grow: 1;
+
+    @include media-query("desktop") {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.top-navigation__menu-item {
+    @include media-query("desktop") {
+        display: block !important; // Important is used to overwrite JS display;
+    }
+
+    @include media-query("widescreen") {
+        margin: 0 $size-5;
+    }
+}
+
+// Mobile menu button
+// Open the navigation menu on mobile (hide on bp > tablet)
+// ---------------------
+.top-navigation__button-mobile {
+    position: absolute;
+    top: $size-14;
+    right: $size-13;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: $primary-blue;
+    font-size: $size-14;
+    font-weight: $font-weight-title;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding-right: $size-32;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        outline: none;
+    }
+
+    &:focus {
+        color: $primary-blue-dd;
+    }
+
+    @include media-query("desktop") {
+        display: none;
+    }
+}
+
+.top-navigation__button-mobile-label {
+    display: inline-block;
+}
+
+.top-navigation__button-mobile-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+// Top Navigation Menu Section
+// ---------------------
+.top-navigation__menu-section {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    @include media-query("desktop") {
+        display: flex !important; // Important are use to overide JS display
+    }
+}
+
+.top-navigation__menu-section--mobile-wrapper {
+    display: block;
+
+    @include media-query("desktop") {
+        display: none !important; // Important are use to overide JS display
+    }
+}
+
+// Top Navigation Sub-menu
+// ---------------------
+.top-navigation__submenu {
+    @include media-query("desktop") {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        margin-top: 1px;
+        background: #fff;
+    }
+
+    &:not(.open) {
+        display: none;
+    }
+}
+
+// Top Navigation Submenu Section
+// ---------------------
+.top-navigation__submenu-section {
+    margin-top: 0;
+
+    @include media-query("desktop") {
+        margin-top: $size-42;
+        margin-bottom: $size-40;
+    }
+}
+
+// Top Navigation Link
+// ---------------------
+.top-navigation__link {
+    position: relative;
+    display: block;
     width: 100%;
+    padding: $size-15 $size-16 $size-15 $size-20;
+    background: #fff;
+    font-size: $size-16;
+    font-weight: $font-weight-title;
+    cursor: pointer;
+    //border-bottom: 1px solid $primary-blue-lll;
+    text-decoration: none;
+    min-height: $size-60;
+
+    &:hover,
+    &:focus,
+    &:active {
+        text-decoration: none;
+        outline: none;
+        color: $primary-blue;
+        background-color: $primary-blue-lll;
+        box-shadow: none;
+    }
 
     @include media-query("desktop") {
-        height: 54px;
+        display: flex !important; // Important is used to overwrite JS display;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 0 $size-8;
+        margin: 0;
+        line-height: $size-20;
+        background: transparent;
+        min-height: 100%;
+        border-radius: 2px;
+        border: 2px solid transparent;
+
+        &:hover {
+            background-color: $primary-blue-lll;
+            border-color: $primary-blue-lll;
+        }
+
+        &:focus {
+            border-color: $primary-blue-dd;
+            background: transparent;
+        }
+
+        &:active {
+            border-bottom-color: $primary-blue-dd;
+            background-color: transparent;
+            color: $primary-blue-dd;
+        }
     }
 }
 
-// Centered variation of top-navigation
-// e.g beta landing page
-.top-navigation__logo--centered {
-    width: 200px;
-    margin: 0 auto;
+.top-navigation__link--disabled {
+    cursor: not-allowed;
+    color: $grey-65;
+
+    &:hover,
+    &:focus {
+        color: $grey-65;
+        background-color: transparent;
+        box-shadow: none;
+    }
 }
+
+.top-navigation__link.open,
+.top-navigation__link[aria-expanded="true"] {
+    border-bottom-color: $primary-blue-dd;
+    color: $primary-blue-dd;
+}
+
+// Prefix Icon for top-navigation menu item
+.top-navigation__link-icon {
+    position: relative;
+    top: $size-3;
+    width: $size-18;
+    height: $size-18;
+    margin-right: $size-6;
+
+    @include media-query("desktop") {
+        top: 0;
+    }
+}
+
+// Icon use in mobile to indicate next/back step
+.top-navigation__link-next-icon {
+    position: absolute;
+    right: $size-16;
+    top: $size-20;
+
+    @include media-query("desktop") {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+}
+
+.top-navigation__link:hover .top-navigation__link-back-icon,
+.top-navigation__link:focus .top-navigation__link-back-icon,
+.top-navigation__link:active .top-navigation__link-back-icon {
+    fill: $primary-blue-dd;
+}
+
+.top-navigation__link-label {
+    white-space: nowrap;
+}
+
+// Small Icon of a link
+.top-navigation__link-glyph {
+    position: relative;
+    top: $size-4;
+    margin-right: $size-4;
+}
+
+.top-navigation__link-right-glyph {
+    margin-right: 0;
+    margin-left: $size-4;
+}
+
+// Top Navigation Sub Menu Title on mobile
+// ---------------------
+.top-navigation__submenu-title {
+    position: relative;
+    display: block;
+    padding: 0 $size-16;
+    width: 100%;
+    margin: 0;
+    line-height: 50px;
+    border-bottom: 1px solid $primary-blue-lll;
+    text-align: center;
+    font-size: $size-20;
+    font-weight: $font-weight-title;
+    background: $primary-blue-llll;
+    text-decoration: none;
+    color: $primary-blue-d;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $primary-blue-d;
+        outline: none;
+        box-shadow: none;
+        background-color: $primary-blue-ll;
+
+        .top-navigation__submenu-title-icon {
+            color: $primary-blue-d;
+        }
+    }
+
+    @include media-query("desktop") {
+        display: none;
+    }
+}
+
+.top-navigation__submenu-title-back {
+    position: absolute;
+    top: 50%;
+    left: $size-20;
+    transform: translateY(-50%);
+    pointer-events: none;
+    border-radius: 50%;
+    background-color: #fff;
+    width: $size-32;
+    height: $size-32;
+    color: $primary-blue;
+}
+
+.top-navigation__submenu-title-icon {
+    top: -$size-4;
+    position: relative;
+}
+
+// Top Navigation Sub Menu Section Title
+// ---------------------
+.top-navigation__submenu-section-title {
+    padding: 0 $size-16 0 $size-20;
+    margin: 0;
+    line-height: 60px;
+    font-size: $size-16;
+    font-weight: $font-weight-title;
+    font-family: $font-body;
+    color: $secondary-grey;
+    background: #fff;
+    width: 100%;
+    display: inline-block;
+
+    @include media-query("desktop") {
+        padding: 0 0 $size-12 0;
+        margin: 0;
+        line-height: $size-20;
+        background: transparent;
+    }
+}
+
+// Top Navigation Sub Menu Link
+// ---------------------
+.top-navigation__submenu-item {
+    @include media-query("desktop") {
+        margin-bottom: $size-2;
+    }
+
+    .top-navigation__link {
+        font-weight: $font-weight-body;
+        padding: 0;
+
+        @include media-query("desktop") {
+            line-height: $size-20;
+            display: inline !important;
+
+            &:hover,
+            &:focus,
+            &:active {
+                text-decoration: underline;
+            }
+
+            &:hover {
+                background-color: transparent;
+                border-color: transparent;
+                color: $primary-blue-d;
+            }
+
+            &:focus {
+                box-shadow: none;
+                border-color: $primary-blue-dd;
+            }
+        }
+    }
+
+    .top-navigation__link-label,
+    .top-navigation__link-glyph {
+        display: inline;
+    }
+}
+
+// Top Navigation Sub Menu Section List
+// ---------------------
+.top-navigation__submenu-section-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+// Top Navigation Language Picker
+// ---------------------
+.top-navigation__language-picker {
+    display: inline-block;
+    padding: $size-20;
+
+    @include media-query("desktop") {
+        padding: 0;
+        display: inline-block !important;
+
+        &:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: $size-20;
+            width: 1px;
+            background: $primary-blue-ll;
+            margin: 0 $size-20 0 0;
+        }
+    }
+}
+
