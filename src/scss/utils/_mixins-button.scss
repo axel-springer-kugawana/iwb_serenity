@@ -10,7 +10,7 @@
     position: relative;
     padding: $size-9 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
     background-color: $color;
-    color: $primary-blue-dd;
+    color: $white;
     border: 1px solid $color;
     border-radius: $button-border-radius;
     font-family: $font-body;
@@ -25,8 +25,8 @@
             border-color: $functional-warning-l;
         }
         @else {
-            background-color: $primary-green-l;
-            border-color: $primary-green-l;
+            background-color: $rb-primary-blue-l;
+            border-color: $rb-primary-blue-l;
         }
     }
 
@@ -41,8 +41,8 @@
             box-shadow: 0 0 0 1px #fff;
         }
         @else {
-            border-color: $primary-blue-dd;
-            box-shadow: 0 0 0 1px $primary-blue-dd;
+            border-color: $rb-primary-blue-dd;
+            box-shadow: 0 0 0 1px $rb-primary-blue-dd;
         }
 
         &:only-child {
@@ -66,7 +66,7 @@
         vertical-align: middle;
         margin-left: -$size-4;
         margin-right: $size-2;
-        fill: $primary-blue-dd;
+        fill: $rb-primary-blue;
         width: $size-18;
         height: $size-18;
     }
@@ -90,7 +90,7 @@
         color: $color;
     }
     @else {
-        color: $primary-blue-dd;
+        color: $rb-primary-blue-dd;
     }
 
     // Icons
@@ -107,7 +107,7 @@
             fill: $color;
         }
         @else {
-            fill: $primary-blue-dd;
+            fill: $rb-primary-blue-dd;
         }
 
         &:only-child {
@@ -126,7 +126,7 @@
             background-color: rgba(101, 215, 141, .3); // $primary-green
         }
         @else {
-            background-color: $primary-green-lll;
+            background-color: $rb-primary-blue-lll;
         }
     }
 
@@ -141,8 +141,8 @@
             box-shadow: 0 0 0 1px #fff;
         }
         @else {
-            border-color: $primary-blue-d;
-            box-shadow: 0 0 0 1px $primary-blue-d;
+            border-color: $rb-primary-blue-dd;
+            box-shadow: 0 0 0 1px $rb-primary-blue-dd;
         }
     }
 
@@ -153,7 +153,7 @@
             fill: #fff;
         }
         @else {
-            fill: $primary-blue-dd;
+            fill: $rb-primary-blue-dd;
         }
     }
 
@@ -196,7 +196,7 @@
     }
     @else {
         color: $color;
-        border: 1px solid $primary-blue-l;
+        border: 1px solid $rb-primary-blue-l;
     }
 
     // Icons
@@ -232,7 +232,7 @@
             background-color: rgba(63, 109, 167, .35); // $primary-blue
         }
         @else {
-            background-color: $primary-blue-lll;
+            background-color: $rb-primary-blue-lll;
         }
     }
 
@@ -256,8 +256,8 @@
             box-shadow: 0 0 0 1px #fff;
         }
         @else {
-            border-color: $primary-blue-d;
-            box-shadow: 0 0 0 1px $primary-blue-d;
+            border-color: $rb-primary-blue-dd;
+            box-shadow: 0 0 0 1px $rb-primary-blue-dd;
         }
     }
 

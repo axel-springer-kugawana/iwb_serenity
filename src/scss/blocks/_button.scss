@@ -61,7 +61,7 @@
 // Button Primary
 %button--primary,
 .button--primary {
-    @include button-plain($primary-green);
+    @include button-plain($rb-primary-blue);
 }
 
 %button--primary--dark,
@@ -77,7 +77,7 @@
 // Button Secondary
 %button--secondary,
 .button--secondary {
-    @include button-outline-colored($primary-green);
+    @include button-outline-colored($rb-primary-blue);
 }
 
 %button--secondary--dark,
@@ -93,7 +93,7 @@
 // Button Tertiary
 %button--tertiary,
 .button--tertiary {
-    @include button-outline-white($primary-blue);
+    @include button-outline-white($rb-primary-blue);
 }
 
 %button--tertiary--dark,
