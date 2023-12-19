@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.0.0 - 2022-12-20
+
+### Changes
+
+- Primary secondary and tertiary button colors have been changed with some new colors defined with the acronym "rb", example: "rb-primary-blue". These changes were made only for the default theme, on "dark" and "masquerade" the buttons are the same. 
+- The brand logo has changed into another svg.
+
+### New
+
+- Were added some new colors as variables, all of them starting with "rb", example "rb-primary-blue"
+- New icons and illustrations
+
 ## 2.1.0 - 2022-05-02
 
 ### Changes
