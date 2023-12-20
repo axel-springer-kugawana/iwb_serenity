@@ -1,5 +1,21 @@
 # Changelog
 
+## 3.0.0 - 2022-12-20
+
+### Changes
+
+- Primary secondary and tertiary button colors have been changed with some new colors defined with the acronym "rb", example: "rb-primary-blue". These changes were made only for the default theme, on "dark" and "masquerade" the buttons are the same. 
+- The brand logo has changed into another svg.
+- The "icons" folder contains the icons that are used in the components of Serenity, but these have been updated with the new colors as well.
+
+### New
+
+- New color variables were added for the Rebranding design, all of them starting with "rb", example "rb-primary-blue".
+- New icons and illustrations have been added under the following structure:
+- The "artworks" folder contains illustrations.
+- The "icons-default" folder contains icons that are not colored (they are black/white) as they will be used with CSS classes or copied into JavaScript where they will be used with fill="currentColor" to take on the color of the text (or the respective context).
+- The "icons-colored" folder contains colored icons based on the new design colors.
+
 ## 2.1.0 - 2022-05-02
 
 ### Changes
