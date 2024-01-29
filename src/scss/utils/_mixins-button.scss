@@ -35,8 +35,8 @@
             border-color: $primary-green-l;
         }
         @else {
-            background-color: $rb-primary-blue-l;
-            border-color: $rb-primary-blue-l;
+            background-color: $primary-blue-l;
+            border-color: $primary-blue-l;
         }
     }
 
@@ -55,8 +55,8 @@
             box-shadow: 0 0 0 1px $primary-blue-dd;
         }
         @else {
-            border-color: $rb-primary-blue-dd;
-            box-shadow: 0 0 0 1px $rb-primary-blue-dd;
+            border-color: $primary-blue-dd;
+            box-shadow: 0 0 0 1px $primary-blue-dd;
         }
 
         &:only-child {
@@ -114,7 +114,7 @@
         color: $primary-blue-dd;
     }
     @else {
-        color: $rb-primary-blue-dd;
+        color: $primary-blue-dd;
     }
 
     // Icons
@@ -134,7 +134,7 @@
             color: $primary-blue-dd;
         }
         @else {
-            fill: $rb-primary-blue-dd;
+            fill: $primary-blue-dd;
         }
 
         &:only-child {
@@ -153,7 +153,7 @@
             background-color: rgba(101, 215, 141, .3); // $primary-green
         }
         @else {
-            background-color: $rb-primary-blue-lll;
+            background-color: $primary-blue-lll;
         }
     }
 
@@ -172,8 +172,8 @@
             box-shadow: 0 0 0 1px $primary-blue-d;
         }
         @else {
-            border-color: $rb-primary-blue-dd;
-            box-shadow: 0 0 0 1px $rb-primary-blue-dd;
+            border-color: $primary-blue-dd;
+            box-shadow: 0 0 0 1px $primary-blue-dd;
         }
     }
 
@@ -187,7 +187,7 @@
             fill: $primary-blue-dd;
         }
         @else {
-            fill: $rb-primary-blue-dd;
+            fill: $primary-blue-dd;
         }
     }
 
@@ -230,7 +230,7 @@
     }
     @else {
         color: $color;
-        border: 1px solid $rb-primary-blue-l;
+        border: 1px solid $primary-blue-l;
     }
 
     // Icons
@@ -269,7 +269,7 @@
             background-color: rgba(63, 109, 167, .35); // $primary-blue
         }
         @else {
-            background-color: $rb-primary-blue-lll;
+            background-color: $primary-blue-lll;
         }
     }
 
@@ -300,8 +300,8 @@
             box-shadow: 0 0 0 1px $primary-blue-d;
         }
         @else {
-            border-color: $rb-primary-blue-dd;
-            box-shadow: 0 0 0 1px $rb-primary-blue-dd;
+            border-color: $primary-blue-dd;
+            box-shadow: 0 0 0 1px $primary-blue-dd;
         }
     }
 
