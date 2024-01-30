@@ -10,6 +10,7 @@
     position: relative;
     padding: $size-9 $size-20; // We substract 1px to padding (regarding the fygma doc) to take in account the 1px border
     background-color: $color;
+    color: $primary-blue-dd;
     border: 1px solid $color;
     border-radius: $button-border-radius;
     font-family: $font-body;
@@ -17,26 +18,15 @@
     font-weight: $font-weight-title;
     transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic;
 
-    @if $theme == "dark" or $theme == "masquerade" {
-        color: $primary-blue-dd;
-    }
-    @else {
-        color: $white;
-    }
-
     // Hover, focus, active interactions
     &:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
         @if $theme == "masquerade" {
             background-color: $functional-warning-l;
             border-color: $functional-warning-l;
         }
-        @else if $theme == "dark" {
+        @else {
             background-color: $primary-green-l;
             border-color: $primary-green-l;
-        }
-        @else {
-            background-color: $primary-blue-l;
-            border-color: $primary-blue-l;
         }
     }
 
@@ -49,10 +39,6 @@
         @if $theme == "dark" {
             border-color: #fff;
             box-shadow: 0 0 0 1px #fff;
-        }
-        @else if $theme == "masquerade" {
-            border-color: $primary-blue-dd;
-            box-shadow: 0 0 0 1px $primary-blue-dd;
         }
         @else {
             border-color: $primary-blue-dd;
@@ -80,16 +66,9 @@
         vertical-align: middle;
         margin-left: -$size-4;
         margin-right: $size-2;
-
+        fill: $primary-blue-dd;
         width: $size-18;
         height: $size-18;
-
-        @if $theme == "dark" or $theme == "masquerade" {
-            fill: $primary-blue-dd;
-        }
-        @else {
-            fill: $white;
-        }
     }
 }
 
@@ -108,10 +87,7 @@
     transition: background-color .1s $easeInOutCubic, color .2s $easeInOutCubic;
 
     @if $theme == "dark" {
-        color: $primary-green;
-    }
-    @else if $theme == "masquerade" {
-        color: $primary-blue-dd;
+        color: $color;
     }
     @else {
         color: $primary-blue-dd;
@@ -128,10 +104,7 @@
         height: $size-18;
 
         @if $theme == "dark" {
-            fill: $primary-green;
-        }
-        @else if $theme == "masquerade" {
-            color: $primary-blue-dd;
+            fill: $color;
         }
         @else {
             fill: $primary-blue-dd;
@@ -153,7 +126,7 @@
             background-color: rgba(101, 215, 141, .3); // $primary-green
         }
         @else {
-            background-color: $primary-blue-lll;
+            background-color: $primary-green-lll;
         }
     }
 
@@ -167,13 +140,9 @@
             border-color: #fff;
             box-shadow: 0 0 0 1px #fff;
         }
-        @else if $theme == "masquerade" {
+        @else {
             border-color: $primary-blue-d;
             box-shadow: 0 0 0 1px $primary-blue-d;
-        }
-        @else {
-            border-color: $primary-blue-dd;
-            box-shadow: 0 0 0 1px $primary-blue-dd;
         }
     }
 
@@ -182,9 +151,6 @@
     &.button--active .button__icon {
         @if $theme == "dark" {
             fill: #fff;
-        }
-        @else if $theme == "masquerade" {
-            fill: $primary-blue-dd;
         }
         @else {
             fill: $primary-blue-dd;
@@ -225,7 +191,7 @@
         border: 1px solid #fff;
     }
     @else if $theme == "masquerade" {
-        color: $primary-blue;
+        color: $color;
         border: 1px solid $functional-warning-d;
     }
     @else {
@@ -245,9 +211,6 @@
 
         @if $theme == "dark" {
             fill: #fff;
-        }
-        @else if $theme == "masquerade" {
-            fill: $primary-blue;
         }
         @else {
             fill: $color;
@@ -277,9 +240,6 @@
         @if $theme == "dark" {
             fill: #fff;
         }
-        @else if $theme == "masquerade" {
-            fill: $primary-blue;
-        }
         @else {
             fill: $color;
         }
@@ -295,13 +255,9 @@
             border-color: #fff;
             box-shadow: 0 0 0 1px #fff;
         }
-        @else if $theme == "masquerade" {
+        @else {
             border-color: $primary-blue-d;
             box-shadow: 0 0 0 1px $primary-blue-d;
-        }
-        @else {
-            border-color: $primary-blue-dd;
-            box-shadow: 0 0 0 1px $primary-blue-dd;
         }
     }
 
@@ -310,9 +266,6 @@
     &.button--active .button__icon {
         @if $theme == "dark" {
             fill: #fff;
-        }
-        @else if $theme == "masquerade" {
-            fill: $primary-blue;
         }
         @else {
             fill: $color;
