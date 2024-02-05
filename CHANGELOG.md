@@ -1,6 +1,18 @@
 # Changelog
 
-## 3.0.0 - 2022-12-20
+## 3.1.0 - 2024-02-05
+
+### Changes
+
+- The color pallet has changed and the variables with "rb" acronym have the same values with the others.
+- The brand logo has a different blue
+- The icons and illustrations have been updated with the new colors as well.
+
+### New
+
+- New logo for serenity
+
+## 3.0.0 - 2023-12-20
 
 ### Changes
 

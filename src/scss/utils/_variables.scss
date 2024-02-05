@@ -2,8 +2,8 @@
  * Fonts stacks selected with the help of https://meowni.ca/font-style-matcher
  * and https://www.cssfontstack.com
  */
-$font-title: "Montserrat", "Verdana", system-ui, -apple-system, sans-serif !default;
-$font-body: "PT Sans", "Trebuchet MS", system-ui, -apple-system, sans-serif !default;
+$font-title: "Gratimo Grotesk", Arial, "Verdana", system-ui, -apple-system, sans-serif !default;
+$font-body: "Gratimo Grotesk", Arial, "Trebuchet MS", system-ui, -apple-system, sans-serif !default;
 
 // sizes
 $base-size: 100% !default;
@@ -17,34 +17,34 @@ $line-height-body: 1.5 !default;
 // Colors
 // ---------------------
 // Primary
-$primary-blue: #3f6da7 !default;
-$primary-green: #65d78d !default;
-$rb-primary-blue: #0022CD !default;
+$primary-blue: #133DBD !default;
+$primary-green: #65D78D !default;
+$rb-primary-blue: #133DBD !default;
 
 // Secondary
 $secondary-grey: #63697d !default;
 $secondary-blue: #3cbcfc !default;
 
 // Shade
-$primary-blue-d: #28476d !default;
-$primary-blue-dd: #1c3452 !default;
-$primary-blue-ddd: #132031 !default;
-$primary-blue-l: #6288b9 !default;
-$primary-blue-ll: #c4d3e4 !default;
-$primary-blue-lll: #ebf0f6 !default;
-$primary-blue-llll: #f7f9fb !default;
+$primary-blue-d: #1542C9 !default;
+$primary-blue-dd: #082479 !default;
+$primary-blue-ddd: #041654 !default;
+$primary-blue-l: #315ED1 !default;
+$primary-blue-ll: #A8BEEA !default;
+$primary-blue-lll: #E4EAF5 !default;
+$primary-blue-llll: #F3F5FA !default;
 
 $primary-green-l: #9be5b5 !default;
 $primary-green-ll: #cff3dc !default;
 $primary-green-lll: #eefbf2 !default;
 
-$rb-primary-blue-d: #0022CD !default;
-$rb-primary-blue-dd: #00168A !default;
-$rb-primary-blue-ddd: #000729 !default;
-$rb-primary-blue-l: #667AE1 !default;
-$rb-primary-blue-ll: #CCD3F5 !default;
-$rb-primary-blue-lll: #E8EBFB !default;
-$rb-primary-blue-llll: #F4F6FF !default;
+$rb-primary-blue-d: #1542C9 !default;
+$rb-primary-blue-dd: #082479 !default;
+$rb-primary-blue-ddd: #041654 !default;
+$rb-primary-blue-l: #315ED1 !default;
+$rb-primary-blue-ll: #A8BEEA !default;
+$rb-primary-blue-lll: #E4EAF5 !default;
+$rb-primary-blue-llll: #F3F5FA !default;
 
 // Various
 $orange-flag: #e2530d !default;
