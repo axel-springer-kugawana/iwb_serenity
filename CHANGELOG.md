@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.1.1 - 2024-02-20
+
+### Changes
+
+- The color of the link text on the hover has been changed to a darker color to be more visible.
+
 ## 3.1.0 - 2024-02-05
 
 ### Changes

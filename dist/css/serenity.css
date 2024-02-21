@@ -415,7 +415,7 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects; }
   a:hover {
-    color: #1542C9; }
+    color: #082479; }
   a:focus, a:active {
     outline: none;
     box-shadow: 0 0 0.125rem #133DBD, inset 0 0 0.125rem #133DBD; }
@@ -1713,10 +1713,10 @@ body {
       margin: 0; }
   
   .button--text:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) {
-    color: #1542C9; }
+    color: #082479; }
   
   .button--text:hover:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]) .button__icon {
-    fill: #1542C9; }
+    fill: #082479; }
   
   .button--text:focus:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]),
   .button--text:active:not([disabled="disabled"]):not(.button-disabled):not([aria-disabled="true"]),
