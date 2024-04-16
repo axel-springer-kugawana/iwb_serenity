@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.1.2 - 2024-04-16
+
+### Changes
+
+- Improved library reliability by fixing local development warnings
+
 ## 3.1.1 - 2024-02-20
 
 ### Changes
