@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.1.3 - 2024-04-17
+
+### Fixed
+
+- Fix css issue from 'calc' method
+- Update dist files 
+
 ## 3.1.2 - 2024-04-16
 
 ### Changes

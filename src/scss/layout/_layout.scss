@@ -72,7 +72,7 @@ body {
 
 .container--top-navigation-submenu {
     @include media-query("desktop") {
-        padding-left: ($max-column-width-desktop * 2) + ($gutter * 2);
+        padding-left: 10rem;
     }
 
     @include media-query("widescreen") {
